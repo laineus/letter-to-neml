@@ -9,6 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "phaser": "^3.90.0",
+    "phaser-assets-loader": "^1.2.0",
+    "phavuer": "^0.16.5",
     "vue": "^3.5.17"
   },
   "devDependencies": {
