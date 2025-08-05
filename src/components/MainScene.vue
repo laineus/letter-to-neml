@@ -4,6 +4,8 @@ import assets from '../assets.json'
 import { type PhaserAssets } from 'phaser-assets-loader'
 import MessageWindow from './MessageWindow.vue'
 import { useMessagePlayer } from '../lib/message'
+import Stage from './Stage.vue'
+import { reactive, ref } from 'vue'
 const phaserAssets = assets as unknown as PhaserAssets
 const preload = (scene: Phaser.Scene) => {
   Object.entries(phaserAssets).forEach(([method, list]) => {
@@ -26,10 +28,21 @@ const messagePlayer = useMessagePlayer([
 messagePlayer.on('end', () => {
   console.log('end')
 })
+const speakers = ref([
+  { image: 'image/chara', x: 0.15 }
+])
+setTimeout(() => {
+  const s2 = reactive({ image: 'image/chara2', x: 0.85 })
+  speakers.value.push(s2)
+  setTimeout(() => {
+    s2.x = 0.5
+  }, 1000)
+}, 1000)
 </script>
 
 <template>
   <Scene name="MainScene" @preload="preload" @update="update">
+    <Stage :speakers />
     <MessageWindow :text="messagePlayer.current.text" />
   </Scene>
   <button @click="messagePlayer.next">next</button>
