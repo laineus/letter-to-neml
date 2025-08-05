@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "openai": "^5.11.0",
     "phaser": "^3.90.0",
     "phaser-assets-loader": "^1.2.0",
     "phavuer": "^0.16.5",
