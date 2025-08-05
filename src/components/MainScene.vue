@@ -2,6 +2,7 @@
 import { Scene } from 'phavuer'
 import assets from '../assets.json'
 import { type PhaserAssets } from 'phaser-assets-loader'
+import MessageWindow from './MessageWindow.vue'
 const phaserAssets = assets as unknown as PhaserAssets
 const preload = (scene: Phaser.Scene) => {
   Object.entries(phaserAssets).forEach(([method, list]) => {
@@ -21,5 +22,6 @@ const update = () => {
 
 <template>
   <Scene name="MainScene" @preload="preload" @update="update">
+    <MessageWindow :text="'こんにちは。\nあああああいいいいいいいいええええええええええええええええええええおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおお'" />
   </Scene>
 </template>
