@@ -3,6 +3,7 @@ import { Scene } from 'phavuer'
 import assets from '../assets.json'
 import { type PhaserAssets } from 'phaser-assets-loader'
 import MessageWindow from './MessageWindow.vue'
+import { useMessagePlayer } from '../lib/message'
 const phaserAssets = assets as unknown as PhaserAssets
 const preload = (scene: Phaser.Scene) => {
   Object.entries(phaserAssets).forEach(([method, list]) => {
@@ -18,10 +19,18 @@ const preload = (scene: Phaser.Scene) => {
 }
 const update = () => {
 }
+const messagePlayer = useMessagePlayer([
+  { image: '', name: 'a', text: 'こんにちは。\nあああああいいいいいいいいええええええええええええええええええええおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおお' },
+  { image: '', name: 'a', text: 'さあああああああああああ' }
+])
+messagePlayer.on('end', () => {
+  console.log('end')
+})
 </script>
 
 <template>
   <Scene name="MainScene" @preload="preload" @update="update">
-    <MessageWindow :text="'こんにちは。\nあああああいいいいいいいいええええええええええええええええええええおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおおお'" />
+    <MessageWindow :text="messagePlayer.current.text" />
   </Scene>
+  <button @click="messagePlayer.next">next</button>
 </template>
