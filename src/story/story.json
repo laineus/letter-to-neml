@@ -1,6 +1,6 @@
 [
   {
-    "title": "Story1",
+    "title": "Story2",
     "list": [
       {
         "type": "background",
@@ -28,6 +28,10 @@
           }
         ]
       }
-    ]
+    ],
+    "if": {
+      "id": 3,
+      "resultId": 6
+    }
   }
 ]

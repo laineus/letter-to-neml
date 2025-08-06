@@ -13,11 +13,33 @@ const port = 5903
 app.use(cors())
 app.use(express.json())
 
+// story.json取得エンドポイント
+app.get('/api', async (req, res) => {
+  try {
+    const storiesPath = path.join(__dirname, '../src/story', 'story.json')
+    const data = await fs.readFile(storiesPath, 'utf8')
+    const stories = JSON.parse(data)
+    res.json(stories)
+  } catch (error) {
+    console.error('Error reading story.json:', error)
+    res.status(500).json({ 
+      success: false, 
+      error: 'Failed to read story.json',
+      details: error.message
+    })
+  }
+})
+
 // story.json更新エンドポイント
 app.post('/api', async (req, res) => {
   try {
     const storiesPath = path.join(__dirname, '../src/story', 'story.json')
     // リクエストボディをそのままファイルに書き込む
+    req.body.forEach(story => {
+      if (!story.if?.id || !story.if?.resultId) {
+        delete story.if
+      }
+    })
     await fs.writeFile(storiesPath, JSON.stringify(req.body, null, 2))
     res.json({ 
       success: true, 

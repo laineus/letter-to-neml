@@ -98,22 +98,29 @@ label {
 
 /* Header styles */
 .app-header {
-  background: #1976D2;
-  color: white;
-  padding: 16px 24px;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 15px 24px;
   font-size: 20px;
   font-weight: bold;
-  cursor: pointer;
+  border-bottom: 1px solid #ddd;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-
-.app-header:hover {
-  background: #1565C0;
+.app-header a {
+  color: #333;
+  text-decoration: none;
+}
+.app-header .btn {
+  font-size: 15px;
 }
 
 /* Story list styles */
 .story-list {
-  padding: 20px;
+  margin: 20px auto;
 }
 
 .story-item-wrapper {
@@ -128,6 +135,7 @@ label {
   cursor: pointer;
   transition: all 0.2s;
   font-size: 16px;
+  margin-bottom: 7px;
 }
 
 .story-title:hover {
