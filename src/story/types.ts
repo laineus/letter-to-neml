@@ -33,3 +33,7 @@ export type MessageConfig = {
   name: string
   text: string
 }
+
+export type StoryCharacter = {
+  name: string
+}

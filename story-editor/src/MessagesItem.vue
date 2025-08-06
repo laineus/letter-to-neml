@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
 import type { StoryMessages } from '../../src/story/types'
+import characters from '../../src/story/characters'
 
 const props = defineProps({
   item: {
@@ -8,6 +9,8 @@ const props = defineProps({
     required: true
   }
 })
+
+const characterOptions = characters.map(char => char.name)
 
 const addMessage = (index: number) => {
   props.item.list.splice(index, 0, { name: '', text: '' })
@@ -38,7 +41,11 @@ const moveMessage = (index: number, direction: 'up' | 'down') => {
           <button @click="removeMessage(index)" class="btn btn-remove">×</button>
         </div>
         <label>
-          <input type="text" v-model="message.name" placeholder="キャラクター名" />
+          <select v-model="message.name">
+            <option v-for="character in characterOptions" :key="character" :value="character">
+              {{ character }}
+            </option>
+          </select>
         </label>
         <label>
           <textarea v-model="message.text" placeholder="メッセージ内容" rows="3"></textarea>
