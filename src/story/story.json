@@ -1,0 +1,33 @@
+[
+  {
+    "title": "Story1",
+    "list": [
+      {
+        "type": "background",
+        "image": "a"
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara1",
+            "x": 100
+          },
+          {
+            "image": "chara2",
+            "x": 0
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "aa",
+            "text": "aaaaa"
+          }
+        ]
+      }
+    ]
+  }
+]

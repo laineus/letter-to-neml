@@ -8,28 +8,28 @@ export type Story = {
   list: StoryItem[]
 }
 
-type StoryItem = StoryBackground | StorySpeakers | StoryMessages
+export type StoryItem = StoryBackground | StorySpeakers | StoryMessages
 
-type StoryBackground = {
+export type StoryBackground = {
   type: 'background'
   image: string
 }
 
-type StorySpeakers = {
+export type StorySpeakers = {
   type: 'speakers'
   list: SpeakerConfig[]
 }
-type SpeakerConfig = {
+export type SpeakerConfig = {
   image: string
   x: number
 }
 
-type StoryMessages = {
+export type StoryMessages = {
   type: 'messages'
   list: MessageConfig[]
 }
 
-type MessageConfig = {
+export type MessageConfig = {
   name: string
   text: string
 }
