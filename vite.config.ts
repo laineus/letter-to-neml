@@ -8,9 +8,12 @@ export default defineConfig({
     vue(),
     phaserAssetsRollupPlugin({
       patterns: [
-        { type: 'image', dir: '/images', rule: /^\w+\.(webp|png|jpg)$/, prefix: 'image/' }
+        { type: 'image', dir: '/images', rule: /^[\w-]+\.(webp|png|jpg)$/, prefix: 'image/' }
       ],
       output: './src/assets.json'
     })
   ],
+  server: {
+    port: 5900
+  }
 })

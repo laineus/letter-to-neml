@@ -554,17 +554,20 @@ phaser-assets-loader@^1.2.0:
   dependencies:
     image-size "^1.0.0"
 
-phaser@^3.90.0:
+phaser@^3.70.0, phaser@^3.90.0:
   version "3.90.0"
   resolved "https://registry.yarnpkg.com/phaser/-/phaser-3.90.0.tgz#a281b2e5e67ec3638cbf73ea3bbfe72b52c4e7de"
   integrity sha512-/cziz/5ZIn02uDkC9RzN8VF9x3Gs3XdFFf9nkiMEQT3p7hQlWuyjy4QWosU802qqno2YSLn2BfqwOKLv/sSVfQ==
   dependencies:
     eventemitter3 "^5.0.1"
 
-phavuer@^0.16.5:
-  version "0.16.5"
-  resolved "https://registry.yarnpkg.com/phavuer/-/phavuer-0.16.5.tgz#e4652d52120f5742b5858ba93a4126a9a416e542"
-  integrity sha512-NuUghQU1cZ8ePGJ9rt9czahtzPiJb7H5wALuP2ZDn8W4ELYuBk5Fz/nMzyxBFFme78Px7q38YTY3nW7xQMu1Ww==
+phavuer@^0.18.0:
+  version "0.18.0"
+  resolved "https://registry.yarnpkg.com/phavuer/-/phavuer-0.18.0.tgz#b734ef9886f6ca5d08f335bd75f723d6d45475cb"
+  integrity sha512-Rw8XeUhvq0Vf+vxGh+kaQm7/3njaAF0j6ry4IW5ptn+isxcbGjGCqjtQkDK2tA2itZYMwS0aGYhYUBG+nEesaw==
+  dependencies:
+    phaser "^3.70.0"
+    vue "^3.5.18"
 
 picocolors@^1.1.1:
   version "1.1.1"
@@ -666,7 +669,7 @@ vue-tsc@^2.2.12:
     "@volar/typescript" "2.4.15"
     "@vue/language-core" "2.2.12"
 
-vue@^3.5.17:
+vue@^3.5.17, vue@^3.5.18:
   version "3.5.18"
   resolved "https://registry.yarnpkg.com/vue/-/vue-3.5.18.tgz#3d622425ad1391a2b0138323211ec784f4415686"
   integrity sha512-7W4Y4ZbMiQ3SEo+m9lnoNpV9xG7QVMLa+/0RFwwiAVkeYoyGXqWE85jabU4pllJNUzqfLShJ5YLptewhCWUgNA==

@@ -1,0 +1,85 @@
+[
+  {
+    "title": "Story2",
+    "list": [
+      {
+        "type": "background",
+        "image": "image/bg-room"
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "image/neml",
+            "x": 0.1
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "aa",
+            "text": "aaaaa"
+          },
+          {
+            "name": "bb",
+            "text": "bbbbbbbbbbbb"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "image/neml",
+            "x": 0.3
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "image/neml",
+            "x": 0.3
+          },
+          {
+            "image": "image/nina",
+            "x": 1.3
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "image/neml",
+            "x": 0.3
+          },
+          {
+            "image": "image/nina",
+            "x": 0.7
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "c",
+            "text": "cccc"
+          },
+          {
+            "name": "dd",
+            "text": "ddddd"
+          }
+        ]
+      }
+    ],
+    "if": {
+      "id": 3,
+      "resultId": 6
+    }
+  }
+]

@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "phavuer": "^0.17.0",
     "vue": "^3.5.17"
   },
   "devDependencies": {

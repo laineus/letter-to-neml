@@ -13,18 +13,18 @@ const port = 5903
 app.use(cors())
 app.use(express.json())
 
-// story.json取得エンドポイント
+// stories.json取得エンドポイント
 app.get('/api', async (req, res) => {
   try {
-    const storiesPath = path.join(__dirname, '../src/story', 'story.json')
+    const storiesPath = path.join(__dirname, '../src/story', 'stories.json')
     const data = await fs.readFile(storiesPath, 'utf8')
     const stories = JSON.parse(data)
     res.json(stories)
   } catch (error) {
-    console.error('Error reading story.json:', error)
+    console.error('Error reading stories.json:', error)
     res.status(500).json({ 
       success: false, 
-      error: 'Failed to read story.json',
+      error: 'Failed to read stories.json',
       details: error.message
     })
   }

@@ -1,10 +1,6 @@
 import { computed, ref } from 'vue'
-type Message = {
-  image: string
-  name: string
-  text: string
-}
-export const useMessagePlayer = (messages: Message[]) => {
+import type { MessageConfig } from '../story/types'
+export const useMessagePlayer = (messages: MessageConfig[]) => {
   const index = ref(0)
   const current = computed(() => messages[index.value])
   const eventTarget = new EventTarget()
