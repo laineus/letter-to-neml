@@ -12,7 +12,7 @@ const props = defineProps({
 })
 
 const selectedIndex = ref<number>()
-const itemTypes = ['background', 'speakers', 'messages'] as const
+const itemTypes = ['background', 'speakers', 'messages', 'sleep'] as const
 
 const addItem = (index: number, type: typeof itemTypes[number]) => {
   let newItem: any
@@ -25,6 +25,9 @@ const addItem = (index: number, type: typeof itemTypes[number]) => {
       break
     case 'messages':
       newItem = { type: 'messages', list: [] }
+      break
+    case 'sleep':
+      newItem = { type: 'sleep', duration: 500 }
       break
   }
   props.story.list.splice(index, 0, newItem)

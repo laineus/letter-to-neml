@@ -8,7 +8,12 @@ export type Story = {
   list: StoryItem[]
 }
 
-export type StoryItem = StoryBackground | StorySpeakers | StoryMessages
+export type StoryItem = StorySleep | StoryBackground | StorySpeakers | StoryMessages
+
+export type StorySleep = {
+  type: 'sleep'
+  duration: number
+}
 
 export type StoryBackground = {
   type: 'background'

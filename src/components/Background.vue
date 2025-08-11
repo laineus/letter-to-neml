@@ -15,7 +15,6 @@ watch(() => props.texture, (newTexture, oldTexture) => {
   // TODO: tweenでフェードインアウトさせる
 })
 emit('end')
-console.log(3)
 </script>
 
 <template>

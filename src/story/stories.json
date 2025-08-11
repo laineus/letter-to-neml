@@ -38,6 +38,10 @@
         ]
       },
       {
+        "type": "sleep",
+        "duration": 1000
+      },
+      {
         "type": "speakers",
         "list": [
           {
