@@ -13,7 +13,7 @@ const props = defineProps({
 const imageOptions = assets.image.map(([key]) => key)
 
 const addSpeaker = (index: number) => {
-  props.item.list.splice(index, 0, { image: '', x: 0 })
+  props.item.list.splice(index, 0, { image: '', x: 0, facing: 'left' })
 }
 
 const removeSpeaker = (index: number) => {
@@ -51,6 +51,13 @@ const moveSpeaker = (index: number, direction: 'up' | 'down') => {
         <label>
           位置:
           <input type="number" v-model.number="speaker.x" min="0" max="1" step="0.05" />
+        </label>
+        <label>
+          向き:
+          <select v-model="speaker.facing">
+            <option value="left">←左</option>
+            <option value="right">右→</option>
+          </select>
         </label>
       </div>
       <button @click="addSpeaker(index + 1)" class="btn btn-add">+ Add</button>

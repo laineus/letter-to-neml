@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { Container, useScene } from 'phavuer'
 import { watch, type PropType } from 'vue'
-import Speaker, { type SpeakerConfig } from './Speaker.vue'
+import Speaker from './Speaker.vue'
 import config from '../lib/config'
+import type { SpeakerConfig } from '../story/types'
 const emit = defineEmits(['end'])
 const props = defineProps({
   speakers: {
@@ -33,6 +34,6 @@ emit('end')
 
 <template>
   <Container>
-    <Speaker :x="speaker.x" :image="speaker.image" v-for="speaker in speakers" :key="speaker.image" :scale="0.5" />
+    <Speaker :speaker="speaker" v-for="speaker in speakers" :key="speaker.image" />
   </Container>
 </template>

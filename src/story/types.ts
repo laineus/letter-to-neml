@@ -27,6 +27,7 @@ export type StorySpeakers = {
 export type SpeakerConfig = {
   image: string
   x: number
+  facing: 'left' | 'right'
 }
 
 export type StoryMessages = {

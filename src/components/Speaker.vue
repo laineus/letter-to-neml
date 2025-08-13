@@ -1,19 +1,15 @@
 <script lang="ts">
 import { Container, Image, type Phavuer } from 'phavuer'
 import config from '../lib/config'
-import { computed, ref, watch } from 'vue'
-export type SpeakerConfig = {
-  x: number
-  image: string
-}
+import { computed, ref, watch, type PropType } from 'vue'
+import type { SpeakerConfig } from '../story/types'
 </script>
 
 <script setup lang="ts">
 const props = defineProps({
-  image: { type: String, required: true },
-  x: { type: Number, required: true }
+  speaker: { type: Object as PropType<SpeakerConfig>, required: true }
 })
-const realX = computed(() => Math.round(props.x * config.WIDTH))
+const realX = computed(() => Math.round(props.speaker.x * config.WIDTH))
 const initX = realX.value
 const tween = ref<Phavuer.TweenConfig>()
 watch(realX, (newX, oldX) => {
@@ -31,12 +27,13 @@ watch(realX, (newX, oldX) => {
   <Container
     :x="initX"
     :y="config.HEIGHT * 0.65"
-    :scale="0.6"
+    :scale="0.5"
     :tween="tween"
   >
     <Image
-      :texture="image"
+      :texture="speaker.image"
       :origin="0.5"
+      :scaleX="speaker.facing === 'left' ? 1 : -1"
     />
   </Container>
 </template>
