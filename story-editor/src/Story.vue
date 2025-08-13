@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import type { PropType } from 'vue'
 import type { Story } from '../../src/story/types'
 import StoryItem from './StoryItem.vue'
 import StoryItemSummary from './StoryItemSummary.vue'
+import Preview from './Preview.vue'
+import { useStoryPlayer } from '../../src/components/Story.vue'
 
 const props = defineProps({
   story: {
@@ -12,7 +14,12 @@ const props = defineProps({
   }
 })
 
+const storyPlayer = useStoryPlayer([props.story])
 const selectedIndex = ref<number>()
+watch(selectedIndex, (newIndex) => {
+  if (newIndex === undefined) return
+  storyPlayer.storyItemIndex = newIndex
+})
 const itemTypes = ['background', 'speakers', 'messages', 'sleep'] as const
 
 const addItem = (index: number, type: typeof itemTypes[number]) => {
@@ -98,6 +105,7 @@ const moveItem = (index: number, direction: 'up' | 'down') => {
       </div>
     </div>
   </div>
+  <Preview :storyPlayer="storyPlayer" />
 </template>
 
 <style scoped>

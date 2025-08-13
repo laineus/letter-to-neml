@@ -50,6 +50,5 @@ const getSummary = (item: StoryItem): string => {
   font-size: 14px;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
 }
 </style>
