@@ -3,6 +3,9 @@ import { Scene } from 'phavuer'
 import assets from '../assets.json'
 import { type PhaserAssets } from 'phaser-assets-loader'
 import Story from './Story.vue'
+import { stories } from '../story/stories'
+import { useStoryPlayer } from './Story.vue'
+const storyPlayer = useStoryPlayer(stories)
 const phaserAssets = assets as unknown as PhaserAssets
 const preload = (scene: Phaser.Scene) => {
   Object.entries(phaserAssets).forEach(([method, list]) => {
@@ -22,6 +25,12 @@ const update = () => {
 
 <template>
   <Scene name="MainScene" @preload="preload" @update="update">
-    <Story />
+    <Story
+      :stories="storyPlayer.stories"
+      :storyIndex="storyPlayer.storyIndex"
+      :storyItemIndex="storyPlayer.storyItemIndex"
+      :messageIndex="storyPlayer.messageIndex"
+      @next="storyPlayer.next"
+    />
   </Scene>
 </template>
