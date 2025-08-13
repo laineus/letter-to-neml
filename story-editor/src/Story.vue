@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import type { PropType } from 'vue'
 import type { Story } from '../../src/story/types'
 import StoryItem from './StoryItem.vue'
+import StoryItemSummary from './StoryItemSummary.vue'
 
 const props = defineProps({
   story: {
@@ -21,7 +22,8 @@ const addItem = (index: number, type: typeof itemTypes[number]) => {
       newItem = { type: 'background', image: '' }
       break
     case 'speakers':
-      newItem = { type: 'speakers', list: [] }
+      const prevSpeakers = props.story.list.slice(0, index).reverse().find(item => item.type === 'speakers')
+      newItem = { type: 'speakers', list: prevSpeakers?.list || [] }
       break
     case 'messages':
       newItem = { type: 'messages', list: [] }
@@ -31,6 +33,7 @@ const addItem = (index: number, type: typeof itemTypes[number]) => {
       break
   }
   props.story.list.splice(index, 0, newItem)
+  selectedIndex.value = index
 }
 
 const removeItem = (index: number) => {
@@ -76,7 +79,7 @@ const moveItem = (index: number, direction: 'up' | 'down') => {
       <div v-for="(item, index) in story.list" :key="index" class="story-item-container">
         <div class="story-item" :class="{ selected: selectedIndex === index }">
           <div class="item-header" @click="selectedIndex !== index ? selectedIndex = index : selectedIndex = undefined">
-            <span class="item-type">{{ item.type }}</span>
+            <StoryItemSummary :item="item" />
             <div class="item-controls" @click.stop>
               <button @click.stop="moveItem(index, 'up')" :disabled="index === 0" class="btn">↑</button>
               <button @click.stop="moveItem(index, 'down')" :disabled="index === story.list.length - 1" class="btn">↓</button>
@@ -162,10 +165,6 @@ const moveItem = (index: number, direction: 'up' | 'down') => {
   cursor: pointer;
 }
 
-.item-type {
-  font-weight: bold;
-  color: #666;
-}
 
 /* Control styles moved to common.css */
 
