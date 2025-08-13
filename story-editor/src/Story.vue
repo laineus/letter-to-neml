@@ -19,6 +19,7 @@ const selectedIndex = ref<number>()
 watch(selectedIndex, (newIndex) => {
   if (newIndex === undefined) return
   storyPlayer.storyItemIndex = newIndex
+  storyPlayer.messageIndex = 0
 })
 const itemTypes = ['background', 'speakers', 'messages', 'sleep'] as const
 

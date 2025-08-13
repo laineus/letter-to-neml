@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import 'phaser'
-import { Game, Scene } from 'phavuer'
+import { Game, Rectangle, Scene } from 'phavuer'
 import Story from '../../src/components/Story.vue'
 import { useStoryPlayer } from '../../src/components/Story.vue'
 import { preloadAssets } from '../../src/lib/preload'
@@ -29,6 +29,7 @@ const preload = (scene: Phaser.Scene) => {
           :messageIndex="storyPlayer.messageIndex"
           @next="storyPlayer.next"
         />
+        <Rectangle :width="config.WIDTH" :height="config.HEIGHT" @pointerdown="storyPlayer.next" />
       </Scene>
     </Game>
   </div>

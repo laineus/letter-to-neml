@@ -29,6 +29,7 @@ export const useStoryPlayer = (stories: Story[]) => {
   }
   return {
     stories,
+    get story () { return story.value },
     get storyItemIndex () { return state.storyItemIndex },
     set storyItemIndex (value: number) { state.storyItemIndex = value },
     get storyIndex () { return state.storyIndex },
@@ -41,12 +42,13 @@ export const useStoryPlayer = (stories: Story[]) => {
 </script>
 
 <script setup lang="ts">
-import { useScene } from 'phavuer'
+import { Rectangle, useScene } from 'phavuer'
 import MessageWindow from './MessageWindow.vue'
 import Stage from './Stage.vue'
 import { computed, reactive, watch, type PropType } from 'vue'
 import Background from './Background.vue'
 import type { Story } from '../story/types'
+import config from '../lib/config'
 const emit = defineEmits(['next'])
 const next = () => emit('next')
 // const storyIndex = defineModel<number>('storyIndex', { default: 0 })
@@ -88,11 +90,15 @@ watch(sleep, (newSleep) => {
     callback: () => next()
   })
 }, { immediate: true })
+const tapScreen = () => {
+  if (!currentMessage.value) return
+  next()
+}
 </script>
 
 <template>
+  <Rectangle :width="config.WIDTH" :height="config.HEIGHT" @pointerdown="tapScreen" />
   <Background v-if="background" :texture="background?.image" @end="next" />
   <Stage v-if="speakers?.list.length" :speakers="speakers.list" @end="next" />
   <MessageWindow v-if="currentMessage" :text="currentMessage.text" />
-  <button v-if="messages" @click="next">next</button>
 </template>
