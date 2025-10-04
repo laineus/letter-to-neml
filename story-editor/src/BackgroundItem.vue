@@ -10,7 +10,7 @@ defineProps({
   }
 })
 
-const imageOptions = assets.image.map(([key]) => key)
+const imageOptions = assets.image.map(([key]) => key).filter(v => v.startsWith('bg/'))
 </script>
 
 <template>

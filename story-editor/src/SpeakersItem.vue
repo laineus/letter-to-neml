@@ -10,7 +10,7 @@ const props = defineProps({
   }
 })
 
-const imageOptions = assets.image.map(([key]) => key)
+const imageOptions = assets.image.map(([key]) => key).filter(v => v.startsWith('chara/'))
 
 const addSpeaker = (index: number) => {
   props.item.list.splice(index, 0, { image: '', x: 0, facing: 'left' })

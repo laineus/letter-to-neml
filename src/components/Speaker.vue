@@ -26,14 +26,14 @@ watch(realX, (newX, oldX) => {
 <template>
   <Container
     :x="initX"
-    :y="config.HEIGHT * 0.65"
-    :scale="0.5"
+    :y="config.HEIGHT * 0.55"
+    :scale="0.55"
     :tween="tween"
   >
     <Image
       :texture="speaker.image"
       :origin="0.5"
-      :scaleX="speaker.facing === 'left' ? 1 : -1"
+      :scaleX="speaker.facing === 'right' ? 1 : -1"
     />
   </Container>
 </template>
