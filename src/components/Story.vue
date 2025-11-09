@@ -72,11 +72,11 @@ const currentSoryItem = computed(() => activeStoryItems.value[storyItemIndex.val
 const background = computed(() => activeStoryItems.value.slice(0).reverse().find(v => v.type === 'background'))
 const speakers = computed(() => activeStoryItems.value.slice(0).reverse().find(v => v.type === 'speakers'))
 const sleep = computed(() => {
-  if (currentSoryItem.value.type !== 'sleep') return
+  if (currentSoryItem.value?.type !== 'sleep') return
   return currentSoryItem.value
 })
 const messages = computed(() => {
-  if (currentSoryItem.value.type !== 'messages') return
+  if (currentSoryItem.value?.type !== 'messages') return
   return currentSoryItem.value
 })
 const currentMessage = computed(() => {

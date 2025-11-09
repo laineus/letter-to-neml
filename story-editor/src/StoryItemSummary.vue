@@ -23,11 +23,17 @@ const getSummary = (item: StoryItem): string => {
       return `${item.duration}ms`
   }
 }
+const labels = {
+  background: '背景',
+  speakers: 'キャラ',
+  messages: '台詞',
+  sleep: 'ウェイト'
+}
 </script>
 
 <template>
   <div class="story-item-summary">
-    <span class="item-type">{{ item.type }}</span>
+    <span class="item-type">{{ labels[item.type] }}</span>
     <span class="item-content">{{ getSummary(item) }}</span>
   </div>
 </template>

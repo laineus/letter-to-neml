@@ -22,6 +22,12 @@ watch(selectedIndex, (newIndex) => {
   storyPlayer.messageIndex = 0
 })
 const itemTypes = ['background', 'speakers', 'messages', 'sleep'] as const
+const labels = {
+  background: '背景',
+  speakers: 'キャラ',
+  messages: '台詞',
+  sleep: 'ウェイト'
+}
 
 const addItem = (index: number, type: typeof itemTypes[number]) => {
   let newItem: any
@@ -81,7 +87,7 @@ const moveItem = (index: number, direction: 'up' | 'down') => {
     <div class="story-items">
       <div class="add-item-section">
         <button v-for="type in itemTypes" :key="type" @click="addItem(0, type)" class="btn btn-add">
-          + {{ type }}
+          + {{ labels[type] }}
         </button>
       </div>
       <div v-for="(item, index) in story.list" :key="index" class="story-item-container">
@@ -100,7 +106,7 @@ const moveItem = (index: number, direction: 'up' | 'down') => {
         </div>
         <div class="add-item-section">
           <button v-for="type in itemTypes" :key="type" @click="addItem(index + 1, type)" class="btn btn-add">
-            + {{ type }}
+            + {{ labels[type] }}
           </button>
         </div>
       </div>

@@ -1,11 +1,28 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import type { Story } from '../../src/story/types.ts'
 import StoryComponent from './Story.vue'
 import Toast, { toastManager } from './Toast.vue'
+import { useRouter } from 'vue-router'
 
 const stories = ref<Story[]>()
-const selectedStory = ref<Story>()
+const router = useRouter()
+const selectedStoryIndex = computed({
+  get: () => {
+    return router.currentRoute.value.query.story ? Number(router.currentRoute.value.query.story) : undefined
+  },
+  set: (index: number) => {
+    if (index === undefined) {
+      router.push({ query: {} })
+    } else {
+      router.push({ query: { story: String(index) } })
+    }
+  }
+})
+const selectedStory = computed(() => {
+  if (stories.value === undefined || selectedStoryIndex.value === undefined) return undefined
+  return stories.value[selectedStoryIndex.value]
+})
 
 const loadStories = () => {
   fetch('/api')
@@ -52,7 +69,7 @@ const addStory = (index: number) => {
 
 <template>
   <header class="app-header">
-    <a href="#" @click="selectedStory = undefined">StoryEditor</a>
+    <a href="#" @click="selectedStoryIndex = undefined">StoryEditor</a>
     <button v-if="stories" @click="onSubmit" class="btn btn-add">Save</button>
   </header>
   <div class="app-content">
@@ -64,7 +81,7 @@ const addStory = (index: number) => {
       <div v-else class="story-list">
         <button @click="addStory(0)" class="btn btn-add">+ Add Story</button>
         <div v-for="(story, i) in stories" :key="i" class="story-item-wrapper">
-          <div class="story-title" :class="{ 'selected-story': selectedStory === story }" @click="selectedStory = story">
+          <div class="story-title" :class="{ 'selected-story': selectedStory === story }" @click="selectedStoryIndex = i">
             {{ story.title || 'Untitled Story' }}
           </div>
           <button @click="addStory(i + 1)" class="btn btn-add">+ Add Story</button>
