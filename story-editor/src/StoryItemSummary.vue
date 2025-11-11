@@ -21,13 +21,19 @@ const getSummary = (item: StoryItem): string => {
       return `${firstMsg.name}: ${firstMsg.text.slice(0, 20)}${firstMsg.text.length > 20 ? '...' : ''}`
     case 'sleep':
       return `${item.duration}ms`
+    case 'if':
+      return `ID: ${item.id}, 結果ID: ${item.resultId}`
+    case 'endIf':
+      return ''
   }
 }
 const labels = {
   background: '背景',
   speakers: 'キャラ',
   messages: '台詞',
-  sleep: 'ウェイト'
+  sleep: 'ウェイト',
+  if: '条件分岐',
+  endIf: '分岐終了'
 }
 </script>
 

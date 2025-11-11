@@ -21,12 +21,14 @@ watch(selectedIndex, (newIndex) => {
   storyPlayer.storyItemIndex = newIndex
   storyPlayer.messageIndex = 0
 })
-const itemTypes = ['background', 'speakers', 'messages', 'sleep'] as const
+const itemTypes = ['background', 'speakers', 'messages', 'sleep', 'if', 'endIf'] as const
 const labels = {
   background: '背景',
   speakers: 'キャラ',
   messages: '台詞',
-  sleep: 'ウェイト'
+  sleep: 'ウェイト',
+  if: '条件分岐',
+  endIf: '分岐終了'
 }
 
 const addItem = (index: number, type: typeof itemTypes[number]) => {
@@ -44,6 +46,12 @@ const addItem = (index: number, type: typeof itemTypes[number]) => {
       break
     case 'sleep':
       newItem = { type: 'sleep', duration: 500 }
+      break
+    case 'if':
+      newItem = { type: 'if', id: 1, resultId: 1 }
+      break
+    case 'endIf':
+      newItem = { type: 'endIf' }
       break
   }
   props.story.list.splice(index, 0, newItem)
@@ -63,6 +71,14 @@ const moveItem = (index: number, direction: 'up' | 'down') => {
   props.story.list.splice(index, 1)
   props.story.list.splice(newIndex, 0, item)
   selectedIndex.value = newIndex
+}
+const calcIndent = (index: number) => {
+  const addition = props.story.list[index].type === 'endIf' ? -1 : 0
+  return props.story.list.slice(0, index).reduce((indent, item) => {
+    if (item.type === 'if') return indent + 1
+    if (item.type === 'endIf') return Math.max(indent - 1, 0)
+    return indent
+  }, 0) + addition
 }
 </script>
 
@@ -90,24 +106,27 @@ const moveItem = (index: number, direction: 'up' | 'down') => {
           + {{ labels[type] }}
         </button>
       </div>
-      <div v-for="(item, index) in story.list" :key="index" class="story-item-container">
-        <div class="story-item" :class="{ selected: selectedIndex === index }">
-          <div class="item-header" @click="selectedIndex !== index ? selectedIndex = index : selectedIndex = undefined">
-            <StoryItemSummary :item="item" />
-            <div class="item-controls" @click.stop>
-              <button @click.stop="moveItem(index, 'up')" :disabled="index === 0" class="btn">↑</button>
-              <button @click.stop="moveItem(index, 'down')" :disabled="index === story.list.length - 1" class="btn">↓</button>
-              <button @click.stop="removeItem(index)" class="btn btn-remove">×</button>
+      <div v-for="(item, index) in story.list" :key="index" class="story-item-container" :class="item.type">
+        <div class="item-indent" v-for="n in calcIndent(index)" :key="n"></div>
+        <div class="story-item-content">
+          <div class="story-item" :class="{ selected: selectedIndex === index }">
+            <div class="item-header" @click="selectedIndex !== index ? selectedIndex = index : selectedIndex = undefined">
+              <StoryItemSummary :item="item" />
+              <div class="item-controls" @click.stop>
+                <button @click.stop="moveItem(index, 'up')" :disabled="index === 0" class="btn">↑</button>
+                <button @click.stop="moveItem(index, 'down')" :disabled="index === story.list.length - 1" class="btn">↓</button>
+                <button @click.stop="removeItem(index)" class="btn btn-remove">×</button>
+              </div>
+            </div>
+            <div v-if="selectedIndex === index" class="item-editor">
+              <StoryItem :item="item" />
             </div>
           </div>
-          <div v-if="selectedIndex === index" class="item-editor">
-            <StoryItem :item="item" />
+          <div class="add-item-section">
+            <button v-for="type in itemTypes" :key="type" @click="addItem(index + 1, type)" class="btn btn-add">
+              + {{ labels[type] }}
+            </button>
           </div>
-        </div>
-        <div class="add-item-section">
-          <button v-for="type in itemTypes" :key="type" @click="addItem(index + 1, type)" class="btn btn-add">
-            + {{ labels[type] }}
-          </button>
         </div>
       </div>
     </div>
@@ -159,7 +178,39 @@ const moveItem = (index: number, direction: 'up' | 'down') => {
 /* Button styles moved to common.css */
 
 .story-item-container {
+  position: relative;
   margin: 10px 0;
+  display: flex;
+}
+
+.item-indent {
+  position: relative;
+  width: 30px;
+  &::before {
+    content: '';
+    position: absolute;
+    border-left: 1px solid #ccc;
+    top: -10px;
+    bottom: -10px;
+    left: 14px;
+  }
+}
+
+.story-item-content {
+  flex: 1;
+}
+
+.story-item-container.if .add-item-section {
+  position: relative;
+  padding-left: 30px;
+  &::before {
+    content: '';
+    position: absolute;
+    border-left: 1px solid #ccc;
+    top: -10px;
+    bottom: -10px;
+    left: 14px;
+  }
 }
 
 .story-item {
