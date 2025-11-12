@@ -1,10 +1,7 @@
 
 export type Story = {
   title: string
-  if?: {
-    id: number
-    resultId: number
-  }
+  if: string
   list: StoryItem[]
 }
 
@@ -12,8 +9,7 @@ export type StoryItem = StorySleep | StoryBackground | StorySpeakers | StoryMess
 
 export type StoryIf = {
   type: 'if'
-  id: number
-  resultId: number
+  if: string
 }
 
 export type StoryEndIf = {
@@ -48,4 +44,10 @@ export type StoryMessages = {
 export type MessageConfig = {
   name: string
   text: string
+}
+
+export type Branch = {
+  id: number
+  resultId: number
+  ref: string
 }

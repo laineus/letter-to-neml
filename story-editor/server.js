@@ -36,7 +36,7 @@ app.post('/api', async (req, res) => {
     const storiesPath = path.join(__dirname, '../src/story', 'stories.json')
     // リクエストボディをそのままファイルに書き込む
     req.body.forEach(story => {
-      if (!story.if?.id || !story.if?.resultId) {
+      if (!story.if) {
         delete story.if
       }
     })

@@ -22,7 +22,7 @@ const getSummary = (item: StoryItem): string => {
     case 'sleep':
       return `${item.duration}ms`
     case 'if':
-      return `ID: ${item.id}, 結果ID: ${item.resultId}`
+      return item.if
     case 'endIf':
       return ''
   }

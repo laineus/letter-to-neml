@@ -11,14 +11,10 @@ defineProps({
 </script>
 
 <template>
-  <div class="endif-item">
-    条件分岐の終了
-  </div>
+  <div class="endif-item"></div>
 </template>
 
 <style scoped>
 .endif-item {
-  padding: 5px 10px;
-  color: #999;
 }
 </style>

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 import type { PropType } from 'vue'
-import type { Story } from '../../src/story/types'
-import StoryItem from './StoryItem.vue'
+import type { Story, StoryItem } from '../../src/story/types'
+import StoryItemComponent from './StoryItem.vue'
 import StoryItemSummary from './StoryItemSummary.vue'
 import Preview from './Preview.vue'
 import { useStoryPlayer } from '../../src/components/Story.vue'
@@ -32,7 +32,7 @@ const labels = {
 }
 
 const addItem = (index: number, type: typeof itemTypes[number]) => {
-  let newItem: any
+  let newItem: StoryItem
   switch (type) {
     case 'background':
       newItem = { type: 'background', image: '' }
@@ -48,7 +48,7 @@ const addItem = (index: number, type: typeof itemTypes[number]) => {
       newItem = { type: 'sleep', duration: 500 }
       break
     case 'if':
-      newItem = { type: 'if', id: 1, resultId: 1 }
+      newItem = { type: 'if', if: '' }
       break
     case 'endIf':
       newItem = { type: 'endIf' }
@@ -88,17 +88,9 @@ const calcIndent = (index: number) => {
       <label>
         タイトル: <input type="text" v-model="story.title" placeholder="Title" />
       </label>
-      <div v-if="story.if" class="condition">
-        条件:
-        <select v-model="story.if!.id">
-          <option :value="NaN">条件なし</option>
-          <option v-for="n in 10" :key="n" :value="n">{{ n }}</option>
-        </select>
-        <select v-model="story.if!.resultId">
-          <option :value="NaN">条件なし</option>
-          <option v-for="n in 10" :key="n" :value="n">{{ n }}</option>
-        </select>
-      </div>
+      <label>
+        条件: <input type="text" v-model="story.if">
+      </label>
     </div>
     <div class="story-items">
       <div class="add-item-section">
@@ -119,7 +111,7 @@ const calcIndent = (index: number) => {
               </div>
             </div>
             <div v-if="selectedIndex === index" class="item-editor">
-              <StoryItem :item="item" />
+              <StoryItemComponent :item="item" />
             </div>
           </div>
           <div class="add-item-section">
@@ -149,20 +141,10 @@ const calcIndent = (index: number) => {
 }
 
 .story-header input {
+  margin-top: 5px;
   width: 100%;
   font-size: 18px;
   font-weight: 500;
-}
-
-.condition {
-  margin-top: 15px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.condition select {
-  min-width: 120px;
 }
 
 .story-items {

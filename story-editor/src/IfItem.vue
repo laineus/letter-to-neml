@@ -12,45 +12,14 @@ defineProps({
 
 <template>
   <div class="if-item">
-    <div class="form-group">
-      <label>
-        ID:
-        <select v-model="item.id">
-          <option v-for="n in 10" :key="n" :value="n">{{ n }}</option>
-        </select>
-      </label>
-    </div>
-    <div class="form-group">
-      <label>
-        結果ID:
-        <select v-model="item.resultId">
-          <option v-for="n in 10" :key="n" :value="n">{{ n }}</option>
-        </select>
-      </label>
-    </div>
+    <input type="text" v-model="item.if" placeholder="条件名">
   </div>
 </template>
 
 <style scoped>
 .if-item {
-  display: flex;
-  gap: 20px;
-  align-items: center;
 }
-
-.form-group {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.form-group label {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.form-group select {
-  min-width: 80px;
+input {
+  width: 100%;
 }
 </style>

@@ -15,14 +15,11 @@ const imageOptions = assets.image.map(([key]) => key).filter(v => v.startsWith('
 
 <template>
   <div class="background-editor">
-    <label>
-      背景画像:
-      <select v-model="item.image">
-        <option v-for="image in imageOptions" :key="image" :value="image">
-          {{ image }}
-        </option>
-      </select>
-    </label>
+    <select v-model="item.image">
+      <option v-for="image in imageOptions" :key="image" :value="image">
+        {{ image }}
+      </option>
+    </select>
   </div>
 </template>
 
@@ -30,6 +27,4 @@ const imageOptions = assets.image.map(([key]) => key).filter(v => v.startsWith('
 .background-editor {
   padding: 10px;
 }
-
-/* Form styles moved to common.css */
 </style>

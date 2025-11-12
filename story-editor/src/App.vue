@@ -28,11 +28,6 @@ const loadStories = () => {
   fetch('/api')
     .then(response => response.json())
     .then(data => {
-      data.forEach((story: any) => {
-        if (!story.if) {
-          story.if = { id: NaN, resultId: NaN }
-        }
-      })
       stories.value = data as Story[]
     })
     .catch(err => {
@@ -62,7 +57,7 @@ const onSubmit = () => {
 }
 const addStory = (index: number) => {
   if (!stories.value) return
-  const newStory: Story = { title: '', list: [], if: { id: NaN, resultId: NaN } }
+  const newStory: Story = { title: '', list: [], if: '' }
   stories.value.splice(index, 0, newStory)
 }
 </script>
