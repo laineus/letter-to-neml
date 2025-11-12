@@ -29,7 +29,6 @@ const preload = (scene: Phaser.Scene) => {
           :messageIndex="storyPlayer.messageIndex"
           @next="storyPlayer.next"
         />
-        <Rectangle :width="config.WIDTH" :height="config.HEIGHT" @pointerdown="storyPlayer.next" />
       </Scene>
     </Game>
   </div>

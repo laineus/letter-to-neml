@@ -139,7 +139,7 @@ const tapScreen = () => {
 </script>
 
 <template>
-  <Rectangle :width="config.WIDTH" :height="config.HEIGHT" @pointerdown="tapScreen" />
+  <Rectangle :width="config.WIDTH" :height="config.HEIGHT" :origin="0" @pointerdown="tapScreen" />
   <Background v-if="background" :texture="background?.image" @end="next" />
   <Stage v-if="speakers?.list.length" :speakers="speakers.list" @end="next" />
   <MessageWindow v-if="currentMessage" :text="currentMessage.text" />
