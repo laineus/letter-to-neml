@@ -13,6 +13,7 @@ const props = defineProps({
 const currentTexture = computed(() => props.texture)
 watch(() => props.texture, (newTexture, oldTexture) => {
   // TODO: tweenでフェードインアウトさせる
+  emit('end')
 })
 emit('end')
 </script>

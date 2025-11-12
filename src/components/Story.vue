@@ -1,15 +1,40 @@
 <script lang="ts">
-export const useStoryPlayer = (stories: Story[]) => {
+type IfNode = {
+  if: string
+  start: number
+  end: number
+}
+const getIfNodes = (story: Story) => {
+  return story.list.reduce((result, v, i) => {
+    if (v.type === 'if') {
+      result.nodeIndex++
+      result.nodes[result.nodeIndex] = {
+        if: v.if,
+        start: i,
+        end: Infinity
+      }
+    } else if (v.type === 'endIf') {
+      result.nodes[result.nodeIndex].end = i
+      result.nodeIndex--
+    }
+    return result
+  }, { nodes: [] as IfNode[], nodeIndex: -1 }).nodes
+}
+type IfConditions = {
+  [key: string]: () => boolean
+}
+
+export const useStoryPlayer = (stories: Story[], ifConditions: IfConditions) => {
   const state = reactive({
     storyIndex: 0,
     storyItemIndex: 0,
     messageIndex: 0
   })
   const story = computed(() => stories[state.storyIndex])
+  const currentStoryItem = computed(() => story.value.list[state.storyItemIndex])
+  const ifNodes = computed(() => getIfNodes(story.value))
   const messages = computed(() => {
-    const currentSoryItem = story.value.list[state.storyItemIndex]
-    if (currentSoryItem.type !== 'messages') return
-    return currentSoryItem
+    return currentStoryItem.value?.type === 'messages' ? currentStoryItem.value : undefined
   })
   const next = () => {
     if (messages.value && state.messageIndex < messages.value.list.length - 1) {
@@ -19,12 +44,29 @@ export const useStoryPlayer = (stories: Story[]) => {
     if (state.storyItemIndex < story.value.list.length - 1) {
       state.storyItemIndex++
       state.messageIndex = 0
+      if (currentStoryItem.value.type === 'if') {
+        const conditionFunc = ifConditions[currentStoryItem.value.if]
+        const conditionResult = conditionFunc ? conditionFunc() : false
+        if (!conditionResult) {
+          const ifNode = ifNodes.value.find(v => v.start === state.storyItemIndex)
+          if (ifNode) {
+            state.storyItemIndex = ifNode.end
+          }
+        }
+        next()
+      } else if (currentStoryItem.value.type === 'endIf') {
+        next()
+      }
       return
     }
     if (state.storyIndex < stories.length - 1) {
       state.storyItemIndex = 0
       state.messageIndex = 0
-      state.storyIndex++
+      state.storyIndex = state.storyIndex + stories.slice(state.storyIndex + 1).findIndex(v => {
+        if (!v.if) return true
+        const conditionFunc = ifConditions[v.if]
+        return conditionFunc ? conditionFunc() : false
+      }) + 1 
     }
   }
   return {
@@ -47,7 +89,7 @@ import MessageWindow from './MessageWindow.vue'
 import Stage from './Stage.vue'
 import { computed, reactive, watch, type PropType } from 'vue'
 import Background from './Background.vue'
-import type { Story } from '../story/types'
+import type { Branch, Story } from '../story/types'
 import config from '../lib/config'
 const emit = defineEmits(['next'])
 const next = () => emit('next')

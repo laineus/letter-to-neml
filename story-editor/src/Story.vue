@@ -14,7 +14,7 @@ const props = defineProps({
   }
 })
 
-const storyPlayer = useStoryPlayer([props.story])
+const storyPlayer = useStoryPlayer([props.story], {})
 const selectedIndex = ref<number>()
 watch(selectedIndex, (newIndex) => {
   if (newIndex === undefined) return
