@@ -17,15 +17,46 @@
         ]
       },
       {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina",
+            "x": 0.5,
+            "facing": "left"
+          }
+        ]
+      },
+      {
         "type": "messages",
         "list": [
           {
-            "name": "aa",
-            "text": "aaaaa"
+            "name": "ニーナ",
+            "text": "ネムル、気持ちよさそうに眠ってる"
           },
           {
-            "name": "bb",
-            "text": "bbbbbbbbbbbb"
+            "name": "ニーナ",
+            "text": "どんな夢を見てるのかな"
+          },
+          {
+            "name": "ニーナ",
+            "text": "ねえネムル、私出かけないといけなくなったの"
+          },
+          {
+            "name": "ニーナ",
+            "text": "起こしたくないから、手紙を置いていくね"
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "function": "手紙執筆"
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ニーナ",
+            "text": "これでよし"
           }
         ]
       },
@@ -37,29 +68,54 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml",
-            "x": 0.3,
-            "facing": "left"
-          },
-          {
             "image": "chara/nina",
-            "x": 1.3,
-            "facing": "left"
+            "x": 0.8,
+            "facing": "right"
           }
         ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
       },
       {
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml",
-            "x": 0.3,
-            "facing": "left"
-          },
-          {
             "image": "chara/nina",
             "x": 0.7,
             "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ニーナ",
+            "text": "ネムル、"
+          },
+          {
+            "name": "ニーナ",
+            "text": "大好きだよ"
+          },
+          {
+            "name": "ニーナ",
+            "text": "………"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina",
+            "x": 1.2,
+            "facing": "right"
           }
         ]
       }
