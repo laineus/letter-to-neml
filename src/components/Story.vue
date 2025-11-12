@@ -1,30 +1,9 @@
 <script lang="ts">
-type IfNode = {
-  if: string
-  start: number
-  end: number
-}
-const getIfNodes = (story: Story) => {
-  return story.list.reduce((result, v, i) => {
-    if (v.type === 'if') {
-      result.nodeIndex++
-      result.nodes[result.nodeIndex] = {
-        if: v.if,
-        start: i,
-        end: Infinity
-      }
-    } else if (v.type === 'endIf') {
-      result.nodes[result.nodeIndex].end = i
-      result.nodeIndex--
-    }
-    return result
-  }, { nodes: [] as IfNode[], nodeIndex: -1 }).nodes
-}
 type IfConditions = {
   [key: string]: () => boolean
 }
 
-export const useStoryPlayer = (stories: Story[], ifConditions: IfConditions) => {
+export const useStoryPlayer = (stories: Story[]) => {
   const state = reactive({
     storyIndex: 0,
     storyItemIndex: 0,
@@ -32,7 +11,6 @@ export const useStoryPlayer = (stories: Story[], ifConditions: IfConditions) => 
   })
   const story = computed(() => stories[state.storyIndex])
   const currentStoryItem = computed(() => story.value.list[state.storyItemIndex])
-  const ifNodes = computed(() => getIfNodes(story.value))
   const currentMessages = computed(() => {
     return currentStoryItem.value?.type === 'messages' ? currentStoryItem.value : undefined
   })
@@ -49,7 +27,7 @@ export const useStoryPlayer = (stories: Story[], ifConditions: IfConditions) => 
   const currentSpeakers = computed(() => {
     return activeStoryItems.value.slice(0).reverse().find(v => v.type === 'speakers')
   })
-  const next = () => {
+  const next = (testIf: (v: string) => boolean) => {
     if (currentMessages.value && state.messageIndex < currentMessages.value.list.length - 1) {
       state.messageIndex++
       return
@@ -58,28 +36,19 @@ export const useStoryPlayer = (stories: Story[], ifConditions: IfConditions) => 
       state.storyItemIndex++
       state.messageIndex = 0
       if (currentStoryItem.value.type === 'if') {
-        const conditionFunc = ifConditions[currentStoryItem.value.if]
-        const conditionResult = conditionFunc ? conditionFunc() : false
-        if (!conditionResult) {
-          const ifNode = ifNodes.value.find(v => v.start === state.storyItemIndex)
-          if (ifNode) {
-            state.storyItemIndex = ifNode.end
-          }
+        if (!testIf(currentStoryItem.value.if)) {
+          state.storyItemIndex = story.value.list.findIndex((v, i) => i > state.storyItemIndex && v.type === 'endIf')
         }
-        next()
+        next(testIf)
       } else if (currentStoryItem.value.type === 'endIf') {
-        next()
+        next(testIf)
       }
       return
     }
     if (state.storyIndex < stories.length - 1) {
       state.storyItemIndex = 0
       state.messageIndex = 0
-      state.storyIndex = state.storyIndex + stories.slice(state.storyIndex + 1).findIndex(v => {
-        if (!v.if) return true
-        const conditionFunc = ifConditions[v.if]
-        return conditionFunc ? conditionFunc() : false
-      }) + 1 
+      state.storyIndex = state.storyIndex + stories.slice(state.storyIndex + 1).findIndex(v => !v.if || testIf(v.if)) + 1
     }
   }
   return {
@@ -109,8 +78,19 @@ import { computed, reactive, type PropType } from 'vue'
 import Background from './Background.vue'
 import type { Story } from '../story/types'
 import config from '../lib/config'
+const ifConditions = {
+  'じょうけん1': () => true,
+  'じょうけん2': () => false,
+  'じょうけん3': () => true,
+  'じょうけん4': () => false,
+  'じょうけん1と2': () => ifConditions['じょうけん1']() && ifConditions['じょうけん2'](),
+  'じょうけん1か2': () => ifConditions['じょうけん1']() || ifConditions['じょうけん2']()
+} as IfConditions
 const next = () => {
-  props.player.next()
+  props.player.next(ifId => {
+    const conditionFunc = ifConditions[ifId]
+    return conditionFunc ? conditionFunc() : false
+  })
   if (props.player.currentStoryItem?.type === 'sleep') {
     scene.time.addEvent({
       delay: props.player.currentStoryItem.duration,
