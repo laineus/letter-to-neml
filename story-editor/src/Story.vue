@@ -66,7 +66,6 @@ const removeItem = (index: number) => {
 const moveItem = (index: number, direction: 'up' | 'down') => {
   const newIndex = direction === 'up' ? index - 1 : index + 1
   if (newIndex < 0 || newIndex >= props.story.list.length) return
-  
   const item = props.story.list[index]
   props.story.list.splice(index, 1)
   props.story.list.splice(newIndex, 0, item)

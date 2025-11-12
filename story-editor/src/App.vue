@@ -11,7 +11,7 @@ const selectedStoryIndex = computed({
   get: () => {
     return router.currentRoute.value.query.story ? Number(router.currentRoute.value.query.story) : undefined
   },
-  set: (index: number) => {
+  set: (index: number | undefined) => {
     if (index === undefined) {
       router.push({ query: {} })
     } else {
@@ -60,6 +60,20 @@ const addStory = (index: number) => {
   const newStory: Story = { title: '', list: [], if: '' }
   stories.value.splice(index, 0, newStory)
 }
+
+const removeStory = (index: number) => {
+  if (!stories.value) return
+  stories.value.splice(index, 1)
+}
+
+const moveStory = (index: number, direction: 'up' | 'down') => {
+  if (!stories.value) return
+  const newIndex = direction === 'up' ? index - 1 : index + 1
+  if (newIndex < 0 || newIndex >= stories.value.length) return
+  const story = stories.value[index]
+  stories.value.splice(index, 1)
+  stories.value.splice(newIndex, 0, story)
+}
 </script>
 
 <template>
@@ -76,8 +90,15 @@ const addStory = (index: number) => {
       <div v-else class="story-list">
         <button @click="addStory(0)" class="btn btn-add">+ Add Story</button>
         <div v-for="(story, i) in stories" :key="i" class="story-item-wrapper">
-          <div class="story-title" :class="{ 'selected-story': selectedStory === story }" @click="selectedStoryIndex = i">
-            {{ story.title || 'Untitled Story' }}
+          <div class="story-item" @click="selectedStoryIndex = i">
+            <div class="story-title">
+              {{ story.title || 'Untitled Story' }}
+            </div>
+            <div class="item-controls" @click.stop>
+              <button @click.stop="moveStory(i, 'up')" :disabled="i === 0" class="btn">↑</button>
+              <button @click.stop="moveStory(i, 'down')" :disabled="i === stories.length - 1" class="btn">↓</button>
+              <button @click.stop="removeStory(i)" class="btn btn-remove">×</button>
+            </div>
           </div>
           <button @click="addStory(i + 1)" class="btn btn-add">+ Add Story</button>
         </div>
@@ -91,7 +112,6 @@ const addStory = (index: number) => {
 .app-content {
   padding: 20px;
 }
-
 .loading-message {
   background: #e3f2fd;
   color: #1976d2;
@@ -99,5 +119,31 @@ const addStory = (index: number) => {
   border-radius: 4px;
   text-align: center;
   margin-bottom: 20px;
+}
+
+.story-item-wrapper {
+  margin: 10px 0;
+}
+
+.story-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.story-title {
+  flex: 1;
+  padding: 5px;
+}
+
+.item-controls {
+  display: flex;
+  gap: 5px;
 }
 </style>
