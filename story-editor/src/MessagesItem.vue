@@ -13,7 +13,8 @@ const props = defineProps({
 const characterOptions = characters.map(char => char.name)
 
 const addMessage = (index: number) => {
-  props.item.list.splice(index, 0, { name: '', text: '' })
+  const prevName = index > 0 ? props.item.list[index - 1]?.name || '' : ''
+  props.item.list.splice(index, 0, { name: prevName, text: '' })
 }
 
 const removeMessage = (index: number) => {

@@ -40,10 +40,10 @@ const addItem = (index: number, type: typeof itemTypes[number]) => {
       break
     case 'speakers':
       const prevSpeakers = props.story.list.slice(0, index).reverse().find(item => item.type === 'speakers')
-      newItem = { type: 'speakers', list: prevSpeakers?.list || [] }
+      newItem = { type: 'speakers', list: prevSpeakers?.list.map(speaker => ({ ...speaker })) || [] }
       break
     case 'messages':
-      newItem = { type: 'messages', list: [] }
+      newItem = { type: 'messages', list: [{ name: '', text: '' }] }
       break
     case 'sleep':
       newItem = { type: 'sleep', duration: 500 }
