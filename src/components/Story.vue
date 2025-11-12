@@ -33,11 +33,24 @@ export const useStoryPlayer = (stories: Story[], ifConditions: IfConditions) => 
   const story = computed(() => stories[state.storyIndex])
   const currentStoryItem = computed(() => story.value.list[state.storyItemIndex])
   const ifNodes = computed(() => getIfNodes(story.value))
-  const messages = computed(() => {
+  const currentMessages = computed(() => {
     return currentStoryItem.value?.type === 'messages' ? currentStoryItem.value : undefined
   })
+  const currentMessage = computed(() => {
+    if (!currentMessages.value) return
+    return currentMessages.value.list[state.messageIndex]
+  })
+  const activeStoryItems = computed(() => {
+    return story.value.list.slice(0, state.storyItemIndex + 1)
+  })
+  const currentBackground = computed(() => {
+    return activeStoryItems.value.slice(0).reverse().find(v => v.type === 'background')
+  })
+  const currentSpeakers = computed(() => {
+    return activeStoryItems.value.slice(0).reverse().find(v => v.type === 'speakers')
+  })
   const next = () => {
-    if (messages.value && state.messageIndex < messages.value.list.length - 1) {
+    if (currentMessages.value && state.messageIndex < currentMessages.value.list.length - 1) {
       state.messageIndex++
       return
     }
@@ -78,6 +91,11 @@ export const useStoryPlayer = (stories: Story[], ifConditions: IfConditions) => 
     set storyIndex (value: number) { state.storyIndex = value },
     get messageIndex () { return state.messageIndex },
     set messageIndex (value: number) { state.messageIndex = value },
+    get currentMessages () { return currentMessages.value },
+    get currentMessage () { return currentMessage.value },
+    get currentStoryItem () { return currentStoryItem.value },
+    get currentBackground () { return currentBackground.value },
+    get currentSpeakers () { return currentSpeakers.value },
     next
   }
 }
@@ -87,60 +105,35 @@ export const useStoryPlayer = (stories: Story[], ifConditions: IfConditions) => 
 import { Rectangle, useScene } from 'phavuer'
 import MessageWindow from './MessageWindow.vue'
 import Stage from './Stage.vue'
-import { computed, reactive, watch, type PropType } from 'vue'
+import { computed, reactive, type PropType } from 'vue'
 import Background from './Background.vue'
-import type { Branch, Story } from '../story/types'
+import type { Story } from '../story/types'
 import config from '../lib/config'
-const emit = defineEmits(['next'])
-const next = () => emit('next')
-// const storyIndex = defineModel<number>('storyIndex', { default: 0 })
-// const storyItemIndex = defineModel<number>('storyItemIndex', { default: 0 })
-// const messageIndex = defineModel<number>('messageIndex', { default: 0 })
+const next = () => {
+  props.player.next()
+  if (props.player.currentStoryItem?.type === 'sleep') {
+    scene.time.addEvent({
+      delay: props.player.currentStoryItem.duration,
+      callback: () => next()
+    })
+  }
+}
 const props = defineProps({
-  stories: { type: Array as PropType<Story[]>, required: true },
-  storyIndex: { type: Number, default: 0 },
-  storyItemIndex: { type: Number, default: 0 },
-  messageIndex: { type: Number, default: 0 }
+  player: {
+    type: Object as PropType<ReturnType<typeof useStoryPlayer>>,
+    required: true
+  }
 })
-const stories = computed(() => props.stories)
-const storyIndex = computed(() => props.storyIndex)
-const storyItemIndex = computed(() => props.storyItemIndex)
-const messageIndex = computed(() => props.messageIndex)
-
 const scene = useScene()
-const story = computed(() => stories.value[storyIndex.value])
-const activeStoryItems = computed(() => story.value.list.slice(0, storyItemIndex.value + 1))
-const currentSoryItem = computed(() => activeStoryItems.value[storyItemIndex.value])
-const background = computed(() => activeStoryItems.value.slice(0).reverse().find(v => v.type === 'background'))
-const speakers = computed(() => activeStoryItems.value.slice(0).reverse().find(v => v.type === 'speakers'))
-const sleep = computed(() => {
-  if (currentSoryItem.value?.type !== 'sleep') return
-  return currentSoryItem.value
-})
-const messages = computed(() => {
-  if (currentSoryItem.value?.type !== 'messages') return
-  return currentSoryItem.value
-})
-const currentMessage = computed(() => {
-  if (!messages.value) return
-  return messages.value.list[messageIndex.value]
-})
-watch(sleep, (newSleep) => {
-  if (!newSleep) return
-  scene.time.addEvent({
-    delay: newSleep.duration,
-    callback: () => next()
-  })
-}, { immediate: true })
 const tapScreen = () => {
-  if (!currentMessage.value) return
+  if (!props.player.currentMessage) return
   next()
 }
 </script>
 
 <template>
   <Rectangle :width="config.WIDTH" :height="config.HEIGHT" :origin="0" @pointerdown="tapScreen" />
-  <Background v-if="background" :texture="background?.image" @end="next" />
-  <Stage v-if="speakers?.list.length" :speakers="speakers.list" @end="next" />
-  <MessageWindow v-if="currentMessage" :text="currentMessage.text" />
+  <Background v-if="player.currentBackground" :texture="player.currentBackground?.image" @end="next" />
+  <Stage v-if="player.currentSpeakers?.list.length" :speakers="player.currentSpeakers.list" @end="next" />
+  <MessageWindow v-if="player.currentMessage" :text="player.currentMessage.text" />
 </template>

@@ -22,12 +22,6 @@ const update = () => {
 
 <template>
   <Scene name="MainScene" @preload="preload" @update="update">
-    <Story
-      :stories="storyPlayer.stories"
-      :storyIndex="storyPlayer.storyIndex"
-      :storyItemIndex="storyPlayer.storyItemIndex"
-      :messageIndex="storyPlayer.messageIndex"
-      @next="storyPlayer.next"
-    />
+    <Story :player="storyPlayer" />
   </Scene>
 </template>
