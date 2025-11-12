@@ -21,14 +21,15 @@ watch(selectedIndex, (newIndex) => {
   storyPlayer.storyItemIndex = newIndex
   storyPlayer.messageIndex = 0
 })
-const itemTypes = ['background', 'speakers', 'messages', 'sleep', 'if', 'endIf'] as const
+const itemTypes = ['background', 'speakers', 'messages', 'sleep', 'if', 'endIf', 'function'] as const
 const labels = {
   background: '背景',
   speakers: 'キャラ',
   messages: '台詞',
   sleep: 'ウェイト',
   if: '条件分岐',
-  endIf: '分岐終了'
+  endIf: '分岐終了',
+  function: '関数'
 }
 
 const addItem = (index: number, type: typeof itemTypes[number]) => {
@@ -52,6 +53,9 @@ const addItem = (index: number, type: typeof itemTypes[number]) => {
       break
     case 'endIf':
       newItem = { type: 'endIf' }
+      break
+    case 'function':
+      newItem = { type: 'function', function: '' }
       break
   }
   props.story.list.splice(index, 0, newItem)

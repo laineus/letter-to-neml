@@ -5,7 +5,7 @@ export type Story = {
   list: StoryItem[]
 }
 
-export type StoryItem = StorySleep | StoryBackground | StorySpeakers | StoryMessages | StoryIf | StoryEndIf
+export type StoryItem = StorySleep | StoryBackground | StorySpeakers | StoryMessages | StoryIf | StoryEndIf | StoryFunction
 
 export type StoryIf = {
   type: 'if'
@@ -14,6 +14,11 @@ export type StoryIf = {
 
 export type StoryEndIf = {
   type: 'endIf'
+}
+
+export type StoryFunction = {
+  type: 'function'
+  function: string
 }
 
 export type StorySleep = {

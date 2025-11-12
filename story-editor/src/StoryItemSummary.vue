@@ -25,6 +25,8 @@ const getSummary = (item: StoryItem): string => {
       return item.if
     case 'endIf':
       return ''
+    case 'function':
+      return item.function
   }
 }
 const labels = {
@@ -33,7 +35,8 @@ const labels = {
   messages: '台詞',
   sleep: 'ウェイト',
   if: '条件分岐',
-  endIf: '分岐終了'
+  endIf: '分岐終了',
+  function: '関数'
 }
 </script>
 

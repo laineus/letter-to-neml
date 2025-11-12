@@ -1,18 +1,18 @@
 [
   {
-    "title": "Story2",
+    "title": "ニーナの外出",
     "list": [
       {
         "type": "background",
-        "image": "bg/room"
+        "image": "bg/home"
       },
       {
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml",
-            "x": 0.1,
-            "facing": "right"
+            "image": "chara/nina",
+            "x": 0.8,
+            "facing": "left"
           }
         ]
       },
@@ -26,16 +26,6 @@
           {
             "name": "bb",
             "text": "bbbbbbbbbbbb"
-          }
-        ]
-      },
-      {
-        "type": "speakers",
-        "list": [
-          {
-            "image": "chara/neml",
-            "x": 0.3,
-            "facing": "right"
           }
         ]
       },
@@ -72,28 +62,89 @@
             "facing": "left"
           }
         ]
+      }
+    ]
+  },
+  {
+    "title": "aaa2",
+    "list": [
+      {
+        "type": "background",
+        "image": "bg/backyard"
       },
       {
-        "type": "messages",
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "speakers",
         "list": [
           {
-            "name": "c",
-            "text": "cccc"
-          },
-          {
-            "name": "dd",
-            "text": "ddddd"
+            "image": "chara/aunt",
+            "x": 0.4,
+            "facing": "left"
           }
         ]
       },
       {
         "type": "sleep",
-        "duration": 0
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "店主",
+            "text": "必ずしゃべるせりふ"
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "function": "イベント1"
+      },
+      {
+        "type": "if",
+        "if": "じょうけん1"
+      },
+      {
+        "type": "if",
+        "if": "じょうけん1か2"
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "犬",
+            "text": "わん"
+          }
+        ]
+      },
+      {
+        "type": "endIf"
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "青年",
+            "text": "aaaaa"
+          }
+        ]
+      },
+      {
+        "type": "endIf"
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "店主",
+            "text": "最後に必ずしゃべる台詞"
+          }
+        ]
       }
     ],
-    "if": {
-      "id": 3,
-      "resultId": 6
-    }
+    "if": "じょうけん1"
   }
 ]

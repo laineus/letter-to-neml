@@ -7,6 +7,7 @@ import MessagesItem from './MessagesItem.vue'
 import SleepItem from './SleepItem.vue'
 import IfItem from './IfItem.vue'
 import EndIfItem from './EndIfItem.vue'
+import FunctionItem from './FunctionItem.vue'
 
 defineProps({
   item: {
@@ -24,6 +25,7 @@ defineProps({
     <SleepItem v-else-if="item.type === 'sleep'" :item="item" />
     <IfItem v-else-if="item.type === 'if'" :item="item" />
     <EndIfItem v-else-if="item.type === 'endIf'" :item="item" />
+    <FunctionItem v-else-if="item.type === 'function'" :item="item" />
   </div>
 </template>
 

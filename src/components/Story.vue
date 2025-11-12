@@ -1,8 +1,4 @@
 <script lang="ts">
-type IfConditions = {
-  [key: string]: () => boolean
-}
-
 export const useStoryPlayer = (stories: Story[]) => {
   const state = reactive({
     storyIndex: 0,
@@ -78,6 +74,9 @@ import { computed, reactive, type PropType } from 'vue'
 import Background from './Background.vue'
 import type { Story } from '../story/types'
 import config from '../lib/config'
+type IfConditions = {
+  [key: string]: () => boolean
+}
 const ifConditions = {
   'じょうけん1': () => true,
   'じょうけん2': () => false,
@@ -86,6 +85,15 @@ const ifConditions = {
   'じょうけん1と2': () => ifConditions['じょうけん1']() && ifConditions['じょうけん2'](),
   'じょうけん1か2': () => ifConditions['じょうけん1']() || ifConditions['じょうけん2']()
 } as IfConditions
+type Functions = {
+  [key: string]: () => boolean
+}
+const functions = {
+  'イベント1': () => {
+    alert('イベント1が発生しました！')
+    return true
+  },
+} as Functions
 const next = () => {
   props.player.next(ifId => {
     const conditionFunc = ifConditions[ifId]
@@ -96,6 +104,11 @@ const next = () => {
       delay: props.player.currentStoryItem.duration,
       callback: () => next()
     })
+  }
+  if (props.player.currentStoryItem?.type === 'function') {
+    const functionFunc = functions[props.player.currentStoryItem.function]
+    if (!functionFunc) throw new Error(`関数が見つかりません: ${props.player.currentStoryItem.function}`)
+    if (functionFunc()) next()
   }
 }
 const props = defineProps({
