@@ -14,7 +14,7 @@ defineProps({
   <div class="sleep-item">
     <label>
       Duration (ms): 
-      <input type="number" v-model.number="item.duration" min="0" step="100" />
+      <input type="number" v-model.number="item.duration" min="0" step="250" />
     </label>
   </div>
 </template>

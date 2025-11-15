@@ -122,11 +122,11 @@
     ]
   },
   {
-    "title": "aaa2",
+    "title": "ネムル起床",
     "list": [
       {
         "type": "background",
-        "image": "bg/backyard"
+        "image": "bg/home"
       },
       {
         "type": "sleep",
@@ -136,9 +136,9 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/aunt",
-            "x": 0.4,
-            "facing": "left"
+            "image": "chara/neml",
+            "x": 0.25,
+            "facing": "right"
           }
         ]
       },
@@ -150,57 +150,231 @@
         "type": "messages",
         "list": [
           {
-            "name": "店主",
-            "text": "必ずしゃべるせりふ"
+            "name": "ネムル",
+            "text": "……"
+          },
+          {
+            "name": "ネムル",
+            "text": "もう夕方か"
+          },
+          {
+            "name": "ネムル",
+            "text": "いっぱい寝ちゃったな"
           }
         ]
       },
       {
-        "type": "function",
-        "function": "イベント1"
-      },
-      {
-        "type": "if",
-        "if": "じょうけん1"
-      },
-      {
-        "type": "if",
-        "if": "じょうけん1か2"
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.35,
+            "facing": "right"
+          }
+        ]
       },
       {
         "type": "messages",
         "list": [
           {
-            "name": "犬",
-            "text": "わん"
-          }
-        ]
-      },
-      {
-        "type": "endIf"
-      },
-      {
-        "type": "messages",
-        "list": [
+            "name": "ネムル",
+            "text": "あれ、ニーナ？"
+          },
           {
-            "name": "青年",
-            "text": "aaaaa"
-          }
-        ]
-      },
-      {
-        "type": "endIf"
-      },
-      {
-        "type": "messages",
-        "list": [
+            "name": "ネムル",
+            "text": "いない……"
+          },
           {
-            "name": "店主",
-            "text": "最後に必ずしゃべる台詞"
+            "name": "ネムル",
+            "text": "？"
+          },
+          {
+            "name": "ネムル",
+            "text": "これは、手紙？"
+          },
+          {
+            "name": "",
+            "text": "ネムルはテーブルのうえに置かれた手紙を手に取った"
           }
         ]
       }
-    ],
-    "if": "じょうけん1"
+    ]
+  },
+  {
+    "title": "ライベルの来訪",
+    "list": [
+      {
+        "type": "background",
+        "image": "bg/home"
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.35,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "ニーナおでかけか…"
+          },
+          {
+            "name": "ネムル",
+            "text": "さみしいな"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 1000
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "",
+            "text": "建てつけの悪い玄関ドアからノックの音が鳴る"
+          },
+          {
+            "name": "ライベル",
+            "text": "ようネムル、入るぜ"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.35,
+            "facing": "right"
+          },
+          {
+            "image": "chara/rybel",
+            "x": 1,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.35,
+            "facing": "right"
+          },
+          {
+            "image": "chara/rybel",
+            "x": 0.85,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "ライベル、どうしたの？"
+          },
+          {
+            "name": "ライベル",
+            "text": "留守番してるんだって？"
+          },
+          {
+            "name": "ライベル",
+            "text": "ニーナに頼まれて様子を見に来たぞ"
+          },
+          {
+            "name": "ネムル",
+            "text": "え、ニーナが？"
+          },
+          {
+            "name": "ネムル",
+            "text": "いつもニーナが買い物に行ってるときも私一人で待ってるのに"
+          },
+          {
+            "name": "ライベル",
+            "text": "買い物とかじゃないんじゃねえの？\nいつ戻れるか分からないって言ってたし"
+          },
+          {
+            "name": "ライベル",
+            "text": "どこ行くか聞いてないの？"
+          },
+          {
+            "name": "ネムル",
+            "text": "うん…"
+          },
+          {
+            "name": "ライベル",
+            "text": "まあどっちにしても過保護だな"
+          },
+          {
+            "name": "ライベル",
+            "text": "座らせてもらうぜ"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.3,
+            "facing": "right"
+          },
+          {
+            "image": "chara/rybel",
+            "x": 0.7,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ライベル",
+            "text": "はー"
+          },
+          {
+            "name": "ライベル",
+            "text": "適当に昼寝でもしたら帰るよ"
+          },
+          {
+            "name": "ネムル",
+            "text": "分かった"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 1500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ライベル",
+            "text": "相変わらずボロいな"
+          }
+        ]
+      }
+    ]
   }
 ]

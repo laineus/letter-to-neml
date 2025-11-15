@@ -1,4 +1,5 @@
 export default [
+  { name: '' },
   { name: 'ネムル' },
   { name: 'ニーナ' },
   { name: 'ライベル' },
