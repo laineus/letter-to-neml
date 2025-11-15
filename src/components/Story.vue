@@ -94,6 +94,12 @@ const functions = {
     return true
   },
 } as Functions
+const props = defineProps({
+  player: {
+    type: Object as PropType<ReturnType<typeof useStoryPlayer>>,
+    required: true
+  }
+})
 const next = () => {
   props.player.next(ifId => {
     const conditionFunc = ifConditions[ifId]
@@ -107,16 +113,14 @@ const next = () => {
   }
   if (props.player.currentStoryItem?.type === 'function') {
     const functionFunc = functions[props.player.currentStoryItem.function]
-    if (!functionFunc) throw new Error(`関数が見つかりません: ${props.player.currentStoryItem.function}`)
+    if (!functionFunc) {
+      console.warn(`関数が見つかりません: ${props.player.currentStoryItem.function}`)
+      next()
+      return
+    }
     if (functionFunc()) next()
   }
 }
-const props = defineProps({
-  player: {
-    type: Object as PropType<ReturnType<typeof useStoryPlayer>>,
-    required: true
-  }
-})
 const scene = useScene()
 const tapScreen = () => {
   if (!props.player.currentMessage) return
@@ -126,7 +130,7 @@ const tapScreen = () => {
 
 <template>
   <Rectangle :width="config.WIDTH" :height="config.HEIGHT" :origin="0" @pointerdown="tapScreen" />
-  <Background v-if="player.currentBackground" :texture="player.currentBackground?.image" @end="next" />
+  <Background v-if="player.currentBackground" :texture="player.currentBackground?.image" />
   <Stage v-if="player.currentSpeakers?.list.length" :speakers="player.currentSpeakers.list" @end="next" />
   <MessageWindow v-if="player.currentMessage" :text="player.currentMessage.text" />
 </template>
