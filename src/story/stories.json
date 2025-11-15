@@ -450,7 +450,27 @@
           {
             "name": "ライベル",
             "text": "ん…"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.75,
+            "facing": "left"
           },
+          {
+            "image": "chara/rybel",
+            "x": 0.4,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
           {
             "name": "ライベル",
             "text": "なんだよ？"
@@ -550,6 +570,10 @@
           {
             "name": "ウルフリック",
             "text": "誰が隠れるだって？"
+          },
+          {
+            "name": "ライベル",
+            "text": "！！"
           }
         ]
       },
@@ -575,10 +599,6 @@
       {
         "type": "messages",
         "list": [
-          {
-            "name": "ライベル",
-            "text": "！！"
-          },
           {
             "name": "",
             "text": "貧相な玄関ドアが重たい何かで強く叩かれ部屋全体が揺れた"
