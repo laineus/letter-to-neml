@@ -98,9 +98,14 @@ const props = defineProps({
   player: {
     type: Object as PropType<ReturnType<typeof useStoryPlayer>>,
     required: true
+  },
+  static: {
+    type: Boolean,
+    default: false
   }
 })
 const next = () => {
+  if (props.static) return
   props.player.next(ifId => {
     const conditionFunc = ifConditions[ifId]
     return conditionFunc ? conditionFunc() : false

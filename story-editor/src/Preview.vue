@@ -22,7 +22,7 @@ const preload = (scene: Phaser.Scene) => {
   <div class="preview">
     <Game :config="gameConfig">
       <Scene name="MainScene" @preload="preload">
-        <Story :player="storyPlayer" />
+        <Story :player="storyPlayer" :static="true" />
       </Scene>
     </Game>
   </div>
