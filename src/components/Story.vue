@@ -110,6 +110,16 @@ const next = () => {
     const conditionFunc = ifConditions[ifId]
     return conditionFunc ? conditionFunc() : false
   })
+  exec()
+}
+const exec = () => {
+  waitingStageUpdate = false
+  if (props.player.currentStoryItem?.type === 'background') {
+    next()
+  }
+  if (props.player.currentStoryItem?.type === 'speakers') {
+    waitingStageUpdate = true
+  }
   if (props.player.currentStoryItem?.type === 'sleep') {
     scene.time.addEvent({
       delay: props.player.currentStoryItem.duration,
@@ -131,11 +141,17 @@ const tapScreen = () => {
   if (!props.player.currentMessage) return
   next()
 }
+let waitingStageUpdate = false
+const onStageUpdate = () => {
+  if (!waitingStageUpdate) return
+  next()
+}
+exec()
 </script>
 
 <template>
   <Rectangle :width="config.WIDTH" :height="config.HEIGHT" :origin="0" @pointerdown="tapScreen" />
   <Background v-if="player.currentBackground" :texture="player.currentBackground?.image" />
-  <Stage v-if="player.currentSpeakers?.list.length" :speakers="player.currentSpeakers.list" @end="next" />
+  <Stage v-if="player.currentSpeakers?.list.length" :speakers="player.currentSpeakers.list" @end="onStageUpdate" />
   <MessageWindow v-if="player.currentMessage" :text="player.currentMessage.text" />
 </template>

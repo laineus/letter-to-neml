@@ -55,12 +55,13 @@ const labels = {
 }
 
 .item-type {
-  min-width: 80px;
+  min-width: 4.3em;
 }
 
 .item-content {
+  margin-right: 10px;
   color: #999;
-  font-size: 14px;
+  font-size: 12px;
   overflow: hidden;
   text-overflow: ellipsis;
 }

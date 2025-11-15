@@ -89,6 +89,12 @@ const calcIndent = (index: number) => {
     return indent
   }, 0) + addition
 }
+const playing = ref(false)
+const play = (index: number) => {
+  storyPlayer.storyItemIndex = index
+  storyPlayer.messageIndex = 0
+  playing.value = true
+}
 </script>
 
 <template>
@@ -114,6 +120,7 @@ const calcIndent = (index: number) => {
             <div class="item-header" @click="selectedIndex !== index ? selectedIndex = index : selectedIndex = undefined">
               <StoryItemSummary :item="item" />
               <div class="item-controls" @click.stop>
+                <button @click.stop="play(index)" class="btn">▶</button>
                 <button @click.stop="duplicateItem(index)" class="btn">⎘</button>
                 <button @click.stop="moveItem(index, 'up')" :disabled="index === 0" class="btn">↑</button>
                 <button @click.stop="moveItem(index, 'down')" :disabled="index === story.list.length - 1" class="btn">↓</button>
@@ -133,7 +140,7 @@ const calcIndent = (index: number) => {
       </div>
     </div>
   </div>
-  <Preview :storyPlayer="storyPlayer" />
+  <Preview :storyPlayer="storyPlayer" :static="!playing" @stop="playing = false" />
 </template>
 
 <style scoped>
