@@ -14,7 +14,7 @@ const props = defineProps({
   }
 })
 
-const storyPlayer = useStoryPlayer([props.story], {})
+const storyPlayer = useStoryPlayer([props.story])
 const selectedIndex = ref<number>()
 watch(selectedIndex, (newIndex) => {
   if (newIndex === undefined) return
@@ -75,6 +75,12 @@ const moveItem = (index: number, direction: 'up' | 'down') => {
   props.story.list.splice(newIndex, 0, item)
   selectedIndex.value = newIndex
 }
+const duplicateItem = (index: number) => {
+  const item = props.story.list[index]
+  const duplicatedItem = JSON.parse(JSON.stringify(item))
+  props.story.list.splice(index + 1, 0, duplicatedItem)
+  selectedIndex.value = index + 1
+}
 const calcIndent = (index: number) => {
   const addition = props.story.list[index].type === 'endIf' ? -1 : 0
   return props.story.list.slice(0, index).reduce((indent, item) => {
@@ -108,6 +114,7 @@ const calcIndent = (index: number) => {
             <div class="item-header" @click="selectedIndex !== index ? selectedIndex = index : selectedIndex = undefined">
               <StoryItemSummary :item="item" />
               <div class="item-controls" @click.stop>
+                <button @click.stop="duplicateItem(index)" class="btn">⎘</button>
                 <button @click.stop="moveItem(index, 'up')" :disabled="index === 0" class="btn">↑</button>
                 <button @click.stop="moveItem(index, 'down')" :disabled="index === story.list.length - 1" class="btn">↓</button>
                 <button @click.stop="removeItem(index)" class="btn btn-remove">×</button>
