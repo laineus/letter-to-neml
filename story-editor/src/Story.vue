@@ -50,7 +50,8 @@ const addItem = (index: number, type: typeof itemTypes[number]) => {
       newItem = { type: 'sleep', duration: 500 }
       break
     case 'fade':
-      newItem = { type: 'fade', fade: 'in', duration: 600 }
+      const prevFade = props.story.list.slice(0, index).reverse().find(item => item.type === 'fade')
+      newItem = { type: 'fade', fade: prevFade?.fade === 'in' ? 'out' : 'in', duration: 500 }
       break
     case 'if':
       newItem = { type: 'if', if: '' }

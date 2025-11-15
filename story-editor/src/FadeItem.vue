@@ -7,9 +7,9 @@ defineProps<{
 
 const durationOptions = [
   { label: '即時', value: 0 },
-  { label: '高速', value: 300 },
-  { label: '普通', value: 600 },
-  { label: '低速', value: 1200 }
+  { label: '高速', value: 250 },
+  { label: '普通', value: 500 },
+  { label: '低速', value: 1000 }
 ]
 </script>
 

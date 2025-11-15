@@ -103,17 +103,17 @@ defineExpose({
 
 .toast-success {
   border-left-color: #4CAF50;
-  background: #f1f8e9;
+  background: #333;
 }
 
 .toast-error {
   border-left-color: #f44336;
-  background: #ffebee;
+  background: #333;
 }
 
 .toast-info {
   border-left-color: #2e7d32;
-  background: #e3f2fd;
+  background: #333;
 }
 
 .toast-content {

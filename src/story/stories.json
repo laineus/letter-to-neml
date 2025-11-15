@@ -3,6 +3,15 @@
     "title": "ニーナの外出",
     "list": [
       {
+        "type": "fade",
+        "fade": "in",
+        "duration": 0
+      },
+      {
+        "type": "sleep",
+        "duration": 1000
+      },
+      {
         "type": "background",
         "image": "bg/home"
       },
@@ -17,6 +26,15 @@
         ]
       },
       {
+        "type": "fade",
+        "fade": "out",
+        "duration": 1000
+      },
+      {
+        "type": "sleep",
+        "duration": 1000
+      },
+      {
         "type": "speakers",
         "list": [
           {
@@ -25,6 +43,10 @@
             "facing": "left"
           }
         ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
       },
       {
         "type": "messages",
@@ -48,8 +70,22 @@
         ]
       },
       {
+        "type": "fade",
+        "fade": "in",
+        "duration": 500
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
         "type": "function",
         "function": "手紙執筆"
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 500
       },
       {
         "type": "messages",
@@ -118,6 +154,11 @@
             "facing": "right"
           }
         ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 1000
       }
     ]
   },
