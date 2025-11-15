@@ -55,8 +55,6 @@ const labels = {
 }
 
 .item-type {
-  font-weight: bold;
-  color: #666;
   min-width: 80px;
 }
 

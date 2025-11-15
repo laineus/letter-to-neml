@@ -1,8 +1,9 @@
 /* Common button styles */
 .btn {
   padding: 4px 8px;
-  border: 1px solid #ddd;
-  background: white;
+  border: 1px solid #444;
+  background: #2d2d2d;
+  color: #e0e0e0;
   cursor: pointer;
   border-radius: 3px;
   font-size: 12px;
@@ -11,7 +12,8 @@
 }
 
 .btn:hover:not(:disabled) {
-  background: #f0f0f0;
+  background: #3d3d3d;
+  border-color: #555;
 }
 
 .btn:disabled {
@@ -22,25 +24,27 @@
 /* Add button style */
 .btn-add {
   padding: 5px 12px;
-  color: #4CAF50;
-  border: 1px solid #4CAF50;
+  background: #2e7d32;
+  font-weight: bold;
+  color: white;
+  border: 1px solid #2e7d32;
 }
 
 .btn-add:hover:not(:disabled) {
-  background: #4CAF50;
-  color: white;
+  background: #388e3c;
+  border-color: #388e3c;
 }
 
 /* Remove button style */
 .btn-remove {
-  color: #d32f2f;
-  border: 1px solid #ddd;
+  color: #ef5350;
+  border: 1px solid #444;
 }
 
 .btn-remove:hover:not(:disabled) {
-  background: #d32f2f;
+  background: #c62828;
   color: white;
-  border-color: #d32f2f;
+  border-color: #c62828;
 }
 
 /* Control buttons container */
@@ -51,11 +55,11 @@
 
 /* Common item styles */
 .editor-item {
-  border: 1px solid #eee;
+  border: 1px solid #333;
   padding: 10px;
   margin: 10px 0;
   border-radius: 4px;
-  background: #f9f9f9;
+  background: #272727;
   position: relative;
 }
 
@@ -71,10 +75,12 @@ input[type="number"],
 textarea,
 select {
   padding: 6px 10px;
-  border: 1px solid #ddd;
+  border: 1px solid #444;
   border-radius: 4px;
   font-size: 14px;
   transition: border-color 0.2s;
+  background: #2d2d2d;
+  color: #e0e0e0;
 }
 
 input[type="text"]:focus,
@@ -82,7 +88,7 @@ input[type="number"]:focus,
 textarea:focus,
 select:focus {
   outline: none;
-  border-color: #2196F3;
+  border-color: #2e7d32;
 }
 
 textarea {
@@ -94,7 +100,7 @@ label {
   display: block;
   margin: 8px 0;
   font-weight: 500;
-  color: #333;
+  color: #b0b0b0;
 }
 
 /* Header styles */
@@ -104,16 +110,16 @@ label {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: white;
+  background: #252525;
   padding: 15px 24px;
   font-size: 20px;
   font-weight: bold;
-  border-bottom: 1px solid #ddd;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-bottom: 1px solid #333;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
   z-index: 100;
 }
 .app-header a {
-  color: #333;
+  color: #e0e0e0;
   text-decoration: none;
 }
 .app-header .btn {

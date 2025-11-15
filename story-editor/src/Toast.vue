@@ -112,7 +112,7 @@ defineExpose({
 }
 
 .toast-info {
-  border-left-color: #2196F3;
+  border-left-color: #2e7d32;
   background: #e3f2fd;
 }
 
@@ -136,7 +136,7 @@ defineExpose({
 }
 
 .toast-info .toast-icon {
-  color: #2196F3;
+  color: #2e7d32;
 }
 
 .toast-message {

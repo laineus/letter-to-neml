@@ -113,8 +113,8 @@ const moveStory = (index: number, direction: 'up' | 'down') => {
   padding: 20px;
 }
 .loading-message {
-  background: #e3f2fd;
-  color: #1976d2;
+  background: #1a237e;
+  color: #90caf9;
   padding: 16px;
   border-radius: 4px;
   text-align: center;
@@ -129,17 +129,24 @@ const moveStory = (index: number, direction: 'up' | 'down') => {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: white;
-  border: 1px solid #ddd;
+  background: #252525;
+  border: 1px solid #333;
   border-radius: 4px;
   padding: 10px;
   margin-bottom: 10px;
   cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.story-item:hover {
+  background: #2d2d2d;
+  border-color: #444;
 }
 
 .story-title {
   flex: 1;
   padding: 5px;
+  color: #e0e0e0;
 }
 
 .item-controls {

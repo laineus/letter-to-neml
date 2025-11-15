@@ -124,7 +124,7 @@ const calcIndent = (index: number) => {
               <StoryItemComponent :item="item" />
             </div>
           </div>
-          <div class="add-item-section">
+          <div class="add-item-section" v-show="selectedIndex === index || index === story.list.length - 1">
             <button v-for="type in itemTypes" :key="type" @click="addItem(index + 1, type)" class="btn btn-add">
               + {{ labels[type] }}
             </button>
@@ -143,8 +143,8 @@ const calcIndent = (index: number) => {
 }
 
 .story-header {
-  background: white;
-  border: 1px solid #ddd;
+  background: #252525;
+  border: 1px solid #333;
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 20px;
@@ -206,12 +206,13 @@ const calcIndent = (index: number) => {
 }
 
 .story-item {
-  border: 1px solid #ddd;
+  background-color: #252525;
+  border: 1px solid #333;
   border-radius: 4px;
 }
 
 .story-item.selected {
-  border-color: #2196F3;
+  border-color: #2e7d32;
   box-shadow: 0 0 5px rgba(33, 150, 243, 0.3);
 }
 
@@ -228,6 +229,6 @@ const calcIndent = (index: number) => {
 
 .item-editor {
   padding: 10px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #333;
 }
 </style>
