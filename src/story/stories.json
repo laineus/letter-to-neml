@@ -376,5 +376,497 @@
         ]
       }
     ]
+  },
+  {
+    "title": "ウルフリック襲来",
+    "list": [
+      {
+        "type": "background",
+        "image": "bg/home"
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.85,
+            "facing": "right"
+          },
+          {
+            "image": "chara/rybel",
+            "x": 0.5,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "",
+            "text": "ネムルは外の様子をうかがっている"
+          },
+          {
+            "name": "",
+            "text": "近隣からはガラスの割れる音や大きな物音がしている"
+          },
+          {
+            "name": "ネムル",
+            "text": "どうしたんだろう…"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.75,
+            "facing": "left"
+          },
+          {
+            "image": "chara/rybel",
+            "x": 0.5,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "ライベル、起きて"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ライベル",
+            "text": "ん…"
+          },
+          {
+            "name": "ライベル",
+            "text": "なんだよ？"
+          },
+          {
+            "name": "ネムル",
+            "text": "近くの家で何かあったのかも"
+          },
+          {
+            "name": "ネムル",
+            "text": "大きな物音が"
+          },
+          {
+            "name": "ライベル",
+            "text": "物音？"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.5,
+            "facing": "right"
+          },
+          {
+            "image": "chara/rybel",
+            "x": 0.85,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "",
+            "text": "ライベルは窓の外を覗くとしばらく様子をうかがった"
+          },
+          {
+            "name": "ライベル",
+            "text": "うげ！"
+          },
+          {
+            "name": "ライベル",
+            "text": "あいつら、なんでこんなところにいるんだ"
+          },
+          {
+            "name": "ライベル",
+            "text": "冗談じゃねえ"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.5,
+            "facing": "right"
+          },
+          {
+            "image": "chara/rybel",
+            "x": 0.85,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ライベル",
+            "text": "ネムル、悪いけど隠れさせてもらうぜ"
+          },
+          {
+            "name": "ネムル",
+            "text": "え？"
+          },
+          {
+            "name": "ネムル",
+            "text": "何がいたの？"
+          },
+          {
+            "name": "ライベル",
+            "text": "まあ、強盗だな"
+          },
+          {
+            "name": "ライベル",
+            "text": "お前ならロクに取るものもねえだろうけど、\n怖い目に遭いたくなけりゃお前もどっかに隠れてな"
+          },
+          {
+            "name": "ネムル",
+            "text": "隠れるって、そんな急に…"
+          },
+          {
+            "name": "ウルフリック",
+            "text": "誰が隠れるだって？"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.5,
+            "facing": "right"
+          },
+          {
+            "image": "chara/rybel",
+            "x": 0.85,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ライベル",
+            "text": "！！"
+          },
+          {
+            "name": "",
+            "text": "貧相な玄関ドアが重たい何かで強く叩かれ部屋全体が揺れた"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.5,
+            "facing": "right"
+          },
+          {
+            "image": "chara/rybel",
+            "x": 1.2,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "",
+            "text": "ライベルは屋根裏に飛び上がり姿を消した"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.2,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "function": "衝撃"
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.2,
+            "facing": "right"
+          },
+          {
+            "image": "chara/wulfric",
+            "x": 1,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.2,
+            "facing": "right"
+          },
+          {
+            "image": "chara/wulfric",
+            "x": 0.8,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ウルフリック",
+            "text": "よう、入らせてもらうぜ"
+          },
+          {
+            "name": "ネムル",
+            "text": "！！"
+          },
+          {
+            "name": "ネムル",
+            "text": "だれ…？"
+          },
+          {
+            "name": "ウルフリック",
+            "text": "あーー"
+          },
+          {
+            "name": "ウルフリック",
+            "text": "なんもなさそうだな"
+          },
+          {
+            "name": "ウルフリック",
+            "text": "おい、チビ"
+          },
+          {
+            "name": "ウルフリック",
+            "text": "部屋を散らかされたくなかったら自分で差し出しな"
+          },
+          {
+            "name": "ネムル",
+            "text": "えっと…お金？"
+          },
+          {
+            "name": "ウルフリック",
+            "text": "早くしろ"
+          },
+          {
+            "name": "ネムル",
+            "text": "その引き出し…"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.2,
+            "facing": "right"
+          },
+          {
+            "image": "chara/wulfric",
+            "x": 0.5,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "",
+            "text": "男はネムルが指さした引き出しから全ての現金を取り出した"
+          },
+          {
+            "name": "ウルフリック",
+            "text": "お前これでどうやって生きてんだ？"
+          },
+          {
+            "name": "ウルフリック",
+            "text": "おい、他にはないのか？"
+          },
+          {
+            "name": "ネムル",
+            "text": "なにも"
+          },
+          {
+            "name": "ウルフリック",
+            "text": "まあねえか"
+          },
+          {
+            "name": "ウルフリック",
+            "text": "無いもんはどうしようもねえ"
+          },
+          {
+            "name": "ウルフリック",
+            "text": "次来るまでにもっと貯めとけよ"
+          },
+          {
+            "name": "ネムル",
+            "text": "……"
+          },
+          {
+            "name": "ネムル",
+            "text": "かえるの？"
+          },
+          {
+            "name": "ウルフリック",
+            "text": "なんだ"
+          },
+          {
+            "name": "ウルフリック",
+            "text": "殺される心配でもしたか？"
+          },
+          {
+            "name": "ウルフリック",
+            "text": "お前みたいなのは放っといても死ぬだろうよ"
+          },
+          {
+            "name": "ウルフリック",
+            "text": "じゃあな"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.2,
+            "facing": "right"
+          },
+          {
+            "image": "chara/wulfric",
+            "x": 0.65,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ウルフリック",
+            "text": "ん？"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ウルフリック",
+            "text": "なるほどな"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.2,
+            "facing": "right"
+          },
+          {
+            "image": "chara/wulfric",
+            "x": 0.65,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ウルフリック",
+            "text": "悪いけど事情が変わった"
+          },
+          {
+            "name": "ウルフリック",
+            "text": "お前に関してはぶっ殺してから帰る"
+          },
+          {
+            "name": "ネムル",
+            "text": "なんで！"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.1,
+            "facing": "right"
+          },
+          {
+            "image": "chara/wulfric",
+            "x": 0.45,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "",
+            "text": "男は分厚いカトラスを片手にネムルに近づいてきた"
+          },
+          {
+            "name": "ネムル",
+            "text": "（どうしよう…！何か武器になるもの…！）"
+          }
+        ]
+      }
+    ]
   }
 ]
