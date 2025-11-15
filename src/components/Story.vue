@@ -23,6 +23,9 @@ export const useStoryPlayer = (stories: Story[]) => {
   const currentSpeakers = computed(() => {
     return activeStoryItems.value.slice(0).reverse().find(v => v.type === 'speakers')
   })
+  const currentFade = computed(() => {
+    return activeStoryItems.value.slice(0).reverse().find(v => v.type === 'fade')
+  })
   const next = (testIf: (v: string) => boolean) => {
     if (currentMessages.value && state.messageIndex < currentMessages.value.list.length - 1) {
       state.messageIndex++
@@ -61,6 +64,7 @@ export const useStoryPlayer = (stories: Story[]) => {
     get currentStoryItem () { return currentStoryItem.value },
     get currentBackground () { return currentBackground.value },
     get currentSpeakers () { return currentSpeakers.value },
+    get currentFade () { return currentFade.value },
     next
   }
 }
@@ -70,6 +74,7 @@ export const useStoryPlayer = (stories: Story[]) => {
 import { Rectangle, useScene } from 'phavuer'
 import MessageWindow from './MessageWindow.vue'
 import Stage from './Stage.vue'
+import Fade from './Fade.vue'
 import { computed, reactive, type PropType } from 'vue'
 import Background from './Background.vue'
 import type { Story } from '../story/types'
@@ -114,6 +119,7 @@ const next = () => {
 }
 const exec = () => {
   waitingStageUpdate = false
+  waitingFade = false
   if (props.player.currentStoryItem?.type === 'background') {
     next()
   }
@@ -125,6 +131,9 @@ const exec = () => {
       delay: props.player.currentStoryItem.duration,
       callback: () => next()
     })
+  }
+  if (props.player.currentStoryItem?.type === 'fade') {
+    waitingFade = true
   }
   if (props.player.currentStoryItem?.type === 'function') {
     const functionFunc = functions[props.player.currentStoryItem.function]
@@ -142,8 +151,13 @@ const tapScreen = () => {
   next()
 }
 let waitingStageUpdate = false
+let waitingFade = false
 const onStageUpdate = () => {
   if (!waitingStageUpdate) return
+  next()
+}
+const onFadeEnd = () => {
+  if (!waitingFade) return
   next()
 }
 exec()
@@ -153,5 +167,6 @@ exec()
   <Rectangle :width="config.WIDTH" :height="config.HEIGHT" :origin="0" @pointerdown="tapScreen" />
   <Background v-if="player.currentBackground" :texture="player.currentBackground?.image" />
   <Stage v-if="player.currentSpeakers?.list.length" :speakers="player.currentSpeakers.list" @end="onStageUpdate" />
+  <Fade v-if="player.currentFade" :fade="player.currentFade" @end="onFadeEnd" />
   <MessageWindow v-if="player.currentMessage" :text="player.currentMessage.text" />
 </template>

@@ -21,6 +21,9 @@ const getSummary = (item: StoryItem): string => {
       return `${firstMsg.name}: ${firstMsg.text.slice(0, 20)}${firstMsg.text.length > 20 ? '...' : ''}`
     case 'sleep':
       return `${item.duration}ms`
+    case 'fade':
+      const fadeLabel = item.fade === 'in' ? '暗転開始' : '暗転終了'
+      return `${fadeLabel} ${item.duration}ms`
     case 'if':
       return item.if
     case 'endIf':
@@ -34,6 +37,7 @@ const labels = {
   speakers: 'キャラ',
   messages: '台詞',
   sleep: 'ウェイト',
+  fade: '暗転',
   if: '条件分岐',
   endIf: '分岐終了',
   function: '関数'

@@ -5,7 +5,38 @@ export type Story = {
   list: StoryItem[]
 }
 
-export type StoryItem = StorySleep | StoryBackground | StorySpeakers | StoryMessages | StoryIf | StoryEndIf | StoryFunction
+export type StoryItem = StoryIf | StorySleep | StoryFade | StoryBackground | StorySpeakers | StoryMessages | StoryEndIf | StoryFunction
+
+export type StorySleep = {
+  type: 'sleep'
+  duration: number
+}
+export type StoryFade = {
+  type: 'fade'
+  fade: 'in' | 'out'
+  duration: number
+}
+
+export type StoryBackground = {
+  type: 'background'
+  image: string
+}
+
+export type StorySpeakers = {
+  type: 'speakers'
+  list: SpeakerConfig[]
+}
+
+export type SpeakerConfig = {
+  image: string
+  x: number
+  facing: 'left' | 'right'
+}
+
+export type StoryMessages = {
+  type: 'messages'
+  list: MessageConfig[]
+}
 
 export type StoryIf = {
   type: 'if'
@@ -19,31 +50,6 @@ export type StoryEndIf = {
 export type StoryFunction = {
   type: 'function'
   function: string
-}
-
-export type StorySleep = {
-  type: 'sleep'
-  duration: number
-}
-
-export type StoryBackground = {
-  type: 'background'
-  image: string
-}
-
-export type StorySpeakers = {
-  type: 'speakers'
-  list: SpeakerConfig[]
-}
-export type SpeakerConfig = {
-  image: string
-  x: number
-  facing: 'left' | 'right'
-}
-
-export type StoryMessages = {
-  type: 'messages'
-  list: MessageConfig[]
 }
 
 export type MessageConfig = {
