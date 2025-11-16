@@ -2,6 +2,7 @@
 import { ref, onMounted, computed } from 'vue'
 import type { Story } from '../../src/story/types.ts'
 import StoryComponent from './Story.vue'
+import StoryNavigation from './StoryNavigation.vue'
 import ProgressIndicator from './ProgressIndicator.vue'
 import Toast, { toastManager } from './Toast.vue'
 import { useRouter } from 'vue-router'
@@ -89,14 +90,17 @@ const moveStory = (index: number, direction: 'up' | 'down') => {
       Loading...
     </div>
     <div v-else>
-      <StoryComponent v-if="selectedStory" :story="selectedStory" />
+      <div v-if="selectedStory && selectedStoryIndex !== undefined">
+        <StoryNavigation :currentIndex="selectedStoryIndex" :total="stories.length" @navigate="selectedStoryIndex = $event" />
+        <StoryComponent :story="selectedStory" :key="selectedStoryIndex" />
+      </div>
       <div v-else class="story-list">
         <ProgressIndicator :current="stories.length" :target="TARGET_STORIES" />
         <button @click="addStory(0)" class="btn btn-add">+ Add Story</button>
         <div v-for="(story, i) in stories" :key="i" class="story-item-wrapper">
           <div class="story-item" @click="selectedStoryIndex = i">
             <div class="story-title">
-              {{ story.title || 'Untitled Story' }}
+              {{ i + 1 }}. {{ story.title || 'Untitled Story' }}
             </div>
             <div class="item-controls" @click.stop>
               <button @click.stop="moveStory(i, 'up')" :disabled="i === 0" class="btn">↑</button>
