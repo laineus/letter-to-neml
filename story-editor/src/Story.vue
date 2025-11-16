@@ -21,49 +21,46 @@ watch(selectedIndex, (newIndex) => {
   storyPlayer.storyItemIndex = newIndex
   storyPlayer.messageIndex = 0
 })
-const itemTypes = ['background', 'speakers', 'messages', 'sleep', 'fade', 'if', 'endIf', 'function'] as const
+const itemTypes = ['background', 'speakers', 'messages', 'sleep', 'fade', 'if', 'function'] as const
 const labels = {
   background: '背景',
   speakers: 'キャラ',
-  messages: '台詞',
+  messages: 'セリフ',
   sleep: 'ウェイト',
   fade: '暗転',
   if: '条件分岐',
-  endIf: '分岐終了',
   function: '関数'
 }
 
 const addItem = (index: number, type: typeof itemTypes[number]) => {
-  let newItem: StoryItem
+  const newItem = ref<StoryItem>()
   switch (type) {
     case 'background':
-      newItem = { type: 'background', image: '' }
+      newItem.value = { type: 'background', image: '' }
       break
     case 'speakers':
       const prevSpeakers = props.story.list.slice(0, index).reverse().find(item => item.type === 'speakers')
-      newItem = { type: 'speakers', list: prevSpeakers?.list.map(speaker => ({ ...speaker })) || [] }
+      newItem.value = { type: 'speakers', list: prevSpeakers?.list.map(speaker => ({ ...speaker })) || [] }
       break
     case 'messages':
-      newItem = { type: 'messages', list: [{ name: '', text: '' }] }
+      newItem.value = { type: 'messages', list: [{ name: '', text: '' }] }
       break
     case 'sleep':
-      newItem = { type: 'sleep', duration: 500 }
+      newItem.value = { type: 'sleep', duration: 500 }
       break
     case 'fade':
       const prevFade = props.story.list.slice(0, index).reverse().find(item => item.type === 'fade')
-      newItem = { type: 'fade', fade: prevFade?.fade === 'in' ? 'out' : 'in', duration: 500 }
+      newItem.value = { type: 'fade', fade: prevFade?.fade === 'in' ? 'out' : 'in', duration: 500 }
       break
     case 'if':
-      newItem = { type: 'if', if: '' }
-      break
-    case 'endIf':
-      newItem = { type: 'endIf' }
+      const prevIf = props.story.list.slice(0, index).reverse().find(item => item.type === 'if' || item.type === 'endIf')
+      newItem.value = prevIf?.type === 'if' ? { type: 'endIf' } : { type: 'if', if: '' }
       break
     case 'function':
-      newItem = { type: 'function', function: '' }
+      newItem.value = { type: 'function', function: '' }
       break
   }
-  props.story.list.splice(index, 0, newItem)
+  props.story.list.splice(index, 0, newItem.value)
   selectedIndex.value = index
 }
 
@@ -88,11 +85,12 @@ const duplicateItem = (index: number) => {
 }
 const calcIndent = (index: number) => {
   const addition = props.story.list[index].type === 'endIf' ? -1 : 0
-  return props.story.list.slice(0, index).reduce((indent, item) => {
+  const indent = props.story.list.slice(0, index).reduce((indent, item) => {
     if (item.type === 'if') return indent + 1
     if (item.type === 'endIf') return Math.max(indent - 1, 0)
     return indent
   }, 0) + addition
+  return Math.max(indent, 0)
 }
 const playing = ref(false)
 const play = (index: number) => {
@@ -125,7 +123,7 @@ const play = (index: number) => {
             <div class="item-header" @click="selectedIndex !== index ? selectedIndex = index : selectedIndex = undefined">
               <StoryItemSummary :item="item" />
               <div class="item-controls" @click.stop>
-                <button @click.stop="play(index)" class="btn">▶</button>
+                <button @click.stop="play(index)" class="btn play">▶</button>
                 <button @click.stop="duplicateItem(index)" class="btn">⎘</button>
                 <button @click.stop="moveItem(index, 'up')" :disabled="index === 0" class="btn">↑</button>
                 <button @click.stop="moveItem(index, 'down')" :disabled="index === story.list.length - 1" class="btn">↓</button>
@@ -156,7 +154,7 @@ const play = (index: number) => {
 
 .story-header {
   background: #252525;
-  border: 1px solid #333;
+  border: 1px solid #777;
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 20px;
@@ -174,9 +172,10 @@ const play = (index: number) => {
 }
 
 .add-item-section {
-  margin: 10px 0;
+  margin: 10px 0 0;
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 /* Button styles moved to common.css */
@@ -189,15 +188,15 @@ const play = (index: number) => {
 
 .item-indent {
   position: relative;
-  width: 30px;
-  flex: 0 0 30px;
+  width: 16px;
+  flex: 0 0 16px;
   &::before {
     content: '';
     position: absolute;
-    border-left: 1px solid #ccc;
+    border-left: 1px solid #777;
     top: -10px;
     bottom: -10px;
-    left: 14px;
+    left: 5px;
   }
 }
 
@@ -207,20 +206,20 @@ const play = (index: number) => {
 
 .story-item-container.if .add-item-section {
   position: relative;
-  padding-left: 30px;
+  padding-left: 16px;
   &::before {
     content: '';
     position: absolute;
-    border-left: 1px solid #ccc;
+    border-left: 1px solid #777;
     top: -10px;
     bottom: -10px;
-    left: 14px;
+    left: 5px;
   }
 }
 
 .story-item {
   background-color: #252525;
-  border: 1px solid #ccc;
+  border: 1px solid #777;
   border-radius: 4px;
 }
 
@@ -235,6 +234,13 @@ const play = (index: number) => {
   align-items: center;
   padding: 10px;
   cursor: pointer;
+  &:hover {
+    background: #2d2d2d;
+  }
+}
+
+.play {
+  color: #2e7d32;
 }
 
 

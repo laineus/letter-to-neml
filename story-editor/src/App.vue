@@ -130,7 +130,7 @@ const moveStory = (index: number, direction: 'up' | 'down') => {
   align-items: center;
   justify-content: space-between;
   background: #252525;
-  border: 1px solid #333;
+  border: 1px solid #777;
   border-radius: 4px;
   padding: 10px;
   margin-bottom: 10px;
@@ -140,7 +140,6 @@ const moveStory = (index: number, direction: 'up' | 'down') => {
 
 .story-item:hover {
   background: #2d2d2d;
-  border-color: #444;
 }
 
 .story-title {

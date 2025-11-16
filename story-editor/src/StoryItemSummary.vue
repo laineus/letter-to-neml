@@ -35,7 +35,7 @@ const getSummary = (item: StoryItem): string => {
 const labels = {
   background: '背景',
   speakers: 'キャラ',
-  messages: '台詞',
+  messages: 'セリフ',
   sleep: 'ウェイト',
   fade: '暗転',
   if: '条件分岐',

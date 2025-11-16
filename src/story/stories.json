@@ -1686,5 +1686,19 @@
       }
     ],
     "if": "ウルフリックにナイフで抵抗"
+  },
+  {
+    "title": "買い出し",
+    "list": [
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 0
+      },
+      {
+        "type": "background",
+        "image": "bg/market"
+      }
+    ]
   }
 ]

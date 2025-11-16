@@ -72,6 +72,7 @@ const moveSpeaker = (index: number, direction: 'up' | 'down') => {
 .editor-item {
   display: flex;
   align-items: center;
+  border: 1px solid #777;
 }
 label + label {
   margin-left: 15px;
