@@ -2,8 +2,11 @@
 import { ref, onMounted, computed } from 'vue'
 import type { Story } from '../../src/story/types.ts'
 import StoryComponent from './Story.vue'
+import ProgressIndicator from './ProgressIndicator.vue'
 import Toast, { toastManager } from './Toast.vue'
 import { useRouter } from 'vue-router'
+
+const TARGET_STORIES = 19
 
 const stories = ref<Story[]>()
 const router = useRouter()
@@ -88,6 +91,7 @@ const moveStory = (index: number, direction: 'up' | 'down') => {
     <div v-else>
       <StoryComponent v-if="selectedStory" :story="selectedStory" />
       <div v-else class="story-list">
+        <ProgressIndicator :current="stories.length" :target="TARGET_STORIES" />
         <button @click="addStory(0)" class="btn btn-add">+ Add Story</button>
         <div v-for="(story, i) in stories" :key="i" class="story-item-wrapper">
           <div class="story-item" @click="selectedStoryIndex = i">
