@@ -601,6 +601,10 @@
             "text": "まあ、強盗だな"
           },
           {
+            "name": "ネムル",
+            "text": "強盗…！？"
+          },
+          {
             "name": "ライベル",
             "text": "お前ならロクに取るものもねえだろうけど、\n怖い目に遭いたくなけりゃお前もどっかに隠れてな"
           },
@@ -744,6 +748,34 @@
           {
             "name": "ウルフリック",
             "text": "部屋を散らかされたくなかったら自分で差し出しな"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.2,
+            "facing": "right"
+          },
+          {
+            "image": "chara/wulfric",
+            "x": 0.7,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 1000
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "え……"
           },
           {
             "name": "ネムル",
@@ -791,7 +823,7 @@
           },
           {
             "name": "ネムル",
-            "text": "なにも"
+            "text": "なにも…"
           },
           {
             "name": "ウルフリック",
@@ -808,10 +840,6 @@
           {
             "name": "ネムル",
             "text": "……"
-          },
-          {
-            "name": "ネムル",
-            "text": "かえるの？"
           },
           {
             "name": "ウルフリック",
@@ -927,7 +955,736 @@
             "text": "（どうしよう…！何か武器になるもの…！）"
           }
         ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.1,
+            "facing": "right"
+          },
+          {
+            "image": "chara/wulfric",
+            "x": 0.4,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "if",
+        "if": "ウルフリックに無抵抗"
+      },
+      {
+        "type": "function",
+        "function": "ダメージ"
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "",
+            "text": "ネムルの体は成すすべ無くウルフリックの斬撃によって大きく斬り裂かれた"
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "function": "ゲームオーバーウルフリックに殺される"
+      },
+      {
+        "type": "endIf"
+      },
+      {
+        "type": "if",
+        "if": "ウルフリックにナイフで抵抗"
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "ニーナはxxxって！"
+          },
+          {
+            "name": "",
+            "text": "ネムルはテーブルの下からナイフを取り出した"
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "function": "衝撃"
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "",
+            "text": "しかし、ナイフはウルフリックによってあっけなく蹴り飛ばされ、遠くの床に転がった"
+          },
+          {
+            "name": "ネムル",
+            "text": "！！"
+          },
+          {
+            "name": "ウルフリック",
+            "text": "余計なことすんな"
+          },
+          {
+            "name": "",
+            "text": "カトラスを振り上げたウルフリックに、ネムルは死を覚悟した"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.1,
+            "facing": "right"
+          },
+          {
+            "image": "chara/wulfric",
+            "x": 0.4,
+            "facing": "left"
+          },
+          {
+            "image": "chara/rybel",
+            "x": 0.8,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.1,
+            "facing": "right"
+          },
+          {
+            "image": "chara/wulfric",
+            "x": 0.4,
+            "facing": "left"
+          },
+          {
+            "image": "chara/rybel",
+            "x": 0.5,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "function": "ダメージ"
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "",
+            "text": "屋根裏から飛び降りてきたライベルは、拾い上げたナイフでウルフリックの背中を深く刺した"
+          },
+          {
+            "name": "ウルフリック",
+            "text": "！！"
+          },
+          {
+            "name": "ウルフリック",
+            "text": "（ゴフッ）"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.1,
+            "facing": "right"
+          },
+          {
+            "image": "chara/rybel",
+            "x": 0.5,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "",
+            "text": "ウルフリックは怒りの形相で何かを言おうと口を動かしたが、声にならない咳とともに床に倒れ絶命した"
+          },
+          {
+            "name": "ネムル",
+            "text": "！！"
+          },
+          {
+            "name": "ライベル",
+            "text": "……！"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 1500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ライベル",
+            "text": "殺しちまった……"
+          },
+          {
+            "name": "ライベル",
+            "text": "どうする、これ……"
+          },
+          {
+            "name": "ネムル",
+            "text": "……"
+          },
+          {
+            "name": "ライベル",
+            "text": "おい、しっかりしろ"
+          },
+          {
+            "name": "ネムル",
+            "text": "う、うん"
+          },
+          {
+            "name": "ライベル",
+            "text": "うーーん、くそ"
+          },
+          {
+            "name": "ライベル",
+            "text": "他の仲間に見つかる前に死体を隠そう"
+          },
+          {
+            "name": "ネムル",
+            "text": "分かった"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 500
+      },
+      {
+        "type": "background",
+        "image": "bg/backyard"
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 500
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "",
+            "text": "二人はネムルの家の裏にウルフリックの死体を埋め終えた"
+          },
+          {
+            "name": "ライベル",
+            "text": "本当はもっと遠くに深く埋めるべきだが、とりあえず今はこれ以上は危険だ"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 1000
+      },
+      {
+        "type": "endIf"
       }
     ]
+  },
+  {
+    "title": "ライベルとの会話",
+    "list": [
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 0
+      },
+      {
+        "type": "background",
+        "image": "bg/home"
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.3,
+            "facing": "right"
+          },
+          {
+            "image": "chara/rybel",
+            "x": 0.7,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 1000
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ライベル",
+            "text": "はーー"
+          },
+          {
+            "name": "ライベル",
+            "text": "最悪の日だな"
+          },
+          {
+            "name": "ネムル",
+            "text": "あの……"
+          },
+          {
+            "name": "ネムル",
+            "text": "さっきは助けてくれてありがとう"
+          },
+          {
+            "name": "ライベル",
+            "text": "ほんとだぜ"
+          },
+          {
+            "name": "ライベル",
+            "text": "おかげでとんでもない罪を背負っちまった"
+          },
+          {
+            "name": "ネムル",
+            "text": "……"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "ねえ、さっきの人って、トルメニアンじゃない種族なの？"
+          },
+          {
+            "name": "ネムル",
+            "text": "だって肌が青くて、耳も丸かった"
+          },
+          {
+            "name": "ライベル",
+            "text": "そうだな"
+          },
+          {
+            "name": "ライベル",
+            "text": "あれはカオティクス"
+          },
+          {
+            "name": "ライベル",
+            "text": "カオティクスは数は少ないが山の近くを拠点に賊みたいなことをしてる奴等だ"
+          },
+          {
+            "name": "ライベル",
+            "text": "こんなボロ家ばかりの地区で見たのは初めてだがな"
+          },
+          {
+            "name": "ライベル",
+            "text": "それに、"
+          },
+          {
+            "name": "ライベル",
+            "text": "さっき殺したやつのことは知ってる"
+          },
+          {
+            "name": "ライベル",
+            "text": "ウルフリックとかいう名前でリーダー格の一人のはずだ"
+          },
+          {
+            "name": "ネムル",
+            "text": "そうなんだ"
+          },
+          {
+            "name": "ネムル",
+            "text": "トルメニアン以外の種族、初めて見た"
+          },
+          {
+            "name": "ライベル",
+            "text": "お前だってトルメニアンじゃねーだろ"
+          },
+          {
+            "name": "ネムル",
+            "text": "そうだけど、見た目は同じだし…"
+          },
+          {
+            "name": "ライベル",
+            "text": "ああ、でもチビだ"
+          },
+          {
+            "name": "ネムル",
+            "text": "ニーナはチビじゃないよ"
+          },
+          {
+            "name": "ライベル",
+            "text": "ああ、ニーナはな"
+          },
+          {
+            "name": "ライベル",
+            "text": "あいつは美人だ"
+          },
+          {
+            "name": "ネムル",
+            "text": "……"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "ニーナはいつかあなたの屋敷に住むの？"
+          },
+          {
+            "name": "ライベル",
+            "text": "は？"
+          },
+          {
+            "name": "ライベル",
+            "text": "どっからそんな話が出てきた"
+          },
+          {
+            "name": "ネムル",
+            "text": "だって今ニーナが美人だって言った"
+          },
+          {
+            "name": "ライベル",
+            "text": "だったらどうしてそうなるんだよ"
+          },
+          {
+            "name": "ライベル",
+            "text": "相変わらず意味不明だな、お前"
+          },
+          {
+            "name": "ネムル",
+            "text": "よかった"
+          },
+          {
+            "name": "ネムル",
+            "text": "もしそうなったら……"
+          },
+          {
+            "name": "ネムル",
+            "text": "いやだな"
+          },
+          {
+            "name": "ライベル",
+            "text": "「いやだな」じゃねえよ"
+          },
+          {
+            "name": "ライベル",
+            "text": "大体娶ったのがノクタリアンだなんてバレたら俺の家は終わりだ"
+          },
+          {
+            "name": "ネムル",
+            "text": "そうなんだ"
+          },
+          {
+            "name": "ライベル",
+            "text": "お前なあ、自分たちが世間でどういう扱いなのか本当にわかってんのか？"
+          },
+          {
+            "name": "ライベル",
+            "text": "だからこうしてトルメニアンのフリしてコソコソ暮らしてんだろ？"
+          },
+          {
+            "name": "ネムル",
+            "text": "うん……"
+          },
+          {
+            "name": "ライベル",
+            "text": "それに…"
+          },
+          {
+            "name": "ライベル",
+            "text": "お前からニーナを奪い取るほど鬼畜になった覚えはねーぞ"
+          },
+          {
+            "name": "ネムル",
+            "text": "よかった"
+          },
+          {
+            "name": "ネムル",
+            "text": "ニーナが居ないと生きられない"
+          },
+          {
+            "name": "ライベル",
+            "text": "お前なあ……"
+          },
+          {
+            "name": "ライベル",
+            "text": "ニーナはお前の親じゃねえだろ"
+          },
+          {
+            "name": "ライベル",
+            "text": "助けてもらうだけでどうするんだ"
+          },
+          {
+            "name": "ネムル",
+            "text": "え……"
+          },
+          {
+            "name": "ネムル",
+            "text": "でも……"
+          },
+          {
+            "name": "ライベル",
+            "text": "……"
+          },
+          {
+            "name": "ライベル",
+            "text": "まあお前らがそれでいいならいいけど"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "ねえ、外の様子はもう大丈夫？"
+          },
+          {
+            "name": "ネムル",
+            "text": "カオティクス…だっけ"
+          },
+          {
+            "name": "ライベル",
+            "text": "ん"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.3,
+            "facing": "right"
+          },
+          {
+            "image": "chara/rybel",
+            "x": 0.85,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ライベル",
+            "text": "ああ、もう大丈夫そうだ"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.3,
+            "facing": "right"
+          },
+          {
+            "image": "chara/rybel",
+            "x": 0.7,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "よかった"
+          },
+          {
+            "name": "ネムル",
+            "text": "私、薬屋に行かないと"
+          },
+          {
+            "name": "ライベル",
+            "text": "薬屋？"
+          },
+          {
+            "name": "ライベル",
+            "text": "ああ、アレか"
+          },
+          {
+            "name": "ライベル",
+            "text": "そりゃ行かないとヤバいな"
+          },
+          {
+            "name": "ネムル",
+            "text": "うん"
+          },
+          {
+            "name": "ライベル",
+            "text": "お、でかけるならついでに市場で食べ物を買ってきてくれ"
+          },
+          {
+            "name": "ライベル",
+            "text": "腹が減った"
+          },
+          {
+            "name": "ネムル",
+            "text": "え……"
+          },
+          {
+            "name": "ネムル",
+            "text": "市場か……"
+          },
+          {
+            "name": "ネムル",
+            "text": "自分では行かないの？"
+          },
+          {
+            "name": "ライベル",
+            "text": "はあ"
+          },
+          {
+            "name": "ライベル",
+            "text": "こっちはお前のために人まで殺めてんだ"
+          },
+          {
+            "name": "ライベル",
+            "text": "お礼にそれくらいやってくれよ"
+          },
+          {
+            "name": "ネムル",
+            "text": "でも……"
+          },
+          {
+            "name": "ライベル",
+            "text": "助けられてばかりじゃよくねえって"
+          },
+          {
+            "name": "ライベル",
+            "text": "お前にとっても"
+          },
+          {
+            "name": "ネムル",
+            "text": "うん……"
+          },
+          {
+            "name": "ネムル",
+            "text": "分かった"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.8,
+            "facing": "right"
+          },
+          {
+            "image": "chara/rybel",
+            "x": 0.4,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.8,
+            "facing": "left"
+          },
+          {
+            "image": "chara/rybel",
+            "x": 0.4,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "それじゃあ、行ってくるね"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 1000
+      }
+    ],
+    "if": "ウルフリックにナイフで抵抗"
   }
 ]

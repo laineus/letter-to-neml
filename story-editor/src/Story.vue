@@ -190,6 +190,7 @@ const play = (index: number) => {
 .item-indent {
   position: relative;
   width: 30px;
+  flex: 0 0 30px;
   &::before {
     content: '';
     position: absolute;
@@ -201,7 +202,7 @@ const play = (index: number) => {
 }
 
 .story-item-content {
-  flex: 1;
+  flex: 1 1 auto;
 }
 
 .story-item-container.if .add-item-section {
@@ -219,7 +220,7 @@ const play = (index: number) => {
 
 .story-item {
   background-color: #252525;
-  border: 1px solid #333;
+  border: 1px solid #ccc;
   border-radius: 4px;
 }
 
