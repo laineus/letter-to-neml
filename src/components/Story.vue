@@ -79,17 +79,17 @@ import { computed, reactive, type PropType } from 'vue'
 import Background from './Background.vue'
 import type { Story } from '../story/types'
 import config from '../lib/config'
-type IfConditions = {
+type ifFunctions = {
   [key: string]: () => boolean
 }
-const ifConditions = {
+const ifFunctions = {
   'じょうけん1': () => true,
   'じょうけん2': () => false,
   'じょうけん3': () => true,
   'じょうけん4': () => false,
-  'じょうけん1と2': () => ifConditions['じょうけん1']() && ifConditions['じょうけん2'](),
-  'じょうけん1か2': () => ifConditions['じょうけん1']() || ifConditions['じょうけん2']()
-} as IfConditions
+  'じょうけん1と2': () => ifFunctions['じょうけん1']() && ifFunctions['じょうけん2'](),
+  'じょうけん1か2': () => ifFunctions['じょうけん1']() || ifFunctions['じょうけん2']()
+} as ifFunctions
 type Functions = {
   [key: string]: () => boolean
 }
@@ -112,7 +112,7 @@ const props = defineProps({
 const next = () => {
   if (props.static) return
   props.player.next(ifId => {
-    const conditionFunc = ifConditions[ifId]
+    const conditionFunc = ifFunctions[ifId]
     return conditionFunc ? conditionFunc() : false
   })
   exec()

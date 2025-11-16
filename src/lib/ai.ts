@@ -6,24 +6,6 @@ const openai = new OpenAI({
   dangerouslyAllowBrowser: true
 })
 
-export const generateImage = (prompt: string) => {
-  return openai.images.generate({
-    size: '1024x1024',
-    model: 'dall-e-3',
-    n: 1,
-    response_format: 'b64_json',
-    quality: 'hd',
-    style: 'vivid',
-    prompt
-  }).then(v => {
-    return `data:image/webp;base64,${v.data?.[0].b64_json}`
-    // const img = document.createElement('img')
-    // img.src = `data:image/webp;base64,${v.data[0].b64_json}`
-    // img.width = 400
-    // document.body.appendChild(img)
-  })
-}
-
 export const chatGpt = <T>(prompt: string): Promise<T> => {
   return openai.chat.completions.create({
     messages: [
