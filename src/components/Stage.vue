@@ -33,7 +33,7 @@ emit('end')
 </script>
 
 <template>
-  <Container>
+  <Container :depth="3000">
     <Speaker :speaker="speaker" v-for="speaker in speakers" :key="speaker.image" />
   </Container>
 </template>

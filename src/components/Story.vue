@@ -11,6 +11,8 @@ import Letter from './Letter.vue'
 import { useIfFunctions } from '../lib/ifFunctions'
 import type { useStoryPlayer } from '../lib/storyPlayer'
 import { save, state } from '../lib/state'
+import Things from './Things.vue'
+import Button from './Button.vue'
 const props = defineProps({
   player: {
     type: Object as PropType<ReturnType<typeof useStoryPlayer>>,
@@ -102,13 +104,16 @@ if (state.value.current) {
   state.value.prev = state.value.current
   state.value.current = undefined
 }
+const exploring = ref(false)
 </script>
 
 <template>
-  <Rectangle :width="config.WIDTH" :height="config.HEIGHT" :origin="0" @pointerdown="tapScreen" />
+  <Rectangle v-if="!exploring" :width="config.WIDTH" :height="config.HEIGHT" :origin="0" @pointerdown="tapScreen" />
   <Background v-if="player.currentBackground" :texture="player.currentBackground?.image" />
-  <Stage v-if="player.currentSpeakers?.list.length" :speakers="player.currentSpeakers.list" @end="onStageUpdate" />
+  <Button :text="exploring ? 'もどる' : 'あたりを見回す'" :x="(200).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="exploring = !exploring" />
+  <Things v-if="exploring" :place="player.currentBackground?.image ?? ''" />
+  <Stage v-if="player.currentSpeakers?.list.length" :visible="!exploring" :speakers="player.currentSpeakers.list" @end="onStageUpdate" />
   <Fade v-if="player.currentFade" :fade="player.currentFade" @end="onFadeEnd" />
-  <MessageWindow v-if="player.currentMessage" :text="player.currentMessage.text" />
+  <MessageWindow v-if="player.currentMessage" :visible="!exploring" :text="player.currentMessage.text" />
   <Letter v-if="showLetter" @submit="submitLetter" />
 </template>

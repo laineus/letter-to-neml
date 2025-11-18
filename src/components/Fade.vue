@@ -43,7 +43,7 @@ const tween = computed<Phavuer.TweenConfig>(() => {
     :origin="0"
     :fillColor="0x000000"
     :alpha="fade.fade === 'in' ? 0 : 1"
-    :depth="100"
+    :depth="5000"
     :tween="tween"
   />
 </template>

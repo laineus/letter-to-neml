@@ -20,7 +20,7 @@ const viewMessage = computed(() => {
 </script>
 
 <template>
-  <Container :x="padding" :y="config.HEIGHT - height - padding" :depth="200">
+  <Container :x="padding" :y="config.HEIGHT - height - padding" :depth="6000">
     <Rectangle :origin="0" :width="width" :height="height" :fillColor="0x333333" :alpha="0.7" />
     <Text :text="viewMessage" :x="windowPadding" :y="windowPadding" :origin="0" :lineSpacing="fontSize * 0.7" :padding="{ top: 2 }" :style="{ fontSize, wordWrap: { width: width - (windowPadding * 2), useAdvancedWrap: true } }" />
   </Container>
