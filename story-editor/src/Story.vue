@@ -5,7 +5,7 @@ import type { Story, StoryItem } from '../../src/story/types'
 import StoryItemComponent from './StoryItem.vue'
 import StoryItemSummary from './StoryItemSummary.vue'
 import Preview from './Preview.vue'
-import { useStoryPlayer } from '../../src/components/Story.vue'
+import { useStoryPlayer } from '../../src/lib/storyPlayer'
 
 const props = defineProps({
   story: {

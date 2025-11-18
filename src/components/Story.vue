@@ -1,104 +1,16 @@
-<script lang="ts">
-export const useStoryPlayer = (stories: Story[]) => {
-  const state = reactive({
-    storyIndex: 0,
-    storyItemIndex: 0,
-    messageIndex: 0
-  })
-  const story = computed(() => stories[state.storyIndex])
-  const currentStoryItem = computed(() => story.value.list[state.storyItemIndex])
-  const currentMessages = computed(() => {
-    return currentStoryItem.value?.type === 'messages' ? currentStoryItem.value : undefined
-  })
-  const currentMessage = computed(() => {
-    if (!currentMessages.value) return
-    return currentMessages.value.list[state.messageIndex]
-  })
-  const activeStoryItems = computed(() => {
-    return story.value.list.slice(0, state.storyItemIndex + 1)
-  })
-  const currentBackground = computed(() => {
-    return activeStoryItems.value.slice(0).reverse().find(v => v.type === 'background')
-  })
-  const currentSpeakers = computed(() => {
-    return activeStoryItems.value.slice(0).reverse().find(v => v.type === 'speakers')
-  })
-  const currentFade = computed(() => {
-    return activeStoryItems.value.slice(0).reverse().find(v => v.type === 'fade')
-  })
-  const next = (testIf: (v: string) => boolean) => {
-    if (currentMessages.value && state.messageIndex < currentMessages.value.list.length - 1) {
-      state.messageIndex++
-      return
-    }
-    if (state.storyItemIndex < story.value.list.length - 1) {
-      state.storyItemIndex++
-      state.messageIndex = 0
-      if (currentStoryItem.value.type === 'if') {
-        if (!testIf(currentStoryItem.value.if)) {
-          state.storyItemIndex = story.value.list.findIndex((v, i) => i > state.storyItemIndex && v.type === 'endIf')
-        }
-        next(testIf)
-      } else if (currentStoryItem.value.type === 'endIf') {
-        next(testIf)
-      }
-      return
-    }
-    if (state.storyIndex < stories.length - 1) {
-      state.storyItemIndex = 0
-      state.messageIndex = 0
-      state.storyIndex = state.storyIndex + stories.slice(state.storyIndex + 1).findIndex(v => !v.if || testIf(v.if)) + 1
-    }
-  }
-  return {
-    stories,
-    get story () { return story.value },
-    get storyItemIndex () { return state.storyItemIndex },
-    set storyItemIndex (value: number) { state.storyItemIndex = value },
-    get storyIndex () { return state.storyIndex },
-    set storyIndex (value: number) { state.storyIndex = value },
-    get messageIndex () { return state.messageIndex },
-    set messageIndex (value: number) { state.messageIndex = value },
-    get currentMessages () { return currentMessages.value },
-    get currentMessage () { return currentMessage.value },
-    get currentStoryItem () { return currentStoryItem.value },
-    get currentBackground () { return currentBackground.value },
-    get currentSpeakers () { return currentSpeakers.value },
-    get currentFade () { return currentFade.value },
-    next
-  }
-}
-</script>
-
 <script setup lang="ts">
 import { Rectangle, useScene } from 'phavuer'
 import MessageWindow from './MessageWindow.vue'
 import Stage from './Stage.vue'
 import Fade from './Fade.vue'
-import { computed, reactive, type PropType } from 'vue'
+import { ref, type PropType } from 'vue'
 import Background from './Background.vue'
-import type { Story } from '../story/types'
+import type { Branch } from '../story/types'
 import config from '../lib/config'
-type ifFunctions = {
-  [key: string]: () => boolean
-}
-const ifFunctions = {
-  'じょうけん1': () => true,
-  'じょうけん2': () => false,
-  'じょうけん3': () => true,
-  'じょうけん4': () => false,
-  'じょうけん1と2': () => ifFunctions['じょうけん1']() && ifFunctions['じょうけん2'](),
-  'じょうけん1か2': () => ifFunctions['じょうけん1']() || ifFunctions['じょうけん2']()
-} as ifFunctions
-type Functions = {
-  [key: string]: () => boolean
-}
-const functions = {
-  'イベント1': () => {
-    alert('イベント1が発生しました！')
-    return true
-  },
-} as Functions
+import Letter from './Letter.vue'
+import { useIfFunctions } from '../lib/ifFunctions'
+import type { useStoryPlayer } from '../lib/storyPlayer'
+import { save, state } from '../lib/state'
 const props = defineProps({
   player: {
     type: Object as PropType<ReturnType<typeof useStoryPlayer>>,
@@ -109,11 +21,25 @@ const props = defineProps({
     default: false
   }
 })
+type Functions = {
+  [key: string]: () => boolean
+}
+const functions = {
+  '手紙執筆': () => {
+    showLetter.value = true
+    return false
+  },
+  'イベント1': () => {
+    alert('イベント1が発生しました！')
+    return true
+  },
+} as Functions
+const ifFunctions = useIfFunctions()
 const next = () => {
   if (props.static) return
   props.player.next(ifId => {
-    const conditionFunc = ifFunctions[ifId]
-    return conditionFunc ? conditionFunc() : false
+    const func = ifFunctions[ifId]
+    return func ? func() : false
   })
   exec()
 }
@@ -161,6 +87,21 @@ const onFadeEnd = () => {
   next()
 }
 exec()
+const showLetter = ref(false)
+const submitLetter = (v: { letter: string; branches: Branch[] }) => {
+  state.value.current = {
+    letter: v.letter,
+    branches: v.branches
+  }
+  save() // 手紙を確定したらセーブ
+  showLetter.value = false
+  next()
+}
+// stateの初期化
+if (state.value.current) {
+  state.value.prev = state.value.current
+  state.value.current = undefined
+}
 </script>
 
 <template>
@@ -169,4 +110,5 @@ exec()
   <Stage v-if="player.currentSpeakers?.list.length" :speakers="player.currentSpeakers.list" @end="onStageUpdate" />
   <Fade v-if="player.currentFade" :fade="player.currentFade" @end="onFadeEnd" />
   <MessageWindow v-if="player.currentMessage" :text="player.currentMessage.text" />
+  <Letter v-if="showLetter" @submit="submitLetter" />
 </template>

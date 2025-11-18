@@ -58,7 +58,7 @@ export type MessageConfig = {
 }
 
 export type Branch = {
-  id: number
-  resultId: number
+  code: number
+  result: boolean
   ref: string
 }

@@ -1,6 +1,20 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { chatAi } from '../lib/ai'
+import { Rectangle, useScene } from 'phavuer'
+import Dialog from './Dialog.vue'
+import config from '../lib/config'
+import type { Branch } from '../story/types'
+
+type ErrorResponse = {
+  error: {
+    code: string
+    ref: string
+  }
+}
+type SuccessResponse = {
+  result: Branch[]
+}
 
 const PROMPT = `あなたはアドベンチャーゲームのキャラクターの行動を決定するAIです。
 
@@ -51,16 +65,121 @@ refはネムルのセリフで「ニーナが"{ref}"って言ってたから〜�
 {message}
 `
 
+const emit = defineEmits(['submit'])
+
 const message = ref<string>('')
+const scene = useScene()
+const loading = ref(false)
+const status = ref<'rules' | 'edit' | 'error' | 'submit'>('rules')
+const error = ref<ErrorResponse>()
 const submit = () => {
+  if (loading.value) return
+  loading.value = true
+  error.value = undefined
   const prompt = PROMPT.replace('{message}', message.value) 
-  chatAi(prompt).then(response => {
+  chatAi<SuccessResponse | ErrorResponse>(prompt).then(response => {
     console.log('AI Response:', response)
+    if ('error' in response) {
+      error.value = response
+      changeStatus('error')
+    } else if ('result' in response) {
+      changeStatus('submit')
+      emit('submit', { letter: message.value, branches: response.result as Branch[] })
+    } else {
+      throw new Error('Unexpected response format')
+    }
+  }).finally(() => {
+    loading.value = false
   })
 }
+const changeStatus = (newStatus: 'rules' | 'edit' | 'error' | 'submit') => {
+  if (newStatus === 'edit') {
+    scene.scene.pause(scene)
+  } else {
+    scene.scene.resume(scene)
+  }
+  status.value = newStatus
+}
+const RULES = `以下の内容は手紙に書けません
+
+「ニーナが未来の出来事を知っているかのような内容」
+「ネムルを傷つける内容」
+「ゲームシステムに関わるメタ的な内容」
+「その他不適切な内容」`
+
+const ERROR_MESSAGES: { [key: string]: string } = {
+  'E1': 'プロンプトインジェクションやゲームシステムを不正に突破する指示が含まれています。',
+  'E2': 'ネムルに対して乱暴な言葉遣いや、酷い指示が含まれています。',
+  'E3': 'ニーナがネムルにこれから起こることを知っているかのような内容が含まれています。',
+  'E4': '出かけることや留守番をお願いする旨が欠けています。'
+}
+const errorMessage = computed(() => {
+  if (!error.value) return undefined
+  if (!('error' in error.value)) return '不明なエラーが発生しました。'
+  const ref = error.value.error.ref ? `\n\n（該当部分: "${error.value.error.ref}"）` : ''
+  return ERROR_MESSAGES[error.value.error.code] + ref
+})
 </script>
 
 <template>
-  <textarea v-model="message"></textarea>
-  <button @click="submit">submit</button>
+  <Rectangle :x="0" :y="0" :width="config.WIDTH" :height="config.HEIGHT" :origin="0" @pointerdown="null" :depth="10000" />
+  <Dialog title="手紙のルール" :desc="RULES" :depth="20000" v-if="status === 'rules'" @close="changeStatus('edit')" />
+  <Dialog title="エラー" :desc="errorMessage" :depth="20000" v-else-if="status === 'error'" @close="changeStatus('edit')" />
+  <div class="Letter" v-else>
+    <template v-if="loading">
+      <p>手紙の内容を確認しています</p>
+      <div class="Loading"></div>
+    </template>
+    <template v-else>
+      <textarea v-model="message" maxlength="800"></textarea>
+      <button @click="submit">submit</button>
+    </template>
+  </div>
 </template>
+
+<style scoped>
+.Letter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(8px);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+textarea {
+  width: 50%;
+  height: 60%;
+  background-color: transparent;
+  resize: none;
+  font-size: 1.5vw;
+  line-height: 1.7;
+  text-align: center;
+}
+p {
+  color: #ddd;
+  font-size: 1.5vw;
+  margin-bottom: 1vw;
+}
+.Loading {
+  width: 7vw;
+  height: 7vw;
+  border: 0.7vw solid rgba(0, 0, 0, 0.4);
+  border-top-color: #ddd;
+  border-radius: 100%;
+  animation: linear rotate 1s infinite;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+</style>

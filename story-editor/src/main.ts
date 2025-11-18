@@ -1,3 +1,4 @@
+import '../../src/lib/extendsNativeClassFunctions'
 import { createApp } from 'vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
 import './style.css'

@@ -2,10 +2,10 @@
 import 'phaser'
 import { Game, Scene } from 'phavuer'
 import Story from '../../src/components/Story.vue'
-import { useStoryPlayer } from '../../src/components/Story.vue'
 import { preloadAssets } from '../../src/lib/preload'
 import config from '../../src/lib/config.ts'
 import { ref, type PropType } from 'vue'
+import type { useStoryPlayer } from '../../src/lib/storyPlayer.ts'
 defineEmits(['stop'])
 const props = defineProps({
   storyPlayer: {

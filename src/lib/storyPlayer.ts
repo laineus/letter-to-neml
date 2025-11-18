@@ -1,0 +1,72 @@
+import { computed, reactive } from 'vue'
+import type { Story } from '../story/types'
+
+export const useStoryPlayer = (stories: Story[]) => {
+  const state = reactive({
+    storyIndex: 0,
+    storyItemIndex: 0,
+    messageIndex: 0
+  })
+  const story = computed(() => stories[state.storyIndex])
+  const currentStoryItem = computed(() => story.value.list[state.storyItemIndex])
+  const currentMessages = computed(() => {
+    return currentStoryItem.value?.type === 'messages' ? currentStoryItem.value : undefined
+  })
+  const currentMessage = computed(() => {
+    if (!currentMessages.value) return
+    return currentMessages.value.list[state.messageIndex]
+  })
+  const activeStoryItems = computed(() => {
+    return story.value.list.slice(0, state.storyItemIndex + 1)
+  })
+  const currentBackground = computed(() => {
+    return activeStoryItems.value.slice(0).reverse().find(v => v.type === 'background')
+  })
+  const currentSpeakers = computed(() => {
+    return activeStoryItems.value.slice(0).reverse().find(v => v.type === 'speakers')
+  })
+  const currentFade = computed(() => {
+    return activeStoryItems.value.slice(0).reverse().find(v => v.type === 'fade')
+  })
+  const next = (testIf: (v: string) => boolean) => {
+    if (currentMessages.value && state.messageIndex < currentMessages.value.list.length - 1) {
+      state.messageIndex++
+      return
+    }
+    if (state.storyItemIndex < story.value.list.length - 1) {
+      state.storyItemIndex++
+      state.messageIndex = 0
+      if (currentStoryItem.value.type === 'if') {
+        if (!testIf(currentStoryItem.value.if)) {
+          state.storyItemIndex = story.value.list.findIndex((v, i) => i > state.storyItemIndex && v.type === 'endIf')
+        }
+        next(testIf)
+      } else if (currentStoryItem.value.type === 'endIf') {
+        next(testIf)
+      }
+      return
+    }
+    if (state.storyIndex < stories.length - 1) {
+      state.storyItemIndex = 0
+      state.messageIndex = 0
+      state.storyIndex = state.storyIndex + stories.slice(state.storyIndex + 1).findIndex(v => !v.if || testIf(v.if)) + 1
+    }
+  }
+  return {
+    stories,
+    get story () { return story.value },
+    get storyItemIndex () { return state.storyItemIndex },
+    set storyItemIndex (value: number) { state.storyItemIndex = value },
+    get storyIndex () { return state.storyIndex },
+    set storyIndex (value: number) { state.storyIndex = value },
+    get messageIndex () { return state.messageIndex },
+    set messageIndex (value: number) { state.messageIndex = value },
+    get currentMessages () { return currentMessages.value },
+    get currentMessage () { return currentMessage.value },
+    get currentStoryItem () { return currentStoryItem.value },
+    get currentBackground () { return currentBackground.value },
+    get currentSpeakers () { return currentSpeakers.value },
+    get currentFade () { return currentFade.value },
+    next
+  }
+}
