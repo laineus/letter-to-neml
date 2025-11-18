@@ -5,6 +5,7 @@ import { Rectangle, useScene } from 'phavuer'
 import Dialog from './Dialog.vue'
 import config from '../lib/config'
 import type { Branch } from '../story/types'
+import { state } from '../lib/state'
 
 type ErrorResponse = {
   error: {
@@ -65,9 +66,13 @@ refはネムルのセリフで「ニーナが"{ref}"って言ってたから〜�
 {message}
 `
 
+const DEFAULT_MESSAGE = `ネムルへ、
+急に出かけないといけなくなっちゃった。
+お留守番お願いね。`
+
 const emit = defineEmits(['submit'])
 
-const message = ref<string>('')
+const message = ref<string>(state.value.prev?.letter ?? DEFAULT_MESSAGE)
 const scene = useScene()
 const loading = ref(false)
 const status = ref<'rules' | 'edit' | 'error' | 'submit'>('rules')
