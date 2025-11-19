@@ -605,10 +605,10 @@ phaser@^3.90.0:
   dependencies:
     eventemitter3 "^5.0.1"
 
-phavuer@^0.19.1:
-  version "0.19.1"
-  resolved "https://registry.yarnpkg.com/phavuer/-/phavuer-0.19.1.tgz#e8eed024dd03356d2822cedf57dbffcf24f97a57"
-  integrity sha512-NU184ar+Bb+9f7WbcDrEmp/zEtmgWJ9tjZhIfpN64GIfXGDTHTME+Lim25ltx3XY3g3ml6wM28Kltmrc/LBTzQ==
+phavuer@^0.19.3:
+  version "0.19.3"
+  resolved "https://registry.yarnpkg.com/phavuer/-/phavuer-0.19.3.tgz#a1d3025e0249f8b737fe38adecee3e393f2e2c4c"
+  integrity sha512-mMHpNvLaaUbRbuf5NG5Iq1XLTSDLvE5gZyazeHvjkUa93r9HuOab4eo2CobGzfmZkQwdwz3AWIRPcIomuHbEwQ==
   dependencies:
     phaser "^3.90.0"
     vue "^3.5.24"
