@@ -11,7 +11,7 @@ export type Thing = {
 const tween = {
   duration: 1800,
   props: {
-    radius: { from: 10, to: 30 },
+    scale: { from: 0.3, to: 1 },
     alpha: { from: 0.5, to: 0 }
   },
   repeat: -1,
@@ -43,7 +43,7 @@ const props = defineProps({
     <Circle
       :key="thing.name"
       :origin="0.5"
-      :radius="10"
+      :radius="30"
       :fillColor="0xEE3300"
       :alpha="0.3"
       :tween="tween"
