@@ -1,4 +1,3 @@
-import 'phaser'
 import { createApp } from 'vue'
 import './lib/extendsNativeClassFunctions'
 import './style.css'

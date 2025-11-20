@@ -17,7 +17,7 @@
     "openai": "^5.11.0",
     "phaser": "^3.90.0",
     "phaser-assets-loader": "^1.2.0",
-    "phavuer": "^0.19.3",
+    "phavuer": "^0.19.5",
     "vue": "^3.5.24",
     "vue-router": "^4.6.3"
   },
