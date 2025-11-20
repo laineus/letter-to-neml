@@ -49,15 +49,16 @@ const next = () => {
   waitingStageUpdate = false
   waitingFade = false
   waitingSleep = false
-  props.player.next(ifId => {
+  const result = props.player.next(ifId => {
     const func = ifFunctions[ifId]
     return func ? func() : false
   })
+  if (!result) return
   exec()
   if (fastForward.value && props.player.currentStoryItem) {
     setTimeout(() => {
       if (fastForward.value) next()
-    }, 100)
+    }, 200)
   }
 }
 /** その行を処理する */

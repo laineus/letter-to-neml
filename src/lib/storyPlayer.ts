@@ -31,7 +31,7 @@ export const useStoryPlayer = (stories: Story[]) => {
   const next = (testIf: (v: string) => boolean) => {
     if (currentMessages.value && state.messageIndex < currentMessages.value.list.length - 1) {
       state.messageIndex++
-      return
+      return true
     }
     if (state.storyItemIndex < story.value.list.length - 1) {
       state.storyItemIndex++
@@ -44,13 +44,15 @@ export const useStoryPlayer = (stories: Story[]) => {
       } else if (currentStoryItem.value.type === 'endIf') {
         next(testIf)
       }
-      return
+      return true
     }
     if (state.storyIndex < stories.length - 1) {
       state.storyItemIndex = 0
       state.messageIndex = 0
       state.storyIndex = state.storyIndex + stories.slice(state.storyIndex + 1).findIndex(v => !v.if || testIf(v.if)) + 1
+      return true
     }
+    return false
   }
   return {
     stories,

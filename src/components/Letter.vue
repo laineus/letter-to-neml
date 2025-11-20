@@ -81,6 +81,11 @@ const submit = () => {
   if (loading.value) return
   loading.value = true
   error.value = undefined
+  if (state.value.prev && message.value === state.value.prev.letter) {
+    changeStatus('submit')
+    emit('submit', { letter: state.value.prev.letter, branches: state.value.prev.branches })
+    return
+  }
   const prompt = PROMPT.replace('{message}', message.value) 
   chatAi<SuccessResponse | ErrorResponse>(prompt).then(response => {
     console.log('AI Response:', response)
