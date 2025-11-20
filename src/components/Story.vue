@@ -44,8 +44,7 @@ const fastForward = ref(false)
 /** 条件分岐関数 */
 const ifFunctions = useIfFunctions()
 /** 次の行へ進む */
-const next = (fromFastForward = false) => {
-  if (fastForward.value && !fromFastForward) return
+const next = () => {
   if (props.static) return
   waitingStageUpdate = false
   waitingFade = false
@@ -56,11 +55,6 @@ const next = (fromFastForward = false) => {
   })
   if (!result) return
   exec()
-  if (fastForward.value && props.player.currentStoryItem) {
-    setTimeout(() => {
-      if (fastForward.value) next(true)
-    }, 100)
-  }
 }
 /** その行を処理する */
 const exec = () => {
@@ -73,7 +67,7 @@ const exec = () => {
   if (props.player.currentStoryItem?.type === 'sleep') {
     waitingSleep = true
     scene.time.addEvent({
-      delay: props.player.currentStoryItem.duration,
+      delay: fastForward.value ? 70 : props.player.currentStoryItem.duration,
       callback: () => {
         if (!waitingSleep) return
         waitingSleep = false
@@ -92,6 +86,13 @@ const exec = () => {
       return
     }
     if (functionFunc()) next()
+  }
+  if (props.player.currentStoryItem?.type === 'messages') {
+    if (fastForward.value) {
+      setTimeout(() => {
+        if (fastForward.value) next()
+      }, 70)
+    }
   }
 }
 const scene = useScene()
@@ -137,7 +138,7 @@ if (state.value.current) {
 }
 const toggleFastForward = () => {
   fastForward.value = !fastForward.value
-  next(fastForward.value)
+  next()
 }
 </script>
 
