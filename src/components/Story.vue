@@ -28,6 +28,7 @@ type Functions = {
 }
 const functions = {
   '手紙執筆': () => {
+    fastForward.value = false
     showLetter.value = true
     return false
   },
@@ -36,18 +37,31 @@ const functions = {
     return true
   },
 } as Functions
+/** フィールド探索中かどうか */
+const exploring = ref(false)
+/** 早送り中かどうか */
+const fastForward = ref(false)
+/** 条件分岐関数 */
 const ifFunctions = useIfFunctions()
+/** 次の行へ進む */
 const next = () => {
   if (props.static) return
+  waitingStageUpdate = false
+  waitingFade = false
+  waitingSleep = false
   props.player.next(ifId => {
     const func = ifFunctions[ifId]
     return func ? func() : false
   })
   exec()
+  if (fastForward.value && props.player.currentStoryItem) {
+    setTimeout(() => {
+      if (fastForward.value) next()
+    }, 100)
+  }
 }
+/** その行を処理する */
 const exec = () => {
-  waitingStageUpdate = false
-  waitingFade = false
   if (props.player.currentStoryItem?.type === 'background') {
     next()
   }
@@ -55,9 +69,14 @@ const exec = () => {
     waitingStageUpdate = true
   }
   if (props.player.currentStoryItem?.type === 'sleep') {
+    waitingSleep = true
     scene.time.addEvent({
       delay: props.player.currentStoryItem.duration,
-      callback: () => next()
+      callback: () => {
+        if (!waitingSleep) return
+        waitingSleep = false
+        next()
+      }
     })
   }
   if (props.player.currentStoryItem?.type === 'fade') {
@@ -75,10 +94,19 @@ const exec = () => {
 }
 const scene = useScene()
 const tapScreen = () => {
+  if (fastForward.value) {
+    fastForward.value = false
+    return
+  }
+  if (exploring.value) return
   if (!props.player.currentMessage) return
   next()
 }
+/** フェーズ移行待ちフラグ */
+let waitingSleep = false
+/** ステージ更新待ちフラグ */
 let waitingStageUpdate = false
+/** フェード待ちフラグ */
 let waitingFade = false
 const onStageUpdate = () => {
   if (!waitingStageUpdate) return
@@ -89,6 +117,7 @@ const onFadeEnd = () => {
   next()
 }
 exec()
+// 手紙執筆関連
 const showLetter = ref(false)
 const submitLetter = (v: { letter: string; branches: Branch[] }) => {
   state.value.current = {
@@ -104,13 +133,13 @@ if (state.value.current) {
   state.value.prev = state.value.current
   state.value.current = undefined
 }
-const exploring = ref(false)
 </script>
 
 <template>
-  <Rectangle v-if="!exploring" :width="config.WIDTH" :height="config.HEIGHT" :origin="0" @pointerdown="tapScreen" />
+  <Rectangle :width="config.WIDTH" :height="config.HEIGHT" :origin="0" @pointerdown="tapScreen" />
   <Background v-if="player.currentBackground" :texture="player.currentBackground?.image" />
   <Button :text="exploring ? 'もどる' : 'あたりを見回す'" :x="(200).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="exploring = !exploring" />
+  <Button :text="fastForward ? '止める' : '早送り'" :x="(200 + 190).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="fastForward = !fastForward, next()" />
   <Things v-if="exploring" :place="player.currentBackground?.image ?? ''" />
   <Stage v-if="player.currentSpeakers?.list.length" :visible="!exploring" :speakers="player.currentSpeakers.list" @end="onStageUpdate" />
   <Fade v-if="player.currentFade" :fade="player.currentFade" @end="onFadeEnd" />

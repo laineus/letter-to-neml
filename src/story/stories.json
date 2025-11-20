@@ -238,12 +238,22 @@
             "text": "ネムルはテーブルのうえに置かれた手紙を手に取った"
           }
         ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 500
       }
     ]
   },
   {
     "title": "ライベルの来訪",
     "list": [
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 0
+      },
       {
         "type": "background",
         "image": "bg/home"
@@ -261,6 +271,15 @@
             "facing": "right"
           }
         ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 500
+      },
+      {
+        "type": "sleep",
+        "duration": 500
       },
       {
         "type": "messages",
@@ -415,12 +434,22 @@
             "text": "相変わらずボロいな"
           }
         ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 1000
       }
     ]
   },
   {
     "title": "ウルフリック襲来",
     "list": [
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 0
+      },
       {
         "type": "background",
         "image": "bg/home"
@@ -439,6 +468,11 @@
             "facing": "left"
           }
         ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 1000
       },
       {
         "type": "messages",
@@ -1004,7 +1038,7 @@
         "list": [
           {
             "name": "ネムル",
-            "text": "ニーナはxxxって！"
+            "text": "ニーナは{ref:103}って！"
           },
           {
             "name": "",
