@@ -1,15 +1,13 @@
 import type { Branch } from '../story/types'
-import { state } from './state'
 type ifFunctions = {
   [key: string]: () => boolean
 }
-const getBranch = (code: number): Branch => {
-  const branches = state.value.current?.branches || []
-  const v = branches.find(v => v.code === code)
-  if (!v) throw new Error(`Branch not found: ${code}`)
-  return v
-}
-export const useIfFunctions = () => {
+export const useIfFunctions = (branches: Branch[]) => {
+  const getBranch = (code: number): Branch => {
+    const v = branches.find(v => v.code === code)
+    if (!v) throw new Error(`Branch not found: ${code}`)
+    return v
+  }
   const ifFunctions: ifFunctions = {
     'ウルフリックにナイフで抵抗': () => {
       return getBranch(103).result
@@ -25,4 +23,9 @@ export const useIfFunctions = () => {
     'じょうけん1か2': () => ifFunctions['じょうけん1']() || ifFunctions['じょうけん2']()
   }
   return ifFunctions
+}
+export const checkIf = (branches: Branch[], ifId: string): boolean => {
+  const ifFunctions = useIfFunctions(branches)
+  const func = ifFunctions[ifId]
+  return func ? func() : false
 }
