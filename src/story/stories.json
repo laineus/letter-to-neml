@@ -439,6 +439,10 @@
         "type": "fade",
         "fade": "in",
         "duration": 1000
+      },
+      {
+        "type": "function",
+        "function": "早送り停止"
       }
     ]
   },
@@ -958,9 +962,17 @@
           },
           {
             "name": "ネムル",
+            "text": "！！"
+          },
+          {
+            "name": "ネムル",
             "text": "なんで！"
           }
         ]
+      },
+      {
+        "type": "function",
+        "function": "早送り停止"
       },
       {
         "type": "speakers",

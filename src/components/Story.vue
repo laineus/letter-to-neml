@@ -32,8 +32,8 @@ const functions = {
     showLetter.value = true
     return false
   },
-  'イベント1': () => {
-    alert('イベント1が発生しました！')
+  '早送り停止': () => {
+    fastForward.value = false
     return true
   },
 } as Functions
@@ -44,7 +44,8 @@ const fastForward = ref(false)
 /** 条件分岐関数 */
 const ifFunctions = useIfFunctions()
 /** 次の行へ進む */
-const next = () => {
+const next = (fromFastForward = false) => {
+  if (fastForward.value && !fromFastForward) return
   if (props.static) return
   waitingStageUpdate = false
   waitingFade = false
@@ -57,8 +58,8 @@ const next = () => {
   exec()
   if (fastForward.value && props.player.currentStoryItem) {
     setTimeout(() => {
-      if (fastForward.value) next()
-    }, 200)
+      if (fastForward.value) next(true)
+    }, 100)
   }
 }
 /** その行を処理する */
@@ -96,7 +97,7 @@ const exec = () => {
 const scene = useScene()
 const tapScreen = () => {
   if (fastForward.value) {
-    fastForward.value = false
+    toggleFastForward()
     return
   }
   if (exploring.value) return
@@ -134,13 +135,17 @@ if (state.value.current) {
   state.value.prev = state.value.current
   state.value.current = undefined
 }
+const toggleFastForward = () => {
+  fastForward.value = !fastForward.value
+  next(fastForward.value)
+}
 </script>
 
 <template>
   <Rectangle :width="config.WIDTH" :height="config.HEIGHT" :origin="0" @pointerdown="tapScreen" />
   <Background v-if="player.currentBackground" :texture="player.currentBackground?.image" />
   <Button :text="exploring ? 'もどる' : 'あたりを見回す'" :x="(200).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="exploring = !exploring" />
-  <Button :text="fastForward ? '止める' : '早送り'" :x="(200 + 190).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="fastForward = !fastForward, next()" />
+  <Button :text="fastForward ? '止める' : '早送り'" :x="(200 + 190).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="toggleFastForward" />
   <Things v-if="exploring" :place="player.currentBackground?.image ?? ''" />
   <Stage v-if="player.currentSpeakers?.list.length" :visible="!exploring" :speakers="player.currentSpeakers.list" @end="onStageUpdate" />
   <Fade v-if="player.currentFade" :fade="player.currentFade" @end="onFadeEnd" />
