@@ -8,7 +8,7 @@ import Background from './Background.vue'
 import type { Branch } from '../story/types'
 import config from '../lib/config'
 import Letter from './Letter.vue'
-import { checkIf } from '../lib/ifFunctions'
+import { useIfFunctions } from '../lib/ifFunctions'
 import type { useStoryPlayer } from '../lib/storyPlayer'
 import { save, state } from '../lib/state'
 import Things from './Things.vue'
@@ -41,6 +41,8 @@ const functions = {
 const exploring = ref(false)
 /** 早送り中かどうか */
 const fastForward = ref(false)
+/** 条件分岐関数 */
+const ifFunctions = useIfFunctions()
 /** 次の行へ進む */
 const next = () => {
   if (props.static) return
@@ -48,15 +50,8 @@ const next = () => {
   waitingFade = false
   waitingSleep = false
   const result = props.player.next(ifId => {
-    const ifResult =  checkIf(state.value.current?.branches ?? [], ifId)
-    // 前回と分岐結果が変わっていたら早送りを停止
-    if (state.value.prev) {
-      const prevIfResult =  checkIf(state.value.prev.branches ?? [], ifId)
-      if (prevIfResult !== ifResult) {
-        fastForward.value = false
-      }
-    }
-    return ifResult
+    const func = ifFunctions[ifId]
+    return func ? func() : false
   })
   if (!result) return
   exec()
