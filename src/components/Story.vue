@@ -89,9 +89,12 @@ const exec = () => {
   }
   if (props.player.currentStoryItem?.type === 'messages') {
     if (fastForward.value) {
-      setTimeout(() => {
-        if (fastForward.value) next()
-      }, 70)
+      scene.time.addEvent({
+        delay: 70,
+        callback: () => {
+          if (fastForward.value) next()
+        }
+      })
     }
   }
 }
