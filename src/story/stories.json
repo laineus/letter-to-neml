@@ -2012,6 +2012,1592 @@
           {
             "name": "ネムル",
             "text": "ええと、食べ物を買い物に…"
+          },
+          {
+            "name": "青年",
+            "text": "そうか\nじゃあ僕とは逆だね"
+          },
+          {
+            "name": "青年",
+            "text": "僕はこれを売りに来たんだ"
+          },
+          {
+            "name": "",
+            "text": "男は10個ほどの不思議な形状の実を手にのせて見せた"
+          },
+          {
+            "name": "ネムル",
+            "text": "木の実？"
+          },
+          {
+            "name": "青年",
+            "text": "これはカスラの実といってね\n薬の材料になるんだ"
+          },
+          {
+            "name": "青年",
+            "text": "ここらへんでは採れないから高く売れるんだ"
+          },
+          {
+            "name": "青年",
+            "text": "お、僕の番が来たみたいだ"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.2,
+            "facing": "right"
+          },
+          {
+            "image": "chara/trader",
+            "x": 0.5,
+            "facing": "right"
+          },
+          {
+            "image": "chara/shopkeeper",
+            "x": 1.1,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.2,
+            "facing": "right"
+          },
+          {
+            "image": "chara/trader",
+            "x": 0.5,
+            "facing": "right"
+          },
+          {
+            "image": "chara/shopkeeper",
+            "x": 0.85,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "店主",
+            "text": "よう兄ちゃん、見ない顔だな"
+          },
+          {
+            "name": "青年",
+            "text": "やあどうも"
+          },
+          {
+            "name": "青年",
+            "text": "このお店でこれを買い取ることはできる？"
+          },
+          {
+            "name": "",
+            "text": "男は布袋からカスラを実を1つ取り出して店主に見せた"
+          },
+          {
+            "name": "店主",
+            "text": "お、カスラの実か"
+          },
+          {
+            "name": "店主",
+            "text": "いくつある？"
+          },
+          {
+            "name": "青年",
+            "text": "10個持ってきたよ\n全部買い取れるかな？"
+          },
+          {
+            "name": "店主",
+            "text": "よくそんなに集めてきたな"
+          },
+          {
+            "name": "店主",
+            "text": "もちろん、全て買い取るぜ"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.2,
+            "facing": "right"
+          },
+          {
+            "image": "chara/trader",
+            "x": 0.55,
+            "facing": "right"
+          },
+          {
+            "image": "chara/shopkeeper",
+            "x": 0.85,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "",
+            "text": "男と店主はカスラの実が入った布袋とたくさんの硬貨を引き換えた"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.2,
+            "facing": "right"
+          },
+          {
+            "image": "chara/trader",
+            "x": 0.5,
+            "facing": "right"
+          },
+          {
+            "image": "chara/shopkeeper",
+            "x": 0.85,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "青年",
+            "text": "たしかに、ありがとう"
+          },
+          {
+            "name": "店主",
+            "text": "ああ、まいどあり\n気をつけて行けよ"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.35,
+            "facing": "left"
+          },
+          {
+            "image": "chara/trader",
+            "x": 0.1,
+            "facing": "left"
+          },
+          {
+            "image": "chara/shopkeeper",
+            "x": 0.85,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "店主",
+            "text": "おい兄ちゃん、"
+          },
+          {
+            "name": "店主",
+            "text": "ちょっと待ってくれるか？"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.35,
+            "facing": "right"
+          },
+          {
+            "image": "chara/trader",
+            "x": 0.1,
+            "facing": "right"
+          },
+          {
+            "image": "chara/shopkeeper",
+            "x": 0.85,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "青年",
+            "text": "なにか？"
+          },
+          {
+            "name": "店主",
+            "text": "あんたとんだ詐欺野郎だな"
+          },
+          {
+            "name": "青年",
+            "text": "！！"
+          },
+          {
+            "name": "青年",
+            "text": "なんだって！？"
+          },
+          {
+            "name": "店主",
+            "text": "とぼけんじゃねえ"
+          },
+          {
+            "name": "",
+            "text": "店主は袋の中身を全てカウンターに出してみせた"
+          },
+          {
+            "name": "店主",
+            "text": "半分はただのクルミじゃねえか"
+          },
+          {
+            "name": "青年",
+            "text": "なに！？"
+          },
+          {
+            "name": "青年",
+            "text": "そんなはずない！"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.35,
+            "facing": "right"
+          },
+          {
+            "image": "chara/trader",
+            "x": 0.55,
+            "facing": "right"
+          },
+          {
+            "image": "chara/shopkeeper",
+            "x": 0.85,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "",
+            "text": "カウンターには確かにカスラの実とただのクルミが5つずつ転がっている"
+          },
+          {
+            "name": "青年",
+            "text": "あんた、インチキはやめてくれ"
+          },
+          {
+            "name": "青年",
+            "text": "僕は確かにカスラの実だけを10個持ってきた"
+          },
+          {
+            "name": "店主",
+            "text": "じゃあこれはなんだ！"
+          },
+          {
+            "name": "店主",
+            "text": "インチキはお前だろうが！"
+          },
+          {
+            "name": "青年",
+            "text": "そうだ！"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.35,
+            "facing": "right"
+          },
+          {
+            "image": "chara/trader",
+            "x": 0.55,
+            "facing": "left"
+          },
+          {
+            "image": "chara/shopkeeper",
+            "x": 0.85,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "青年",
+            "text": "この子だ"
+          },
+          {
+            "name": "青年",
+            "text": "ねえ君、\n僕は確かに君に10個のカスラの実を見せたよな？"
+          },
+          {
+            "name": "ネムル",
+            "text": "え、"
+          },
+          {
+            "name": "ネムル",
+            "text": "（どうしたらいいんだろう）"
+          }
+        ]
+      },
+      {
+        "type": "if",
+        "if": ""
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "うん、\n確かにそっちと同じ形の実を、10個くらい、見せてもらったかな"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.35,
+            "facing": "right"
+          },
+          {
+            "image": "chara/trader",
+            "x": 0.55,
+            "facing": "right"
+          },
+          {
+            "image": "chara/shopkeeper",
+            "x": 0.85,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "青年",
+            "text": "ほら見ろ！\nこの子が証人だ！"
+          },
+          {
+            "name": "店主",
+            "text": "何言ってやがる\nじゃあその残りの実はどこだって言うんだ"
+          },
+          {
+            "name": "青年",
+            "text": "それは…、"
+          },
+          {
+            "name": "青年",
+            "text": "あんたがクルミとすり替えて隠したんだろう"
+          },
+          {
+            "name": "店主",
+            "text": "好き勝手言いやがって"
+          },
+          {
+            "name": "店主",
+            "text": "本当にそうなのかどうか、あそこの衛兵に確かめさせよう"
+          },
+          {
+            "name": "青年",
+            "text": "いいだろう\nぜひそうしてくれ"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.2,
+            "facing": "right"
+          },
+          {
+            "image": "chara/trader",
+            "x": 0.4,
+            "facing": "right"
+          },
+          {
+            "image": "chara/shopkeeper",
+            "x": 0.65,
+            "facing": "left"
+          },
+          {
+            "image": "chara/guard",
+            "x": 0.85,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "",
+            "text": "状況の説明を受けた衛兵は露店内をくまなく確認した"
+          },
+          {
+            "name": "衛兵",
+            "text": "他にカスラの実は見つからない"
+          },
+          {
+            "name": "衛兵",
+            "text": "この店主が言っていることは真実だろう"
+          },
+          {
+            "name": "青年",
+            "text": "そんな！"
+          },
+          {
+            "name": "店主",
+            "text": "ほら、言っただろ"
+          },
+          {
+            "name": "青年",
+            "text": "何かの間違いだ！"
+          },
+          {
+            "name": "青年",
+            "text": "他に何か不正をしているはず！"
+          },
+          {
+            "name": "青年",
+            "text": "それにこっちには証人だっている"
+          },
+          {
+            "name": "店主",
+            "text": "何も見つからないのが真実だぜ"
+          },
+          {
+            "name": "店主",
+            "text": "そっちのチビもグルだろう\n見たことない女だ"
+          },
+          {
+            "name": "ネムル",
+            "text": "違う！"
+          },
+          {
+            "name": "青年",
+            "text": "この子は違う！さっき初めて会ったんだ"
+          },
+          {
+            "name": "衛兵",
+            "text": "もう十分だ"
+          },
+          {
+            "name": "衛兵",
+            "text": "貴様ら二人は投獄と処す"
+          },
+          {
+            "name": "ネムル",
+            "text": "！！"
+          },
+          {
+            "name": "青年",
+            "text": "ありえない！！"
+          },
+          {
+            "name": "店主",
+            "text": "へっ、\nおい、騙し取った金もきっちり置いていけよ"
+          },
+          {
+            "name": "ネムル",
+            "text": "あの…、私は何も関係ないよ"
+          },
+          {
+            "name": "衛兵",
+            "text": "お前、この辺りで見かけない顔だな"
+          },
+          {
+            "name": "衛兵",
+            "text": "身分を証明できるものはあるか？"
+          },
+          {
+            "name": "ネムル",
+            "text": "（身分を証明できるもの…なにかあるかな）"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "それは…、ないけど…"
+          },
+          {
+            "name": "衛兵",
+            "text": "では貴様を助けることはできない"
+          },
+          {
+            "name": "衛兵",
+            "text": "来るんだ"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.1,
+            "facing": "left"
+          },
+          {
+            "image": "chara/trader",
+            "x": 0.25,
+            "facing": "left"
+          },
+          {
+            "image": "chara/shopkeeper",
+            "x": 0.8,
+            "facing": "left"
+          },
+          {
+            "image": "chara/guard",
+            "x": 0.4,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "endIf"
+      },
+      {
+        "type": "if",
+        "if": ""
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "",
+            "text": "男は衛兵に連行されていった"
+          },
+          {
+            "name": "店主",
+            "text": "ったく、これだからよそ者は信用ならねえ"
+          },
+          {
+            "name": "店主",
+            "text": "さあ、あんたは何を買うんだ"
+          },
+          {
+            "name": "ネムル",
+            "text": "ええと…、"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 500
+      },
+      {
+        "type": "background",
+        "image": "bg/market"
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.4,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "怖かった……"
+          },
+          {
+            "name": "ネムル",
+            "text": "巻き込まれなくて、よかった…、のかな……"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 1000
+      },
+      {
+        "type": "function",
+        "function": "早送り停止"
+      },
+      {
+        "type": "endIf"
+      }
+    ]
+  },
+  {
+    "title": "薬屋",
+    "list": [
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 0
+      },
+      {
+        "type": "background",
+        "image": "bg/apothecary"
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": -0.2,
+            "facing": "right"
+          },
+          {
+            "image": "chara/doctor",
+            "x": 0.75,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 1000
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.05,
+            "facing": "right"
+          },
+          {
+            "image": "chara/doctor",
+            "x": 0.75,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "あの……、"
+          },
+          {
+            "name": "ネムル",
+            "text": "こんばんは"
+          },
+          {
+            "name": "医者",
+            "text": "おお、ネムルちゃんじゃない"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.3,
+            "facing": "right"
+          },
+          {
+            "image": "chara/doctor",
+            "x": 0.75,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "医者",
+            "text": "今日はニーナちゃんと一緒じゃないのかい？"
+          },
+          {
+            "name": "ネムル",
+            "text": "ニーナはおでかけで……"
+          },
+          {
+            "name": "医者",
+            "text": "そうかい"
+          },
+          {
+            "name": "医者",
+            "text": "今日は何が必要かな？"
+          },
+          {
+            "name": "ネムル",
+            "text": "悪夢予防薬と、それと精神安定剤も……"
+          },
+          {
+            "name": "医者",
+            "text": "ああ、切らしちゃったんだね\nそれは大変だ"
+          },
+          {
+            "name": "ネムル",
+            "text": "あの…、いつもありがとう"
+          },
+          {
+            "name": "ネムル",
+            "text": "私たちがノクタリアンって知ってるのに、親切にしてくれて"
+          },
+          {
+            "name": "医者",
+            "text": "そんなことかい"
+          },
+          {
+            "name": "医者",
+            "text": "気にしていないよ"
+          },
+          {
+            "name": "医者",
+            "text": "君たちの悪夢で災害が起きたとしても、君たちがそうしたくて起きるわけじゃない"
+          },
+          {
+            "name": "医者",
+            "text": "君たちは何も悪くないんだ"
+          },
+          {
+            "name": "医者",
+            "text": "自分を責めたりしちゃいけないよ"
+          },
+          {
+            "name": "ネムル",
+            "text": "ありがとう…"
+          },
+          {
+            "name": "医者",
+            "text": "それに、君たちにちゃんと悪夢予防薬を飲んでもらえないと、僕だって困るからね"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.3,
+            "facing": "right"
+          },
+          {
+            "image": "chara/doctor",
+            "x": 0.7,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "医者",
+            "text": "そういうと医者は棚から薬瓶を手に取った"
+          },
+          {
+            "name": "医者",
+            "text": "ああそうだった"
+          },
+          {
+            "name": "医者",
+            "text": "ごめんね、悪夢予防薬はあるんだけど、精神安定剤のほうは切らしちゃってるんだ"
+          },
+          {
+            "name": "医者",
+            "text": "そっちはまた今度でも大丈夫かな？"
+          },
+          {
+            "name": "ネムル",
+            "text": "あ、はい、そっちはなくても、"
+          },
+          {
+            "name": "医者",
+            "text": "材料があればできるんだけどねえ"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "医者",
+            "text": "あ、そうだ"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "医者",
+            "text": "代わりにいいのがあるよ"
+          },
+          {
+            "name": "",
+            "text": "医者は虹色に光る薬をネムルに見せた"
+          },
+          {
+            "name": "店主",
+            "text": "これ、いつものとちょっと違う薬なんだけど"
+          },
+          {
+            "name": "店主",
+            "text": "飲むととっても良い気持ちになれるんだよ"
+          },
+          {
+            "name": "ネムル",
+            "text": "変な色…"
+          },
+          {
+            "name": "医者",
+            "text": "ちょっとぼーっとするんだけれど、嫌なことも全部忘れられるよ"
+          },
+          {
+            "name": "ネムル",
+            "text": "そうなんですか"
+          },
+          {
+            "name": "医者",
+            "text": "じゃあちょっと試してみようか"
+          },
+          {
+            "name": "医者",
+            "text": "お代は気に入ったらでいいからね"
+          },
+          {
+            "name": "ネムル",
+            "text": "タダでいいの？"
+          },
+          {
+            "name": "医者",
+            "text": "うん、いいよ"
+          },
+          {
+            "name": "医者",
+            "text": "ほら、飲んでごらん"
+          },
+          {
+            "name": "ネムル",
+            "text": "（知らない薬だけど、試しに飲んでみてもいいかな…）"
+          }
+        ]
+      },
+      {
+        "type": "if",
+        "if": ""
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.35,
+            "facing": "right"
+          },
+          {
+            "image": "chara/doctor",
+            "x": 0.7,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "それじゃあ…、いただきます"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "なんだか、ちょっとぼーっとする……"
+          },
+          {
+            "name": "医者",
+            "text": "そうだね、じゃあこの椅子に座ってもいいからね"
+          },
+          {
+            "name": "医者",
+            "text": "しばらく休んでいこうね"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 500
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "………"
+          },
+          {
+            "name": "医者",
+            "text": "眠くなってきちゃったかな"
+          },
+          {
+            "name": "ネムル",
+            "text": "………"
+          },
+          {
+            "name": "医者",
+            "text": "それじゃあ、こっちのお部屋で横になれるからね"
+          },
+          {
+            "name": "ネムル",
+            "text": "………"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.8,
+            "facing": "right"
+          },
+          {
+            "image": "chara/doctor",
+            "x": 0.6,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "あ………"
+          },
+          {
+            "name": "医者",
+            "text": "大丈夫、良い気持ちになれるからね"
+          }
+        ]
+      },
+      {
+        "type": "endIf"
+      },
+      {
+        "type": "if",
+        "if": ""
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "ニーナは…って言ってた"
+          },
+          {
+            "name": "ネムル",
+            "text": "そのお薬は、大丈夫"
+          },
+          {
+            "name": "医者",
+            "text": "そうか……"
+          },
+          {
+            "name": "医者",
+            "text": "じゃあまた気になったら言ってね"
+          },
+          {
+            "name": "",
+            "text": "ネムルは悪夢予防薬の代金を支払うと薬屋を後にした"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 1000
+      },
+      {
+        "type": "function",
+        "function": "早送り停止"
+      },
+      {
+        "type": "endIf"
+      }
+    ]
+  },
+  {
+    "title": "浜辺での休憩",
+    "list": [
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 0
+      },
+      {
+        "type": "background",
+        "image": "bg/shore"
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.3,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 1000
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "食べ物もお薬も買えた"
+          },
+          {
+            "name": "ネムル",
+            "text": "久しぶりに外を歩いたからちょっと疲れたな"
+          },
+          {
+            "name": "ネムル",
+            "text": "ちょっと休んでから帰ろう"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": -0.2,
+            "facing": "right"
+          },
+          {
+            "image": "chara/ceryth",
+            "x": 0.7,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.1,
+            "facing": "right"
+          },
+          {
+            "image": "chara/ceryth",
+            "x": 0.7,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "誰かいる……"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.2,
+            "facing": "right"
+          },
+          {
+            "image": "chara/ceryth",
+            "x": 0.7,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "こんばんは"
+          },
+          {
+            "name": "お姉さん",
+            "text": "こんばんは"
+          },
+          {
+            "name": "ネムル",
+            "text": "ここに座ってもいいですか？"
+          },
+          {
+            "name": "お姉さん",
+            "text": "もちろん"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.3,
+            "facing": "right"
+          },
+          {
+            "image": "chara/ceryth",
+            "x": 0.7,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "お姉さん",
+            "text": "一人で来たの？"
+          },
+          {
+            "name": "ネムル",
+            "text": "うん、ちょっと歩き疲れて"
+          },
+          {
+            "name": "お姉さん",
+            "text": "そう"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "お姉さん",
+            "text": "ねえ、"
+          },
+          {
+            "name": "お姉さん",
+            "text": "海の向こう、行ったことある？"
+          },
+          {
+            "name": "ネムル",
+            "text": "え、ないよ"
+          },
+          {
+            "name": "ネムル",
+            "text": "そんな遠いところ…、\nきっと一生行かないんだと思う"
+          },
+          {
+            "name": "お姉さん",
+            "text": "そうだよね\n遠いよね、とっても"
+          },
+          {
+            "name": "ネムル",
+            "text": "行ってみたいの？"
+          },
+          {
+            "name": "お姉さん",
+            "text": "うん"
+          },
+          {
+            "name": "お姉さん",
+            "text": "行きたい"
+          },
+          {
+            "name": "ネムル",
+            "text": "船とか、で行くのかな……"
+          },
+          {
+            "name": "お姉さん",
+            "text": "うーん、"
+          },
+          {
+            "name": "お姉さん",
+            "text": "普通の人は難しいかな、きっと"
+          },
+          {
+            "name": "ネムル",
+            "text": "そうなんだ"
+          },
+          {
+            "name": "お姉さん",
+            "text": "空を飛んで行けたらいいのに"
+          },
+          {
+            "name": "ネムル",
+            "text": "そんなことできないよ"
+          },
+          {
+            "name": "お姉さん",
+            "text": "そうかな"
+          },
+          {
+            "name": "お姉さん",
+            "text": "昔の人はできたみたいだよ"
+          },
+          {
+            "name": "ネムル",
+            "text": "昔の人……"
+          },
+          {
+            "name": "ネムル",
+            "text": "みんな魔法が使えたんだよね、確か"
+          },
+          {
+            "name": "お姉さん",
+            "text": "そうだよ"
+          },
+          {
+            "name": "お姉さん",
+            "text": "いいよね"
+          },
+          {
+            "name": "お姉さん",
+            "text": "遠くに行っちゃった人にも会いに行けるんだから"
+          },
+          {
+            "name": "ネムル",
+            "text": "遠くに行っちゃった人か……"
+          },
+          {
+            "name": "お姉さん",
+            "text": "見て、このコンパス"
+          },
+          {
+            "name": "",
+            "text": "女性は古びたコンパスをネムルに見せた"
+          },
+          {
+            "name": "お姉さん",
+            "text": "これ、昔作られた魔法道具"
+          },
+          {
+            "name": "ネムル",
+            "text": "普通のコンパスとは違うの？"
+          },
+          {
+            "name": "お姉さん",
+            "text": "うん"
+          },
+          {
+            "name": "お姉さん",
+            "text": "これはね、北じゃなくて、持ち主の想い人の方向を指すんだ"
+          },
+          {
+            "name": "ネムル",
+            "text": "え、すごい"
+          },
+          {
+            "name": "お姉さん",
+            "text": "すごいでしょ"
+          },
+          {
+            "name": "お姉さん",
+            "text": "私の恋人がね、くれたの"
+          },
+          {
+            "name": "お姉さん",
+            "text": "彼はしばらくの間遠くに行かないといけなくなって、"
+          },
+          {
+            "name": "お姉さん",
+            "text": "遠くにいても分かるようにって…くれたんだ"
+          },
+          {
+            "name": "ネムル",
+            "text": "そうなんだ"
+          },
+          {
+            "name": "ネムル",
+            "text": "海の向こうを指して…、"
+          },
+          {
+            "name": "ネムル",
+            "text": "だから海の向こうに行きたかったんだね"
+          },
+          {
+            "name": "お姉さん",
+            "text": "でもね、きっともうだめなの"
+          },
+          {
+            "name": "ネムル",
+            "text": "どうして？"
+          },
+          {
+            "name": "お姉さん",
+            "text": "しばらくの間は、毎日針が少しずつ動いていて、"
+          },
+          {
+            "name": "お姉さん",
+            "text": "彼が海の向こうで頑張っているのが分かって…、"
+          },
+          {
+            "name": "お姉さん",
+            "text": "私も頑張ろうって思えていたんだ"
+          },
+          {
+            "name": "お姉さん",
+            "text": "でも……、"
+          },
+          {
+            "name": "お姉さん",
+            "text": "動かなくなったの……"
+          },
+          {
+            "name": "お姉さん",
+            "text": "少しも…、もう、動かない……"
+          },
+          {
+            "name": "ネムル",
+            "text": "………"
+          },
+          {
+            "name": "ネムル",
+            "text": "壊れちゃったの、かな……"
+          },
+          {
+            "name": "",
+            "text": "女性は悲しげに首を横に振った"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "お姉さん",
+            "text": "ごめんね、暗い話しちゃって"
+          },
+          {
+            "name": "お姉さん",
+            "text": "あなたは、恋人はいる？"
+          },
+          {
+            "name": "ネムル",
+            "text": "え…、いないよ"
+          },
+          {
+            "name": "ネムル",
+            "text": "ニーナはいるけど、"
+          },
+          {
+            "name": "ネムル",
+            "text": "好きだけど、"
+          },
+          {
+            "name": "ネムル",
+            "text": "違うと思う"
+          },
+          {
+            "name": "お姉さん",
+            "text": "そうなんだ"
+          },
+          {
+            "name": "ネムル",
+            "text": "分かんない"
+          },
+          {
+            "name": "お姉さん",
+            "text": "分からないなら…、"
+          },
+          {
+            "name": "お姉さん",
+            "text": "手をつないだり、"
+          },
+          {
+            "name": "お姉さん",
+            "text": "キスしたりしたいって思う？"
+          },
+          {
+            "name": "ネムル",
+            "text": "え…、"
+          },
+          {
+            "name": "ネムル",
+            "text": "そういうのは…、"
+          },
+          {
+            "name": "ネムル",
+            "text": "ニーナとは…、"
+          },
+          {
+            "name": "ネムル",
+            "text": "してみたいかな"
+          },
+          {
+            "name": "お姉さん",
+            "text": "そうなんだね"
+          },
+          {
+            "name": "ネムル",
+            "text": "でも、ニーナは違うと思う"
+          },
+          {
+            "name": "ネムル",
+            "text": "大事に思ってくれてると思うけど……"
+          },
+          {
+            "name": "ネムル",
+            "text": "それは私が頼りなくて、可哀想だからで……"
+          },
+          {
+            "name": "お姉さん",
+            "text": "そっか"
+          },
+          {
+            "name": "お姉さん",
+            "text": "でもね"
+          },
+          {
+            "name": "お姉さん",
+            "text": "自分で決めちゃだめだよ"
+          },
+          {
+            "name": "ネムル",
+            "text": "？"
+          },
+          {
+            "name": "お姉さん",
+            "text": "ニーナちゃんの気持ち"
+          },
+          {
+            "name": "お姉さん",
+            "text": "あなたの想像だけで決めちゃだめってこと"
+          },
+          {
+            "name": "ネムル",
+            "text": "うん"
+          },
+          {
+            "name": "ネムル",
+            "text": "分かった"
+          },
+          {
+            "name": "お姉さん",
+            "text": "それに…、"
+          },
+          {
+            "name": "お姉さん",
+            "text": "ある日突然、会えなくなっちゃうかもしれないんだから"
+          },
+          {
+            "name": "ネムル",
+            "text": ""
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "お姉さん",
+            "text": ""
           }
         ]
       }
