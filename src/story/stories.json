@@ -1744,6 +1744,276 @@
       {
         "type": "background",
         "image": "bg/market"
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 1000
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.3,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "ついた…"
+          },
+          {
+            "name": "ネムル",
+            "text": "市場、すごく久しぶりに来たな"
+          },
+          {
+            "name": "ネムル",
+            "text": "ええと、食べ物は、"
+          },
+          {
+            "name": "ネムル",
+            "text": "どこで買うのがいいかな…"
+          },
+          {
+            "name": "ネムル",
+            "text": "ニーナはいつもどのお店で買ってるのかな…"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.3,
+            "facing": "right"
+          },
+          {
+            "image": "chara/aunt",
+            "x": 1.2,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.3,
+            "facing": "right"
+          },
+          {
+            "image": "chara/aunt",
+            "x": 0.7,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "あ、"
+          },
+          {
+            "name": "おばさん",
+            "text": "あら、あなたは、"
+          },
+          {
+            "name": "おばさん",
+            "text": "ニーナちゃんと一緒に住んでる子ね"
+          },
+          {
+            "name": "ネムル",
+            "text": "ええと、お向かいの…、こんばんは"
+          },
+          {
+            "name": "おばさん",
+            "text": "今日は珍しいのね"
+          },
+          {
+            "name": "おばさん",
+            "text": "何かあったの？"
+          },
+          {
+            "name": "おばさん",
+            "text": "ほら、いつも市場ではニーナちゃんのほうしか見かけないから"
+          },
+          {
+            "name": "ネムル",
+            "text": "あ、ええと、ニーナは急なおでかけみたいで"
+          },
+          {
+            "name": "おばさん",
+            "text": "そうなのね"
+          },
+          {
+            "name": "ネムル",
+            "text": "あの、"
+          },
+          {
+            "name": "ネムル",
+            "text": "ニーナはいつもどこのお店で買い物をしてましたか？"
+          },
+          {
+            "name": "おばさん",
+            "text": "ああ、そうね、よくあそこの露店で買い物していたわ"
+          },
+          {
+            "name": "おばさん",
+            "text": "ほら、あのボロちゃんがいるお店"
+          },
+          {
+            "name": "ネムル",
+            "text": "ボロ？"
+          },
+          {
+            "name": "おばさん",
+            "text": "あそこのお店の前でお利口に座っている茶色の犬よ"
+          },
+          {
+            "name": "おばさん",
+            "text": "ニーナちゃん、いつもボロにパンの切れ端なんかあげていたから間違いないわ"
+          },
+          {
+            "name": "ネムル",
+            "text": "なるほど、ありがとうございます"
+          },
+          {
+            "name": "ネムル",
+            "text": "じゃあ、そこのお店に行ってみます"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 500
+      },
+      {
+        "type": "function",
+        "function": "早送り停止"
+      }
+    ]
+  },
+  {
+    "title": "行商の青年",
+    "list": [
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 0
+      },
+      {
+        "type": "background",
+        "image": "bg/stall"
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.1,
+            "facing": "right"
+          },
+          {
+            "image": "chara/trader",
+            "x": 0.5,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "このお店だ"
+          },
+          {
+            "name": "ネムル",
+            "text": "ボロもいる"
+          },
+          {
+            "name": "ネムル",
+            "text": "あの人のうしろに並べばいいかな"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.2,
+            "facing": "right"
+          },
+          {
+            "image": "chara/trader",
+            "x": 0.5,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.2,
+            "facing": "right"
+          },
+          {
+            "image": "chara/trader",
+            "x": 0.5,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "あ、すみません、こんばんは…"
+          },
+          {
+            "name": "青年",
+            "text": "やあ、"
+          },
+          {
+            "name": "青年",
+            "text": "君は買い物？それとも何か売りに来たのかい？"
+          },
+          {
+            "name": "ネムル",
+            "text": "ええと、食べ物を買い物に…"
+          }
+        ]
       }
     ]
   }

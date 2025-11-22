@@ -4,6 +4,7 @@ export default [
   { name: 'ニーナ' },
   { name: 'ライベル' },
   { name: 'ウルフリック' },
+  { name: 'おばさん' },
   { name: '青年' },
   { name: '店主' },
   { name: '衛兵' },
