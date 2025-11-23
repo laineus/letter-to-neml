@@ -1,5 +1,5 @@
 import { computed, reactive } from 'vue'
-import type { Story } from '../story/types'
+import type { Story, StoryItem } from '../story/types'
 
 export const useStoryPlayer = (stories: Story[]) => {
   const state = reactive({
@@ -19,15 +19,19 @@ export const useStoryPlayer = (stories: Story[]) => {
   const activeStoryItems = computed(() => {
     return story.value.list.slice(0, state.storyItemIndex + 1)
   })
-  const currentBackground = computed(() => {
-    return activeStoryItems.value.slice(0).reverse().find(v => v.type === 'background')
-  })
-  const currentSpeakers = computed(() => {
-    return activeStoryItems.value.slice(0).reverse().find(v => v.type === 'speakers')
-  })
-  const currentFade = computed(() => {
-    return activeStoryItems.value.slice(0).reverse().find(v => v.type === 'fade')
-  })
+  type StoryItemByType<T extends StoryItem['type']> = Extract<StoryItem, { type: T }>
+  const findLastRow = <T extends StoryItem['type']>(type: T) => {
+    return activeStoryItems.value.slice(0).reverse().reduce((result, v) => {
+      if (result.background) return result
+      if (v.type === 'if') result.ifCnt = Math.max(0, result.ifCnt - 1)
+      if (v.type === 'endIf') result.ifCnt++
+      if (result.ifCnt === 0 && v.type === type) result.background = v as StoryItemByType<T>
+      return result
+    }, { ifCnt:0, background: undefined as undefined | StoryItemByType<T> } ).background
+  }
+  const currentBackground = computed(() => findLastRow('background'))
+  const currentSpeakers = computed(() => findLastRow('speakers'))
+  const currentFade = computed(() => findLastRow('fade'))
   const next = (testIf: (v: string) => boolean) => {
     if (currentMessages.value && state.messageIndex < currentMessages.value.list.length - 1) {
       state.messageIndex++

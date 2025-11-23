@@ -39,7 +39,7 @@ const addItem = (index: number, type: typeof itemTypes[number]) => {
       newItem.value = { type: 'background', image: '' }
       break
     case 'speakers':
-      const prevSpeakers = props.story.list.slice(0, index).reverse().find(item => item.type === 'speakers')
+      const prevSpeakers = storyPlayer.currentSpeakers
       newItem.value = { type: 'speakers', list: prevSpeakers?.list.map(speaker => ({ ...speaker })) || [] }
       break
     case 'messages':

@@ -39,6 +39,7 @@ const type = computed<'if' | 'endIf'>({
 .if-item {
 }
 input {
+  margin-top: 10px;
   width: 100%;
 }
 </style>

@@ -2882,6 +2882,90 @@
         "duration": 500
       },
       {
+        "type": "if",
+        "if": ""
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "（そういえばニーナが\"\"って）"
+          },
+          {
+            "name": "ネムル",
+            "text": "あの、材料ってもしかしてこれですか？"
+          },
+          {
+            "name": "",
+            "text": "ネムルは医者にカスラの実を見せた"
+          },
+          {
+            "name": "医者",
+            "text": "おお、君よくそれを手に入れたね"
+          },
+          {
+            "name": "医者",
+            "text": "そうそうそれ、カスラの実があれば作れるんだ"
+          },
+          {
+            "name": "医者",
+            "text": "それじゃあ材料を代金代わりに薬を作っていいね？"
+          },
+          {
+            "name": "ネムル",
+            "text": "お願いします"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 500
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "",
+            "text": "ネムルは悪夢予防薬と精神安定剤を受け取った"
+          },
+          {
+            "name": "ネムル",
+            "text": "ありがとうございます"
+          },
+          {
+            "name": "医者",
+            "text": "こちらこそ、ありがとう"
+          },
+          {
+            "name": "医者",
+            "text": "また無くなってきたら早めに買いに来るんだよ"
+          },
+          {
+            "name": "医者",
+            "text": "それじゃあ、気をつけて帰ってね"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 1000
+      },
+      {
+        "type": "function",
+        "function": "シーン終了"
+      },
+      {
+        "type": "endIf"
+      },
+      {
         "type": "messages",
         "list": [
           {
@@ -2949,7 +3033,7 @@
       },
       {
         "type": "if",
-        "if": ""
+        "if": "カラフルな薬を飲む"
       },
       {
         "type": "speakers",
@@ -3064,7 +3148,7 @@
       },
       {
         "type": "if",
-        "if": ""
+        "if": "カラフルな薬を飲まない"
       },
       {
         "type": "messages",
@@ -3545,7 +3629,660 @@
           {
             "name": "お姉さん",
             "text": "そっか"
+          }
+        ]
+      },
+      {
+        "type": "if",
+        "if": "お姉さんに精神安定剤をあげない"
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "お姉さん",
+            "text": "それってつらいね"
           },
+          {
+            "name": "ネムル",
+            "text": "つらい？"
+          },
+          {
+            "name": "お姉さん",
+            "text": "うん、だって自分だけその人のこと特別に感じてるんでしょ？"
+          },
+          {
+            "name": "お姉さん",
+            "text": "その人はそうじゃないのに"
+          },
+          {
+            "name": "お姉さん",
+            "text": "それってとても悲しいよ"
+          },
+          {
+            "name": "ネムル",
+            "text": "え"
+          },
+          {
+            "name": "ネムル",
+            "text": "そう、なのかな"
+          },
+          {
+            "name": "お姉さん",
+            "text": "絶対そうだよ"
+          },
+          {
+            "name": "お姉さん",
+            "text": "あなたは、かわいそう"
+          },
+          {
+            "name": "お姉さん",
+            "text": "一緒に過ごしていても、心はすれ違っていて"
+          },
+          {
+            "name": "お姉さん",
+            "text": "あなたは、独りぼっち"
+          },
+          {
+            "name": "ネムル",
+            "text": "私は…、ひとり……"
+          },
+          {
+            "name": "お姉さん",
+            "text": "でも大丈夫だよ"
+          },
+          {
+            "name": "お姉さん",
+            "text": "私も、独りぼっちだから"
+          },
+          {
+            "name": "お姉さん",
+            "text": "どうせ独りなら、世界にいなくても……"
+          },
+          {
+            "name": "ネムル",
+            "text": "……"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.3,
+            "facing": "right"
+          },
+          {
+            "image": "chara/ceryth",
+            "x": 0.65,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "お姉さん",
+            "text": "ねえ、あなたは泳げる？"
+          },
+          {
+            "name": "ネムル",
+            "text": "ううん、泳げないよ"
+          },
+          {
+            "name": "ネムル",
+            "text": "試したこともない"
+          },
+          {
+            "name": "お姉さん",
+            "text": "そっか"
+          },
+          {
+            "name": "お姉さん",
+            "text": "じゃあちょっとだけ海に入ってみようよ"
+          },
+          {
+            "name": "ネムル",
+            "text": "え、でも"
+          },
+          {
+            "name": "お姉さん",
+            "text": "大丈夫だよ、足をつけるとひんやりして気持ちいいんだよ"
+          },
+          {
+            "name": "ネムル",
+            "text": "そうなの？"
+          },
+          {
+            "name": "お姉さん",
+            "text": "うん、冷たい波が足を何度もなでて、なんだか心が安らかになってくるの"
+          },
+          {
+            "name": "ネムル",
+            "text": "そうなんだ"
+          },
+          {
+            "name": "お姉さん",
+            "text": "じゃあ、行こう？"
+          },
+          {
+            "name": "お姉さん",
+            "text": "しっかり手をつないでいてあげるから、大丈夫だよ"
+          },
+          {
+            "name": "",
+            "text": "女性は微笑みながらネムルに手を差し出した"
+          },
+          {
+            "name": "ネムル",
+            "text": "（ちょっと怖いけど、試してみようかな）"
+          }
+        ]
+      },
+      {
+        "type": "if",
+        "if": "お姉さんと海に入らない"
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "（あ、でもニーナが\"{ref:}\"って言ってた）"
+          },
+          {
+            "name": "ネムル",
+            "text": "私は、やめておこうかな"
+          },
+          {
+            "name": "お姉さん",
+            "text": "え、どうして？\nとっても気持ちいいよ？"
+          },
+          {
+            "name": "ネムル",
+            "text": "うーん、でも、やめておく"
+          },
+          {
+            "name": "お姉さん",
+            "text": "そっか……"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.3,
+            "facing": "right"
+          },
+          {
+            "image": "chara/ceryth",
+            "x": 0.65,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "私、もう帰らなくちゃ"
+          },
+          {
+            "name": "お姉さん",
+            "text": "……"
+          },
+          {
+            "name": "ネムル",
+            "text": "またね"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.1,
+            "facing": "left"
+          },
+          {
+            "image": "chara/ceryth",
+            "x": 0.65,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.1,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 500
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.1,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "あれ？"
+          },
+          {
+            "name": "",
+            "text": "ふと振り返った浜辺には誰も居なくなっていた"
+          },
+          {
+            "name": "ネムル",
+            "text": "お姉さんももう帰ったのかな"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 1000
+      },
+      {
+        "type": "function",
+        "function": "早送り停止"
+      },
+      {
+        "type": "function",
+        "function": "シーン終了"
+      },
+      {
+        "type": "endIf"
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "じゃあ、少しだけ……"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.4,
+            "facing": "right"
+          },
+          {
+            "image": "chara/ceryth",
+            "x": 0.6,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.45,
+            "facing": "right"
+          },
+          {
+            "image": "chara/ceryth",
+            "x": 0.55,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "",
+            "text": "女性はネムルの手を握りながら海に足を入れた"
+          },
+          {
+            "name": "お姉さん",
+            "text": "どう？"
+          },
+          {
+            "name": "ネムル",
+            "text": "冷たい"
+          },
+          {
+            "name": "ネムル",
+            "text": "冷たくて、ちょっと気持ちいい"
+          },
+          {
+            "name": "お姉さん",
+            "text": "でしょ？"
+          },
+          {
+            "name": "お姉さん",
+            "text": "もうちょっと進んでみよう"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.5,
+            "facing": "right"
+          },
+          {
+            "image": "chara/ceryth",
+            "x": 0.6,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "",
+            "text": "海水がよりネムルの足をより力強く押した"
+          },
+          {
+            "name": "ネムル",
+            "text": "ちょっと、怖いかも"
+          },
+          {
+            "name": "お姉さん",
+            "text": "……"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.55,
+            "facing": "right"
+          },
+          {
+            "image": "chara/ceryth",
+            "x": 0.65,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "え、ねえ、もう戻ろう"
+          },
+          {
+            "name": "ネムル",
+            "text": "転んじゃいそうだよ"
+          },
+          {
+            "name": "お姉さん",
+            "text": "……"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.6,
+            "facing": "right"
+          },
+          {
+            "image": "chara/ceryth",
+            "x": 0.7,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "ねえ！"
+          },
+          {
+            "name": "お姉さん",
+            "text": "……"
+          },
+          {
+            "name": "ネムル",
+            "text": "いや！もう離して！"
+          },
+          {
+            "name": "",
+            "text": "女性はネムルの手首を強く引き、深みに進んでいった"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.65,
+            "facing": "right"
+          },
+          {
+            "image": "chara/ceryth",
+            "x": 0.75,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.7,
+            "facing": "right"
+          },
+          {
+            "image": "chara/ceryth",
+            "x": 0.8,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "やめて！！溺れちゃう！！"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 250
+      },
+      {
+        "type": "speakers",
+        "list": []
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 250
+      },
+      {
+        "type": "endIf"
+      },
+      {
+        "type": "if",
+        "if": "お姉さんに精神安定剤をあげる"
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "お姉さん",
+            "text": "ところで、あなた薬屋に行っていたの？"
+          },
+          {
+            "name": "ネムル",
+            "text": "あ、うん、"
+          },
+          {
+            "name": "ネムル",
+            "text": "これ、買いに"
+          },
+          {
+            "name": "お姉さん",
+            "text": "悪夢予防薬…？"
+          },
+          {
+            "name": "お姉さん",
+            "text": "怖い夢を見ちゃうの？"
+          },
+          {
+            "name": "ネムル",
+            "text": "うーん、もし悪夢を見ちゃったら、\nなんというか、世界中のみんなに迷惑をかけちゃう、みたいな…"
+          },
+          {
+            "name": "お姉さん",
+            "text": "それって…、ノクタリアンってこと？"
+          },
+          {
+            "name": "ネムル",
+            "text": "うん"
+          },
+          {
+            "name": "ネムル",
+            "text": "いつも人には言わないようにしてるんだけど…"
+          },
+          {
+            "name": "お姉さん",
+            "text": "そうなんだ"
+          },
+          {
+            "name": "お姉さん",
+            "text": "気にしなくていいよ"
+          },
+          {
+            "name": "お姉さん",
+            "text": "大変なんだね"
+          },
+          {
+            "name": "お姉さん",
+            "text": "ところでそっちは、精神安定剤？"
+          },
+          {
+            "name": "ネムル",
+            "text": "うん"
+          },
+          {
+            "name": "お姉さん",
+            "text": "どこに売っていたの？"
+          },
+          {
+            "name": "お姉さん",
+            "text": "私も今日買いたかったんだけど、売り切れって言われちゃったから"
+          },
+          {
+            "name": "ネムル",
+            "text": "あ、これ、\nたまたま材料があって作ってもらえたの"
+          },
+          {
+            "name": "ネムル",
+            "text": "よかったらお姉さんにも分けてあげるよ"
+          },
+          {
+            "name": "お姉さん",
+            "text": "え、いいの？"
+          },
+          {
+            "name": "ネムル",
+            "text": "うん、どうぞ"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 250
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 250
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "",
+            "text": "ネムルは女性が持っていた空き瓶に薬を半分移し替えた"
+          },
+          {
+            "name": "お姉さん",
+            "text": "ほんとにありがとう"
+          },
+          {
+            "name": "お姉さん",
+            "text": "困っていたから"
+          },
+          {
+            "name": "お姉さん",
+            "text": "これがあるって分かっただけで気持ちも落ち着いてきたよ"
+          },
+          {
+            "name": "ネムル",
+            "text": "よかった"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
           {
             "name": "お姉さん",
             "text": "でもね"
@@ -3593,13 +4330,7 @@
         "duration": 500
       },
       {
-        "type": "messages",
-        "list": [
-          {
-            "name": "お姉さん",
-            "text": ""
-          }
-        ]
+        "type": "endIf"
       }
     ]
   }
