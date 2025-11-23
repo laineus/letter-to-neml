@@ -2678,6 +2678,227 @@
       },
       {
         "type": "endIf"
+      },
+      {
+        "type": "if",
+        "if": "ボロがカスラの実を吐き出す"
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "ええと、その……"
+          },
+          {
+            "name": "",
+            "text": "ネムルが困っていると、店先に座っていたボロがネムルに反応した"
+          },
+          {
+            "name": "ネムル",
+            "text": "え！なに？"
+          },
+          {
+            "name": "店主",
+            "text": "おい、ボロ！待ちやがれ！"
+          },
+          {
+            "name": "",
+            "text": "ボロはネムルのバッグに鼻を押し付けて匂いを嗅いでいる"
+          },
+          {
+            "name": "ネムル",
+            "text": "あ、バゲットが欲しいのかな"
+          },
+          {
+            "name": "ネムル",
+            "text": "あげるよ、どうぞ"
+          },
+          {
+            "name": "店主",
+            "text": "お、おい！"
+          },
+          {
+            "name": "",
+            "text": "ネムルがバゲットの切れ端をボロに差し出すと、それを食べようとしたボロの口からカスラの実が落下した"
+          },
+          {
+            "name": "ネムル",
+            "text": "！！"
+          },
+          {
+            "name": "青年",
+            "text": "あ！それは！！"
+          },
+          {
+            "name": "店主",
+            "text": "な、なんだ、ボロの野郎、お前が隠してやがったのか、ハハ"
+          },
+          {
+            "name": "青年",
+            "text": "あんた、その犬を利用して僕を騙そうとしたな"
+          },
+          {
+            "name": "店主",
+            "text": "ち、違う！\nそんなことはしてねえ！"
+          },
+          {
+            "name": "店主",
+            "text": "ほら、ペットとはいえ動物のやったことだ\n俺のせいじゃねえ"
+          },
+          {
+            "name": "衛兵",
+            "text": "ううむ"
+          },
+          {
+            "name": "衛兵",
+            "text": "意図したことは分からぬが、ペットの悪事は飼い主の責任"
+          },
+          {
+            "name": "店主",
+            "text": "待ってくれよ……"
+          },
+          {
+            "name": "衛兵",
+            "text": "おい行商、この店主にどのような処罰を望む？"
+          },
+          {
+            "name": "青年",
+            "text": "疑いが晴れたからよかったとはいえ……"
+          },
+          {
+            "name": "青年",
+            "text": "よし、じゃあ騙そうとした分のカスラの実は返してくれ"
+          },
+          {
+            "name": "青年",
+            "text": "10個分の売上金はそのままもらうよ"
+          },
+          {
+            "name": "青年",
+            "text": "他の処罰は望まないけど、もうこんなことは誰にもしないでくれ"
+          },
+          {
+            "name": "衛兵",
+            "text": "いいだろう"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "衛兵",
+            "text": "よし、この青年の要望の通りカスラの実を返却しろ"
+          },
+          {
+            "name": "衛兵",
+            "text": "この処罰は重いとは言えないぞ"
+          },
+          {
+            "name": "店主",
+            "text": "く……"
+          },
+          {
+            "name": "店主",
+            "text": "ああ、分かったよ"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "",
+            "text": "5つのカスラの実は青年に返却された"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "青年",
+            "text": "ねえ君、これはお礼だ、受け取ってくれ"
+          },
+          {
+            "name": "青年",
+            "text": "さっきも言ったように、これはカスラの実といって貴重なものだ"
+          },
+          {
+            "name": "ネムル",
+            "text": "え、私は何も……"
+          },
+          {
+            "name": "青年",
+            "text": "いや、君がいなかった僕はまずいことになっていたかもしれない"
+          },
+          {
+            "name": "青年",
+            "text": "だからもらってくれ"
+          },
+          {
+            "name": "ネムル",
+            "text": "分かった…"
+          },
+          {
+            "name": "",
+            "text": "ネムルはカスラの実を受け取った\nボロのヨダレでちょっと湿っている…！"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 500
+      },
+      {
+        "type": "background",
+        "image": "bg/market"
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.35,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "市場ってああいうこともあるんだ……"
+          },
+          {
+            "name": "ネムル",
+            "text": "ちょっと怖かったな"
+          },
+          {
+            "name": "ネムル",
+            "text": "でも食べ物も買えたし、次は薬屋さんに向かおう"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 1000
+      },
+      {
+        "type": "function",
+        "function": "早送り停止"
+      },
+      {
+        "type": "endIf"
       }
     ]
   },
@@ -4277,8 +4498,153 @@
           {
             "name": "ネムル",
             "text": "よかった"
+          },
+          {
+            "name": "お姉さん",
+            "text": "これを飲んだって、ほんとの意味では何も解決しないんだけど、"
+          },
+          {
+            "name": "お姉さん",
+            "text": "解決するまでに使える時間は増えるでしょ"
+          },
+          {
+            "name": "ネムル",
+            "text": "そうだね"
+          },
+          {
+            "name": "お姉さん",
+            "text": "ねえ、お礼にこれ"
+          },
+          {
+            "name": "",
+            "text": "女性は魔法のコンパスを差し出した"
+          },
+          {
+            "name": "お姉さん",
+            "text": "あなたにあげる"
+          },
+          {
+            "name": "ネムル",
+            "text": "え、大事なものでしょ？"
+          },
+          {
+            "name": "お姉さん",
+            "text": "そうだったんだけど、今これが必要なのはあなたな気がするの"
+          },
+          {
+            "name": "お姉さん",
+            "text": "それに、この動かない針を見ていると悲しい気持ちになるし……"
+          },
+          {
+            "name": "お姉さん",
+            "text": "だから、もらって"
+          },
+          {
+            "name": "ネムル",
+            "text": "うん、分かった"
           }
         ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.3,
+            "facing": "right"
+          },
+          {
+            "image": "chara/ceryth",
+            "x": 0.65,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.3,
+            "facing": "right"
+          },
+          {
+            "image": "chara/ceryth",
+            "x": 0.7,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "ありがとう"
+          },
+          {
+            "name": "お姉さん",
+            "text": "どう？"
+          },
+          {
+            "name": "お姉さん",
+            "text": "針は何かを指してる？"
+          },
+          {
+            "name": "ネムル",
+            "text": "あ、うん"
+          },
+          {
+            "name": "ネムル",
+            "text": "さっきとは違う方向を指しているみたい"
+          },
+          {
+            "name": "お姉さん",
+            "text": "よかった"
+          },
+          {
+            "name": "お姉さん",
+            "text": "それがあなたの役に立ってくれたら嬉しいな"
+          },
+          {
+            "name": "ネムル",
+            "text": "うん、\nなんだかニーナの存在がちょっと感じられて……、いいね、これ"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "お姉さん",
+            "text": "さて、そろそろ帰ろうかな"
+          },
+          {
+            "name": "ネムル",
+            "text": "あ、うん、\n私も帰るね"
+          },
+          {
+            "name": "ネムル",
+            "text": "ありがとう"
+          },
+          {
+            "name": "お姉さん",
+            "text": "こちらこそだよ\nありがとう"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 1000
+      },
+      {
+        "type": "function",
+        "function": "早送り停止"
       },
       {
         "type": "messages",
@@ -4331,6 +4697,789 @@
       },
       {
         "type": "endIf"
+      }
+    ]
+  },
+  {
+    "title": "帰宅",
+    "list": [
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 0
+      },
+      {
+        "type": "background",
+        "image": "bg/home"
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.8,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 1000
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "ただいま"
+          },
+          {
+            "name": "ネムル",
+            "text": "あれ、ライベルがいない"
+          },
+          {
+            "name": "ネムル",
+            "text": "結構時間かかっちゃったから、もう帰ったのかな"
+          },
+          {
+            "name": "ネムル",
+            "text": "まあいいか"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.6,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "せっかく買ってきたし\nご飯にしようかな"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.4,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "一人で食べるのって、なんだか寂しいな"
+          },
+          {
+            "name": "ネムル",
+            "text": "ニーナ、元気にしてるかな"
+          },
+          {
+            "name": "ネムル",
+            "text": "会いたいよ"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 1000
+      },
+      {
+        "type": "function",
+        "function": "早送り停止"
+      }
+    ]
+  },
+  {
+    "title": "ライベルの再訪",
+    "list": [
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 0
+      },
+      {
+        "type": "background",
+        "image": "bg/home"
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.4,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 1000
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "",
+            "text": "玄関のドアをノックする音が部屋に響き渡った"
+          },
+          {
+            "name": "ネムル",
+            "text": "え？"
+          },
+          {
+            "name": "ネムル",
+            "text": "誰だろう……"
+          },
+          {
+            "name": "ネムル",
+            "text": "また、強盗……、じゃないよね？"
+          },
+          {
+            "name": "ライベル",
+            "text": "おいネムル、俺だ"
+          },
+          {
+            "name": "ネムル",
+            "text": "あ、ライベル、\n今開けるね"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.55,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ライベル",
+            "text": "いや、待て"
+          },
+          {
+            "name": "ライベル",
+            "text": "開けなくて大丈夫だ"
+          },
+          {
+            "name": "ネムル",
+            "text": "？"
+          },
+          {
+            "name": "ネムル",
+            "text": "どうしたの？"
+          },
+          {
+            "name": "ライベル",
+            "text": "ちょっと様子を見に寄っただけだ"
+          },
+          {
+            "name": "ライベル",
+            "text": "だから開けなくて大丈夫だ"
+          },
+          {
+            "name": "ネムル",
+            "text": "え、うん、\n分かった"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ライベル",
+            "text": "買い物は、大丈夫だったか？"
+          },
+          {
+            "name": "ネムル",
+            "text": "うん、なんとか、\n大丈夫だったよ"
+          },
+          {
+            "name": "ライベル",
+            "text": "そうか"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ライベル",
+            "text": "ネムル、"
+          },
+          {
+            "name": "ネムル",
+            "text": "？"
+          },
+          {
+            "name": "ライベル",
+            "text": "お前は、幸せか？"
+          },
+          {
+            "name": "ネムル",
+            "text": "え？\nうーん"
+          },
+          {
+            "name": "ネムル",
+            "text": "そうかな"
+          },
+          {
+            "name": "ネムル",
+            "text": "ニーナと一緒に暮らせているだけで、幸せ、かな"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ライベル",
+            "text": "そうか……"
+          },
+          {
+            "name": "ネムル",
+            "text": "どうしてそんなこと聞くの？"
+          },
+          {
+            "name": "ライベル",
+            "text": "気にすんな"
+          },
+          {
+            "name": "ライベル",
+            "text": "とにかく、あれだ"
+          },
+          {
+            "name": "ライベル",
+            "text": "強く生きろよ"
+          },
+          {
+            "name": "ネムル",
+            "text": "え、うん"
+          },
+          {
+            "name": "ライベル",
+            "text": "そんじゃあ帰るわ"
+          },
+          {
+            "name": "ネムル",
+            "text": "え、帰るの？"
+          },
+          {
+            "name": "ネムル",
+            "text": "食べ物も買ってきたよ"
+          },
+          {
+            "name": "ライベル",
+            "text": "あー、悪いな\nまた明日にでももらいに来るよ"
+          },
+          {
+            "name": "ネムル",
+            "text": "分かった"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.4,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "何だったんだろう"
+          },
+          {
+            "name": "ネムル",
+            "text": "なんだかちょっと怪しかったな"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 1000
+      },
+      {
+        "type": "function",
+        "function": "早送り停止"
+      }
+    ]
+  },
+  {
+    "title": "ニーナの訪問",
+    "list": []
+  },
+  {
+    "title": "助けを呼ぶ子供",
+    "list": [
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 0
+      },
+      {
+        "type": "background",
+        "image": "bg/home"
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.4,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 1000
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "",
+            "text": "外から子供が泣いているような声が聞こえている"
+          },
+          {
+            "name": "ネムル",
+            "text": "こんどは、子供の泣き声……？"
+          },
+          {
+            "name": "ネムル",
+            "text": "今日は色々なことが起きるな"
+          },
+          {
+            "name": "ネムル",
+            "text": "どうしよう……"
+          },
+          {
+            "name": "ネムル",
+            "text": "強盗のこともあるし、\nさっきのライベルも怪しかったし"
+          },
+          {
+            "name": "ネムル",
+            "text": "また何かに巻き込まれたら怖いな……"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 500
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "",
+            "text": "外からは相変わらず子供の泣き声が続いている"
+          },
+          {
+            "name": "ネムル",
+            "text": "ううーん、\nずっと放っておくのは、よくないよね"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.8,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "",
+            "text": "ネムルは外の様子をうかがった"
+          },
+          {
+            "name": "ネムル",
+            "text": "子供が一人で泣いていて、\n他には何も無さそう……"
+          },
+          {
+            "name": "ネムル",
+            "text": "……よし、話を聞きに行ってみよう"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 500
+      },
+      {
+        "type": "background",
+        "image": "bg/outfront"
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.1,
+            "facing": "right"
+          },
+          {
+            "image": "chara/korrin",
+            "x": 0.7,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "",
+            "text": "家の前の広場で子供が座り込んで泣いている"
+          },
+          {
+            "name": "ネムル",
+            "text": "ねえ、どうしたの？"
+          },
+          {
+            "name": "コリン",
+            "text": "うう……\n置いて行かれたんだ……"
+          },
+          {
+            "name": "ネムル",
+            "text": "ええと、迷子？"
+          },
+          {
+            "name": "コリン",
+            "text": "皆からはぐれて、気づいたら置いて行かちゃって……\nうぐ……うぇ…"
+          },
+          {
+            "name": "ネムル",
+            "text": "お家はどこか分かる？"
+          },
+          {
+            "name": "コリン",
+            "text": "山の方で、\n……遠くのほうで、一人じゃ帰れない……"
+          },
+          {
+            "name": "ネムル",
+            "text": "うーん、そうか"
+          },
+          {
+            "name": "コリン",
+            "text": "姉ちゃん……"
+          },
+          {
+            "name": "コリン",
+            "text": "連れてって……！"
+          },
+          {
+            "name": "ネムル",
+            "text": "うーん、\nそう、なるよね……"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 1000
+      },
+      {
+        "type": "function",
+        "function": "早送り停止"
+      }
+    ]
+  },
+  {
+    "title": "",
+    "list": [
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 0
+      },
+      {
+        "type": "background",
+        "image": "bg/forest1"
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.6,
+            "facing": "left"
+          },
+          {
+            "image": "chara/korrin",
+            "x": 0.2,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 1000
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.6,
+            "facing": "left"
+          },
+          {
+            "image": "chara/korrin",
+            "x": 0.2,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "コリン",
+            "text": "姉ちゃん、おせーぞ！"
+          },
+          {
+            "name": "",
+            "text": "すっかり泣き止んだコリンが森の中を楽しそうに歩いていく"
+          },
+          {
+            "name": "ネムル",
+            "text": "疲れた……"
+          },
+          {
+            "name": "ネムル",
+            "text": "あなたのおうち、すごく遠いね"
+          },
+          {
+            "name": "ネムル",
+            "text": "なんでこんな遠くまで来てたの？"
+          },
+          {
+            "name": "コリン",
+            "text": "とーちゃんたちの仕事だよ！"
+          },
+          {
+            "name": "コリン",
+            "text": "悪い奴らを倒してお金をもらうんだ"
+          },
+          {
+            "name": "ネムル",
+            "text": "悪い奴ら？"
+          },
+          {
+            "name": "コリン",
+            "text": "ああ、世の中には悪い奴らがたくさん居るってとーちゃんが言ってたぜ"
+          },
+          {
+            "name": "コリン",
+            "text": "お金や食べ物を独り占めしてるやつらとか"
+          },
+          {
+            "name": "コリン",
+            "text": "あとは魔女とかな"
+          },
+          {
+            "name": "ネムル",
+            "text": "魔女？\nそんなのいるの？"
+          },
+          {
+            "name": "コリン",
+            "text": "ああ、いるぜ"
+          },
+          {
+            "name": "コリン",
+            "text": "怖い夢の世界の出来事を、本当の世界にも起こしたりするんだ"
+          },
+          {
+            "name": "ネムル",
+            "text": "！！"
+          },
+          {
+            "name": "コリン",
+            "text": "怖いだろ？"
+          },
+          {
+            "name": "コリン",
+            "text": "昔そのせいで大きな洪水が起きて、俺たちの国が流されちゃったり、\nうちのじーちゃんやばーちゃんも死んじまったんだ"
+          },
+          {
+            "name": "ネムル",
+            "text": "え……"
+          },
+          {
+            "name": "コリン",
+            "text": "だから俺のとーちゃんはその魔女たちのことが大っ嫌いなんだ"
+          },
+          {
+            "name": "コリン",
+            "text": "見つけたら絶対にやっつけるんだぜ"
+          },
+          {
+            "name": "ネムル",
+            "text": "……そうなんだ"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.6,
+            "facing": "left"
+          },
+          {
+            "image": "chara/korrin",
+            "x": 0.2,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "コリン",
+            "text": "とーちゃん、俺がちゃんと馬車で待ってなかったから、先に帰っちゃったんだろうな……"
+          },
+          {
+            "name": "コリン",
+            "text": "帰ったら怒られるかな"
+          },
+          {
+            "name": "ネムル",
+            "text": "きっと大丈夫"
+          },
+          {
+            "name": "ネムル",
+            "text": "心配して待っていてくれてると思うから、早く行こう"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.6,
+            "facing": "left"
+          },
+          {
+            "image": "chara/korrin",
+            "x": 0.2,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "コリン",
+            "text": "そうだな！"
+          },
+          {
+            "name": "コリン",
+            "text": "とーちゃん、きっと晩飯作ってるはずだから、お礼に食っていってくれよ！"
+          },
+          {
+            "name": "ネムル",
+            "text": "ええと……うん……お腹空いてたらね"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 1000
+      },
+      {
+        "type": "function",
+        "function": "早送り停止"
       }
     ]
   }
