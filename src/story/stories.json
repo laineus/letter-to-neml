@@ -5248,6 +5248,10 @@
             "text": "うーん、そうか"
           },
           {
+            "name": "ネムル",
+            "text": "（見た感じカオティクスみたいだし、できれば関わりたくはないけど……）"
+          },
+          {
             "name": "コリン",
             "text": "姉ちゃん……"
           },
@@ -5488,6 +5492,177 @@
       {
         "type": "function",
         "function": "早送り停止"
+      }
+    ]
+  },
+  {
+    "title": "コリンの家",
+    "list": [
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 0
+      },
+      {
+        "type": "background",
+        "image": "bg/wulfric-home"
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.9,
+            "facing": "left"
+          },
+          {
+            "image": "chara/korrin",
+            "x": 0.6,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 1000
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "コリン",
+            "text": "やった！帰ってこれた！"
+          },
+          {
+            "name": "コリン",
+            "text": "歩くとすごく遠いんだな"
+          },
+          {
+            "name": "コリン",
+            "text": "いつもはとーちゃんたちの馬車であっという間なのに"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.9,
+            "facing": "left"
+          },
+          {
+            "image": "chara/korrin",
+            "x": 0.5,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "コリン",
+            "text": "ねーちゃん、ありがとな！"
+          },
+          {
+            "name": "ネムル",
+            "text": "うん……"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.9,
+            "facing": "left"
+          },
+          {
+            "image": "chara/korrin",
+            "x": 0.5,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "コリン",
+            "text": "おーい！とーちゃん！\n俺、歩いて帰ってきたんだぜ！"
+          },
+          {
+            "name": "コリン",
+            "text": "あれ？とーちゃんどこだ？"
+          },
+          {
+            "name": "コリン",
+            "text": "なんでいない？"
+          },
+          {
+            "name": "コリン",
+            "text": "おかしいな"
+          },
+          {
+            "name": "ネムル",
+            "text": "……"
+          },
+          {
+            "name": "コリン",
+            "text": "後でとーちゃんの仲間たちに聞いてみよう"
+          },
+          {
+            "name": "コリン",
+            "text": "帰ったら会えると思ったのにな……"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.9,
+            "facing": "left"
+          },
+          {
+            "image": "chara/korrin",
+            "x": 0.5,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "コリン",
+            "text": "ごめんなねーちゃん、\n飯はご馳走できないみたいだ"
+          },
+          {
+            "name": "ネムル",
+            "text": "大丈夫"
+          },
+          {
+            "name": "ネムル",
+            "text": "私も家に戻らないといけないし"
+          },
+          {
+            "name": "コリン",
+            "text": "そうか"
+          },
+          {
+            "name": "ネムル",
+            "text": "君は一人で大丈夫？"
+          },
+          {
+            "name": "コリン",
+            "text": "ああ！\n後でとーちゃんも帰ってくるだろ"
+          }
+        ]
       }
     ]
   }
