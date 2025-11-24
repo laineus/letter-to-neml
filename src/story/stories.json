@@ -5689,30 +5689,1858 @@
   },
   {
     "title": "ウルフリックの家",
-    "list": []
+    "list": [
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 0
+      },
+      {
+        "type": "background",
+        "image": "bg/wulfric-home"
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.9,
+            "facing": "left"
+          },
+          {
+            "image": "chara/korrin",
+            "x": 0.75,
+            "facing": "left"
+          },
+          {
+            "image": "chara/wulfric",
+            "x": 0.2,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 1000
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "コリン",
+            "text": "とーちゃん！\n帰ってきたぜ！"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.9,
+            "facing": "left"
+          },
+          {
+            "image": "chara/korrin",
+            "x": 0.5,
+            "facing": "left"
+          },
+          {
+            "image": "chara/wulfric",
+            "x": 0.2,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ウルフリック",
+            "text": "コリン！"
+          },
+          {
+            "name": "ネムル",
+            "text": "！"
+          },
+          {
+            "name": "ウルフリック",
+            "text": "お前、馬車にちゃんと乗ってなかったな？"
+          },
+          {
+            "name": "コリン",
+            "text": "だって暇なんだよいつも！"
+          },
+          {
+            "name": "ウルフリック",
+            "text": "ったく、心配させやがって"
+          },
+          {
+            "name": "ウルフリック",
+            "text": "ん？そっちのは……"
+          },
+          {
+            "name": "ウルフリック",
+            "text": "！！"
+          },
+          {
+            "name": "ウルフリック",
+            "text": "お前は……"
+          },
+          {
+            "name": "ネムル",
+            "text": "どうも……"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.9,
+            "facing": "left"
+          },
+          {
+            "image": "chara/korrin",
+            "x": 0.5,
+            "facing": "right"
+          },
+          {
+            "image": "chara/wulfric",
+            "x": 0.2,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "コリン",
+            "text": "このねーちゃんが送ってくれたんだぜ！"
+          },
+          {
+            "name": "ウルフリック",
+            "text": "おう……\nそうだったのか"
+          },
+          {
+            "name": "ウルフリック",
+            "text": "ああ、\nあんた"
+          },
+          {
+            "name": "ウルフリック",
+            "text": "……息子を運んでくれてありがとうな"
+          },
+          {
+            "name": "ネムル",
+            "text": "あ、……うん"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.9,
+            "facing": "left"
+          },
+          {
+            "image": "chara/korrin",
+            "x": 0.5,
+            "facing": "left"
+          },
+          {
+            "image": "chara/wulfric",
+            "x": 0.2,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "コリン",
+            "text": "そうだ！とーちゃん、メシはあるか？\nお礼にご馳走してあげようぜ！"
+          },
+          {
+            "name": "ネムル",
+            "text": "あ、私は……"
+          },
+          {
+            "name": "ネムル",
+            "text": "すぐ帰らないと"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.9,
+            "facing": "left"
+          },
+          {
+            "image": "chara/korrin",
+            "x": 0.5,
+            "facing": "right"
+          },
+          {
+            "image": "chara/wulfric",
+            "x": 0.2,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ウルフリック",
+            "text": "急いでるのか？"
+          },
+          {
+            "name": "ウルフリック",
+            "text": "迷惑かけたな"
+          },
+          {
+            "name": "ウルフリック",
+            "text": "そうだ、帰りは馬車を出すから、それで帰ってくれ"
+          },
+          {
+            "name": "ネムル",
+            "text": "え、うん\nありがとう"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 500
+      },
+      {
+        "type": "background",
+        "image": "bg/forest1"
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "コリン",
+            "text": "どうだ！良い馬車だろ！"
+          },
+          {
+            "name": "コリン",
+            "text": "ほら、俺が荷物を積んでやるからな！"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.9,
+            "facing": "left"
+          },
+          {
+            "image": "chara/korrin",
+            "x": 0.7,
+            "facing": "right"
+          },
+          {
+            "image": "chara/wulfric",
+            "x": 0.2,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "あ！大丈夫！自分で"
+          },
+          {
+            "name": "コリン",
+            "text": "ねーちゃんの荷物これだけ？"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.9,
+            "facing": "left"
+          },
+          {
+            "image": "chara/korrin",
+            "x": 0.7,
+            "facing": "left"
+          },
+          {
+            "image": "chara/wulfric",
+            "x": 0.2,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "コリン",
+            "text": "なんだこれ？薬か？"
+          },
+          {
+            "name": "ウルフリック",
+            "text": "！！"
+          },
+          {
+            "name": "ネムル",
+            "text": "……"
+          },
+          {
+            "name": "コリン",
+            "text": "ねーちゃん病気なのか？"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.9,
+            "facing": "left"
+          },
+          {
+            "image": "chara/korrin",
+            "x": 0.7,
+            "facing": "left"
+          },
+          {
+            "image": "chara/wulfric",
+            "x": 0.4,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ウルフリック",
+            "text": "コリン、お前はもういいから先に部屋に戻ってろ"
+          },
+          {
+            "name": "コリン",
+            "text": "なんだよ"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.9,
+            "facing": "left"
+          },
+          {
+            "image": "chara/korrin",
+            "x": 0.7,
+            "facing": "right"
+          },
+          {
+            "image": "chara/wulfric",
+            "x": 0.4,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "コリン",
+            "text": "ねーちゃん、またいつでも遊びに来てくれよな！"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.9,
+            "facing": "left"
+          },
+          {
+            "image": "chara/wulfric",
+            "x": 0.4,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ウルフリック",
+            "text": "なあ、お前ってもしかして"
+          },
+          {
+            "name": "ネムル",
+            "text": "……"
+          },
+          {
+            "name": "ウルフリック",
+            "text": "はあ……"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.9,
+            "facing": "left"
+          },
+          {
+            "image": "chara/wulfric",
+            "x": 0.6,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "",
+            "text": "ウルフリックはネムルに革の小袋を差し出した"
+          },
+          {
+            "name": "ネムル",
+            "text": "？"
+          },
+          {
+            "name": "ウルフリック",
+            "text": "昼間にお前から奪った分と、コリンを送ってくれた礼だ"
+          },
+          {
+            "name": "ネムル",
+            "text": "え……"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.9,
+            "facing": "left"
+          },
+          {
+            "image": "chara/wulfric",
+            "x": 0.4,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ウルフリック",
+            "text": "気をつけて帰れよ"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.9,
+            "facing": "left"
+          },
+          {
+            "image": "chara/wulfric",
+            "x": -0.2,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "……"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 1000
+      },
+      {
+        "type": "function",
+        "function": "早送り停止"
+      }
+    ]
   },
   {
     "title": "帰りの馬車",
-    "list": []
+    "list": [
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 0
+      },
+      {
+        "type": "background",
+        "image": "bg/forest1"
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.4,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 1000
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "今日はなんだか色々なことがあったな"
+          },
+          {
+            "name": "ネムル",
+            "text": "疲れたし、\n家につくまで寝てようかな"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "if",
+        "if": "バッドエンド"
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "家に帰ったら、ニーナはいるかな？"
+          },
+          {
+            "name": "ネムル",
+            "text": "もし居なかったら……"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "もし……、そのまま帰ってこなかったら……"
+          },
+          {
+            "name": "ネムル",
+            "text": "……だめ\n悲しいこと考えたら悪い夢を見ちゃう"
+          }
+        ]
+      },
+      {
+        "type": "endIf"
+      },
+      {
+        "type": "if",
+        "if": "ノーマルエンド"
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "浜辺でお姉さんと話したこと、\nニーナはどう思ってるんだろう……"
+          },
+          {
+            "name": "ネムル",
+            "text": "これは、私だけの気持ちなのかな"
+          },
+          {
+            "name": "ネムル",
+            "text": "ニーナがもし、\n私と同じ気持ちでいてくれたら……"
+          },
+          {
+            "name": "ネムル",
+            "text": "そうだとしたらとっても嬉しいな"
+          },
+          {
+            "name": "ネムル",
+            "text": "きっと悪夢なんてなくて、\n毎日幸せな夢を見られるんだろうな"
+          },
+          {
+            "name": "ネムル",
+            "text": "もしかしたら空も飛べちゃうかも"
+          },
+          {
+            "name": "ネムル",
+            "text": "……なんてね"
+          }
+        ]
+      },
+      {
+        "type": "endIf"
+      },
+      {
+        "type": "if",
+        "if": "グッドエンド"
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "でも今日は、そんなに悪くなかったかな"
+          },
+          {
+            "name": "ネムル",
+            "text": "それに……、"
+          },
+          {
+            "name": "ネムル",
+            "text": "ニーナが手紙で言ってくれたこと……、"
+          },
+          {
+            "name": "ネムル",
+            "text": "\"{ref:}\"って"
+          },
+          {
+            "name": "ネムル",
+            "text": "なんだか照れちゃうな"
+          },
+          {
+            "name": "ネムル",
+            "text": "気持ちがふわふわして"
+          },
+          {
+            "name": "ネムル",
+            "text": "このまま眠ったら、\nきっととっても幸せな夢が見れちゃいそう"
+          },
+          {
+            "name": "ネムル",
+            "text": "悪夢なんてなくて……、"
+          },
+          {
+            "name": "ネムル",
+            "text": "もしかしたら空だって飛べちゃうかも"
+          }
+        ]
+      },
+      {
+        "type": "endIf"
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 1000
+      },
+      {
+        "type": "function",
+        "function": "早送り停止"
+      }
+    ]
   },
   {
     "title": "シャマニの塔",
-    "list": []
+    "list": [
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 0
+      },
+      {
+        "type": "background",
+        "image": "bg/tower"
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina",
+            "x": 0.75,
+            "facing": "left"
+          },
+          {
+            "image": "chara/shaman",
+            "x": 0.25,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 1000
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "シャーマン",
+            "text": "お前たちノクタリアンの運命は知っての通りだ"
+          },
+          {
+            "name": "シャーマン",
+            "text": "お前たちが悪夢を見たとき、それは災厄として現実となる"
+          },
+          {
+            "name": "シャーマン",
+            "text": "お前が生まれる少し前、\nあるノクタリアンが見た悪夢によって世界に大洪水が起きた"
+          },
+          {
+            "name": "シャーマン",
+            "text": "特にカオティクスが住んでいた地域の大部分は流された"
+          },
+          {
+            "name": "ニーナ",
+            "text": "私たちは何故こんな運命を背負っているの？"
+          },
+          {
+            "name": "シャーマン",
+            "text": "お前たちはこの世の仕組みの一部"
+          },
+          {
+            "name": "シャーマン",
+            "text": "世界は大きな変化が起きたとき、進化していく"
+          },
+          {
+            "name": "シャーマン",
+            "text": "その為に、世界に大きな変異を引き起こす存在が必要"
+          },
+          {
+            "name": "シャーマン",
+            "text": "その役割を担うのがお前たちノクタリアン"
+          },
+          {
+            "name": "ニーナ",
+            "text": "でも、それで世界が滅んだら？"
+          },
+          {
+            "name": "シャーマン",
+            "text": "それも世界の選択だ"
+          },
+          {
+            "name": "シャーマン",
+            "text": "お前はどのような悪夢を見た？"
+          },
+          {
+            "name": "ニーナ",
+            "text": "月が……、\n落ちてくる夢"
+          },
+          {
+            "name": "シャーマン",
+            "text": "そうか"
+          },
+          {
+            "name": "ニーナ",
+            "text": "この悪夢が実現するのを止める方法はある？"
+          },
+          {
+            "name": "シャーマン",
+            "text": "唯一の方法を知っている"
+          },
+          {
+            "name": "シャーマン",
+            "text": "その悪夢を見たノクタリアンが死んだとき、悪夢は実現しない"
+          },
+          {
+            "name": "ニーナ",
+            "text": "……"
+          },
+          {
+            "name": "ニーナ",
+            "text": "私が自ら命を捨てれば悪夢は現実にならない、\nそういうこと？"
+          },
+          {
+            "name": "シャーマン",
+            "text": "その通り"
+          },
+          {
+            "name": "ニーナ",
+            "text": "それはこの世の理に反する？"
+          },
+          {
+            "name": "シャーマン",
+            "text": "それも世界の選択の一つ"
+          },
+          {
+            "name": "シャーマン",
+            "text": "我々は伝承の民\nその選択を否定も肯定もしない"
+          },
+          {
+            "name": "シャーマン",
+            "text": "我々はこの世の選択ただ見届け、伝えていくのみ"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 1000
+      },
+      {
+        "type": "function",
+        "function": "早送り停止"
+      }
+    ]
   },
   {
     "title": "ED1:ニーナのいない夜",
-    "list": []
+    "list": [
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 0
+      },
+      {
+        "type": "background",
+        "image": "bg/home"
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.9,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 1000
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "ただいま"
+          },
+          {
+            "name": "ネムル",
+            "text": "ニーナ、まだ居ない……"
+          },
+          {
+            "name": "ネムル",
+            "text": "どこに行っちゃったんだろう"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.7,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "いつ、帰ってくるんだろう"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.5,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "",
+            "text": "ネムルは窓の外を見上げた"
+          },
+          {
+            "name": "ネムル",
+            "text": "なんだか、あんなに近かったお月さまが遠くなっているような気がする"
+          },
+          {
+            "name": "ネムル",
+            "text": "ニーナ……"
+          },
+          {
+            "name": "ネムル",
+            "text": "寂しいよ……"
+          }
+        ]
+      }
+    ]
   },
   {
     "title": "ED2:ニーナの使命",
-    "list": []
+    "list": [
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 0
+      },
+      {
+        "type": "background",
+        "image": "bg/home"
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.9,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 1000
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "ただいま"
+          },
+          {
+            "name": "ネムル",
+            "text": "ニーナ、まだ帰ってない……"
+          },
+          {
+            "name": "ネムル",
+            "text": "お姉さんにもらったコンパス、\nこれでニーナを探しに行こう"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 500
+      },
+      {
+        "type": "background",
+        "image": "bg/forest2"
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.15,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "ニーナがいるのはこのあたりみたい"
+          },
+          {
+            "name": "ネムル",
+            "text": "ここって確か、\nシャーマンの塔の近くのはず"
+          },
+          {
+            "name": "ネムル",
+            "text": "どうしてこんなのところに居るのかな"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.8,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "あれ？"
+          },
+          {
+            "name": "ネムル",
+            "text": "あそこに倒れているのって……！"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.5,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "え…………？"
+          },
+          {
+            "name": "ネムル",
+            "text": "……！！"
+          },
+          {
+            "name": "",
+            "text": "ネムルは変わり果てた姿となったニーナを見つけた"
+          },
+          {
+            "name": "ネムル",
+            "text": "ニーナ……なの？"
+          },
+          {
+            "name": "ネムル",
+            "text": "どう……して……？"
+          }
+        ]
+      }
+    ]
   },
   {
     "title": "ED3:二人で過ごす終焉",
-    "list": []
+    "list": [
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 0
+      },
+      {
+        "type": "background",
+        "image": "bg/tower"
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina",
+            "x": 0.2,
+            "facing": "right"
+          },
+          {
+            "image": "chara/shaman",
+            "x": 0.6,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 1000
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina",
+            "x": 0.2,
+            "facing": "right"
+          },
+          {
+            "image": "chara/shaman",
+            "x": 0.6,
+            "facing": "left"
+          },
+          {
+            "image": "chara/neml",
+            "x": 1.2,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina",
+            "x": 0.2,
+            "facing": "right"
+          },
+          {
+            "image": "chara/shaman",
+            "x": 0.6,
+            "facing": "left"
+          },
+          {
+            "image": "chara/neml",
+            "x": 0.9,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "ニーナ！！"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ニーナ",
+            "text": "ネムル！？"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina",
+            "x": 0.2,
+            "facing": "right"
+          },
+          {
+            "image": "chara/shaman",
+            "x": 0.5,
+            "facing": "right"
+          },
+          {
+            "image": "chara/neml",
+            "x": 0.9,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ニーナ",
+            "text": "どうしてここが分かったの？"
+          },
+          {
+            "name": "ネムル",
+            "text": "ニーナ……、遅いんだから"
+          },
+          {
+            "name": "ネムル",
+            "text": "迎えに来たよ"
+          },
+          {
+            "name": "ニーナ",
+            "text": "ネムル……、"
+          },
+          {
+            "name": "ニーナ",
+            "text": "ごめんね"
+          },
+          {
+            "name": "ニーナ",
+            "text": "私、帰れない"
+          },
+          {
+            "name": "ネムル",
+            "text": "どうして？"
+          },
+          {
+            "name": "ニーナ",
+            "text": "私……、悪夢を見たの"
+          },
+          {
+            "name": "ネムル",
+            "text": "どんな？"
+          },
+          {
+            "name": "ニーナ",
+            "text": "月が、落ちてくる夢"
+          },
+          {
+            "name": "ニーナ",
+            "text": "それで、世界が壊れちゃう"
+          },
+          {
+            "name": "ネムル",
+            "text": "そんな……"
+          },
+          {
+            "name": "ニーナ",
+            "text": "でも大丈夫なの"
+          },
+          {
+            "name": "ニーナ",
+            "text": "私が居なくなれば、悪夢は実現しないんだ"
+          },
+          {
+            "name": "ネムル",
+            "text": "！！"
+          },
+          {
+            "name": "ネムル",
+            "text": "居なくなるってどういこと！？"
+          },
+          {
+            "name": "ニーナ",
+            "text": "…………"
+          },
+          {
+            "name": "ネムル",
+            "text": "そんなの全然大丈夫じゃない！！"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina",
+            "x": 0.2,
+            "facing": "right"
+          },
+          {
+            "image": "chara/shaman",
+            "x": 0.8,
+            "facing": "left"
+          },
+          {
+            "image": "chara/neml",
+            "x": 0.5,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "ニーナが居なくなって、いいわけがないよ……"
+          },
+          {
+            "name": "ニーナ",
+            "text": "じゃあ……"
+          },
+          {
+            "name": "ニーナ",
+            "text": "どうすればいいの……？……私"
+          },
+          {
+            "name": "ネムル",
+            "text": "ニーナ、"
+          },
+          {
+            "name": "ネムル",
+            "text": "帰ろう？\n一緒に、おうちに"
+          },
+          {
+            "name": "ニーナ",
+            "text": "でも……！\nみんな、死んじゃうんだよ"
+          },
+          {
+            "name": "ネムル",
+            "text": "私、ニーナだけが死んで続いていく世界なんて絶対に嫌だよ"
+          },
+          {
+            "name": "ネムル",
+            "text": "そんな世界……、ないほうがいい"
+          },
+          {
+            "name": "ネムル",
+            "text": "死ぬのは怖いけど……、"
+          },
+          {
+            "name": "ネムル",
+            "text": "死ぬならニーナと一緒がいい"
+          },
+          {
+            "name": "ニーナ",
+            "text": "ネムル……"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina",
+            "x": 0.2,
+            "facing": "right"
+          },
+          {
+            "image": "chara/shaman",
+            "x": 0.8,
+            "facing": "left"
+          },
+          {
+            "image": "chara/neml",
+            "x": 0.35,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "帰ろう"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 1000
+      },
+      {
+        "type": "background",
+        "image": "bg/forest2"
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina",
+            "x": 0.65,
+            "facing": "left"
+          },
+          {
+            "image": "chara/neml",
+            "x": 0.45,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ニーナ",
+            "text": "月、とっても近くなってきたね"
+          },
+          {
+            "name": "ネムル",
+            "text": "うん"
+          },
+          {
+            "name": "ニーナ",
+            "text": "帰ったら……、\nネムルに伝えたいことがあるんだ"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 1000
+      },
+      {
+        "type": "background",
+        "image": "bg/home"
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina",
+            "x": 0.6,
+            "facing": "left"
+          },
+          {
+            "image": "chara/neml",
+            "x": 0.4,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 1000
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "もうすぐ……、\n終わっちゃうんだね"
+          },
+          {
+            "name": "ニーナ",
+            "text": "……うん"
+          },
+          {
+            "name": "ニーナ",
+            "text": "ねえネムル、\n手、繋いでほしい、な"
+          },
+          {
+            "name": "ネムル",
+            "text": "うん、いいよ"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina",
+            "x": 0.6,
+            "facing": "left"
+          },
+          {
+            "image": "chara/neml",
+            "x": 0.45,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "怖いの？"
+          },
+          {
+            "name": "ニーナ",
+            "text": "うん"
+          },
+          {
+            "name": "ニーナ",
+            "text": "ネムル、私ね"
+          },
+          {
+            "name": "ニーナ",
+            "text": "ネムルのことが好き"
+          },
+          {
+            "name": "ネムル",
+            "text": "え……"
+          },
+          {
+            "name": "ネムル",
+            "text": "それって……"
+          },
+          {
+            "name": "ネムル",
+            "text": "すごく……、嬉しいよ"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina",
+            "x": 0.6,
+            "facing": "left"
+          },
+          {
+            "image": "chara/neml",
+            "x": 0.45,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "なんだかもったいないな"
+          },
+          {
+            "name": "ネムル",
+            "text": "今こんなに幸せな気持ちなのに……、\nもう終わっちゃうんだもん"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina",
+            "x": 0.6,
+            "facing": "left"
+          },
+          {
+            "image": "chara/neml",
+            "x": 0.45,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "ニーナ、\n私も、大好きだよ"
+          }
+        ]
+      }
+    ]
   },
   {
     "title": "ED4:ネムルの見た夢",
-    "list": []
+    "list": [
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 0
+      },
+      {
+        "type": "background",
+        "image": "bg/tower"
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina",
+            "x": 0.3,
+            "facing": "right"
+          },
+          {
+            "image": "chara/neml",
+            "x": 1.2,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 1000
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina",
+            "x": 0.3,
+            "facing": "right"
+          },
+          {
+            "image": "chara/neml",
+            "x": 0.8,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "",
+            "text": "コピー"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "ニーナが伝えてくれたこと、とっても嬉しかったんだ"
+          },
+          {
+            "name": "ニーナ",
+            "text": "うん"
+          },
+          {
+            "name": "ニーナ",
+            "text": "読んでくれてありがとう"
+          },
+          {
+            "name": "ニーナ",
+            "text": "それでね、私、気持ちに決心がついたの"
+          },
+          {
+            "name": "ニーナ",
+            "text": "ネムルが悲しむかもしれないけど、"
+          },
+          {
+            "name": "ニーナ",
+            "text": "それでも私はネムルに生きていてほしいんだ"
+          },
+          {
+            "name": "ネムル",
+            "text": "え……"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina",
+            "x": 0.2,
+            "facing": "right"
+          },
+          {
+            "image": "chara/neml",
+            "x": 0.8,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ニーナ",
+            "text": "ごめんね、ネムル"
+          },
+          {
+            "name": "ニーナ",
+            "text": "……元気でね"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina",
+            "x": 0.1,
+            "facing": "right"
+          },
+          {
+            "image": "chara/neml",
+            "x": 0.6,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "だめ！！"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina",
+            "x": -0.2,
+            "facing": "right"
+          },
+          {
+            "image": "chara/neml",
+            "x": 0.3,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "",
+            "text": "飛び降りたニーナを追ってネムルが駆け出すと、\nその背中に輝く大きな翼が広がった"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "ニーナ！！！！"
+          },
+          {
+            "name": "ニーナ",
+            "text": "ネムル！！"
+          },
+          {
+            "name": "ニーナ",
+            "text": "ど、どうなってるの！？これ"
+          },
+          {
+            "name": "ニーナ",
+            "text": "空、飛んで……！"
+          },
+          {
+            "name": "ネムル",
+            "text": "飛んでる……ね"
+          },
+          {
+            "name": "ネムル",
+            "text": "ニーナ、もうこんなこと、しなくていいんだよ"
+          },
+          {
+            "name": "ニーナ",
+            "text": "でも……！私が生きてたら……！"
+          },
+          {
+            "name": "ネムル",
+            "text": "ニーナ、私ね、夢を見たの"
+          },
+          {
+            "name": "ネムル",
+            "text": "とっても素敵な夢"
+          },
+          {
+            "name": "ネムル",
+            "text": "この世界が、これからも続いていく夢"
+          },
+          {
+            "name": "ネムル",
+            "text": "ニーナも一緒にね"
+          },
+          {
+            "name": "ニーナ",
+            "text": "え……？"
+          },
+          {
+            "name": "ネムル",
+            "text": "だからニーナの悪夢は実現しない"
+          },
+          {
+            "name": "ニーナ",
+            "text": "ほんと……に？"
+          },
+          {
+            "name": "ネムル",
+            "text": "うん、\nだってほら、私こうして空だって飛べちゃった"
+          },
+          {
+            "name": "ネムル",
+            "text": "ニーナが伝えてくれたこと、とっても嬉しくて"
+          },
+          {
+            "name": "ネムル",
+            "text": "こんな奇跡が起きるくらいに"
+          },
+          {
+            "name": "ニーナ",
+            "text": "じゃあ私、これからも生きていていいの？"
+          },
+          {
+            "name": "ニーナ",
+            "text": "ネムルと一緒に、生きていていいの？"
+          },
+          {
+            "name": "ネムル",
+            "text": "うん、\nだから一緒に……"
+          },
+          {
+            "name": "ネムル",
+            "text": "帰ろう"
+          },
+          {
+            "name": "ニーナ",
+            "text": "うん！！"
+          },
+          {
+            "name": "ネムル",
+            "text": "ニーナ、"
+          },
+          {
+            "name": "ネムル",
+            "text": "大好きだよ"
+          }
+        ]
+      }
+    ]
   }
 ]
