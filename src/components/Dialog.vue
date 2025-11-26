@@ -77,7 +77,7 @@ const onSelect = (v: DialogOption) => {
   <Container>
     <Rectangle :width="config.WIDTH" :height="config.HEIGHT" :fillColor="0x000000" :fillAlpha="0" :origin="0" @pointerdown="emit('close')" />
     <Container :x="config.WIDTH.half() - width.half()" :y="config.HEIGHT.half() - windowHeight.half()">
-      <Rectangle :width="width" :height="windowHeight" :fillColor="0x000000" :alpha="0.6" :origin="0" :radius="0" @pointerdown="">
+      <Rectangle :width="width" :height="windowHeight" :fillColor="0x000000" :alpha="0.7" :origin="0" :radius="0" @pointerdown="">
         <!-- <FxBlur :strength="3" :quality="1" :steps="7" /> -->
         <FxBlur :strength="1.5" :quality="1" :steps="4" />
       </Rectangle>

@@ -1,14 +1,12 @@
 <script setup lang="ts">
-import { Container, Rectangle, Text } from 'phavuer'
+import { Container, Rectangle, Text, FxBlur, Line } from 'phavuer'
 import { computed } from 'vue'
 import config from '../lib/config'
 import { state } from '../lib/state'
-const padding = 20
-const width = computed(() => config.WIDTH - padding * 2)
-const height = 300
-const windowPadding = 20
+const titleSize = 19
 const fontSize = 22
 const props = defineProps<{
+  title?: string
   text: string
 }>()
 const viewMessage = computed(() => {
@@ -20,8 +18,16 @@ const viewMessage = computed(() => {
 </script>
 
 <template>
-  <Container :x="padding" :y="config.HEIGHT - height - padding" :depth="6000">
-    <Rectangle :origin="0" :width="width" :height="height" :fillColor="0x333333" :alpha="0.7" />
-    <Text :text="viewMessage" :x="windowPadding" :y="windowPadding" :origin="0" :lineSpacing="fontSize * 0.7" :padding="{ top: 2 }" :style="{ fontSize, wordWrap: { width: width - (windowPadding * 2), useAdvancedWrap: true } }" />
+  <Container :x="config.WIDTH / 2" :y="(120).byBottom()" :depth="6000">
+    <Rectangle :origin="0.5" :width="config.WIDTH" :height="240" :fillColor="0x000000" :alpha="0.7">
+      <FxBlur :strength="3" :quality="1" :steps="7" />
+    </Rectangle>
+    <template v-if="title">
+      <Text :text="title" :x="0" :y="-50" :origin="0.5" :lineSpacing="titleSize * 0.7" :padding="{ top: 2 }" :style="{ fontSize: titleSize, align: 'center', wordWrap: { width: config.WIDTH - 100, useAdvancedWrap: true } }" />
+      <Line :x="0" :y="-25" :x1="0" :y1="0" :x2="160" :y2="0" :originX="0.5" :originY="0" :lineWidth="1.7" :strokeColor="0xFFFFFF">
+        <FxBlur :strength="3" :quality="1" :steps="7" :x="5" :y="0" />
+      </Line>
+    </template>
+    <Text :text="viewMessage" :x="0" :y="0" :originX="0.5" :originY="0" :lineSpacing="fontSize * 0.7" :padding="{ top: 2 }" :style="{ fontSize, align: 'center', wordWrap: { width: config.WIDTH - 100, useAdvancedWrap: true } }" />
   </Container>
 </template>
