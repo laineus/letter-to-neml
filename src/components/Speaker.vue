@@ -7,7 +7,8 @@ import type { SpeakerConfig } from '../story/types'
 
 <script setup lang="ts">
 const props = defineProps({
-  speaker: { type: Object as PropType<SpeakerConfig>, required: true }
+  speaker: { type: Object as PropType<SpeakerConfig>, required: true },
+  focus: { type: Boolean, default: false }
 })
 const realX = computed(() => Math.round(props.speaker.x * config.WIDTH))
 const initX = realX.value
@@ -34,6 +35,7 @@ watch(realX, (newX, oldX) => {
       :texture="speaker.image"
       :origin="0.5"
       :scaleX="speaker.facing === 'right' ? 1 : -1"
+      :tint="focus ? 0xFFFFFF : 0x888888"
     />
   </Container>
 </template>

@@ -208,7 +208,7 @@ const toggleFastForward = () => {
   <!-- Background and Stage -->
   <Container :depth="1000">
     <Background v-if="player.currentBackground" :texture="player.currentBackground?.image" />
-    <Stage v-if="player.currentSpeakers?.list.length" :visible="!exploring" :speakers="player.currentSpeakers.list" @end="onStageUpdate" />
+    <Stage v-if="player.currentSpeakers?.list.length" :visible="!exploring" :speaking="player.currentMessage?.name" :speakers="player.currentSpeakers.list" @end="onStageUpdate" />
     <FxBlur v-if="dialog.current || showLetter" :post="true" :strength="2" :quality="1" :steps="7" />
   </Container>
   <Fade v-if="player.currentFade" :fade="player.currentFade" :depth="3000" @end="onFadeEnd" />

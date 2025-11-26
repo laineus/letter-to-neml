@@ -1,15 +1,28 @@
 <script setup lang="ts">
 import { Container, useScene } from 'phavuer'
-import { watch, type PropType } from 'vue'
+import { computed, watch, type PropType } from 'vue'
 import Speaker from './Speaker.vue'
 import config from '../lib/config'
 import type { SpeakerConfig } from '../story/types'
+import characters from '../story/characters'
 const emit = defineEmits(['end'])
 const props = defineProps({
   speakers: {
     type: Array as PropType<SpeakerConfig[]>,
     required: true
+  },
+  speaking: {
+    type: String,
+    required: false
   }
+})
+const currentSpeaker = computed(() => {
+  if (!props.speaking) return
+  const char = characters.find(c => c.name === props.speaking)
+  if (!char) return
+  return props.speakers.find(v => {
+    return v.image.split('/')[1].startsWith(char.image!)
+  })
 })
 const scene = useScene()
 watch(() => props.speakers, (newSpeakers, oldSpeakers) => {
@@ -34,6 +47,6 @@ emit('end')
 
 <template>
   <Container>
-    <Speaker :speaker="speaker" v-for="speaker in speakers" :key="speaker.image" />
+    <Speaker :speaker="speaker" v-for="speaker in speakers" :key="speaker.image" :focus="!currentSpeaker || currentSpeaker === speaker" />
   </Container>
 </template>
