@@ -40,6 +40,13 @@ const resize = () => {
 </template>
 
 <style>
+canvas {
+  display: block;
+  width: 100%;
+}
+[data-phavuer-game] {
+  position: relative;
+}
 .preview.static {
   position: sticky;
   margin: 0 0 0 auto;

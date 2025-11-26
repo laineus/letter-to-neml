@@ -15,7 +15,7 @@ import Things from './Things.vue'
 import Button from './Button.vue'
 import Dialog, { useDialogs } from './Dialog.vue'
 import type { Thing } from './Thing.vue'
-import { useShake } from '../lib/effect'
+import { useDamage, useShake } from '../lib/effect'
 const props = defineProps({
   player: {
     type: Object as PropType<ReturnType<typeof useStoryPlayer>>,
@@ -48,6 +48,7 @@ const functions = {
     return false
   },
   'ダメージ': () => {
+    damage.exec(() => next())
     return false
   },
 } as Functions
@@ -59,6 +60,8 @@ const exploring = ref(false)
 const fastForward = ref(false)
 /** 画面揺れ効果 */
 const shake = useShake(scene)
+/** ダメージ効果 */
+const damage = useDamage(scene)
 /** 条件分岐関数 */
 const ifFunctions = useIfFunctions()
 /** 分岐名取得 */
@@ -215,6 +218,7 @@ const toggleFastForward = () => {
     <Stage v-if="player.currentSpeakers?.list.length" :visible="!exploring" :speaking="player.currentMessage?.name" :speakers="player.currentSpeakers.list" @end="onStageUpdate" />
     <FxBlur v-if="dialog.current || showLetter" :post="true" :strength="2" :quality="1" :steps="7" />
   </Container>
+  <Rectangle :width="config.WIDTH" :height="config.HEIGHT" :origin="0" :fillColor="0xFF1100" :alpha="damage.alpha" :depth="2500" />
   <Fade v-if="player.currentFade" :fade="player.currentFade" :depth="3000" @end="onFadeEnd" />
   <!-- UI -->
   <template v-if="!dialog.current && !showLetter && !player.currentFade">

@@ -25,3 +25,22 @@ export const useShake = (scene: Phaser.Scene) => {
     exec
   }
 }
+
+export const useDamage = (scene: Phaser.Scene) => {
+  const alpha = ref(0)
+  const exec = (callback: () => void) => {
+    scene.add.tween({
+      targets: alpha,
+      value: 0.5,
+      duration: 300,
+      yoyo: true,
+      onComplete: () => {
+        callback()
+      }
+    })
+  }
+  return {
+    get alpha () { return alpha.value },
+    exec
+  }
+}
