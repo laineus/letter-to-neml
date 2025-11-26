@@ -15,6 +15,7 @@ import Things from './Things.vue'
 import Button from './Button.vue'
 import Dialog, { useDialogs } from './Dialog.vue'
 import type { Thing } from './Thing.vue'
+import { useShake } from '../lib/effect'
 const props = defineProps({
   player: {
     type: Object as PropType<ReturnType<typeof useStoryPlayer>>,
@@ -43,17 +44,21 @@ const functions = {
     return true
   },
   '衝撃': () => {
+    shake.exec(() => next())
     return false
   },
   'ダメージ': () => {
     return false
   },
 } as Functions
+const scene = useScene()
 const dialog = useDialogs()
 /** フィールド探索中かどうか */
 const exploring = ref(false)
 /** 早送り中かどうか */
 const fastForward = ref(false)
+/** 画面揺れ効果 */
+const shake = useShake(scene)
 /** 条件分岐関数 */
 const ifFunctions = useIfFunctions()
 /** 分岐名取得 */
@@ -147,7 +152,6 @@ const exec = () => {
     }
   }
 }
-const scene = useScene()
 const tapScreen = () => {
   if (fastForward.value) {
     toggleFastForward()
@@ -207,7 +211,7 @@ const toggleFastForward = () => {
   <Rectangle :width="config.WIDTH" :height="config.HEIGHT" :origin="0" @pointerdown="tapScreen" />
   <!-- Background and Stage -->
   <Container :depth="1000">
-    <Background v-if="player.currentBackground" :texture="player.currentBackground?.image" />
+    <Background v-if="player.currentBackground" :x="shake.x" :y="shake.y" :texture="player.currentBackground?.image" />
     <Stage v-if="player.currentSpeakers?.list.length" :visible="!exploring" :speaking="player.currentMessage?.name" :speakers="player.currentSpeakers.list" @end="onStageUpdate" />
     <FxBlur v-if="dialog.current || showLetter" :post="true" :strength="2" :quality="1" :steps="7" />
   </Container>

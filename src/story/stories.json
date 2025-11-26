@@ -666,6 +666,10 @@
         ]
       },
       {
+        "type": "function",
+        "function": "衝撃"
+      },
+      {
         "type": "messages",
         "list": [
           {
@@ -707,10 +711,6 @@
             "facing": "right"
           }
         ]
-      },
-      {
-        "type": "function",
-        "function": "衝撃"
       },
       {
         "type": "speakers",
