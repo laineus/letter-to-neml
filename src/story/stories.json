@@ -429,10 +429,6 @@
         "type": "fade",
         "fade": "in",
         "duration": 1000
-      },
-      {
-        "type": "function",
-        "function": "早送り停止"
       }
     ]
   },
@@ -963,10 +959,6 @@
             "text": "なんで！"
           }
         ]
-      },
-      {
-        "type": "function",
-        "function": "早送り停止"
       },
       {
         "type": "speakers",
@@ -1949,10 +1941,6 @@
         "type": "fade",
         "fade": "in",
         "duration": 500
-      },
-      {
-        "type": "function",
-        "function": "早送り停止"
       }
     ]
   },
@@ -2842,10 +2830,6 @@
         "duration": 1000
       },
       {
-        "type": "function",
-        "function": "早送り停止"
-      },
-      {
         "type": "endIf"
       },
       {
@@ -3064,10 +3048,6 @@
         "type": "fade",
         "fade": "in",
         "duration": 1000
-      },
-      {
-        "type": "function",
-        "function": "早送り停止"
       },
       {
         "type": "endIf"
@@ -3576,10 +3556,6 @@
         "type": "fade",
         "fade": "in",
         "duration": 1000
-      },
-      {
-        "type": "function",
-        "function": "早送り停止"
       },
       {
         "type": "endIf"
@@ -4314,10 +4290,6 @@
         "duration": 1000
       },
       {
-        "type": "function",
-        "function": "早送り停止"
-      },
-      {
         "type": "endIf"
       },
       {
@@ -4829,10 +4801,6 @@
         "duration": 1000
       },
       {
-        "type": "function",
-        "function": "早送り停止"
-      },
-      {
         "type": "messages",
         "list": [
           {
@@ -4994,10 +4962,6 @@
         "type": "fade",
         "fade": "in",
         "duration": 1000
-      },
-      {
-        "type": "function",
-        "function": "早送り停止"
       }
     ]
   },
@@ -5244,10 +5208,6 @@
         "type": "fade",
         "fade": "in",
         "duration": 1000
-      },
-      {
-        "type": "function",
-        "function": "早送り停止"
       }
     ],
     "if": "ライベルの再訪"
@@ -5457,10 +5417,6 @@
         "type": "fade",
         "fade": "in",
         "duration": 1000
-      },
-      {
-        "type": "function",
-        "function": "早送り停止"
       }
     ]
   },
@@ -5676,10 +5632,6 @@
         "type": "fade",
         "fade": "in",
         "duration": 1000
-      },
-      {
-        "type": "function",
-        "function": "早送り停止"
       }
     ]
   },
@@ -5868,10 +5820,6 @@
         "type": "fade",
         "fade": "in",
         "duration": 1000
-      },
-      {
-        "type": "function",
-        "function": "早送り停止"
       }
     ],
     "if": "コリンの家"
@@ -6399,10 +6347,6 @@
         "type": "fade",
         "fade": "in",
         "duration": 1000
-      },
-      {
-        "type": "function",
-        "function": "早送り停止"
       }
     ],
     "if": "ウルフリックの家"
@@ -6580,10 +6524,6 @@
         "type": "fade",
         "fade": "in",
         "duration": 1000
-      },
-      {
-        "type": "function",
-        "function": "早送り停止"
       }
     ]
   },
@@ -6724,10 +6664,6 @@
         "type": "fade",
         "fade": "in",
         "duration": 1000
-      },
-      {
-        "type": "function",
-        "function": "早送り停止"
       }
     ]
   },
