@@ -13,8 +13,9 @@ const viewMessage = computed(() => {
   const branches = state.value.current?.branches || []
   return branches.reduce((t, branch) => {
     return t.replace(new RegExp(`{ref:${branch.code}}`, 'g'), branch.ref)
-  }, props.text)
+  }, props.text).replace(new RegExp(`{red}`, 'g'), '')
 })
+const red = computed(() => props.text.includes('{red}'))
 </script>
 
 <template>
@@ -28,6 +29,6 @@ const viewMessage = computed(() => {
         <FxBlur :strength="3" :quality="1" :steps="7" :x="5" :y="0" />
       </Line>
     </template>
-    <Text :text="viewMessage" :x="0" :y="0" :originX="0.5" :originY="0" :lineSpacing="fontSize * 0.7" :padding="{ top: 2 }" :style="{ fontSize, align: 'center', wordWrap: { width: config.WIDTH - 100, useAdvancedWrap: true } }" />
+    <Text :text="viewMessage" :x="0" :y="0" :originX="0.5" :originY="0" :lineSpacing="fontSize * 0.7" :padding="{ top: 2 }" :style="{ color: red ? '#FF3300' : '#FFFFFF', fontSize, align: 'center', wordWrap: { width: config.WIDTH - 100, useAdvancedWrap: true } }" />
   </Container>
 </template>
