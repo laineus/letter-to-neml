@@ -14,6 +14,7 @@ import { save, state } from '../lib/state'
 import Things from './Things.vue'
 import Button from './Button.vue'
 import Dialog, { useDialogs } from './Dialog.vue'
+import type { Thing } from './Thing.vue'
 const props = defineProps({
   player: {
     type: Object as PropType<ReturnType<typeof useStoryPlayer>>,
@@ -182,6 +183,14 @@ const submitLetter = (v: { letter: string; branches: Branch[] }) => {
   showLetter.value = false
   next()
 }
+// 捜索
+const selectThing = (thing: Thing) => {
+  dialog.show({
+    title: thing.name,
+    desc: thing.desc,
+    options: [{ text: '閉じる', close: true }]
+  })
+}
 // stateの初期化
 if (state.value.current) {
   state.value.prev = state.value.current
@@ -208,10 +217,10 @@ const toggleFastForward = () => {
     <Button :text="exploring ? 'もどる' : 'あたりを見回す'" :x="(200).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="exploring = !exploring" />
     <Button :text="fastForward ? '止める' : '早送り'" :x="(200 + 190).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="toggleFastForward" />
   </template>
-  <Things v-if="exploring" :place="player.currentBackground?.image ?? ''" />
+  <Things v-if="exploring && !dialog.current" :place="player.currentBackground?.image ?? ''" @select="selectThing" />
   <MessageWindow v-if="player.currentMessage" :visible="!dialog.current && !showLetter && !exploring" :text="player.currentMessage.text" />
   <Letter v-if="showLetter" @submit="submitLetter" />
   <!-- Dialog -->
-  <Rectangle :origin="0" :width="config.WIDTH" :height="config.HEIGHT" :depth="2000" :fillColor="0xAAAAAA" :alpha="0.25" v-if="dialog.current || showLetter" />
+  <Rectangle :origin="0" :width="config.WIDTH" :height="config.HEIGHT" :depth="2000" :fillColor="0x888888" :alpha="0.2" v-if="dialog.current || showLetter" />
   <Dialog v-if="dialog.current" :title="dialog.current.title" :desc="dialog.current.desc" :options="dialog.current.options" @close="dialog.close" :depth="8000" />
 </template>
