@@ -13,5 +13,5 @@ const currentTexture = computed(() => props.texture)
 </script>
 
 <template>
-  <Image :texture="currentTexture" :displayWidth="config.WIDTH" :displayHeight="config.HEIGHT" :origin="0" :depth="1000" />
+  <Image :texture="currentTexture" :displayWidth="config.WIDTH" :displayHeight="config.HEIGHT" :origin="0" />
 </template>

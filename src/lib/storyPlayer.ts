@@ -31,32 +31,43 @@ export const useStoryPlayer = (stories: Story[]) => {
   }
   const currentBackground = computed(() => findLastRow('background'))
   const currentSpeakers = computed(() => findLastRow('speakers'))
-  const currentFade = computed(() => findLastRow('fade'))
-  const next = (testIf: (v: string) => boolean) => {
+  const currentFade = computed(() => {
+    const lastFade = findLastRow('fade')
+    return lastFade?.fade === 'in' || currentStoryItem.value === lastFade ? lastFade : undefined
+  })
+  const currentIf = computed(() => findLastRow('if'))
+  const next = () => {
+    // 次のメッセージ
     if (currentMessages.value && state.messageIndex < currentMessages.value.list.length - 1) {
       state.messageIndex++
       return true
     }
+    // 次のストーリー行
     if (state.storyItemIndex < story.value.list.length - 1) {
       state.storyItemIndex++
       state.messageIndex = 0
-      if (currentStoryItem.value.type === 'if') {
-        if (!testIf(currentStoryItem.value.if)) {
-          state.storyItemIndex = story.value.list.findIndex((v, i) => i > state.storyItemIndex && v.type === 'endIf')
-        }
-        next(testIf)
-      } else if (currentStoryItem.value.type === 'endIf') {
-        next(testIf)
-      }
       return true
     }
+    // 次のシーン
     if (state.storyIndex < stories.length - 1) {
       state.storyItemIndex = 0
       state.messageIndex = 0
-      state.storyIndex = state.storyIndex + stories.slice(state.storyIndex + 1).findIndex(v => !v.if || testIf(v.if)) + 1
+      state.storyIndex++
       return true
     }
     return false
+  }
+  const skipIf = () => {
+    const endIfIndex = story.value.list.findIndex((v, i) => i > state.storyItemIndex && v.type === 'endIf')
+    if (endIfIndex === -1) throw new Error('endIf not found')
+    state.storyItemIndex = endIfIndex
+    state.messageIndex = 0
+    next()
+  }
+  const skipStory = () => {
+    state.storyItemIndex = 0
+    state.messageIndex = 0
+    state.storyIndex++
   }
   return {
     stories,
@@ -73,6 +84,9 @@ export const useStoryPlayer = (stories: Story[]) => {
     get currentBackground () { return currentBackground.value },
     get currentSpeakers () { return currentSpeakers.value },
     get currentFade () { return currentFade.value },
-    next
+    get currentIf () { return currentIf.value },
+    next,
+    skipIf,
+    skipStory
   }
 }

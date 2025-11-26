@@ -3,7 +3,34 @@ export type DialogOption = {
   text: string
   action?: () => any
   close?: boolean
-};
+}
+type DialogData = {
+  title?: string
+  desc?: string
+  options: DialogOption[]
+}
+export const useDialogs = () => {
+  const dialogs = ref<DialogData[]>([])
+  const show = (dialog: DialogData) => {
+    dialogs.value.push(dialog)
+  }
+  const close = () => {
+    dialogs.value.shift()
+  }
+  const currentDialog = computed(() => {
+    return dialogs.value[0]
+  })
+  return {
+    get list() {
+      return dialogs.value
+    },
+    get current() {
+      return currentDialog.value
+    },
+    show,
+    close
+  }
+}
 </script>
 
 <script setup lang="ts">

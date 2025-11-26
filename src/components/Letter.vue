@@ -68,7 +68,7 @@ E4: 出かけることや留守番をお願いする旨が欠けている
     {
       "code": number,
       "result": true | false,
-      "ref": "ユーザー入力内の該当部分"
+      "ref": "ユーザー入力内の該当部分(trueの場合必須)" | null
     },
     ..
   ]
@@ -169,7 +169,6 @@ const errorMessage = computed(() => {
   left: 0;
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(8px);
   padding: 20px;
   display: flex;
   justify-content: center;
@@ -180,11 +179,14 @@ const errorMessage = computed(() => {
 textarea {
   width: 50%;
   height: 60%;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.5);
   resize: none;
   font-size: 1.5vw;
   line-height: 1.7;
   text-align: center;
+}
+textarea:focus {
+  outline: none;
 }
 p {
   color: #ddd;

@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { Rectangle, useScene } from 'phavuer'
+import { Container, FxBlur, Rectangle, useScene } from 'phavuer'
 import MessageWindow from './MessageWindow.vue'
 import Stage from './Stage.vue'
 import Fade from './Fade.vue'
 import { ref, type PropType } from 'vue'
 import Background from './Background.vue'
-import type { Branch } from '../story/types'
+import type { Branch, StoryIf } from '../story/types'
 import config from '../lib/config'
 import Letter from './Letter.vue'
 import { useIfFunctions } from '../lib/ifFunctions'
@@ -13,6 +13,7 @@ import type { useStoryPlayer } from '../lib/storyPlayer'
 import { save, state } from '../lib/state'
 import Things from './Things.vue'
 import Button from './Button.vue'
+import Dialog, { useDialogs } from './Dialog.vue'
 const props = defineProps({
   player: {
     type: Object as PropType<ReturnType<typeof useStoryPlayer>>,
@@ -47,34 +48,74 @@ const functions = {
     return false
   },
 } as Functions
+const dialog = useDialogs()
 /** フィールド探索中かどうか */
 const exploring = ref(false)
 /** 早送り中かどうか */
 const fastForward = ref(false)
 /** 条件分岐関数 */
 const ifFunctions = useIfFunctions()
+/** 分岐名取得 */
+const getIfName = (ifItem: StoryIf) => {
+  const currentIfIndex = props.player.story.list.filter(v => v.type === 'if').findIndex(v => v === ifItem)
+  return `${props.player.storyIndex}-${currentIfIndex}`
+}
 /** 次の行へ進む */
 const next = () => {
   if (props.static) return
   waitingStageUpdate = false
   waitingFade = false
   waitingSleep = false
-  const result = props.player.next(ifId => {
-    const func = ifFunctions[ifId]
-    return func ? func() : false
-  })
+  const result = props.player.next()
   if (!result) return
   exec()
 }
 /** その行を処理する */
 const exec = () => {
-  if (props.player.currentStoryItem?.type === 'background') {
+  if (props.player.storyItemIndex === 0 && props.player.story.if) {
+    const func = ifFunctions[props.player.story.if]
+    if (func && !func()) {
+      props.player.skipStory()
+      exec()
+      return
+    }
+    // シーンが変わったら早送り停止
+    fastForward.value = false
+  }
+  if (props.player.currentStoryItem?.type === 'if') {
+    const func = ifFunctions[props.player.currentStoryItem.if]
+    if (func && !func()) {
+      props.player.skipIf()
+      exec()
+    } else {
+      // 初めてプレイする分岐なら早送り停止
+      const ifName = getIfName(props.player.currentStoryItem)
+      if (fastForward.value && !state.value.completedBranches.includes(ifName)) {
+        fastForward.value = false
+        dialog.show({
+          title: '初めての分岐',
+          desc: '早送りを停止しました。',
+          options: [{ text: 'OK', close: true }]
+        })
+      }
+      next()
+    }
+  } else if (props.player.currentStoryItem?.type === 'endIf') {
+    const currentIf = props.player.currentIf
+    // プレイ済みの分岐として保存
+    if (currentIf) {
+      const ifName = getIfName(currentIf)
+      if (!state.value.completedBranches.includes(ifName)) {
+        state.value.completedBranches.push(ifName)
+        save()
+      }
+    }
     next()
-  }
-  if (props.player.currentStoryItem?.type === 'speakers') {
+  } else if (props.player.currentStoryItem?.type === 'background') {
+    next()
+  } else if (props.player.currentStoryItem?.type === 'speakers') {
     waitingStageUpdate = true
-  }
-  if (props.player.currentStoryItem?.type === 'sleep') {
+  } else if (props.player.currentStoryItem?.type === 'sleep') {
     waitingSleep = true
     scene.time.addEvent({
       delay: fastForward.value ? 70 : props.player.currentStoryItem.duration,
@@ -84,11 +125,9 @@ const exec = () => {
         next()
       }
     })
-  }
-  if (props.player.currentStoryItem?.type === 'fade') {
+  } else if (props.player.currentStoryItem?.type === 'fade') {
     waitingFade = true
-  }
-  if (props.player.currentStoryItem?.type === 'function') {
+  } else if (props.player.currentStoryItem?.type === 'function') {
     const functionFunc = functions[props.player.currentStoryItem.function]
     if (!functionFunc) {
       console.warn(`関数が見つかりません: ${props.player.currentStoryItem.function}`)
@@ -96,8 +135,7 @@ const exec = () => {
       return
     }
     if (functionFunc()) next()
-  }
-  if (props.player.currentStoryItem?.type === 'messages') {
+  } else if (props.player.currentStoryItem?.type === 'messages') {
     if (fastForward.value) {
       scene.time.addEvent({
         delay: 70,
@@ -156,13 +194,24 @@ const toggleFastForward = () => {
 </script>
 
 <template>
+  <!-- TapArea -->
   <Rectangle :width="config.WIDTH" :height="config.HEIGHT" :origin="0" @pointerdown="tapScreen" />
-  <Background v-if="player.currentBackground" :texture="player.currentBackground?.image" />
-  <Button :text="exploring ? 'もどる' : 'あたりを見回す'" :x="(200).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="exploring = !exploring" />
-  <Button :text="fastForward ? '止める' : '早送り'" :x="(200 + 190).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="toggleFastForward" />
+  <!-- Background and Stage -->
+  <Container :depth="1000">
+    <Background v-if="player.currentBackground" :texture="player.currentBackground?.image" />
+    <Stage v-if="player.currentSpeakers?.list.length" :visible="!exploring" :speakers="player.currentSpeakers.list" @end="onStageUpdate" />
+    <FxBlur v-if="dialog.current || showLetter" :post="true" :strength="2" :quality="1" :steps="7" />
+  </Container>
+  <Fade v-if="player.currentFade" :fade="player.currentFade" :depth="3000" @end="onFadeEnd" />
+  <!-- UI -->
+  <template v-if="!dialog.current && !showLetter && !player.currentFade">
+    <Button :text="exploring ? 'もどる' : 'あたりを見回す'" :x="(200).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="exploring = !exploring" />
+    <Button :text="fastForward ? '止める' : '早送り'" :x="(200 + 190).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="toggleFastForward" />
+  </template>
   <Things v-if="exploring" :place="player.currentBackground?.image ?? ''" />
-  <Stage v-if="player.currentSpeakers?.list.length" :visible="!exploring" :speakers="player.currentSpeakers.list" @end="onStageUpdate" />
-  <Fade v-if="player.currentFade" :fade="player.currentFade" @end="onFadeEnd" />
-  <MessageWindow v-if="player.currentMessage" :visible="!exploring" :text="player.currentMessage.text" />
+  <MessageWindow v-if="player.currentMessage" :visible="!dialog.current && !showLetter && !exploring" :text="player.currentMessage.text" />
   <Letter v-if="showLetter" @submit="submitLetter" />
+  <!-- Dialog -->
+  <Rectangle :origin="0" :width="config.WIDTH" :height="config.HEIGHT" :depth="2000" :fillColor="0xAAAAAA" :alpha="0.25" v-if="dialog.current || showLetter" />
+  <Dialog v-if="dialog.current" :title="dialog.current.title" :desc="dialog.current.desc" :options="dialog.current.options" @close="dialog.close" :depth="8000" />
 </template>

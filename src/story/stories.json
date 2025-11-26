@@ -70,22 +70,12 @@
         ]
       },
       {
-        "type": "fade",
-        "fade": "in",
-        "duration": 500
-      },
-      {
         "type": "sleep",
         "duration": 500
       },
       {
         "type": "function",
         "function": "手紙執筆"
-      },
-      {
-        "type": "fade",
-        "fade": "out",
-        "duration": 500
       },
       {
         "type": "messages",
