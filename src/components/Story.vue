@@ -36,6 +36,16 @@ const functions = {
     fastForward.value = false
     return true
   },
+  'シーン終了': () => {
+    props.player.storyItemIndex = Infinity
+    return true
+  },
+  '衝撃': () => {
+    return false
+  },
+  'ダメージ': () => {
+    return false
+  },
 } as Functions
 /** フィールド探索中かどうか */
 const exploring = ref(false)

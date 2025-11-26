@@ -33,6 +33,10 @@ const loadStories = () => {
     .then(response => response.json())
     .then(data => {
       stories.value = data as Story[]
+      const functionNames = stories.value.flatMap(v => v.list).filter(v => v.type === 'function').map(v => v.function)
+      console.log('functions', functionNames)
+      const ifNames = stories.value.filter(v => v.if).map(v => v.if).concat(stories.value.flatMap(v => v.list).filter(v => v.type === 'if').map(v => v.if))
+      console.log('if', ifNames)
     })
     .catch(err => {
       toastManager.error('Failed to load stories')
