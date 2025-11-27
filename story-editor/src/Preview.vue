@@ -6,6 +6,7 @@ import { preloadAssets } from '../../src/lib/preload'
 import config from '../../src/lib/config.ts'
 import { ref, type PropType } from 'vue'
 import type { useStoryPlayer } from '../../src/lib/storyPlayer.ts'
+import { state } from '../../src/lib/state.ts'
 defineEmits(['stop'])
 const props = defineProps({
   storyPlayer: {
@@ -24,6 +25,23 @@ const preload = (scene: Phaser.Scene) => {
 const size = ref(0)
 const resize = () => {
   size.value = (size.value + 1) % 3
+}
+state.value.current = {
+  letter: '',
+  branches: [
+    { code: 101, result: true, ref: '悪夢予防薬の空き瓶は片付けておいて' },
+    { code: 102, result: true, ref: 'DUMMY' },
+    { code: 103, result: true, ref: 'DUMMY' },
+    { code: 104, result: true, ref: 'DUMMY' },
+    { code: 201, result: true, ref: 'DUMMY' },
+    { code: 202, result: true, ref: 'DUMMY' },
+    { code: 203, result: true, ref: 'DUMMY' },
+    { code: 301, result: true, ref: 'DUMMY' },
+    { code: 302, result: true, ref: 'DUMMY' },
+    { code: 303, result: true, ref: 'DUMMY' },
+    { code: 401, result: true, ref: 'DUMMY' },
+    { code: 501, result: true, ref: 'DUMMY' }
+  ]
 }
 </script>
 

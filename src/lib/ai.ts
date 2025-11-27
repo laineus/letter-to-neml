@@ -1,4 +1,4 @@
-import { GoogleGenerativeAI } from '@google/generative-ai'
+import { GoogleGenerativeAI, HarmBlockThreshold, HarmCategory } from '@google/generative-ai'
 import OpenAI from 'openai'
 
 const openai = new OpenAI({
@@ -21,10 +21,34 @@ export const chatGpt = <T>(prompt: string): Promise<T> => {
 
 const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY)
 
-export const chatGemini = <T>(prompt: string): Promise<T> => {
+const safetySettings = [
+  {
+    category: HarmCategory.HARM_CATEGORY_HARASSMENT,
+    threshold: HarmBlockThreshold.BLOCK_NONE,
+  },
+  {
+    category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
+    threshold: HarmBlockThreshold.BLOCK_NONE,
+  },
+  {
+    category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
+    threshold: HarmBlockThreshold.BLOCK_NONE,
+  },
+  {
+    category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
+    threshold: HarmBlockThreshold.BLOCK_NONE,
+  },
+  {
+    category: HarmCategory.HARM_CATEGORY_CIVIC_INTEGRITY,
+    threshold: HarmBlockThreshold.BLOCK_NONE,
+  }
+]
+export const chatGemini = <T>(prompt: string, systemInstruction?: string): Promise<T> => {
   const model = genAI.getGenerativeModel({
-    model: 'gemini-2.5-flash',
-    // model: 'gemini-2.5-flash-lite',
+    // model: 'gemini-2.5-flash',
+    model: 'gemini-2.5-flash-lite',
+    systemInstruction,
+    safetySettings,
     generationConfig: {
       responseMimeType: 'application/json'
     }
@@ -35,7 +59,7 @@ export const chatGemini = <T>(prompt: string): Promise<T> => {
   })
 }
 
-export const chatAi = <T>(prompt: string): Promise<T> => {
-  return chatGemini<T>(prompt)
+export const chatAi = <T>(prompt: string, systemInstruction?: string): Promise<T> => {
+  return chatGemini<T>(prompt, systemInstruction)
   // return chatGpt<T>(prompt)
 }
