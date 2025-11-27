@@ -5214,7 +5214,496 @@
   },
   {
     "title": "ニーナの訪問",
-    "list": [],
+    "list": [
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 0
+      },
+      {
+        "type": "background",
+        "image": "bg/outfront"
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina",
+            "x": 0.6,
+            "facing": "left"
+          },
+          {
+            "image": "chara/rybel",
+            "x": 0.3,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 1000
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "",
+            "text": "ライベルは玄関のドアをノックした"
+          },
+          {
+            "name": "ライベル",
+            "text": "おいネムル、俺だ"
+          },
+          {
+            "name": "ライベル",
+            "text": "……"
+          },
+          {
+            "name": "ネムル",
+            "text": "あ、ライベル、\n今開けるね"
+          },
+          {
+            "name": "ニーナ",
+            "text": "！"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ライベル",
+            "text": "いや、待て"
+          },
+          {
+            "name": "ライベル",
+            "text": "開けなくて大丈夫だ"
+          },
+          {
+            "name": "ネムル",
+            "text": "？"
+          },
+          {
+            "name": "ネムル",
+            "text": "どうしたの？"
+          },
+          {
+            "name": "ライベル",
+            "text": "ちょっと様子を見に寄っただけだ"
+          },
+          {
+            "name": "ライベル",
+            "text": "だから開けなくて大丈夫だ"
+          },
+          {
+            "name": "ネムル",
+            "text": "え、うん、\n分かった"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ライベル",
+            "text": "買い物は、大丈夫だったか？"
+          },
+          {
+            "name": "ネムル",
+            "text": "うん、なんとか、\n大丈夫だったよ"
+          },
+          {
+            "name": "ライベル",
+            "text": "そうか"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina",
+            "x": 0.6,
+            "facing": "left"
+          },
+          {
+            "image": "chara/rybel",
+            "x": 0.3,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ライベル",
+            "text": "おい、\n本当に話しておかなくていいのかよ？"
+          },
+          {
+            "name": "ニーナ",
+            "text": "うん、\n……伝えるなんて、できないから"
+          },
+          {
+            "name": "ライベル",
+            "text": "……そうかよ"
+          },
+          {
+            "name": "ライベル",
+            "text": "後は何を聞けばいい？"
+          },
+          {
+            "name": "ニーナ",
+            "text": "ええと……"
+          },
+          {
+            "name": "ニーナ",
+            "text": "ネムルは……、幸せだったの、かな？"
+          },
+          {
+            "name": "ライベル",
+            "text": "……"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina",
+            "x": 0.6,
+            "facing": "left"
+          },
+          {
+            "image": "chara/rybel",
+            "x": 0.3,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ライベル",
+            "text": "ネムル、"
+          },
+          {
+            "name": "ネムル",
+            "text": "？"
+          },
+          {
+            "name": "ライベル",
+            "text": "お前は、幸せか？"
+          },
+          {
+            "name": "ネムル",
+            "text": "え？\nうーん"
+          },
+          {
+            "name": "ネムル",
+            "text": "そうかな"
+          },
+          {
+            "name": "ネムル",
+            "text": "ニーナと一緒に暮らせているだけで、幸せ、かな"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ニーナ",
+            "text": "……"
+          },
+          {
+            "name": "ニーナ",
+            "text": "ネム、ル……"
+          },
+          {
+            "name": "ライベル",
+            "text": "……"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ライベル",
+            "text": "そうか……"
+          },
+          {
+            "name": "ネムル",
+            "text": "どうしてそんなこと聞くの？"
+          },
+          {
+            "name": "ライベル",
+            "text": "気にすんな"
+          },
+          {
+            "name": "ライベル",
+            "text": "とにかく、あれだ"
+          },
+          {
+            "name": "ライベル",
+            "text": "強く生きろよ"
+          },
+          {
+            "name": "ネムル",
+            "text": "え、うん"
+          },
+          {
+            "name": "ライベル",
+            "text": "そんじゃあ帰るわ"
+          },
+          {
+            "name": "ネムル",
+            "text": "え、帰るの？"
+          },
+          {
+            "name": "ネムル",
+            "text": "食べ物も買ってきたよ"
+          },
+          {
+            "name": "ライベル",
+            "text": "あー、悪いな\nまた明日にでももらいに来るよ"
+          },
+          {
+            "name": "ネムル",
+            "text": "分かった"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina",
+            "x": 0.6,
+            "facing": "left"
+          },
+          {
+            "image": "chara/rybel",
+            "x": 0.3,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ライベル",
+            "text": "これでよかったのか？"
+          },
+          {
+            "name": "ニーナ",
+            "text": "うん、\n最後に声がきけてよかった"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ライベル",
+            "text": "……なあ、\n本当にお前が死ぬしかないのか？"
+          },
+          {
+            "name": "ニーナ",
+            "text": "……うん"
+          },
+          {
+            "name": "ライベル",
+            "text": "……"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina",
+            "x": 0.6,
+            "facing": "left"
+          },
+          {
+            "image": "chara/rybel",
+            "x": 0.3,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ライベル",
+            "text": "あいつはまあ、\nなんとかなると思うぜ"
+          },
+          {
+            "name": "ライベル",
+            "text": "俺もたまに気にかけといてやるからさ"
+          },
+          {
+            "name": "ニーナ",
+            "text": "……うん"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina",
+            "x": 0.55,
+            "facing": "left"
+          },
+          {
+            "image": "chara/rybel",
+            "x": 0.3,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ニーナ",
+            "text": "ネムル、"
+          },
+          {
+            "name": "ニーナ",
+            "text": "……ごめんね"
+          },
+          {
+            "name": "ニーナ",
+            "text": "バイバイ"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina",
+            "x": 0.55,
+            "facing": "right"
+          },
+          {
+            "image": "chara/rybel",
+            "x": 0.3,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ライベル",
+            "text": "……"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina",
+            "x": 0.6,
+            "facing": "right"
+          },
+          {
+            "image": "chara/rybel",
+            "x": 0.3,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 1500
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina",
+            "x": 0.65,
+            "facing": "right"
+          },
+          {
+            "image": "chara/rybel",
+            "x": 0.3,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 1500
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina",
+            "x": 0.7,
+            "facing": "right"
+          },
+          {
+            "image": "chara/rybel",
+            "x": 0.3,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 1500
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina",
+            "x": 0.75,
+            "facing": "right"
+          },
+          {
+            "image": "chara/rybel",
+            "x": 0.3,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 1000
+      }
+    ],
     "if": "ニーナの訪問"
   },
   {
