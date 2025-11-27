@@ -3,6 +3,7 @@ import { Game } from 'phavuer'
 import config from './lib/config.ts'
 import MainScene from './components/MainScene.vue'
 import ChatAi from './components/ChatAi.vue'
+import TitleScene from './components/TitleScene.vue'
 const gameConfig: Phaser.Types.Core.GameConfig = {
   width: config.WIDTH,
   height: config.HEIGHT,
@@ -16,7 +17,8 @@ const onCreate = (game: Phaser.Game) => {
 
 <template>
   <Game :config="gameConfig" @create="onCreate">
-    <MainScene />
+    <TitleScene :autoStart="true" />
+    <MainScene :autoStart="false" />
   </Game>
   <ChatAi />
 </template>

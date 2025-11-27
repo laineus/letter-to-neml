@@ -51,9 +51,23 @@ const functions = {
     damage.exec(() => next())
     return false
   },
+  'UI非表示': () => {
+    uiHidden.value = true
+    return true
+  },
+  'ゲームオーバー': () => {
+    return false
+  }
 } as Functions
+const toTitle = () => {
+  scene.scene.start('TitleScene')
+}
 const scene = useScene()
 const dialog = useDialogs()
+/** UIが非表示かどうか */
+const uiHidden = ref(false)
+/** タイトル画面に戻るかどうか */
+const goingToTitle = ref(false)
 /** フィールド探索中かどうか */
 const exploring = ref(false)
 /** 早送り中かどうか */
@@ -156,6 +170,10 @@ const exec = () => {
   }
 }
 const tapScreen = () => {
+  if (props.player.currentStoryItem.type === 'function' && props.player.currentStoryItem.function.startsWith('ゲームオーバー')) {
+    goingToTitle.value = true
+    return
+  }
   if (fastForward.value) {
     toggleFastForward()
     return
@@ -221,13 +239,14 @@ const toggleFastForward = () => {
   <Rectangle :width="config.WIDTH" :height="config.HEIGHT" :origin="0" :fillColor="0xFF1100" :alpha="damage.alpha" :depth="2500" />
   <Fade v-if="player.currentFade" :fade="player.currentFade" :depth="3000" @end="onFadeEnd" />
   <!-- UI -->
-  <template v-if="!dialog.current && !showLetter && !player.currentFade">
+  <template v-if="!uiHidden && !dialog.current && !showLetter && !player.currentFade">
     <Button :text="exploring ? 'もどる' : 'あたりを見回す'" :x="(200).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="exploring = !exploring" />
     <Button :text="fastForward ? '止める' : '早送り'" :x="(200 + 190).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="toggleFastForward" />
   </template>
   <Things v-if="exploring && !dialog.current" :place="player.currentBackground?.image ?? ''" @select="selectThing" />
   <MessageWindow v-if="player.currentMessage" :visible="!dialog.current && !showLetter && !exploring" :title="player.currentMessage.name" :text="player.currentMessage.text" />
   <Letter v-if="showLetter" @submit="submitLetter" />
+  <Fade v-if="goingToTitle" :fade="{ type: 'fade', fade: 'in', duration: 3000 }" :depth="3000" @end="toTitle" />
   <!-- Dialog -->
   <Rectangle :origin="0" :width="config.WIDTH" :height="config.HEIGHT" :depth="2000" :fillColor="0x888888" :alpha="0.2" v-if="dialog.current || showLetter" />
   <Dialog v-if="dialog.current" :title="dialog.current.title" :desc="dialog.current.desc" :options="dialog.current.options" @close="dialog.close" :depth="8000" />

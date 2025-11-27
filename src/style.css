@@ -7,3 +7,10 @@
 html {
   background-color: #242424;
 }
+canvas {
+  display: block;
+  width: 100%;
+}
+[data-phavuer-game] {
+  position: relative;
+}
