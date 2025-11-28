@@ -9,7 +9,8 @@ export default defineConfig({
     phaserAssetsRollupPlugin({
       patterns: [
         { type: 'image', dir: '/images/chara', rule: /^[\w-]+\.(webp|png|jpg)$/, prefix: 'chara/' },
-        { type: 'image', dir: '/images/bg', rule: /^[\w-]+\.(webp|png|jpg)$/, prefix: 'bg/' }
+        { type: 'image', dir: '/images/bg', rule: /^[\w-]+\.(webp|png|jpg)$/, prefix: 'bg/' },
+        { type: 'image', dir: '/images/etc', rule: /^[\w-]+\.(webp|png|jpg)$/, prefix: 'etc/' }
       ],
       output: './src/assets.json'
     })
