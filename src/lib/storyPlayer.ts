@@ -58,7 +58,17 @@ export const useStoryPlayer = (stories: Story[]) => {
     return false
   }
   const skipIf = () => {
-    const endIfIndex = story.value.list.findIndex((v, i) => i > state.storyItemIndex && v.type === 'endIf')
+    const endIfIndex = story.value.list.slice(state.storyItemIndex + 1).reduce((acc, item, index) => {
+      if (acc.endIfIndex !== -1) return acc
+      if (item.type === 'if') acc.ifNestCount++
+      if (item.type === 'endIf') {
+        acc.ifNestCount--
+        if (acc.ifNestCount === 0) {
+          acc.endIfIndex = state.storyItemIndex + 1 + index
+        }
+      }
+      return acc
+    }, { ifNestCount: 1, endIfIndex: -1 }).endIfIndex
     if (endIfIndex === -1) throw new Error('endIf not found')
     state.storyItemIndex = endIfIndex
     state.messageIndex = 0
