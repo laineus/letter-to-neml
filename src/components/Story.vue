@@ -156,13 +156,39 @@ const exec = () => {
   } else if (props.player.currentStoryItem?.type === 'messages') {
     if (fastForward.value) {
       scene.time.addEvent({
-        delay: 70,
+        delay: 100,
         callback: () => {
           if (fastForward.value) next()
         }
       })
     }
   }
+}
+const skipScene = () => {
+  if (!props.player.next()) return
+  if (props.player.storyItemIndex === 0) return exec()
+  if (props.player.currentStoryItem.type === 'function') {
+    if (props.player.currentStoryItem.function.startsWith('ゲームオーバー')) return
+    if (props.player.currentStoryItem.function === '手紙執筆') return exec()
+  }
+  if (props.player.currentStoryItem.type === 'if') {
+    const func = ifFunctions[props.player.currentStoryItem.if]
+    if (func && !func()) {
+      props.player.skipIf()
+    } else {
+      // 初めてプレイする分岐ならスキップ中断
+      const ifName = getIfName(props.player.currentStoryItem)
+      if (!state.value.completedBranches.includes(ifName)) {
+        dialog.show({
+          title: '初めての分岐',
+          desc: 'スキップを中断しました。',
+          options: [{ text: 'OK', close: true }]
+        })
+        return next()
+      }
+    }
+  }
+  skipScene()
 }
 const tapScreen = () => {
   if (props.player.currentStoryItem.type === 'function' && props.player.currentStoryItem.function.startsWith('ゲームオーバー')) {
@@ -241,6 +267,7 @@ const toggleExploring = () => {
   <template v-if="!uiHidden && !dialog.current && !showLetter && !player.currentFade">
     <Button :text="exploring ? 'もどる' : 'あたりを見回す'" :x="(200).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="toggleExploring" />
     <Button v-if="!exploring" :text="fastForward ? '止める' : '早送り'" :x="(200 + 190).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="toggleFastForward" />
+    <Button v-if="!exploring" :text="'スキップ'" :x="(200 + 190 + 190).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="skipScene" />
   </template>
   <Things v-if="exploring && !dialog.current" :place="player.currentBackground?.image ?? ''" @select="selectThing" />
   <MessageWindow v-if="player.currentMessage" :visible="!dialog.current && !showLetter && !exploring" :title="player.currentMessage.name" :text="player.currentMessage.text" />
