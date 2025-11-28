@@ -47,6 +47,6 @@ emit('end')
 
 <template>
   <Container>
-    <Speaker :speaker="speaker" v-for="speaker in speakers" :key="speaker.image" :focus="!currentSpeaker || currentSpeaker === speaker" />
+    <Speaker :speaker="speaker" v-for="speaker in speakers" :key="speaker.image" :focus="!speaking || currentSpeaker === speaker" />
   </Container>
 </template>

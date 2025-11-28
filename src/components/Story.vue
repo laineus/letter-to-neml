@@ -35,14 +35,6 @@ const functions = {
     showLetter.value = true
     return false
   },
-  '早送り停止': () => {
-    fastForward.value = false
-    return true
-  },
-  'シーン終了': () => {
-    props.player.storyItemIndex = Infinity
-    return true
-  },
   '衝撃': () => {
     shake.exec(() => next())
     return false
@@ -55,9 +47,10 @@ const functions = {
     uiHidden.value = true
     return true
   },
-  'ゲームオーバー': () => {
-    return false
-  }
+  'ゲームオーバー:報復': () => false,
+  'ゲームオーバー:投獄': () => false,
+  'ゲームオーバー:昏睡': () => false,
+  'ゲームオーバー:心中': () => false
 } as Functions
 const toTitle = () => {
   scene.scene.start('TitleScene')
@@ -95,12 +88,14 @@ const next = () => {
 }
 /** その行を処理する */
 const exec = () => {
-  if (props.player.storyItemIndex === 0 && props.player.story.if) {
-    const func = ifFunctions[props.player.story.if]
-    if (func && !func()) {
-      props.player.skipStory()
-      exec()
-      return
+  if (props.player.storyItemIndex === 0) {
+    if (props.player.story.if) {
+      const func = ifFunctions[props.player.story.if]
+      if (func && !func()) {
+        props.player.skipStory()
+        exec()
+        return
+      }
     }
     // シーンが変わったら早送り停止
     fastForward.value = false
@@ -225,6 +220,10 @@ const toggleFastForward = () => {
   fastForward.value = !fastForward.value
   next()
 }
+const toggleExploring = () => {
+  fastForward.value = false
+  exploring.value = !exploring.value
+}
 </script>
 
 <template>
@@ -240,8 +239,8 @@ const toggleFastForward = () => {
   <Fade v-if="player.currentFade" :fade="player.currentFade" :depth="3000" @end="onFadeEnd" />
   <!-- UI -->
   <template v-if="!uiHidden && !dialog.current && !showLetter && !player.currentFade">
-    <Button :text="exploring ? 'もどる' : 'あたりを見回す'" :x="(200).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="exploring = !exploring" />
-    <Button :text="fastForward ? '止める' : '早送り'" :x="(200 + 190).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="toggleFastForward" />
+    <Button :text="exploring ? 'もどる' : 'あたりを見回す'" :x="(200).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="toggleExploring" />
+    <Button v-if="!exploring" :text="fastForward ? '止める' : '早送り'" :x="(200 + 190).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="toggleFastForward" />
   </template>
   <Things v-if="exploring && !dialog.current" :place="player.currentBackground?.image ?? ''" @select="selectThing" />
   <MessageWindow v-if="player.currentMessage" :visible="!dialog.current && !showLetter && !exploring" :title="player.currentMessage.name" :text="player.currentMessage.text" />
