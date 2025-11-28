@@ -6,7 +6,7 @@ const textareaModel = ref('')
 const onSubmit = () => {
   const startAt = new Date()
   console.log('submit')
-  chatAi(textareaModel.value).then((response) => {
+  chatAi(textareaModel.value, 'gemini-2.5-flash-lite').then((response) => {
     const diffSec = (new Date().getTime() - startAt.getTime()) / 1000 
     console.log(diffSec)
     console.log(response)
