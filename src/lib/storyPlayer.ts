@@ -57,6 +57,19 @@ export const useStoryPlayer = (stories: Story[]) => {
     }
     return false
   }
+  const backToStart = () => {
+    state.storyItemIndex = 0
+    state.messageIndex = 0
+  }
+  const backToPrevStory = () => {
+    if (state.storyIndex > 0) {
+      state.storyIndex--
+      state.storyItemIndex = 0
+      state.messageIndex = 0
+    } else {
+      backToStart()
+    }
+  }
   const skipIf = () => {
     const endIfIndex = story.value.list.slice(state.storyItemIndex + 1).reduce((acc, item, index) => {
       if (acc.endIfIndex !== -1) return acc
@@ -97,6 +110,8 @@ export const useStoryPlayer = (stories: Story[]) => {
     get currentIf () { return currentIf.value },
     next,
     skipIf,
-    skipStory
+    skipStory,
+    backToStart,
+    backToPrevStory
   }
 }

@@ -190,6 +190,14 @@ const skipScene = () => {
   }
   skipScene()
 }
+const backScene = () => {
+  if (props.player.messageIndex > 0 || props.player.story.list.slice(0, props.player.storyItemIndex).some(v => v.type === 'messages')) {
+    props.player.backToStart()
+  } else {
+    props.player.backToPrevStory()
+  }
+  exec()
+}
 const tapScreen = () => {
   if (props.player.currentStoryItem.type === 'function' && props.player.currentStoryItem.function.startsWith('ゲームオーバー')) {
     goingToTitle.value = true
@@ -268,6 +276,7 @@ const toggleExploring = () => {
     <Button :text="exploring ? 'もどる' : 'あたりを見回す'" :x="(200).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="toggleExploring" />
     <Button v-if="!exploring" :text="fastForward ? '止める' : '早送り'" :x="(200 + 190).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="toggleFastForward" />
     <Button v-if="!exploring" :text="'スキップ'" :x="(200 + 190 + 190).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="skipScene" />
+    <Button v-if="!exploring" :text="'もどる'" :x="(200 + 190 + 190 + 190).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="backScene" />
   </template>
   <Things v-if="exploring && !dialog.current" :place="player.currentBackground?.image ?? ''" @select="selectThing" />
   <MessageWindow v-if="player.currentMessage" :visible="!dialog.current && !showLetter && !exploring" :title="player.currentMessage.name" :text="player.currentMessage.text" />
