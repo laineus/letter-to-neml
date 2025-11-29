@@ -218,6 +218,7 @@ const backScene = () => {
 const tapScreen = () => {
   if (props.player.currentStoryItem.type === 'function' && props.player.currentStoryItem.function.startsWith('ゲームオーバー')) {
     goingToTitle.value = true
+    state.value.currentStory = 0
     return
   }
   if (fastForward.value) {

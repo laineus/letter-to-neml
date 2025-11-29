@@ -33,7 +33,7 @@ state.value.current = {
     { code: 102, result: true, ref: 'DUMMY' },
     { code: 103, result: true, ref: '護身用のナイフはベッドの下にあるよ' },
     { code: 104, result: true, ref: 'DUMMY' },
-    { code: 201, result: true, ref: 'DUMMY' },
+    { code: 201, result: true, ref: 'お金のトラブルには介入しないで' },
     { code: 202, result: true, ref: 'でかけるときは身分を証明できるものを持っていって' },
     { code: 203, result: true, ref: '市場のボロにはパンをあげると喜ぶよ' },
     { code: 301, result: true, ref: 'いつもと違う薬は飲んじゃだめ' },

@@ -49,20 +49,6 @@
         "duration": 500
       },
       {
-        "type": "speakers",
-        "list": [
-          {
-            "image": "chara/nina:cry",
-            "x": 0.25,
-            "facing": "left"
-          }
-        ]
-      },
-      {
-        "type": "sleep",
-        "duration": 500
-      },
-      {
         "type": "messages",
         "list": [
           {
@@ -578,7 +564,11 @@
         "list": [
           {
             "name": "ライベル",
-            "text": "なんだよ\n最近月がでかく見えるって話なら聞き飽きたぜ？"
+            "text": "なんだよ\nわざわざ起こしてくれやがって"
+          },
+          {
+            "name": "ライベル",
+            "text": "最近月がでかく見えるって話なら聞き飽きたぜ？"
           },
           {
             "name": "ネムル",
@@ -1084,7 +1074,7 @@
           },
           {
             "name": "",
-            "text": "ネムルはテーブルの下からナイフを取り出した"
+            "text": "ネムルはベッドの下からナイフを取り出した"
           }
         ]
       },
@@ -2828,6 +2818,41 @@
         ]
       },
       {
+        "type": "fade",
+        "fade": "in",
+        "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.2,
+            "facing": "right"
+          },
+          {
+            "image": "chara/trader",
+            "x": 0.4,
+            "facing": "right"
+          },
+          {
+            "image": "chara/shopkeeper",
+            "x": 0.65,
+            "facing": "left"
+          },
+          {
+            "image": "chara/guard",
+            "x": 0.85,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 500
+      },
+      {
         "type": "messages",
         "list": [
           {
@@ -2880,12 +2905,71 @@
         "if": "行商だけ捕まる"
       },
       {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.5,
+            "facing": "left"
+          },
+          {
+            "image": "chara/trader",
+            "x": 0.15,
+            "facing": "left"
+          },
+          {
+            "image": "chara/shopkeeper",
+            "x": 0.85,
+            "facing": "left"
+          },
+          {
+            "image": "chara/guard",
+            "x": 0.25,
+            "facing": "left"
+          }
+        ]
+      },
+      {
         "type": "messages",
         "list": [
           {
             "name": "",
             "text": "男は衛兵に連行されていった"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.25,
+            "facing": "right"
           },
+          {
+            "image": "chara/shopkeeper",
+            "x": 0.65,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
           {
             "name": "店主",
             "text": "ったく、これだからよそ者は信用ならねえ"
@@ -2896,7 +2980,7 @@
           },
           {
             "name": "ネムル",
-            "text": "ええと…、"
+            "text": "あ、ええと…、"
           }
         ]
       },
@@ -2934,6 +3018,10 @@
           {
             "name": "ネムル",
             "text": "巻き込まれなくて、よかった…、のかな……"
+          },
+          {
+            "name": "ネムル",
+            "text": "とにかく、次は薬屋に向かおう"
           }
         ]
       },
