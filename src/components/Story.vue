@@ -16,6 +16,7 @@ import Button from './Button.vue'
 import Dialog, { useDialogs } from './Dialog.vue'
 import type { Thing } from './Thing.vue'
 import { useDamage, useShake } from '../lib/effect'
+import IconButton from './IconButton.vue'
 const props = defineProps({
   player: {
     type: Object as PropType<ReturnType<typeof useStoryPlayer>>,
@@ -274,9 +275,12 @@ const toggleExploring = () => {
   <!-- UI -->
   <template v-if="!uiHidden && !dialog.current && !showLetter && !player.currentFade">
     <Button :text="exploring ? 'もどる' : 'あたりを見回す'" :x="(200).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="toggleExploring" />
-    <Button v-if="!exploring" :text="fastForward ? '止める' : '早送り'" :x="(200 + 190).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="toggleFastForward" />
-    <Button v-if="!exploring" :text="'スキップ'" :x="(200 + 190 + 190).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="skipScene" />
-    <Button v-if="!exploring" :text="'もどる'" :x="(200 + 190 + 190 + 190).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="backScene" />
+    <template v-if="!exploring">
+      <IconButton icon="settings" :x="((50 * 0) + 60).byRight()" :y="(60).byBottom()" :depth="8000" />
+      <IconButton icon="next" :x="((50 * 1) + 60).byRight()" :y="(60).byBottom()" :depth="8000" @click="skipScene" />
+      <IconButton :icon="fastForward ? 'pause' : 'fastforward'" :x="((50 * 2) + 60).byRight()" :y="(60).byBottom()" :depth="8000" @click="toggleFastForward" />
+      <IconButton icon="prev" :x="((50 * 3) + 60).byRight()" :y="(60).byBottom()" :depth="8000" @click="backScene" />
+    </template>
   </template>
   <Things v-if="exploring && !dialog.current" :place="player.currentBackground?.image ?? ''" @select="selectThing" />
   <MessageWindow v-if="player.currentMessage" :visible="!dialog.current && !showLetter && !exploring" :title="player.currentMessage.name" :text="player.currentMessage.text" />

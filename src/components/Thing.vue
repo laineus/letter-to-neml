@@ -36,7 +36,7 @@ const props = defineProps({
     <Circle
       :key="thing.name"
       :origin="0.5"
-      :radius="10"
+      :radius="8"
       :fillColor="0xEE3300"
       :alpha="0.5"
     />
