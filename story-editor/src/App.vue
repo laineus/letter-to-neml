@@ -7,7 +7,7 @@ import ProgressIndicator from './ProgressIndicator.vue'
 import Toast, { toastManager } from './Toast.vue'
 import { useRouter } from 'vue-router'
 
-const TARGET_STORIES = 22
+const TARGET_STORIES = 21
 
 const stories = ref<Story[]>()
 const router = useRouter()

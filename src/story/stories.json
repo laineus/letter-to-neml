@@ -149,6 +149,24 @@
         "type": "fade",
         "fade": "in",
         "duration": 1000
+      }
+    ]
+  },
+  {
+    "title": "ライベルの来訪",
+    "list": [
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 0
+      },
+      {
+        "type": "background",
+        "image": "bg/home"
+      },
+      {
+        "type": "sleep",
+        "duration": 500
       },
       {
         "type": "speakers",
@@ -159,10 +177,6 @@
             "facing": "right"
           }
         ]
-      },
-      {
-        "type": "sleep",
-        "duration": 500
       },
       {
         "type": "messages",
@@ -234,34 +248,10 @@
         "type": "fade",
         "fade": "in",
         "duration": 500
-      }
-    ]
-  },
-  {
-    "title": "ライベルの来訪",
-    "list": [
-      {
-        "type": "fade",
-        "fade": "in",
-        "duration": 0
-      },
-      {
-        "type": "background",
-        "image": "bg/home"
       },
       {
         "type": "sleep",
         "duration": 500
-      },
-      {
-        "type": "speakers",
-        "list": [
-          {
-            "image": "chara/neml",
-            "x": 0.35,
-            "facing": "right"
-          }
-        ]
       },
       {
         "type": "fade",
@@ -269,15 +259,19 @@
         "duration": 500
       },
       {
-        "type": "sleep",
-        "duration": 500
-      },
-      {
         "type": "messages",
         "list": [
           {
+            "name": "",
+            "text": "ネムルは読み終わった手紙を大事そうにしまった"
+          },
+          {
             "name": "ネムル",
             "text": "ニーナおでかけか……"
+          },
+          {
+            "name": "ネムル",
+            "text": "急にどうしたんだろう"
           },
           {
             "name": "ネムル",
@@ -422,6 +416,10 @@
         "duration": 1500
       },
       {
+        "type": "if",
+        "if": "悪夢予防薬を片付けない"
+      },
+      {
         "type": "messages",
         "list": [
           {
@@ -429,6 +427,29 @@
             "text": "相変わらずボロいな"
           }
         ]
+      },
+      {
+        "type": "endIf"
+      },
+      {
+        "type": "if",
+        "if": "悪夢予防薬を片付ける"
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "私は部屋の片付けでもしてようかな"
+          },
+          {
+            "name": "ネムル",
+            "text": "ニーナも\"{ref:101}\"って言ってたし"
+          }
+        ]
+      },
+      {
+        "type": "endIf"
       },
       {
         "type": "fade",
