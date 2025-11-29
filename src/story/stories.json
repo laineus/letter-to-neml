@@ -1789,6 +1789,63 @@
         "duration": 500
       },
       {
+        "type": "if",
+        "if": "荷物あり"
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "ええと、ニーナはたしか、"
+          }
+        ]
+      },
+      {
+        "type": "if",
+        "if": "身分を証明できる"
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "\"{ref:202}\"\nって言ってたからこれと……"
+          }
+        ]
+      },
+      {
+        "type": "endIf"
+      },
+      {
+        "type": "if",
+        "if": "ボロがカスラの実を吐き出す"
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "\"{ref:203}\"\nって言ってたからこれと……"
+          }
+        ]
+      },
+      {
+        "type": "endIf"
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "これでよし！"
+          }
+        ]
+      },
+      {
+        "type": "endIf"
+      },
+      {
         "type": "messages",
         "list": [
           {

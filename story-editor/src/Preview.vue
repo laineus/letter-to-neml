@@ -31,16 +31,16 @@ state.value.current = {
   branches: [
     { code: 101, result: true, ref: '悪夢予防薬の空き瓶は片付けておいて' },
     { code: 102, result: true, ref: 'DUMMY' },
-    { code: 103, result: true, ref: 'DUMMY' },
+    { code: 103, result: true, ref: '護身用のナイフはベッドの下にあるよ' },
     { code: 104, result: true, ref: 'DUMMY' },
     { code: 201, result: true, ref: 'DUMMY' },
-    { code: 202, result: true, ref: 'DUMMY' },
-    { code: 203, result: true, ref: 'DUMMY' },
-    { code: 301, result: true, ref: 'DUMMY' },
-    { code: 302, result: true, ref: 'DUMMY' },
+    { code: 202, result: true, ref: 'でかけるときは身分を証明できるものを持っていって' },
+    { code: 203, result: true, ref: '市場のボロにはパンをあげると喜ぶよ' },
+    { code: 301, result: true, ref: 'いつもと違う薬は飲んじゃだめ' },
+    { code: 302, result: true, ref: '精神安定剤はカスラの実があれば作れるよ' },
     { code: 303, result: true, ref: 'DUMMY' },
-    { code: 401, result: true, ref: 'DUMMY' },
-    { code: 501, result: true, ref: 'DUMMY' }
+    { code: 401, result: true, ref: '海は危ないから入っちゃだめ' },
+    { code: 501, result: true, ref: 'ネムルのこと、好きだよ' }
   ]
 }
 </script>
