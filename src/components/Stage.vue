@@ -47,6 +47,6 @@ emit('end')
 
 <template>
   <Container>
-    <Speaker :speaker="speaker" v-for="speaker in speakers" :key="speaker.image" :focus="!speaking || currentSpeaker === speaker" />
+    <Speaker :speaker="speaker" v-for="speaker in speakers" :key="speaker.image.split(':')[0]" :focus="!speaking || currentSpeaker === speaker" />
   </Container>
 </template>

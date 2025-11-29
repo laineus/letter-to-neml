@@ -22,19 +22,28 @@ watch(realX, (newX, oldX) => {
     duration: Math.abs(newX - oldX) * 1.5
   }
 })
+const baseImage = computed(() => props.speaker.image.split(':')[0])
+const faceImage = computed(() =>  props.speaker.image.split(':')[1] ? props.speaker.image : undefined)
+const SCALE = 0.55
 </script>
 
 <template>
   <Container
     :x="initX"
-    :y="config.HEIGHT * 0.55"
-    :scale="0.55"
+    :y="config.HEIGHT * SCALE"
+    :scaleX="speaker.facing === 'right' ? SCALE : -SCALE"
+    :scaleY="SCALE"
     :tween="tween"
   >
     <Image
-      :texture="speaker.image"
+      :texture="baseImage"
       :origin="0.5"
-      :scaleX="speaker.facing === 'right' ? 1 : -1"
+      :tint="focus ? 0xFFFFFF : 0x888888"
+    />
+    <Image
+      v-if="faceImage"
+      :texture="faceImage"
+      :origin="0.5"
       :tint="focus ? 0xFFFFFF : 0x888888"
     />
   </Container>

@@ -49,6 +49,20 @@
         "duration": 500
       },
       {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina:cry",
+            "x": 0.25,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
         "type": "messages",
         "list": [
           {
@@ -5714,7 +5728,27 @@
           {
             "name": "ニーナ",
             "text": "ネムル、"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina:cry",
+            "x": 0.55,
+            "facing": "left"
           },
+          {
+            "image": "chara/rybel",
+            "x": 0.3,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
           {
             "name": "ニーナ",
             "text": "……ごめんね"
@@ -5729,7 +5763,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina",
+            "image": "chara/nina:cry",
             "x": 0.55,
             "facing": "right"
           },
@@ -5753,45 +5787,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina",
-            "x": 0.6,
-            "facing": "right"
-          },
-          {
-            "image": "chara/rybel",
-            "x": 0.3,
-            "facing": "right"
-          }
-        ]
-      },
-      {
-        "type": "sleep",
-        "duration": 1500
-      },
-      {
-        "type": "speakers",
-        "list": [
-          {
-            "image": "chara/nina",
-            "x": 0.65,
-            "facing": "right"
-          },
-          {
-            "image": "chara/rybel",
-            "x": 0.3,
-            "facing": "right"
-          }
-        ]
-      },
-      {
-        "type": "sleep",
-        "duration": 1500
-      },
-      {
-        "type": "speakers",
-        "list": [
-          {
-            "image": "chara/nina",
+            "image": "chara/nina:cry",
             "x": 0.7,
             "facing": "right"
           },
@@ -5804,14 +5800,27 @@
       },
       {
         "type": "sleep",
-        "duration": 1500
+        "duration": 1000
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ニーナ",
+            "text": "……"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 2000
       },
       {
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina",
-            "x": 0.75,
+            "image": "chara/nina:cry",
+            "x": 1.2,
             "facing": "right"
           },
           {
