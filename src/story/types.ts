@@ -59,6 +59,10 @@ export type MessageConfig = {
 
 export type Branch = {
   code: number
-  result: boolean
+  result: true
   ref: string
+} | {
+  code: number
+  result: false
+  ref: null
 }

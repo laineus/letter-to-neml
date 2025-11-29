@@ -10,7 +10,7 @@ import { state } from '../lib/state'
 type ErrorResponse = {
   error: {
     code: string
-    ref: string
+    ref: string | null
   }
 }
 type SuccessResponse = {
@@ -125,6 +125,7 @@ const submit = () => {
     { role: 'assistant', content: AI_RESPONSE },
     { role: 'user', content: message.value }
   ], 'gemini-2.5-flash-lite').then(response => {
+    validateAiResponse(response)
     console.log('AI Response:', response)
     if ('error' in response) {
       error.value = response
@@ -172,6 +173,26 @@ const errorMessage = computed(() => {
   const ref = error.value.error.ref ? `\n\n（該当部分: "${error.value.error.ref}"）` : ''
   return ERROR_MESSAGES[error.value.error.code] + ref
 })
+const validateAiResponse = (response: SuccessResponse | ErrorResponse) => {
+  if (typeof response !== 'object' || response === null) throw new Error('Response is not an object')
+  if ('error' in response) {
+    if (typeof response.error !== 'object' || response.error === null) throw new Error('Error field is not an object')
+    if (typeof response.error.code !== 'string') throw new Error('Error code is not a string')
+    if (typeof response.error.ref !== 'string' && response.error.ref !== null) throw new Error('Error ref is not a string or null')
+  } else if ('result' in response) {
+    if (!Array.isArray(response.result)) throw new Error('Result field is not an array')
+    if (response.result.length !== 12) throw new Error('Result array is not 12 items long')
+    for (const item of response.result) {
+      if (typeof item !== 'object' || item === null) throw new Error('Result item is not an object')
+      if (typeof item.code !== 'number') throw new Error('Result item code is not a number')
+      if (typeof item.result !== 'boolean') throw new Error('Result item result is not a boolean')
+      if (typeof item.ref !== 'string' && item.ref !== null) throw new Error('Result item ref is not a string or null')
+      if (item.result && typeof item.ref !== 'string') throw new Error('Result item ref is not a string when result is true')
+    }
+  } else {
+    throw new Error('Response does not contain error or result field')
+  }
+}
 </script>
 
 <template>
