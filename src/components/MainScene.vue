@@ -4,9 +4,11 @@ import Story from './Story.vue'
 import { stories } from '../story/stories'
 import { useStoryPlayer } from '../lib/storyPlayer'
 import { ref } from 'vue'
+import { state } from '../lib/state'
 const storyPlayer = ref<ReturnType<typeof useStoryPlayer>>()
 const init = () => {
   storyPlayer.value = useStoryPlayer(stories)
+  storyPlayer.value.storyIndex = state.value.currentStory ?? 0
 }
 </script>
 

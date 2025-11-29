@@ -106,7 +106,7 @@ const DEFAULT_MESSAGE = `ネムルへ、
 
 const emit = defineEmits(['submit'])
 
-const message = ref<string>(state.value.prev?.letter ?? DEFAULT_MESSAGE)
+const message = ref<string>(state.value.current?.letter ?? DEFAULT_MESSAGE)
 const scene = useScene()
 const loading = ref(false)
 const status = ref<'rules' | 'edit' | 'error' | 'submit'>('rules')
@@ -115,9 +115,9 @@ const submit = () => {
   if (loading.value) return
   loading.value = true
   error.value = undefined
-  if (state.value.prev && message.value === state.value.prev.letter) {
+  if (state.value.current && message.value === state.value.current.letter) {
     changeStatus('submit')
-    emit('submit', { letter: state.value.prev.letter, branches: state.value.prev.branches })
+    emit('submit', undefined)
     return
   }
   chatAi<SuccessResponse | ErrorResponse>([

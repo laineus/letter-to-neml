@@ -6,9 +6,11 @@ type StateRecord = {
   branches: Branch[]
 }
 export type GameState = {
+  currentStory: number
+  completedStories: number[]
   completedBranches: string[]
-  prev?: StateRecord
-  current?: StateRecord
+  prev: StateRecord | null
+  current: StateRecord | null
 }
 
 export const save = () => {
@@ -20,9 +22,11 @@ export const load = () => {
 }
 const makeState = (): GameState => {
   return {
+    currentStory: 0,
+    completedStories: [],
     completedBranches: [],
-    prev: undefined,
-    current: undefined
+    prev: null,
+    current: null
   }
 }
 export const state = ref(load() ?? makeState())
