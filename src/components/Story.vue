@@ -3,7 +3,7 @@ import { Container, FxBlur, Rectangle, useScene } from 'phavuer'
 import MessageWindow from './MessageWindow.vue'
 import Stage from './Stage.vue'
 import Fade from './Fade.vue'
-import { ref, type PropType } from 'vue'
+import { ref, watch, type PropType } from 'vue'
 import Background from './Background.vue'
 import type { Branch, StoryIf } from '../story/types'
 import config from '../lib/config'
@@ -77,18 +77,19 @@ const getIfName = (ifItem: StoryIf) => {
   const currentIfIndex = props.player.story.list.filter(v => v.type === 'if').findIndex(v => v === ifItem)
   return `${props.player.storyIndex}-${currentIfIndex}`
 }
+watch(() => props.player.storyIndex, (_current, prev) => {
+  console.log('storyIndex changed:', prev, _current)
+  if (!state.value.completedStories.includes(prev)) {
+    state.value.completedStories.push(prev)
+    save()
+  }
+})
 /** 次の行へ進む */
 const next = () => {
   if (props.static) return
   waitingStageUpdate = false
   waitingFade = false
   waitingSleep = false
-  if ((props.player.story.list.length - 1) === props.player.storyItemIndex) {
-    if (!state.value.completedStories.includes(props.player.storyIndex)) {
-      state.value.completedStories.push(props.player.storyIndex)
-      save()
-    }
-  }
   const result = props.player.next()
   if (!result) return
   exec()
@@ -192,6 +193,7 @@ const skipScene = () => {
     const func = ifFunctions[props.player.currentStoryItem.if]
     if (func && !func()) {
       props.player.skipIf()
+      if (props.player.storyItemIndex === 0) return exec()
     } else {
       // 初めてプレイする分岐ならスキップ中断
       const ifName = getIfName(props.player.currentStoryItem)
