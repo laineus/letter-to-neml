@@ -29,20 +29,18 @@ watch(() => props.speakers, (newSpeakers, oldSpeakers) => {
   if (newSpeakers === oldSpeakers) return
   // TODO: tweenでフェードインアウトさせる
   const delay = Math.max(...newSpeakers.map(v => {
-    const old = oldSpeakers.find(o => o.image === v.image)
+    const old = oldSpeakers?.find(o => o.image === v.image)
     if (!old) return 0
     const oldX = Math.round(old.x * config.WIDTH)
     const newX = Math.round(v.x * config.WIDTH)
     return Math.abs(oldX - newX) * 1.5
-  }))
+  }), 0)
+  if (!delay) return emit('end')
   scene.time.addEvent({
     delay,
-    callback: () => {
-      emit('end')
-    }
+    callback: () => emit('end')
   })
-})
-emit('end')
+}, { immediate: true })
 </script>
 
 <template>
