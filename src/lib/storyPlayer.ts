@@ -88,9 +88,11 @@ export const useStoryPlayer = (stories: Story[]) => {
     next()
   }
   const skipStory = () => {
+    if (state.storyIndex >= stories.length - 1) return false
     state.storyItemIndex = 0
     state.messageIndex = 0
     state.storyIndex++
+    return true
   }
   return {
     stories,

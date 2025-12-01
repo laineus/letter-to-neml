@@ -78,7 +78,6 @@ const getIfName = (ifItem: StoryIf) => {
   return `${props.player.storyIndex}-${currentIfIndex}`
 }
 watch(() => props.player.storyIndex, (_current, prev) => {
-  console.log('storyIndex changed:', prev, _current)
   if (!state.value.completedStories.includes(prev)) {
     state.value.completedStories.push(prev)
     save()
@@ -100,8 +99,9 @@ const exec = () => {
     if (props.player.story.if) {
       const func = ifFunctions[props.player.story.if]
       if (func && !func()) {
-        props.player.skipStory()
-        exec()
+        if (props.player.skipStory()) {
+          exec()
+        }
         return
       }
     }
@@ -125,19 +125,23 @@ const exec = () => {
           desc: '早送りを停止しました。',
           options: [{ text: 'OK', close: true }]
         })
+        // プレイ済みの分岐として保存
+        state.value.completedBranches.push(ifName)
+        save()
       }
       next()
     }
   } else if (props.player.currentStoryItem?.type === 'endIf') {
-    const currentIf = props.player.currentIf
+    // if入った時点で保存するように変更
+    // const currentIf = props.player.currentIf
     // プレイ済みの分岐として保存
-    if (currentIf) {
-      const ifName = getIfName(currentIf)
-      if (!state.value.completedBranches.includes(ifName)) {
-        state.value.completedBranches.push(ifName)
-        save()
-      }
-    }
+    // if (currentIf) {
+    //   const ifName = getIfName(currentIf)
+    //   if (!state.value.completedBranches.includes(ifName)) {
+    //     state.value.completedBranches.push(ifName)
+    //     save()
+    //   }
+    // }
     next()
   } else if (props.player.currentStoryItem?.type === 'background') {
     next()
@@ -271,14 +275,14 @@ const selectThing = (thing: Thing) => {
   })
 }
 const toggleFastForward = () => {
-  if (!fastForward.value && !state.value.completedStories.includes(props.player.storyIndex)) {
-    dialog.show({
-      title: '未完了のシーン',
-      desc: 'このシーンは未完了のため早送りできません。',
-      options: [{ text: 'OK', close: true }]
-    })
-    return
-  }
+  // if (!fastForward.value && !state.value.completedStories.includes(props.player.storyIndex)) {
+  //   dialog.show({
+  //     title: '未完了のシーン',
+  //     desc: 'このシーンは未完了のため早送りできません。',
+  //     options: [{ text: 'OK', close: true }]
+  //   })
+  //   return
+  // }
   fastForward.value = !fastForward.value
   next()
 }
