@@ -51,7 +51,11 @@ const functions = {
   'ゲームオーバー:報復': () => false,
   'ゲームオーバー:投獄': () => false,
   'ゲームオーバー:昏睡': () => false,
-  'ゲームオーバー:心中': () => false
+  'ゲームオーバー:心中': () => false,
+  'エンディング:ニーナのいない夜': () => false,
+  'エンディング:ニーナの使命': () => false,
+  'エンディング:二人で過ごす終焉': () => false,
+  'エンディング:ネムルの見た夢': () => false
 } as Functions
 const toTitle = () => {
   scene.scene.start('TitleScene')
@@ -191,6 +195,7 @@ const skipScene = () => {
   if (props.player.storyItemIndex === 0) return exec()
   if (props.player.currentStoryItem.type === 'function') {
     if (props.player.currentStoryItem.function.startsWith('ゲームオーバー')) return
+    if (props.player.currentStoryItem.function.startsWith('エンディング')) return
     if (props.player.currentStoryItem.function === '手紙執筆') return exec()
   }
   if (props.player.currentStoryItem.type === 'if') {
@@ -223,6 +228,12 @@ const backScene = () => {
 }
 const tapScreen = () => {
   if (props.player.currentStoryItem.type === 'function' && props.player.currentStoryItem.function.startsWith('ゲームオーバー')) {
+    goingToTitle.value = true
+    state.value.currentStory = 0
+    return
+  }
+  // 仮
+  if (props.player.currentStoryItem.type === 'function' && props.player.currentStoryItem.function.startsWith('エンディング')) {
     goingToTitle.value = true
     state.value.currentStory = 0
     return
