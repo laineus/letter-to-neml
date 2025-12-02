@@ -1,5 +1,6 @@
 import { computed, reactive } from 'vue'
 import type { Story, StoryItem } from '../story/types'
+import { thingDefinitions, things } from '../story/things'
 
 export const useStoryPlayer = (stories: Story[]) => {
   const state = reactive({
@@ -20,12 +21,14 @@ export const useStoryPlayer = (stories: Story[]) => {
     return story.value.list.slice(0, state.storyItemIndex + 1)
   })
   type StoryItemByType<T extends StoryItem['type']> = Extract<StoryItem, { type: T }>
-  const findLastRow = <T extends StoryItem['type']>(type: T) => {
+  const findLastRow = <T extends StoryItem['type']>(target: T | ((v: StoryItem) => boolean)) => {
     return activeStoryItems.value.slice(0).reverse().reduce((result, v) => {
       if (result.background) return result
       if (v.type === 'if') result.ifCnt = Math.max(0, result.ifCnt - 1)
       if (v.type === 'endIf') result.ifCnt++
-      if (result.ifCnt === 0 && v.type === type) result.background = v as StoryItemByType<T>
+      if (result.ifCnt === 0 && (typeof target === 'function' ? target(v) : v.type === target)) {
+        result.background = v as StoryItemByType<T>
+      }
       return result
     }, { ifCnt:0, background: undefined as undefined | StoryItemByType<T> } ).background
   }
@@ -36,6 +39,12 @@ export const useStoryPlayer = (stories: Story[]) => {
     return lastFade?.fade === 'in' || currentStoryItem.value === lastFade ? lastFade : undefined
   })
   const currentIf = computed(() => findLastRow('if'))
+  const currentThings = computed(() => {
+    const result = findLastRow<'function'>(v => v.type === 'function' && v.function.startsWith('オブジェクト:'))
+    if (!result) return undefined
+    const ids = thingDefinitions[result.function.replace('オブジェクト:', '')]
+    return ids.map(id => things.find(v => v.id === id)!)
+  })
   const next = () => {
     // 次のメッセージ
     if (currentMessages.value && state.messageIndex < currentMessages.value.list.length - 1) {
@@ -110,6 +119,7 @@ export const useStoryPlayer = (stories: Story[]) => {
     get currentSpeakers () { return currentSpeakers.value },
     get currentFade () { return currentFade.value },
     get currentIf () { return currentIf.value },
+    get currentThings () { return currentThings.value },
     next,
     skipIf,
     skipStory,

@@ -66,3 +66,11 @@ export type Branch = {
   result: false
   ref: null
 }
+
+export type Thing = {
+  id: string
+  x: number
+  y: number
+  name: string
+  desc: string
+}

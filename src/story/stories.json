@@ -3,6 +3,10 @@
     "title": "ニーナの外出",
     "list": [
       {
+        "type": "function",
+        "function": "オブジェクト:自宅:デフォルト"
+      },
+      {
         "type": "fade",
         "fade": "in",
         "duration": 0
@@ -155,6 +159,10 @@
   {
     "title": "ライベルの来訪",
     "list": [
+      {
+        "type": "function",
+        "function": "オブジェクト:自宅:デフォルト"
+      },
       {
         "type": "fade",
         "fade": "in",
@@ -461,6 +469,10 @@
   {
     "title": "ウルフリック襲来",
     "list": [
+      {
+        "type": "function",
+        "function": "オブジェクト:自宅:デフォルト"
+      },
       {
         "type": "fade",
         "fade": "in",
@@ -1246,6 +1258,10 @@
         ]
       },
       {
+        "type": "function",
+        "function": "オブジェクト:削除"
+      },
+      {
         "type": "fade",
         "fade": "in",
         "duration": 500
@@ -1318,6 +1334,10 @@
   {
     "title": "ライベルとの会話",
     "list": [
+      {
+        "type": "function",
+        "function": "オブジェクト:自宅:デフォルト"
+      },
       {
         "type": "fade",
         "fade": "in",
@@ -2046,6 +2066,10 @@
   {
     "title": "行商の青年",
     "list": [
+      {
+        "type": "function",
+        "function": "オブジェクト:市場:デフォルト"
+      },
       {
         "type": "fade",
         "fade": "in",
@@ -2985,6 +3009,10 @@
         ]
       },
       {
+        "type": "function",
+        "function": "オブジェクト:削除"
+      },
+      {
         "type": "fade",
         "fade": "in",
         "duration": 500
@@ -3205,6 +3233,10 @@
         ]
       },
       {
+        "type": "function",
+        "function": "オブジェクト:削除"
+      },
+      {
         "type": "fade",
         "fade": "in",
         "duration": 500
@@ -3258,6 +3290,10 @@
   {
     "title": "薬屋",
     "list": [
+      {
+        "type": "function",
+        "function": "オブジェクト:薬局:デフォルト"
+      },
       {
         "type": "fade",
         "fade": "in",
@@ -3769,6 +3805,10 @@
   {
     "title": "浜辺での休憩",
     "list": [
+      {
+        "type": "function",
+        "function": "オブジェクト:浜辺:デフォルト"
+      },
       {
         "type": "fade",
         "fade": "in",
@@ -5119,6 +5159,10 @@
     "title": "帰宅",
     "list": [
       {
+        "type": "function",
+        "function": "オブジェクト:自宅:デフォルト"
+      },
+      {
         "type": "fade",
         "fade": "in",
         "duration": 0
@@ -5239,6 +5283,10 @@
   {
     "title": "ライベルの再訪",
     "list": [
+      {
+        "type": "function",
+        "function": "オブジェクト:自宅:デフォルト"
+      },
       {
         "type": "fade",
         "fade": "in",
@@ -5997,6 +6045,10 @@
     "title": "助けを呼ぶ子供",
     "list": [
       {
+        "type": "function",
+        "function": "オブジェクト:自宅:デフォルト"
+      },
+      {
         "type": "fade",
         "fade": "in",
         "duration": 0
@@ -6098,6 +6150,10 @@
             "text": "……よし、話を聞きに行ってみよう"
           }
         ]
+      },
+      {
+        "type": "function",
+        "function": "オブジェクト:削除"
       },
       {
         "type": "fade",
@@ -6435,9 +6491,17 @@
     "title": "コリンの家",
     "list": [
       {
+        "type": "function",
+        "function": "オブジェクト:ウルフリックの家:デフォルト"
+      },
+      {
         "type": "fade",
         "fade": "in",
         "duration": 0
+      },
+      {
+        "type": "function",
+        "function": "オブジェクト:ウルフリックの家:デフォルト"
       },
       {
         "type": "background",
@@ -6617,6 +6681,10 @@
         ]
       },
       {
+        "type": "function",
+        "function": "オブジェクト:削除"
+      },
+      {
         "type": "fade",
         "fade": "in",
         "duration": 1000
@@ -6685,6 +6753,10 @@
   {
     "title": "ウルフリックの家",
     "list": [
+      {
+        "type": "function",
+        "function": "オブジェクト:ウルフリックの家:デフォルト"
+      },
       {
         "type": "fade",
         "fade": "in",
@@ -6911,6 +6983,10 @@
             "text": "え、うん\nありがとう"
           }
         ]
+      },
+      {
+        "type": "function",
+        "function": "オブジェクト:削除"
       },
       {
         "type": "fade",

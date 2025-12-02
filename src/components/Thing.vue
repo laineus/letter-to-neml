@@ -2,12 +2,7 @@
 import { Circle, Container } from 'phavuer'
 import { type PropType, defineEmits, defineProps } from 'vue'
 import config from '../lib/config'
-export type Thing = {
-  x: number
-  y: number
-  name: string
-  desc: string
-}
+import type { Thing } from '../story/types'
 const tween = {
   duration: 1800,
   props: {

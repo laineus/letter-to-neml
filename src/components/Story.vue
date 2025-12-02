@@ -5,7 +5,7 @@ import Stage from './Stage.vue'
 import Fade from './Fade.vue'
 import { ref, watch, type PropType } from 'vue'
 import Background from './Background.vue'
-import type { Branch, StoryIf } from '../story/types'
+import type { Branch, StoryIf, Thing } from '../story/types'
 import config from '../lib/config'
 import Letter from './Letter.vue'
 import { useIfFunctions } from '../lib/ifFunctions'
@@ -14,7 +14,6 @@ import { save, state } from '../lib/state'
 import Things from './Things.vue'
 import Button from './Button.vue'
 import Dialog, { useDialogs } from './Dialog.vue'
-import type { Thing } from './Thing.vue'
 import { useDamage, useShake } from '../lib/effect'
 import IconButton from './IconButton.vue'
 const props = defineProps({
@@ -166,7 +165,7 @@ const exec = () => {
   } else if (props.player.currentStoryItem?.type === 'function') {
     const functionFunc = functions[props.player.currentStoryItem.function]
     if (!functionFunc) {
-      console.warn(`関数が見つかりません: ${props.player.currentStoryItem.function}`)
+      // console.warn(`関数が見つかりません: ${props.player.currentStoryItem.function}`)
       next()
       return
     }
@@ -316,7 +315,7 @@ const toggleExploring = () => {
   <Fade v-if="player.currentFade" :fade="player.currentFade" :depth="3000" @end="onFadeEnd" />
   <!-- UI -->
   <template v-if="!uiHidden && !dialog.current && !showLetter && !player.currentFade">
-    <Button :text="exploring ? 'もどる' : 'あたりを見回す'" :x="(200).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="toggleExploring" />
+    <Button v-if="player.currentThings?.length" :text="exploring ? 'もどる' : 'あたりを見回す'" :x="(200).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="toggleExploring" />
     <template v-if="!exploring">
       <IconButton icon="settings" :x="((50 * 0) + 60).byRight()" :y="(60).byBottom()" :depth="8000" />
       <IconButton icon="next" :x="((50 * 1) + 60).byRight()" :y="(60).byBottom()" :depth="8000" @click="skipScene" />
@@ -324,7 +323,7 @@ const toggleExploring = () => {
       <IconButton icon="prev" :x="((50 * 3) + 60).byRight()" :y="(60).byBottom()" :depth="8000" @click="backScene" />
     </template>
   </template>
-  <Things v-if="exploring && !dialog.current" :place="player.currentBackground?.image ?? ''" @select="selectThing" />
+  <Things v-if="exploring && !dialog.current" :things="player.currentThings ?? []" @select="selectThing" />
   <MessageWindow v-if="player.currentMessage" :visible="!dialog.current && !showLetter && !exploring" :title="player.currentMessage.name" :text="player.currentMessage.text" />
   <Letter v-if="showLetter" @submit="submitLetter" />
   <Fade v-if="goingToTitle" :fade="{ type: 'fade', fade: 'in', duration: 3000 }" :depth="3000" @end="toTitle" />
