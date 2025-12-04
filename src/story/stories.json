@@ -7295,14 +7295,14 @@
       },
       {
         "type": "background",
-        "image": "bg/forest1"
+        "image": "bg/carriage"
       },
       {
         "type": "speakers",
         "list": [
           {
             "image": "chara/neml",
-            "x": 0.4,
+            "x": 0.35,
             "facing": "right"
           }
         ]
