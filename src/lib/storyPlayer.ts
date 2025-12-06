@@ -1,6 +1,5 @@
 import { computed, reactive } from 'vue'
-import type { Story, StoryItem } from '../story/types'
-import { thingDefinitions, things } from '../story/things'
+import type { Story } from '../story/types'
 
 export const useStoryPlayer = (stories: Story[]) => {
   const state = reactive({
@@ -16,34 +15,6 @@ export const useStoryPlayer = (stories: Story[]) => {
   const currentMessage = computed(() => {
     if (!currentMessages.value) return
     return currentMessages.value.list[state.messageIndex]
-  })
-  const activeStoryItems = computed(() => {
-    return story.value.list.slice(0, state.storyItemIndex + 1)
-  })
-  type StoryItemByType<T extends StoryItem['type']> = Extract<StoryItem, { type: T }>
-  const findLastRow = <T extends StoryItem['type']>(target: T | ((v: StoryItem) => boolean)) => {
-    return activeStoryItems.value.slice(0).reverse().reduce((result, v) => {
-      if (result.background) return result
-      if (v.type === 'if') result.ifCnt = Math.max(0, result.ifCnt - 1)
-      if (v.type === 'endIf') result.ifCnt++
-      if (result.ifCnt === 0 && (typeof target === 'function' ? target(v) : v.type === target)) {
-        result.background = v as StoryItemByType<T>
-      }
-      return result
-    }, { ifCnt:0, background: undefined as undefined | StoryItemByType<T> } ).background
-  }
-  const currentBackground = computed(() => findLastRow('background'))
-  const currentSpeakers = computed(() => findLastRow('speakers'))
-  const currentFade = computed(() => {
-    const lastFade = findLastRow('fade')
-    return lastFade?.fade === 'in' || currentStoryItem.value === lastFade ? lastFade : undefined
-  })
-  const currentIf = computed(() => findLastRow('if'))
-  const currentThings = computed(() => {
-    const result = findLastRow<'function'>(v => v.type === 'function' && v.function.startsWith('オブジェクト:'))
-    if (!result) return undefined
-    const ids = thingDefinitions[result.function.replace('オブジェクト:', '')]
-    return ids.map(id => things.find(v => v.id === id)!)
   })
   const next = () => {
     // 次のメッセージ
@@ -115,11 +86,6 @@ export const useStoryPlayer = (stories: Story[]) => {
     get currentMessages () { return currentMessages.value },
     get currentMessage () { return currentMessage.value },
     get currentStoryItem () { return currentStoryItem.value },
-    get currentBackground () { return currentBackground.value },
-    get currentSpeakers () { return currentSpeakers.value },
-    get currentFade () { return currentFade.value },
-    get currentIf () { return currentIf.value },
-    get currentThings () { return currentThings.value },
     next,
     skipIf,
     skipStory,

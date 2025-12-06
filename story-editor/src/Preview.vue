@@ -4,10 +4,12 @@ import { Game, Scene } from 'phavuer'
 import Story from '../../src/components/Story.vue'
 import { preloadAssets } from '../../src/lib/preload'
 import config from '../../src/lib/config.ts'
-import { ref, type PropType } from 'vue'
+import { ref, onMounted, onUnmounted, type PropType } from 'vue'
 import type { useStoryPlayer } from '../../src/lib/storyPlayer.ts'
 import { state } from '../../src/lib/state.ts'
-defineEmits(['stop'])
+
+const emit = defineEmits(['stop'])
+
 const props = defineProps({
   storyPlayer: {
     type: Object as PropType<ReturnType<typeof useStoryPlayer>>,
@@ -18,6 +20,27 @@ const props = defineProps({
     required: true
   }
 })
+
+const handleKeyDown = (event: KeyboardEvent) => {
+  if (!props.static && event.key === 'Escape') {
+    emit('stop')
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('keydown', handleKeyDown)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('keydown', handleKeyDown)
+})
+
+const clickOutside = () => {
+  if (!props.static) {
+    emit('stop')
+  }
+}
+
 const gameConfig = { width: config.WIDTH, height: config.HEIGHT }
 const preload = (scene: Phaser.Scene) => {
   preloadAssets(scene)
@@ -46,7 +69,7 @@ state.value.current = {
 </script>
 
 <template>
-  <div class="preview" :class="[`size${size}`, static ? 'static' : 'dynamic']">
+  <div class="preview" :class="[`size${size}`, static ? 'static' : 'dynamic']" @click.self="clickOutside">
     <Game :config="gameConfig">
       <Scene name="MainScene" @preload="preload">
         <Story :player="storyPlayer" :static="static" :key="static ? 'static' : 'dynamic'" />

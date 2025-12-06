@@ -3,9 +3,9 @@ import { Container, FxBlur, Rectangle, useScene } from 'phavuer'
 import MessageWindow from './MessageWindow.vue'
 import Stage from './Stage.vue'
 import Fade from './Fade.vue'
-import { ref, watch, type PropType } from 'vue'
+import { computed, ref, watch, type PropType } from 'vue'
 import Background from './Background.vue'
-import type { Branch, StoryIf, Thing } from '../story/types'
+import type { Branch, StoryIf, StoryItem, Thing } from '../story/types'
 import config from '../lib/config'
 import Letter from './Letter.vue'
 import { useIfFunctions } from '../lib/ifFunctions'
@@ -16,6 +16,7 @@ import Button from './Button.vue'
 import Dialog, { useDialogs } from './Dialog.vue'
 import { useDamage, useShake } from '../lib/effect'
 import IconButton from './IconButton.vue'
+import { thingDefinitions, things } from '../story/things'
 const props = defineProps({
   player: {
     type: Object as PropType<ReturnType<typeof useStoryPlayer>>,
@@ -86,6 +87,43 @@ watch(() => props.player.storyIndex, (_current, prev) => {
     save()
   }
 })
+const activeStoryItems = computed(() => {
+  return props.player.story.list.slice(0, props.player.storyItemIndex + 1)
+})
+type StoryItemByType<T extends StoryItem['type']> = Extract<StoryItem, { type: T }>
+const findLastRow = <T extends StoryItem['type']>(target: T | ((v: StoryItem) => boolean)) => {
+  return activeStoryItems.value.slice(0).reduce((result, v) => {
+    if (v.type === 'if') {
+      const func = ifFunctions[v.if]
+      if (result.ignoredIfCnt > 0 || (func && !func())) {
+        result.ignoredIfCnt++
+      }
+    }
+    if (v.type === 'endIf') {
+      if (result.ignoredIfCnt > 0) {
+        result.ignoredIfCnt--
+      }
+    }
+    if (result.ignoredIfCnt > 0) return result
+    if (typeof target === 'function' ? target(v) : v.type === target) {
+      result.found = v as StoryItemByType<T>
+    }
+    return result
+  }, { ignoredIfCnt:0, found: undefined as undefined | StoryItemByType<T> } ).found
+}
+const currentBackground = computed(() => findLastRow('background'))
+const currentSpeakers = computed(() => findLastRow('speakers'))
+const currentFade = computed(() => {
+  const lastFade = findLastRow('fade')
+  return lastFade?.fade === 'in' || props.player.currentStoryItem === lastFade ? lastFade : undefined
+})
+const currentIf = computed(() => findLastRow('if'))
+const currentThings = computed(() => {
+  const result = findLastRow<'function'>(v => v.type === 'function' && v.function.startsWith('オブジェクト:'))
+  if (!result) return undefined
+  const ids = thingDefinitions[result.function.replace('オブジェクト:', '')]
+  return ids.map(id => things.find(v => v.id === id)!)
+})
 /** 次の行へ進む */
 const next = () => {
   if (props.static) return
@@ -136,10 +174,9 @@ const exec = () => {
     }
   } else if (props.player.currentStoryItem?.type === 'endIf') {
     // if入った時点で保存するように変更
-    // const currentIf = props.player.currentIf
     // プレイ済みの分岐として保存
-    // if (currentIf) {
-    //   const ifName = getIfName(currentIf)
+    // if (currentIf.value) {
+    //   const ifName = getIfName(currentIf.value)
     //   if (!state.value.completedBranches.includes(ifName)) {
     //     state.value.completedBranches.push(ifName)
     //     save()
@@ -308,15 +345,15 @@ const toggleExploring = () => {
   <Rectangle :width="config.WIDTH" :height="config.HEIGHT" :origin="0" @pointerdown="tapScreen" />
   <!-- Background and Stage -->
   <Container :depth="1000">
-    <Background v-if="player.currentBackground" :x="shake.x" :y="shake.y" :texture="player.currentBackground?.image" />
-    <Stage v-if="player.currentSpeakers" :visible="!exploring" :speaking="player.currentMessage?.name" :speakers="player.currentSpeakers.list" @end="onStageUpdate" />
+    <Background v-if="currentBackground" :x="shake.x" :y="shake.y" :texture="currentBackground?.image" />
+    <Stage v-if="currentSpeakers" :visible="!exploring" :speaking="player.currentMessage?.name" :speakers="currentSpeakers.list" @end="onStageUpdate" />
     <FxBlur v-if="dialog.current || showLetter" :post="true" :strength="2" :quality="1" :steps="7" />
   </Container>
   <Rectangle :width="config.WIDTH" :height="config.HEIGHT" :origin="0" :fillColor="0xFF1100" :alpha="damage.alpha" :depth="2500" />
-  <Fade v-if="player.currentFade" :fade="player.currentFade" :depth="3000" @end="onFadeEnd" />
+  <Fade v-if="currentFade" :fade="currentFade" :depth="3000" @end="onFadeEnd" />
   <!-- UI -->
-  <template v-if="!uiHidden && !dialog.current && !showLetter && !player.currentFade">
-    <Button v-if="player.currentThings?.length" :text="exploring ? 'もどる' : 'あたりを見回す'" :x="(200).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="toggleExploring" />
+  <template v-if="!uiHidden && !dialog.current && !showLetter && !currentFade">
+    <Button v-if="currentThings?.length" :text="exploring ? 'もどる' : 'あたりを見回す'" :x="(200).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="toggleExploring" />
     <template v-if="!exploring">
       <IconButton icon="settings" :x="((50 * 0) + 60).byRight()" :y="(60).byBottom()" :depth="8000" />
       <IconButton icon="next" :x="((50 * 1) + 60).byRight()" :y="(60).byBottom()" :depth="8000" @click="skipScene" />
@@ -324,7 +361,7 @@ const toggleExploring = () => {
       <IconButton icon="prev" :x="((50 * 3) + 60).byRight()" :y="(60).byBottom()" :depth="8000" @click="backScene" />
     </template>
   </template>
-  <Things v-if="exploring && !dialog.current" :things="player.currentThings ?? []" @select="selectThing" />
+  <Things v-if="exploring && !dialog.current" :things="currentThings ?? []" @select="selectThing" />
   <MessageWindow v-if="player.currentMessage" :visible="!dialog.current && !showLetter && !exploring" :title="player.currentMessage.name" :text="player.currentMessage.text" />
   <Letter v-if="showLetter" @submit="submitLetter" />
   <Fade v-if="goingToTitle" :fade="{ type: 'fade', fade: 'in', duration: 3000 }" :depth="3000" @end="toTitle" />
