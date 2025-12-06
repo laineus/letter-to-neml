@@ -4,7 +4,7 @@
     "list": [
       {
         "type": "function",
-        "function": "オブジェクト:自宅:デフォルト"
+        "function": "オブジェクト:自宅:ビン有り"
       },
       {
         "type": "fade",
@@ -17,7 +17,7 @@
       },
       {
         "type": "background",
-        "image": "bg/home"
+        "image": "bg/home:bottle"
       },
       {
         "type": "speakers",
@@ -161,7 +161,7 @@
     "list": [
       {
         "type": "function",
-        "function": "オブジェクト:自宅:デフォルト"
+        "function": "オブジェクト:自宅:ビン有り"
       },
       {
         "type": "fade",
@@ -170,7 +170,7 @@
       },
       {
         "type": "background",
-        "image": "bg/home"
+        "image": "bg/home:bottle"
       },
       {
         "type": "sleep",
@@ -489,6 +489,10 @@
       {
         "type": "background",
         "image": "bg/home:bottle"
+      },
+      {
+        "type": "function",
+        "function": "オブジェクト:自宅:ビン有り"
       },
       {
         "type": "endIf"
@@ -1391,6 +1395,10 @@
       {
         "type": "background",
         "image": "bg/home:bottle"
+      },
+      {
+        "type": "function",
+        "function": "オブジェクト:自宅:ビン有り"
       },
       {
         "type": "endIf"
@@ -2415,6 +2423,10 @@
         "image": "bg/stall:dog2"
       },
       {
+        "type": "function",
+        "function": "オブジェクト:市場:ボロくわえ"
+      },
+      {
         "type": "messages",
         "list": [
           {
@@ -2824,6 +2836,28 @@
       },
       {
         "type": "function",
+        "function": "UI非表示"
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": []
+      },
+      {
+        "type": "background",
+        "image": "bg/go2"
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 500
+      },
+      {
+        "type": "function",
         "function": "ゲームオーバー:投獄"
       },
       {
@@ -3144,6 +3178,10 @@
       {
         "type": "background",
         "image": "bg/stall"
+      },
+      {
+        "type": "function",
+        "function": "オブジェクト:市場:ボロ無し"
       },
       {
         "type": "messages",
@@ -3800,6 +3838,28 @@
             "facing": "right"
           }
         ]
+      },
+      {
+        "type": "function",
+        "function": "UI非表示"
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": []
+      },
+      {
+        "type": "background",
+        "image": "bg/go3"
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 500
       },
       {
         "type": "messages",
@@ -4865,6 +4925,28 @@
         ]
       },
       {
+        "type": "function",
+        "function": "UI非表示"
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": []
+      },
+      {
+        "type": "background",
+        "image": "bg/go4"
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 500
+      },
+      {
         "type": "messages",
         "list": [
           {
@@ -4872,20 +4954,6 @@
             "text": "やめて！！溺れちゃう！！"
           }
         ]
-      },
-      {
-        "type": "fade",
-        "fade": "in",
-        "duration": 250
-      },
-      {
-        "type": "speakers",
-        "list": []
-      },
-      {
-        "type": "fade",
-        "fade": "out",
-        "duration": 250
       },
       {
         "type": "function",
@@ -5066,6 +5134,10 @@
         ]
       },
       {
+        "type": "function",
+        "function": "オブジェクト:浜辺:コンパス無し"
+      },
+      {
         "type": "speakers",
         "list": [
           {
@@ -5241,6 +5313,10 @@
         "image": "bg/home:bottle"
       },
       {
+        "type": "function",
+        "function": "オブジェクト:自宅:ビン有り"
+      },
+      {
         "type": "endIf"
       },
       {
@@ -5375,6 +5451,10 @@
       {
         "type": "background",
         "image": "bg/home:bottle"
+      },
+      {
+        "type": "function",
+        "function": "オブジェクト:自宅:ビン有り"
       },
       {
         "type": "endIf"
@@ -6147,6 +6227,10 @@
       {
         "type": "background",
         "image": "bg/home:bottle"
+      },
+      {
+        "type": "function",
+        "function": "オブジェクト:自宅:ビン有り"
       },
       {
         "type": "endIf"
@@ -7745,6 +7829,10 @@
     "title": "ED1:ニーナのいない夜",
     "list": [
       {
+        "type": "function",
+        "function": "オブジェクト:自宅:デフォルト"
+      },
+      {
         "type": "fade",
         "fade": "in",
         "duration": 0
@@ -7760,6 +7848,10 @@
       {
         "type": "background",
         "image": "bg/home:bottle"
+      },
+      {
+        "type": "function",
+        "function": "オブジェクト:自宅:ビン有り"
       },
       {
         "type": "endIf"
@@ -7826,6 +7918,32 @@
         ]
       },
       {
+        "type": "function",
+        "function": "UI非表示"
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": []
+      },
+      {
+        "type": "background",
+        "image": "bg/ed1"
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 500
+      },
+      {
         "type": "messages",
         "list": [
           {
@@ -7872,6 +7990,10 @@
       {
         "type": "background",
         "image": "bg/home:bottle"
+      },
+      {
+        "type": "function",
+        "function": "オブジェクト:自宅:ビン有り"
       },
       {
         "type": "endIf"
@@ -8006,7 +8128,34 @@
           {
             "name": "",
             "text": "ネムルは変わり果てた姿となったニーナを見つけた"
-          },
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "function": "UI非表示"
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": []
+      },
+      {
+        "type": "background",
+        "image": "bg/ed2"
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
           {
             "name": "ネムル",
             "text": "ニーナ……なの？"
@@ -8421,6 +8570,32 @@
         ]
       },
       {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "function",
+        "function": "UI非表示"
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": []
+      },
+      {
+        "type": "background",
+        "image": "bg/ed3"
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 500
+      },
+      {
         "type": "messages",
         "list": [
           {
@@ -8445,28 +8620,13 @@
           },
           {
             "name": "ネムル",
-            "text": "それって……"
-          },
-          {
-            "name": "ネムル",
-            "text": "すごく……、嬉しいよ"
+            "text": "それって、すごく……、嬉しいよ"
           }
         ]
       },
       {
-        "type": "speakers",
-        "list": [
-          {
-            "image": "chara/nina",
-            "x": 0.6,
-            "facing": "left"
-          },
-          {
-            "image": "chara/neml",
-            "x": 0.45,
-            "facing": "left"
-          }
-        ]
+        "type": "sleep",
+        "duration": 1500
       },
       {
         "type": "messages",
@@ -8478,21 +8638,6 @@
           {
             "name": "ネムル",
             "text": "今こんなに幸せな気持ちなのに……、\nもう終わっちゃうんだもん"
-          }
-        ]
-      },
-      {
-        "type": "speakers",
-        "list": [
-          {
-            "image": "chara/nina",
-            "x": 0.6,
-            "facing": "left"
-          },
-          {
-            "image": "chara/neml",
-            "x": 0.45,
-            "facing": "right"
           }
         ]
       },
@@ -8676,6 +8821,32 @@
             "text": "飛び降りたニーナを追ってネムルが駆け出すと、\nその背中に輝く大きな翼が広がった"
           }
         ]
+      },
+      {
+        "type": "function",
+        "function": "UI非表示"
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": []
+      },
+      {
+        "type": "background",
+        "image": "bg/ed4"
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 500
       },
       {
         "type": "messages",

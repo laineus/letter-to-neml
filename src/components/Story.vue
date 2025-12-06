@@ -297,6 +297,7 @@ const toggleFastForward = () => {
   next()
 }
 const toggleExploring = () => {
+  if (!props.player.currentMessages) return
   fastForward.value = false
   exploring.value = !exploring.value
 }
