@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Image } from 'phavuer'
+import { Container, Image } from 'phavuer'
 import { computed } from 'vue'
 import config from '../lib/config'
 
@@ -9,9 +9,13 @@ const props = defineProps({
     required: true
   }
 })
-const currentTexture = computed(() => props.texture)
+const baseImage = computed(() => props.texture.split(':')[0])
+const objImage = computed(() =>  props.texture.split(':')[1] ? props.texture : undefined)
 </script>
 
 <template>
-  <Image :texture="currentTexture" :displayWidth="config.WIDTH" :displayHeight="config.HEIGHT" :origin="0" />
+  <Container>
+    <Image :texture="baseImage" :displayWidth="config.WIDTH" :displayHeight="config.HEIGHT" :origin="0" />
+    <Image v-if="objImage" :texture="objImage" :displayWidth="config.WIDTH" :displayHeight="config.HEIGHT" :origin="0" />
+  </Container>
 </template>

@@ -483,6 +483,17 @@
         "image": "bg/home"
       },
       {
+        "type": "if",
+        "if": "悪夢予防薬を片付けない"
+      },
+      {
+        "type": "background",
+        "image": "bg/home:bottle"
+      },
+      {
+        "type": "endIf"
+      },
+      {
         "type": "speakers",
         "list": [
           {
@@ -1058,6 +1069,32 @@
         "function": "ダメージ"
       },
       {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "function",
+        "function": "UI非表示"
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": []
+      },
+      {
+        "type": "background",
+        "image": "bg/go1"
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 500
+      },
+      {
         "type": "messages",
         "list": [
           {
@@ -1346,6 +1383,17 @@
       {
         "type": "background",
         "image": "bg/home"
+      },
+      {
+        "type": "if",
+        "if": "悪夢予防薬を片付けない"
+      },
+      {
+        "type": "background",
+        "image": "bg/home:bottle"
+      },
+      {
+        "type": "endIf"
       },
       {
         "type": "speakers",
@@ -2077,7 +2125,7 @@
       },
       {
         "type": "background",
-        "image": "bg/stall"
+        "image": "bg/stall:dog1"
       },
       {
         "type": "speakers",
@@ -2361,6 +2409,10 @@
             "facing": "left"
           }
         ]
+      },
+      {
+        "type": "background",
+        "image": "bg/stall:dog2"
       },
       {
         "type": "messages",
@@ -3086,7 +3138,16 @@
           {
             "name": "店主",
             "text": "おい、ボロ！待ちやがれ！"
-          },
+          }
+        ]
+      },
+      {
+        "type": "background",
+        "image": "bg/stall"
+      },
+      {
+        "type": "messages",
+        "list": [
           {
             "name": "",
             "text": "ボロはネムルのバッグに鼻を押し付けて匂いを嗅いでいる"
@@ -3228,7 +3289,7 @@
           },
           {
             "name": "",
-            "text": "ネムルはカスラの実を受け取った\nボロのヨダレでちょっと湿っている…！"
+            "text": "ネムルはカスラの実を受け取った！\nボロのヨダレでちょっと湿っている…"
           }
         ]
       },
@@ -3816,7 +3877,7 @@
       },
       {
         "type": "background",
-        "image": "bg/shore"
+        "image": "bg/shore:bag"
       },
       {
         "type": "speakers",
@@ -5172,6 +5233,17 @@
         "image": "bg/home"
       },
       {
+        "type": "if",
+        "if": "悪夢予防薬を片付けない"
+      },
+      {
+        "type": "background",
+        "image": "bg/home:bottle"
+      },
+      {
+        "type": "endIf"
+      },
+      {
         "type": "speakers",
         "list": [
           {
@@ -5295,6 +5367,17 @@
       {
         "type": "background",
         "image": "bg/home"
+      },
+      {
+        "type": "if",
+        "if": "悪夢予防薬を片付けない"
+      },
+      {
+        "type": "background",
+        "image": "bg/home:bottle"
+      },
+      {
+        "type": "endIf"
       },
       {
         "type": "speakers",
@@ -6056,6 +6139,17 @@
       {
         "type": "background",
         "image": "bg/home"
+      },
+      {
+        "type": "if",
+        "if": "悪夢予防薬を片付けない"
+      },
+      {
+        "type": "background",
+        "image": "bg/home:bottle"
+      },
+      {
+        "type": "endIf"
       },
       {
         "type": "speakers",
@@ -7660,6 +7754,17 @@
         "image": "bg/home"
       },
       {
+        "type": "if",
+        "if": "悪夢予防薬を片付けない"
+      },
+      {
+        "type": "background",
+        "image": "bg/home:bottle"
+      },
+      {
+        "type": "endIf"
+      },
+      {
         "type": "speakers",
         "list": [
           {
@@ -7759,6 +7864,17 @@
       {
         "type": "background",
         "image": "bg/home"
+      },
+      {
+        "type": "if",
+        "if": "悪夢予防薬を片付けない"
+      },
+      {
+        "type": "background",
+        "image": "bg/home:bottle"
+      },
+      {
+        "type": "endIf"
       },
       {
         "type": "speakers",
