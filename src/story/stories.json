@@ -3921,7 +3921,7 @@
         "type": "messages",
         "list": [
           {
-            "name": "医者",
+            "name": "",
             "text": "そういうと医者は棚から薬瓶を手に取った"
           },
           {
@@ -3959,7 +3959,7 @@
         "list": [
           {
             "name": "ネムル",
-            "text": "（そういえばニーナが\"\"って）"
+            "text": "（そういえばニーナが\"{ref:302}\"って）"
           },
           {
             "name": "ネムル",
@@ -4153,6 +4153,21 @@
         "type": "fade",
         "fade": "in",
         "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml:dark",
+            "x": 0.35,
+            "facing": "right"
+          },
+          {
+            "image": "chara/doctor",
+            "x": 0.7,
+            "facing": "left"
+          }
+        ]
       },
       {
         "type": "fade",
@@ -7965,7 +7980,7 @@
           },
           {
             "name": "ネムル",
-            "text": "\"{ref:}\"って"
+            "text": "\"{ref:501}\"って"
           },
           {
             "name": "ネムル",

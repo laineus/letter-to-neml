@@ -16,6 +16,12 @@ const viewMessage = computed(() => {
   }, props.text).replace(new RegExp(`{red}`, 'g'), '')
 })
 const red = computed(() => props.text.includes('{red}'))
+const green = computed(() => props.text.includes('{ref:'))
+const color = computed(() => {
+  if (red.value) return '#FF3300'
+  if (green.value) return '#99FF11'
+  return '#FFFFFF'
+})
 </script>
 
 <template>
@@ -29,6 +35,6 @@ const red = computed(() => props.text.includes('{red}'))
         <FxBlur :strength="3" :quality="1" :steps="7" :x="5" :y="0" />
       </Line>
     </template>
-    <Text :text="viewMessage" :x="0" :y="0" :originX="0.5" :originY="0" :lineSpacing="fontSize * 0.7" :padding="{ top: 2 }" :style="{ color: red ? '#FF3300' : '#FFFFFF', fontSize, align: 'center', wordWrap: { width: config.WIDTH - 100, useAdvancedWrap: true } }" />
+    <Text :text="viewMessage" :x="0" :y="0" :originX="0.5" :originY="0" :lineSpacing="fontSize * 0.7" :padding="{ top: 2 }" :style="{ color, fontSize, align: 'center', wordWrap: { width: config.WIDTH - 100, useAdvancedWrap: true } }" />
   </Container>
 </template>

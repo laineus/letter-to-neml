@@ -56,12 +56,12 @@ state.value.current = {
     { code: 102, result: true, ref: 'DUMMY' },
     { code: 103, result: true, ref: '護身用のナイフはベッドの下にあるよ' },
     { code: 104, result: true, ref: 'DUMMY' },
-    { code: 201, result: true, ref: 'お金のトラブルには介入しないで' },
-    { code: 202, result: true, ref: 'でかけるときは身分を証明できるものを持っていって' },
+    { code: 201, result: false, ref: 'お金のトラブルには介入しないで' },
+    { code: 202, result: false, ref: 'でかけるときは身分を証明できるものを持っていって' },
     { code: 203, result: true, ref: '市場のボロにはパンをあげると喜ぶよ' },
     { code: 301, result: true, ref: 'いつもと違う薬は飲んじゃだめ' },
     { code: 302, result: true, ref: '精神安定剤はカスラの実があれば作れるよ' },
-    { code: 303, result: true, ref: 'DUMMY' },
+    { code: 303, result: false, ref: 'おうちの本で薬について勉強してね' },
     { code: 401, result: true, ref: '海は危ないから入っちゃだめ' },
     { code: 501, result: true, ref: 'ネムルのこと、好きだよ' }
   ]
