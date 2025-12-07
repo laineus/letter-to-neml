@@ -8832,7 +8832,7 @@
     "if": "バッドエンド2"
   },
   {
-    "title": "ED3:二人で過ごす終焉",
+    "title": "再会",
     "list": [
       {
         "type": "fade",
@@ -9020,6 +9020,31 @@
           {
             "name": "ネムル",
             "text": "そんなの全然大丈夫じゃない！！"
+          }
+        ]
+      }
+    ],
+    "if": "生きてニーナに会える"
+  },
+  {
+    "title": "ED3:二人で過ごす終焉",
+    "list": [
+      {
+        "type": "background",
+        "image": "bg/tower"
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina:sad",
+            "x": 0.2,
+            "facing": "right"
+          },
+          {
+            "image": "chara/neml:rush1",
+            "x": 0.7,
+            "facing": "left"
           }
         ]
       },
@@ -9334,11 +9359,6 @@
     "title": "ED4:ネムルの見た夢",
     "list": [
       {
-        "type": "fade",
-        "fade": "in",
-        "duration": 0
-      },
-      {
         "type": "background",
         "image": "bg/tower"
       },
@@ -9352,15 +9372,27 @@
           },
           {
             "image": "chara/neml",
-            "x": 1.2,
+            "x": 0.7,
             "facing": "left"
           }
         ]
       },
       {
-        "type": "fade",
-        "fade": "out",
-        "duration": 1000
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "ねえ、聞いて"
+          },
+          {
+            "name": "ネムル",
+            "text": "私ね、\nニーナが伝えてくれたこと、とっても嬉しかったんだ"
+          },
+          {
+            "name": "ニーナ",
+            "text": "うん"
+          }
+        ]
       },
       {
         "type": "speakers",
@@ -9372,7 +9404,7 @@
           },
           {
             "image": "chara/neml",
-            "x": 0.8,
+            "x": 0.7,
             "facing": "left"
           }
         ]
@@ -9380,23 +9412,6 @@
       {
         "type": "messages",
         "list": [
-          {
-            "name": "",
-            "text": "コピー"
-          }
-        ]
-      },
-      {
-        "type": "messages",
-        "list": [
-          {
-            "name": "ネムル",
-            "text": "ニーナが伝えてくれたこと、とっても嬉しかったんだ"
-          },
-          {
-            "name": "ニーナ",
-            "text": "うん"
-          },
           {
             "name": "ニーナ",
             "text": "読んでくれてありがとう"
@@ -9423,13 +9438,13 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina",
+            "image": "chara/nina:sad",
             "x": 0.2,
             "facing": "right"
           },
           {
-            "image": "chara/neml",
-            "x": 0.8,
+            "image": "chara/neml:rush2",
+            "x": 0.6,
             "facing": "left"
           }
         ]
@@ -9444,6 +9459,10 @@
           {
             "name": "ニーナ",
             "text": "……元気でね"
+          },
+          {
+            "name": "ネムル",
+            "text": "待って！！"
           }
         ]
       },
@@ -9451,13 +9470,13 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina",
+            "image": "chara/nina:sad",
             "x": 0.1,
             "facing": "right"
           },
           {
-            "image": "chara/neml",
-            "x": 0.6,
+            "image": "chara/neml:rush2",
+            "x": 0.5,
             "facing": "left"
           }
         ]
@@ -9475,12 +9494,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina",
+            "image": "chara/nina:sad",
             "x": -0.2,
             "facing": "right"
           },
           {
-            "image": "chara/neml",
+            "image": "chara/neml:rush2",
             "x": 0.3,
             "facing": "left"
           }
@@ -9574,7 +9593,11 @@
           },
           {
             "name": "ネムル",
-            "text": "だからニーナの悪夢は実現しない"
+            "text": "実現するのは私の見た夢"
+          },
+          {
+            "name": "ネムル",
+            "text": "ニーナの悪夢は実現しない"
           },
           {
             "name": "ニーナ",
