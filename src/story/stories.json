@@ -4576,7 +4576,7 @@
           },
           {
             "name": "お姉さん",
-            "text": "遠くに行っちゃった人にも会いに行けるんだから"
+            "text": "遠くに行っちゃった人にも、飛んで会いに行けるんだから"
           },
           {
             "name": "ネムル",
@@ -4635,6 +4635,10 @@
             "text": "海の向こうを指してる……"
           },
           {
+            "name": "お姉さん",
+            "text": "そう。彼は海の向こう"
+          },
+          {
             "name": "ネムル",
             "text": "だから海の向こうに行きたかったんだね"
           },
@@ -4673,7 +4677,27 @@
           {
             "name": "お姉さん",
             "text": "少しも……、もう、動かない……"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml:rush1",
+            "x": 0.3,
+            "facing": "right"
           },
+          {
+            "image": "chara/ceryth",
+            "x": 0.7,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
           {
             "name": "ネムル",
             "text": "……"
@@ -4685,6 +4709,21 @@
           {
             "name": "",
             "text": "女性は悲しげに首を横に振った"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.3,
+            "facing": "right"
+          },
+          {
+            "image": "chara/ceryth",
+            "x": 0.7,
+            "facing": "left"
           }
         ]
       },
@@ -4851,7 +4890,7 @@
             "facing": "right"
           },
           {
-            "image": "chara/ceryth",
+            "image": "chara/ceryth:dark",
             "x": 0.7,
             "facing": "right"
           }
@@ -4879,7 +4918,7 @@
             "facing": "right"
           },
           {
-            "image": "chara/ceryth",
+            "image": "chara/ceryth:dark",
             "x": 0.65,
             "facing": "left"
           }
@@ -4988,7 +5027,7 @@
             "facing": "right"
           },
           {
-            "image": "chara/ceryth",
+            "image": "chara/ceryth:dark",
             "x": 0.65,
             "facing": "right"
           }
@@ -5016,7 +5055,7 @@
             "facing": "left"
           },
           {
-            "image": "chara/ceryth",
+            "image": "chara/ceryth:dark",
             "x": 0.65,
             "facing": "right"
           }
@@ -5111,7 +5150,7 @@
             "facing": "right"
           },
           {
-            "image": "chara/ceryth",
+            "image": "chara/ceryth:dark",
             "x": 0.6,
             "facing": "left"
           }
@@ -5130,7 +5169,7 @@
             "facing": "right"
           },
           {
-            "image": "chara/ceryth",
+            "image": "chara/ceryth:dark",
             "x": 0.55,
             "facing": "right"
           }
@@ -5174,7 +5213,7 @@
             "facing": "right"
           },
           {
-            "image": "chara/ceryth",
+            "image": "chara/ceryth:dark",
             "x": 0.6,
             "facing": "right"
           }
@@ -5201,12 +5240,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml",
+            "image": "chara/neml:rush1",
             "x": 0.55,
             "facing": "right"
           },
           {
-            "image": "chara/ceryth",
+            "image": "chara/ceryth:dark",
             "x": 0.65,
             "facing": "right"
           }
@@ -5233,12 +5272,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml",
+            "image": "chara/neml:rush2",
             "x": 0.6,
             "facing": "right"
           },
           {
-            "image": "chara/ceryth",
+            "image": "chara/ceryth:dark",
             "x": 0.7,
             "facing": "right"
           }
@@ -5269,12 +5308,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml",
+            "image": "chara/neml:rush2",
             "x": 0.65,
             "facing": "right"
           },
           {
-            "image": "chara/ceryth",
+            "image": "chara/ceryth:dark",
             "x": 0.75,
             "facing": "left"
           }
@@ -5288,12 +5327,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml",
+            "image": "chara/neml:rush2",
             "x": 0.7,
             "facing": "right"
           },
           {
-            "image": "chara/ceryth",
+            "image": "chara/ceryth:dark",
             "x": 0.8,
             "facing": "left"
           }
@@ -5345,6 +5384,10 @@
         "if": "お姉さんに精神安定剤をあげる"
       },
       {
+        "type": "sleep",
+        "duration": 1000
+      },
+      {
         "type": "messages",
         "list": [
           {
@@ -5369,11 +5412,11 @@
           },
           {
             "name": "ネムル",
-            "text": "うーん、もし悪夢を見ちゃったら、\nなんというか、世界中のみんなに迷惑をかけちゃう、みたいな…"
+            "text": "うーん、もし悪夢を見ちゃったら、\nなんというか、世界中のみんなに迷惑をかけちゃう、みたいな……"
           },
           {
             "name": "お姉さん",
-            "text": "それって…、ノクタリアンってこと？"
+            "text": "それって……、ノクタリアンってこと？"
           },
           {
             "name": "ネムル",
@@ -5381,7 +5424,7 @@
           },
           {
             "name": "ネムル",
-            "text": "いつも人には言わないようにしてるんだけど…"
+            "text": "いつも人には言わないようにしてるんだけど……"
           },
           {
             "name": "お姉さん",
@@ -5452,7 +5495,7 @@
           },
           {
             "name": "お姉さん",
-            "text": "困っていたから"
+            "text": "結構困っていたから"
           },
           {
             "name": "お姉さん",
@@ -5526,6 +5569,10 @@
             "facing": "left"
           }
         ]
+      },
+      {
+        "type": "sleep",
+        "duration": 300
       },
       {
         "type": "speakers",
@@ -5608,55 +5655,6 @@
         "type": "fade",
         "fade": "in",
         "duration": 1000
-      },
-      {
-        "type": "messages",
-        "list": [
-          {
-            "name": "お姉さん",
-            "text": "でもね"
-          },
-          {
-            "name": "お姉さん",
-            "text": "自分で決めちゃだめだよ"
-          },
-          {
-            "name": "ネムル",
-            "text": "？"
-          },
-          {
-            "name": "お姉さん",
-            "text": "ニーナちゃんの気持ち"
-          },
-          {
-            "name": "お姉さん",
-            "text": "あなたの想像だけで決めちゃだめってこと"
-          },
-          {
-            "name": "ネムル",
-            "text": "うん"
-          },
-          {
-            "name": "ネムル",
-            "text": "分かった"
-          },
-          {
-            "name": "お姉さん",
-            "text": "それに…、"
-          },
-          {
-            "name": "お姉さん",
-            "text": "ある日突然、会えなくなっちゃうかもしれないんだから"
-          },
-          {
-            "name": "ネムル",
-            "text": ""
-          }
-        ]
-      },
-      {
-        "type": "sleep",
-        "duration": 500
       },
       {
         "type": "endIf"

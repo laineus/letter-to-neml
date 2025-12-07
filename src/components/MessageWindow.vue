@@ -4,7 +4,7 @@ import { computed } from 'vue'
 import config from '../lib/config'
 import { state } from '../lib/state'
 const titleSize = 19
-const fontSize = 22
+const fontSize = 21
 const props = defineProps<{
   title?: string
   text: string
@@ -19,7 +19,7 @@ const red = computed(() => props.text.includes('{red}'))
 const green = computed(() => props.text.includes('{ref:'))
 const color = computed(() => {
   if (red.value) return '#FF3300'
-  if (green.value) return '#99FF11'
+  if (green.value) return '#77FF11'
   return '#FFFFFF'
 })
 </script>
@@ -30,7 +30,7 @@ const color = computed(() => {
       <FxBlur :strength="3" :quality="1" :steps="7" />
     </Rectangle>
     <template v-if="title">
-      <Text :text="title" :x="0" :y="-50" :origin="0.5" :lineSpacing="titleSize * 0.7" :padding="{ top: 2 }" :style="{ fontSize: titleSize, align: 'center', wordWrap: { width: config.WIDTH - 100, useAdvancedWrap: true } }" />
+      <Text :text="title" :x="0" :y="-50" :origin="0.5" :lineSpacing="titleSize * 0.7" :padding="{ top: 3 }" :style="{ fontSize: titleSize, align: 'center', wordWrap: { width: config.WIDTH - 100, useAdvancedWrap: true } }" />
       <Line :x="0" :y="-25" :x1="0" :y1="0" :x2="160" :y2="0" :originX="0.5" :originY="0" :lineWidth="1.7" :strokeColor="0xFFFFFF">
         <FxBlur :strength="3" :quality="1" :steps="7" :x="5" :y="0" />
       </Line>
