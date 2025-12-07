@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Container, Rectangle, Text, useScene } from 'phavuer'
+import { Container, Rectangle, Image, Text, useScene } from 'phavuer'
 import config from '../lib/config'
 const scene = useScene()
 const start = () => {
@@ -16,6 +16,10 @@ const start = () => {
       :fillColor="0x000000"
       @pointerdown="start"
     />
-    <Text text="ゲームを開始" :origin="0.5" :x="config.WIDTH / 2" :y="config.HEIGHT / 2" />
+    <Image texture="etc/title-bg" :origin="0" />
+    <Image texture="etc/logo-bg" :origin="0.5" :x="config.WIDTH / 2" :y="config.HEIGHT * 0.3" />
+    <Image texture="etc/logo-color" :origin="0.5" :x="config.WIDTH / 2" :y="config.HEIGHT * 0.3" :blendMode="1" />
+    <!-- <Image texture="etc/logo" :origin="0.5" :x="config.WIDTH / 2" :y="config.HEIGHT * 0.3" /> -->
+    <Text text="ゲームを開始" :origin="0.5" :x="config.WIDTH / 2" :y="config.HEIGHT * 0.7" />
   </Container>
 </template>
