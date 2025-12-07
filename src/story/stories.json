@@ -5787,7 +5787,22 @@
           {
             "name": "ネムル",
             "text": "ニーナ、元気にしてるかな"
-          },
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml:rush1",
+            "x": 0.4,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
           {
             "name": "ネムル",
             "text": "会いたいよ"
@@ -6109,7 +6124,7 @@
             "facing": "left"
           },
           {
-            "image": "chara/rybel",
+            "image": "chara/rybel:normal",
             "x": 0.3,
             "facing": "left"
           }
@@ -6207,12 +6222,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina",
+            "image": "chara/nina:sad",
             "x": 0.6,
             "facing": "left"
           },
           {
-            "image": "chara/rybel",
+            "image": "chara/rybel:normal",
             "x": 0.3,
             "facing": "right"
           }
@@ -6260,7 +6275,7 @@
             "facing": "left"
           },
           {
-            "image": "chara/rybel",
+            "image": "chara/rybel:normal",
             "x": 0.3,
             "facing": "left"
           }
@@ -6369,12 +6384,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina",
+            "image": "chara/nina:sad",
             "x": 0.6,
             "facing": "left"
           },
           {
-            "image": "chara/rybel",
+            "image": "chara/rybel:normal",
             "x": 0.3,
             "facing": "right"
           }
@@ -6418,12 +6433,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina",
+            "image": "chara/nina:sad",
             "x": 0.6,
             "facing": "left"
           },
           {
-            "image": "chara/rybel",
+            "image": "chara/rybel:normal",
             "x": 0.3,
             "facing": "left"
           }
@@ -6450,12 +6465,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina",
+            "image": "chara/nina:sad",
             "x": 0.55,
             "facing": "left"
           },
           {
-            "image": "chara/rybel",
+            "image": "chara/rybel:normal",
             "x": 0.3,
             "facing": "left"
           }
@@ -6479,7 +6494,7 @@
             "facing": "left"
           },
           {
-            "image": "chara/rybel",
+            "image": "chara/rybel:normal",
             "x": 0.3,
             "facing": "left"
           }
@@ -6507,7 +6522,7 @@
             "facing": "right"
           },
           {
-            "image": "chara/rybel",
+            "image": "chara/rybel:normal",
             "x": 0.3,
             "facing": "right"
           }
@@ -6531,7 +6546,7 @@
             "facing": "right"
           },
           {
-            "image": "chara/rybel",
+            "image": "chara/rybel:normal",
             "x": 0.3,
             "facing": "right"
           }
@@ -6552,7 +6567,7 @@
       },
       {
         "type": "sleep",
-        "duration": 2000
+        "duration": 1500
       },
       {
         "type": "speakers",
@@ -6563,7 +6578,7 @@
             "facing": "right"
           },
           {
-            "image": "chara/rybel",
+            "image": "chara/rybel:normal",
             "x": 0.3,
             "facing": "right"
           }
@@ -6668,7 +6683,22 @@
           {
             "name": "",
             "text": "外からは相変わらず子供の泣き声が続いている"
-          },
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml:rush1",
+            "x": 0.4,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
           {
             "name": "ネムル",
             "text": "ううーん、\nずっと放っておくのは、よくないよね"
@@ -6724,7 +6754,7 @@
             "facing": "right"
           },
           {
-            "image": "chara/korrin",
+            "image": "chara/korrin:cry",
             "x": 0.7,
             "facing": "left"
           }
@@ -6769,7 +6799,7 @@
             "facing": "right"
           },
           {
-            "image": "chara/korrin",
+            "image": "chara/korrin:cry",
             "x": 0.7,
             "facing": "left"
           }
@@ -6797,7 +6827,27 @@
           {
             "name": "ネムル",
             "text": "うーん、そうか"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml:rush1",
+            "x": 0.35,
+            "facing": "right"
           },
+          {
+            "image": "chara/korrin:cry",
+            "x": 0.7,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
           {
             "name": "ネムル",
             "text": "（見た感じカオティクスみたいだし、できれば関わりたくはないけど……）"
@@ -6844,7 +6894,7 @@
             "facing": "left"
           },
           {
-            "image": "chara/korrin",
+            "image": "chara/korrin:smile",
             "x": 0.2,
             "facing": "left"
           }
@@ -6868,7 +6918,7 @@
             "facing": "left"
           },
           {
-            "image": "chara/korrin",
+            "image": "chara/korrin:smile",
             "x": 0.2,
             "facing": "right"
           }
@@ -6940,7 +6990,27 @@
           {
             "name": "コリン",
             "text": "怖いだろ？"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.6,
+            "facing": "left"
           },
+          {
+            "image": "chara/korrin",
+            "x": 0.2,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
           {
             "name": "コリン",
             "text": "昔そのせいで大きな洪水が起きて、俺たちの国が流されちゃったり、\nうちのじーちゃんやばーちゃんも死んじまったんだ"
@@ -7008,7 +7078,7 @@
             "facing": "left"
           },
           {
-            "image": "chara/korrin",
+            "image": "chara/korrin:smile",
             "x": 0.2,
             "facing": "right"
           }
@@ -7024,7 +7094,27 @@
           {
             "name": "コリン",
             "text": "とーちゃん、きっと晩飯作ってるはずだから、お礼に食っていってくれよ！"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml:rush1",
+            "x": 0.6,
+            "facing": "left"
           },
+          {
+            "image": "chara/korrin:smile",
+            "x": 0.2,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
           {
             "name": "ネムル",
             "text": "ええと……うん……お腹空いてたらね"
@@ -7067,7 +7157,7 @@
             "facing": "left"
           },
           {
-            "image": "chara/korrin",
+            "image": "chara/korrin:smile",
             "x": 0.6,
             "facing": "left"
           }
@@ -7104,7 +7194,7 @@
             "facing": "left"
           },
           {
-            "image": "chara/korrin",
+            "image": "chara/korrin:smile",
             "x": 0.5,
             "facing": "right"
           }
@@ -7132,7 +7222,7 @@
             "facing": "left"
           },
           {
-            "image": "chara/korrin",
+            "image": "chara/korrin:smile",
             "x": 0.5,
             "facing": "left"
           }
@@ -7148,7 +7238,27 @@
           {
             "name": "コリン",
             "text": "歩いて来たんだからな！"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.9,
+            "facing": "left"
           },
+          {
+            "image": "chara/korrin",
+            "x": 0.5,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
           {
             "name": "コリン",
             "text": "あれ？とーちゃんどこだ？"
@@ -7216,7 +7326,27 @@
           {
             "name": "コリン",
             "text": "ああ\n後でとーちゃんも帰ってくるだろ"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml:rush1",
+            "x": 0.9,
+            "facing": "left"
           },
+          {
+            "image": "chara/korrin",
+            "x": 0.5,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
           {
             "name": "ネムル",
             "text": "……"
@@ -7224,7 +7354,27 @@
           {
             "name": "ネムル",
             "text": "それじゃあ私帰るね"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml:rush1",
+            "x": 0.9,
+            "facing": "left"
           },
+          {
+            "image": "chara/korrin:smile",
+            "x": 0.5,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
           {
             "name": "コリン",
             "text": "おう！\nほんとにありがとな！"
@@ -7248,7 +7398,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml",
+            "image": "chara/neml:rush1",
             "x": 0.3,
             "facing": "right"
           }
@@ -7279,6 +7429,16 @@
       {
         "type": "sleep",
         "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.3,
+            "facing": "right"
+          }
+        ]
       },
       {
         "type": "messages",
@@ -7326,7 +7486,7 @@
             "facing": "left"
           },
           {
-            "image": "chara/korrin",
+            "image": "chara/korrin:smile",
             "x": 0.75,
             "facing": "left"
           },
@@ -7360,7 +7520,7 @@
             "facing": "left"
           },
           {
-            "image": "chara/korrin",
+            "image": "chara/korrin:smile",
             "x": 0.5,
             "facing": "left"
           },
@@ -7405,10 +7565,6 @@
           {
             "name": "ウルフリック",
             "text": "お前は……"
-          },
-          {
-            "name": "ネムル",
-            "text": "どうも……"
           }
         ]
       },
@@ -7416,12 +7572,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml",
+            "image": "chara/neml:rush1",
             "x": 0.9,
             "facing": "left"
           },
           {
-            "image": "chara/korrin",
+            "image": "chara/korrin:smile",
             "x": 0.5,
             "facing": "right"
           },
@@ -7435,6 +7591,10 @@
       {
         "type": "messages",
         "list": [
+          {
+            "name": "ネムル",
+            "text": "どうも……"
+          },
           {
             "name": "コリン",
             "text": "このねーちゃんが送ってくれたんだぜ！"
@@ -7461,12 +7621,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml",
+            "image": "chara/neml:rush1",
             "x": 0.9,
             "facing": "left"
           },
           {
-            "image": "chara/korrin",
+            "image": "chara/korrin:smile",
             "x": 0.5,
             "facing": "left"
           },
@@ -7503,7 +7663,7 @@
             "facing": "left"
           },
           {
-            "image": "chara/korrin",
+            "image": "chara/korrin:smile",
             "x": 0.5,
             "facing": "right"
           },
@@ -7570,12 +7730,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml",
+            "image": "chara/neml:rush1",
             "x": 0.9,
             "facing": "left"
           },
           {
-            "image": "chara/korrin",
+            "image": "chara/korrin:smile",
             "x": 0.7,
             "facing": "right"
           },
@@ -7603,7 +7763,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml",
+            "image": "chara/neml:rush2",
             "x": 0.9,
             "facing": "left"
           },
@@ -7644,7 +7804,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml",
+            "image": "chara/neml:rush2",
             "x": 0.9,
             "facing": "left"
           },
@@ -7677,12 +7837,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml",
+            "image": "chara/neml:rush1",
             "x": 0.9,
             "facing": "left"
           },
           {
-            "image": "chara/korrin",
+            "image": "chara/korrin:smile",
             "x": 0.7,
             "facing": "right"
           },
@@ -7711,7 +7871,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml",
+            "image": "chara/neml:rush1",
             "x": 0.9,
             "facing": "left"
           },
@@ -7748,7 +7908,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml",
+            "image": "chara/neml:rush2",
             "x": 0.9,
             "facing": "left"
           },
@@ -7764,8 +7924,28 @@
         "list": [
           {
             "name": "",
-            "text": "ウルフリックはネムルに革の小袋を差し出した"
+            "text": "ウルフリックはネムルに硬貨が入った革の小袋を差し出した"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.9,
+            "facing": "left"
           },
+          {
+            "image": "chara/wulfric",
+            "x": 0.6,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
           {
             "name": "ネムル",
             "text": "？"
@@ -7902,6 +8082,16 @@
         "duration": 500
       },
       {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml:rush1",
+            "x": 0.35,
+            "facing": "right"
+          }
+        ]
+      },
+      {
         "type": "messages",
         "list": [
           {
@@ -7939,7 +8129,22 @@
           {
             "name": "ネムル",
             "text": "{red}そうだとしたらとっても嬉しいな"
-          },
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml:smile",
+            "x": 0.35,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
           {
             "name": "ネムル",
             "text": "きっと悪夢なんてなくて、\n毎日幸せな夢を見られるんだろうな"
@@ -7975,7 +8180,22 @@
           {
             "name": "ネムル",
             "text": "ニーナが手紙で言ってくれたこと……、"
-          },
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml:smile",
+            "x": 0.35,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
           {
             "name": "ネムル",
             "text": "\"{ref:501}\"って"
@@ -8123,7 +8343,27 @@
           {
             "name": "シャーマン",
             "text": "お前はどのような悪夢を見た？"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina:sad",
+            "x": 0.75,
+            "facing": "left"
           },
+          {
+            "image": "chara/shaman",
+            "x": 0.25,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
           {
             "name": "ニーナ",
             "text": "月が……、\n落ちてくる夢"
@@ -8135,7 +8375,27 @@
           {
             "name": "ニーナ",
             "text": "この悪夢が実現するのを止める方法はある？"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina",
+            "x": 0.75,
+            "facing": "left"
           },
+          {
+            "image": "chara/shaman",
+            "x": 0.25,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
           {
             "name": "シャーマン",
             "text": "唯一の方法を知っている"
@@ -8284,7 +8544,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml",
+            "image": "chara/neml:rush1",
             "x": 0.5,
             "facing": "left"
           }
@@ -8465,6 +8725,16 @@
         "duration": 500
       },
       {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml:rush1",
+            "x": 0.8,
+            "facing": "left"
+          }
+        ]
+      },
+      {
         "type": "messages",
         "list": [
           {
@@ -8481,7 +8751,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml",
+            "image": "chara/neml:rush1",
             "x": 0.5,
             "facing": "left"
           }
@@ -8493,7 +8763,22 @@
           {
             "name": "ネムル",
             "text": "え…………？"
-          },
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml:rush2",
+            "x": 0.5,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
           {
             "name": "ネムル",
             "text": "……！！"
@@ -8567,8 +8852,8 @@
             "facing": "right"
           },
           {
-            "image": "chara/shaman",
-            "x": 0.6,
+            "image": "chara/neml",
+            "x": 1.2,
             "facing": "left"
           }
         ]
@@ -8587,33 +8872,8 @@
             "facing": "right"
           },
           {
-            "image": "chara/shaman",
-            "x": 0.6,
-            "facing": "left"
-          },
-          {
             "image": "chara/neml",
-            "x": 1.2,
-            "facing": "left"
-          }
-        ]
-      },
-      {
-        "type": "speakers",
-        "list": [
-          {
-            "image": "chara/nina",
-            "x": 0.2,
-            "facing": "right"
-          },
-          {
-            "image": "chara/shaman",
-            "x": 0.6,
-            "facing": "left"
-          },
-          {
-            "image": "chara/neml",
-            "x": 0.9,
+            "x": 0.7,
             "facing": "left"
           }
         ]
@@ -8624,41 +8884,11 @@
           {
             "name": "ネムル",
             "text": "ニーナ！！"
-          }
-        ]
-      },
-      {
-        "type": "messages",
-        "list": [
+          },
           {
             "name": "ニーナ",
             "text": "ネムル！？"
-          }
-        ]
-      },
-      {
-        "type": "speakers",
-        "list": [
-          {
-            "image": "chara/nina",
-            "x": 0.2,
-            "facing": "right"
           },
-          {
-            "image": "chara/shaman",
-            "x": 0.5,
-            "facing": "right"
-          },
-          {
-            "image": "chara/neml",
-            "x": 0.9,
-            "facing": "left"
-          }
-        ]
-      },
-      {
-        "type": "messages",
-        "list": [
           {
             "name": "ニーナ",
             "text": "どうしてここが分かったの？"
@@ -8674,7 +8904,27 @@
           {
             "name": "ニーナ",
             "text": "ネムル……、"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina:sad",
+            "x": 0.2,
+            "facing": "right"
           },
+          {
+            "image": "chara/neml",
+            "x": 0.7,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
           {
             "name": "ニーナ",
             "text": "ごめんね"
@@ -8682,7 +8932,27 @@
           {
             "name": "ニーナ",
             "text": "私、帰れない"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina:sad",
+            "x": 0.2,
+            "facing": "right"
           },
+          {
+            "image": "chara/neml:rush1",
+            "x": 0.7,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
           {
             "name": "ネムル",
             "text": "どうして？"
@@ -8714,7 +8984,27 @@
           {
             "name": "ニーナ",
             "text": "私が居なくなれば、悪夢は実現しないんだ"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina:sad",
+            "x": 0.2,
+            "facing": "right"
           },
+          {
+            "image": "chara/neml:rush2",
+            "x": 0.7,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
           {
             "name": "ネムル",
             "text": "！！"
@@ -8737,17 +9027,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina",
+            "image": "chara/nina:sad",
             "x": 0.2,
             "facing": "right"
           },
           {
-            "image": "chara/shaman",
-            "x": 0.8,
-            "facing": "left"
-          },
-          {
-            "image": "chara/neml",
+            "image": "chara/neml:rush1",
             "x": 0.5,
             "facing": "left"
           }
@@ -8806,17 +9091,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina",
+            "image": "chara/nina:cry",
             "x": 0.2,
             "facing": "right"
           },
           {
-            "image": "chara/shaman",
-            "x": 0.8,
-            "facing": "left"
-          },
-          {
-            "image": "chara/neml",
+            "image": "chara/neml:smile",
             "x": 0.35,
             "facing": "left"
           }
@@ -8844,7 +9124,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina",
+            "image": "chara/nina:sad",
             "x": 0.65,
             "facing": "left"
           },
@@ -8870,7 +9150,27 @@
           {
             "name": "ネムル",
             "text": "うん"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina",
+            "x": 0.65,
+            "facing": "left"
           },
+          {
+            "image": "chara/neml",
+            "x": 0.45,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
           {
             "name": "ニーナ",
             "text": "帰ったら……、\nネムルに伝えたいことがあるんだ"
@@ -8931,12 +9231,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina",
+            "image": "chara/nina:smile",
             "x": 0.6,
             "facing": "left"
           },
           {
-            "image": "chara/neml",
+            "image": "chara/neml:smile",
             "x": 0.45,
             "facing": "right"
           }
@@ -9187,6 +9487,19 @@
         ]
       },
       {
+        "type": "function",
+        "function": "UI非表示"
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 500
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
         "type": "messages",
         "list": [
           {
@@ -9194,19 +9507,6 @@
             "text": "飛び降りたニーナを追ってネムルが駆け出すと、\nその背中に輝く大きな翼が広がった"
           }
         ]
-      },
-      {
-        "type": "function",
-        "function": "UI非表示"
-      },
-      {
-        "type": "sleep",
-        "duration": 500
-      },
-      {
-        "type": "fade",
-        "fade": "in",
-        "duration": 500
       },
       {
         "type": "speakers",
