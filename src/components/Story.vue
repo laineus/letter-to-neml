@@ -81,8 +81,8 @@ const getIfName = (ifItem: StoryIf) => {
   const currentIfIndex = props.player.story.list.filter(v => v.type === 'if').findIndex(v => v === ifItem)
   return `${props.player.storyIndex}-${currentIfIndex}`
 }
-watch(() => props.player.storyIndex, (_current, prev) => {
-  if (!state.value.completedStories.includes(prev)) {
+watch(() => props.player.storyIndex, (current, prev) => {
+  if (current > prev && !state.value.completedStories.includes(prev)) {
     state.value.completedStories.push(prev)
     save()
   }
@@ -159,13 +159,15 @@ const exec = () => {
     } else {
       // 初めてプレイする分岐なら早送り停止
       const ifName = getIfName(props.player.currentStoryItem)
-      if (fastForward.value && !state.value.completedBranches.includes(ifName)) {
-        fastForward.value = false
-        dialog.show({
-          title: '初めての分岐',
-          desc: '早送りを停止しました。',
-          options: [{ text: 'OK', close: true }]
-        })
+      if (!state.value.completedBranches.includes(ifName)) {
+        if (fastForward.value) {
+          fastForward.value = false
+          dialog.show({
+            title: '初めての分岐',
+            desc: '早送りを停止しました。',
+            options: [{ text: 'OK', close: true }]
+          })
+        }
         // プレイ済みの分岐として保存
         state.value.completedBranches.push(ifName)
         save()
@@ -248,6 +250,9 @@ const skipScene = () => {
           desc: 'スキップを中断しました。',
           options: [{ text: 'OK', close: true }]
         })
+        // プレイ済みの分岐として保存
+        state.value.completedBranches.push(ifName)
+        save()
         return next()
       }
     }
@@ -266,6 +271,7 @@ const tapScreen = () => {
   if (props.player.currentStoryItem.type === 'function' && props.player.currentStoryItem.function.startsWith('ゲームオーバー')) {
     goingToTitle.value = true
     state.value.currentStory = 0
+    save()
     return
   }
   // 仮

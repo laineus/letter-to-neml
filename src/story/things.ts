@@ -5,8 +5,8 @@ export const things = thingsJson as Thing[]
 
 export const thingDefinitions: Record<string, string[]> = {
   '削除': [],
-  '自宅:デフォルト': ['home-1', 'home-2', 'home-3', 'home-4', 'home-6'],
-  '自宅:ビン有り': ['home-1', 'home-2', 'home-3', 'home-4', 'home-5', 'home-6'],
+  '自宅:デフォルト': ['home-1', 'home-2', 'home-3', 'home-4', 'home-6', 'home-7'],
+  '自宅:ビン有り': ['home-1', 'home-2', 'home-3', 'home-4', 'home-5', 'home-6', 'home-7'],
   '市場:デフォルト': ['stall-1', 'stall-2'],
   '市場:ボロくわえ': ['stall-1', 'stall-3'],
   '市場:ボロ無し': ['stall-1'],

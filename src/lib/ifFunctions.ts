@@ -6,7 +6,10 @@ type ifFunctions = {
 const getBranch = (code: number): Branch => {
   const branches = state.value.current?.branches || []
   const v = branches.find(v => v.code === code)
-  if (!v) throw new Error(`Branch not found: ${code}`)
+  if (!v) {
+    // AIが全行を返さない場合があるため、その場合はfalse扱い
+    return { code, result: false, ref: null }
+  }
   return v
 }
 export const useIfFunctions = () => {
