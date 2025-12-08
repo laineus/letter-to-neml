@@ -278,6 +278,7 @@ const tapScreen = () => {
   if (props.player.currentStoryItem.type === 'function' && props.player.currentStoryItem.function.startsWith('エンディング')) {
     goingToTitle.value = true
     state.value.currentStory = 0
+    save()
     return
   }
   if (fastForward.value) {
