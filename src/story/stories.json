@@ -3618,10 +3618,35 @@
           {
             "name": "店主",
             "text": "な、なんだ、ボロの野郎、お前が隠してやがったのか、ハハ"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.35,
+            "facing": "right"
           },
           {
+            "image": "chara/trader:angry",
+            "x": 0.55,
+            "facing": "right"
+          },
+          {
+            "image": "chara/shopkeeper:angry",
+            "x": 0.85,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
             "name": "青年",
-            "text": "あんた、その犬を利用して僕を騙そうとしたな"
+            "text": "あんた、この犬を利用して僕を騙そうとしたな"
           },
           {
             "name": "店主",
@@ -3629,23 +3654,7 @@
           },
           {
             "name": "店主",
-            "text": "ほら、ペットとはいえ動物のやったことだ\n俺のせいじゃねえ"
-          },
-          {
-            "name": "衛兵",
-            "text": "ううむ"
-          },
-          {
-            "name": "衛兵",
-            "text": "意図したことは分からぬが、ペットの悪事は飼い主の責任"
-          },
-          {
-            "name": "店主",
-            "text": "待ってくれよ……"
-          },
-          {
-            "name": "衛兵",
-            "text": "おい行商、この店主にどのような処罰を望む？"
+            "text": "ほら、きっとおやつと勘違いして口に入れてしまったんだろう"
           },
           {
             "name": "青年",
@@ -3653,46 +3662,36 @@
           },
           {
             "name": "青年",
-            "text": "よし、じゃあ騙そうとした分のカスラの実は返してくれ"
-          },
-          {
-            "name": "青年",
-            "text": "10個分の売上金はそのままもらうよ"
-          },
-          {
-            "name": "青年",
-            "text": "他の処罰は望まないけど、もうこんなことは誰にもしないでくれ"
-          },
-          {
-            "name": "衛兵",
-            "text": "いいだろう"
-          }
-        ]
-      },
-      {
-        "type": "messages",
-        "list": [
-          {
-            "name": "衛兵",
-            "text": "よし、この青年の要望の通りカスラの実を返却しろ"
-          },
-          {
-            "name": "衛兵",
-            "text": "この処罰は重いとは言えないぞ"
+            "text": "悪いけど衛兵を呼ばせてもらうよ"
           },
           {
             "name": "店主",
-            "text": "く……"
+            "text": "待て！分かった"
           },
           {
             "name": "店主",
-            "text": "ああ、分かったよ"
-          }
-        ]
-      },
-      {
-        "type": "messages",
-        "list": [
+            "text": "こうしよう\nカスラの実は10個全部返す"
+          },
+          {
+            "name": "店主",
+            "text": "そのうえで買い取った分の代金もそのままもらってくれ"
+          },
+          {
+            "name": "青年",
+            "text": "……"
+          },
+          {
+            "name": "青年",
+            "text": "分かった"
+          },
+          {
+            "name": "青年",
+            "text": "今回はそれで収めることにするけど、もうこんなことは誰にもしないでくれ"
+          },
+          {
+            "name": "店主",
+            "text": "ああ、もちろんだ"
+          },
           {
             "name": "",
             "text": "5つのカスラの実は青年に返却された"
@@ -3700,11 +3699,31 @@
         ]
       },
       {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.35,
+            "facing": "right"
+          },
+          {
+            "image": "chara/trader",
+            "x": 0.55,
+            "facing": "left"
+          },
+          {
+            "image": "chara/shopkeeper:angry",
+            "x": 0.85,
+            "facing": "left"
+          }
+        ]
+      },
+      {
         "type": "messages",
         "list": [
           {
             "name": "青年",
-            "text": "ねえ君、これはお礼だ、受け取ってくれ"
+            "text": "なあ君、これはお礼だ、受け取ってくれ"
           },
           {
             "name": "青年",
@@ -3739,7 +3758,7 @@
       {
         "type": "fade",
         "fade": "in",
-        "duration": 500
+        "duration": 1000
       },
       {
         "type": "background",
@@ -3758,7 +3777,7 @@
       {
         "type": "fade",
         "fade": "out",
-        "duration": 500
+        "duration": 1000
       },
       {
         "type": "messages",
@@ -8713,6 +8732,16 @@
         "duration": 1000
       },
       {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.7,
+            "facing": "left"
+          }
+        ]
+      },
+      {
         "type": "messages",
         "list": [
           {
@@ -8908,6 +8937,110 @@
         "type": "fade",
         "fade": "in",
         "duration": 0
+      },
+      {
+        "type": "background",
+        "image": "bg/home"
+      },
+      {
+        "type": "function",
+        "function": "オブジェクト:自宅:デフォルト"
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.9,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 1000
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.7,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "馬車で送ってもらったおかげで割とすぐ戻ってこれたな"
+          },
+          {
+            "name": "ネムル",
+            "text": "……"
+          },
+          {
+            "name": "ネムル",
+            "text": "ニーナ、まだ帰ってない……"
+          },
+          {
+            "name": "ネムル",
+            "text": "心配だな……"
+          },
+          {
+            "name": "ネムル",
+            "text": "お姉さんにもらったコンパス、\nこれでニーナを探しに行こう"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 1000
+      },
+      {
+        "type": "background",
+        "image": "bg/forest2"
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.4,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 1000
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "ここって確かシャーマンの塔に続く森……"
+          },
+          {
+            "name": "ネムル",
+            "text": "ニーナはどうしてこんなところに居るんだろう"
+          },
+          {
+            "name": "ネムル",
+            "text": "とにかく先を急ごう"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 1000
       },
       {
         "type": "background",

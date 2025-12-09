@@ -52,7 +52,7 @@ const resize = () => {
 state.value.current = {
   letter: '',
   branches: [
-    { code: 101, result: false, ref: '悪夢予防薬の空き瓶は片付けておいて' },
+    { code: 101, result: true, ref: '悪夢予防薬の空き瓶は片付けておいて' },
     { code: 102, result: true, ref: 'DUMMY' },
     { code: 103, result: true, ref: '護身用のナイフはベッドの下にあるよ' },
     { code: 104, result: true, ref: 'DUMMY' },
