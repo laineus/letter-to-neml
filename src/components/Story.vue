@@ -45,7 +45,6 @@ const functions = {
     return false
   },
   'UI非表示': () => {
-    uiHidden.value = true
     return true
   },
   'ゲームオーバー:報復': () => false,
@@ -62,8 +61,6 @@ const toTitle = () => {
 }
 const scene = useScene()
 const dialog = useDialogs()
-/** UIが非表示かどうか */
-const uiHidden = ref(false)
 /** タイトル画面に戻るかどうか */
 const goingToTitle = ref(false)
 /** フィールド探索中かどうか */
@@ -118,6 +115,7 @@ const currentFade = computed(() => {
   return lastFade?.fade === 'in' || props.player.currentStoryItem === lastFade ? lastFade : undefined
 })
 const currentIf = computed(() => findLastRow('if'))
+const uiHidden = computed(() => findLastRow(v => v.type === 'function' && v.function === 'UI非表示'))
 const currentThings = computed(() => {
   const result = findLastRow<'function'>(v => v.type === 'function' && v.function.startsWith('オブジェクト:'))
   if (!result) return undefined
@@ -155,7 +153,7 @@ const exec = () => {
     const func = ifFunctions[props.player.currentStoryItem.if]
     if (func && !func()) {
       props.player.skipIf()
-      exec()
+      next()
     } else {
       // 初めてプレイする分岐なら早送り停止
       const ifName = getIfName(props.player.currentStoryItem)
@@ -240,7 +238,6 @@ const skipScene = () => {
     const func = ifFunctions[props.player.currentStoryItem.if]
     if (func && !func()) {
       props.player.skipIf()
-      if (props.player.storyItemIndex === 0) return exec()
     } else {
       // 初めてプレイする分岐ならスキップ中断
       const ifName = getIfName(props.player.currentStoryItem)
@@ -259,6 +256,19 @@ const skipScene = () => {
   }
   skipScene()
 }
+const backToFirst = () => {
+  dialog.show({
+    title: '最初のシーンへ戻る',
+    desc: 'ニーナ出発前のシーンへ戻り、手紙を書き直します。\nよろしいですか？',
+    options: [
+      { text: 'OK', close: true, action: () => {
+        props.player.reset()
+        exec()
+      } },
+      { text: 'キャンセル', close: true }
+    ]
+  })
+}
 const backScene = () => {
   if (props.player.messageIndex > 0 || props.player.story.list.slice(0, props.player.storyItemIndex).some(v => v.type === 'messages')) {
     props.player.backToStart()
@@ -270,6 +280,9 @@ const backScene = () => {
 const tapScreen = () => {
   if (props.player.currentStoryItem.type === 'function' && props.player.currentStoryItem.function.startsWith('ゲームオーバー')) {
     goingToTitle.value = true
+    if (!state.value.completedStories.includes(state.value.currentStory)) {
+      state.value.completedStories.push(state.value.currentStory)
+    }
     state.value.currentStory = 0
     save()
     return
@@ -277,6 +290,9 @@ const tapScreen = () => {
   // 仮
   if (props.player.currentStoryItem.type === 'function' && props.player.currentStoryItem.function.startsWith('エンディング')) {
     goingToTitle.value = true
+    if (!state.value.completedStories.includes(state.value.currentStory)) {
+      state.value.completedStories.push(state.value.currentStory)
+    }
     state.value.currentStory = 0
     save()
     return
@@ -366,6 +382,7 @@ const toggleExploring = () => {
       <IconButton icon="next" :x="((50 * 1) + 60).byRight()" :y="(60).byBottom()" :depth="8000" @click="skipScene" />
       <IconButton :icon="fastForward ? 'pause' : 'fastforward'" :x="((50 * 2) + 60).byRight()" :y="(60).byBottom()" :depth="8000" @click="toggleFastForward" />
       <IconButton icon="prev" :x="((50 * 3) + 60).byRight()" :y="(60).byBottom()" :depth="8000" @click="backScene" />
+      <IconButton icon="replay" :x="((50 * 4) + 60).byRight()" :y="(60).byBottom()" :depth="8000" @click="backToFirst" />
     </template>
   </template>
   <Things v-if="exploring && !dialog.current" :things="currentThings ?? []" @select="selectThing" />

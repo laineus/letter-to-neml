@@ -37,6 +37,11 @@ export const useStoryPlayer = (stories: Story[]) => {
     }
     return false
   }
+  const reset = () => {
+    state.storyIndex = 0
+    state.storyItemIndex = 0
+    state.messageIndex = 0
+  }
   const backToStart = () => {
     state.storyItemIndex = 0
     state.messageIndex = 0
@@ -65,7 +70,6 @@ export const useStoryPlayer = (stories: Story[]) => {
     if (endIfIndex === -1) throw new Error('endIf not found')
     state.storyItemIndex = endIfIndex
     state.messageIndex = 0
-    next()
   }
   const skipStory = () => {
     if (state.storyIndex >= stories.length - 1) return false
@@ -90,6 +94,7 @@ export const useStoryPlayer = (stories: Story[]) => {
     skipIf,
     skipStory,
     backToStart,
-    backToPrevStory
+    backToPrevStory,
+    reset
   }
 }
