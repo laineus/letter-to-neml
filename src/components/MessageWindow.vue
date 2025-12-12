@@ -4,7 +4,7 @@ import { computed } from 'vue'
 import config from '../lib/config'
 import { state } from '../lib/state'
 import CustomText from './CustomText.vue'
-const titleSize = 19
+const titleSize = 20
 const fontSize = 21
 const props = defineProps<{
   title?: string
@@ -31,11 +31,11 @@ const color = computed(() => {
       <FxBlur :strength="3" :quality="1" :steps="7" />
     </Rectangle>
     <template v-if="title">
-      <CustomText :text="title" :x="0" :y="-50" :origin="0.5" :lineSpacing="titleSize * 0.7" :padding="{ top: 3 }" :style="{ fontSize: titleSize, align: 'center', wordWrap: { width: config.WIDTH - 100, useAdvancedWrap: true } }" />
-      <Line :x="0" :y="-25" :x1="0" :y1="0" :x2="160" :y2="0" :originX="0.5" :originY="0" :lineWidth="1.7" :strokeColor="0xFFFFFF">
+      <CustomText :text="title" :x="0" :y="-70" :origin="0.5" :lineSpacing="titleSize * 0.65" :padding="{ top: 3 }" :style="{ fontSize: titleSize, align: 'center', wordWrap: { width: config.WIDTH - 100, useAdvancedWrap: true } }" />
+      <Line :x="0" :y="-45" :x1="0" :y1="0" :x2="160" :y2="0" :originX="0.5" :originY="0" :lineWidth="1.7" :strokeColor="0xFFFFFF">
         <FxBlur :strength="3" :quality="1" :steps="7" :x="5" :y="0" />
       </Line>
     </template>
-    <CustomText :text="viewMessage" :x="0" :y="0" :originX="0.5" :originY="0" :lineSpacing="fontSize * 0.7" :padding="{ top: 2 }" :style="{ color, fontSize, align: 'center', wordWrap: { width: config.WIDTH - 100, useAdvancedWrap: true } }" />
+    <CustomText :text="viewMessage" :x="0" :y="-23" :originX="0.5" :originY="0" :lineSpacing="fontSize * 0.65" :padding="{ top: 2 }" :style="{ color, fontSize, align: 'center', wordWrap: { width: config.WIDTH - 100, useAdvancedWrap: true } }" />
   </Container>
 </template>
