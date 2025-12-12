@@ -274,6 +274,13 @@ const backScene = () => {
     props.player.backToStart()
   } else {
     props.player.backToPrevStory()
+    if (props.player.story.if) {
+      const func = ifFunctions[props.player.story.if]
+      if (func && !func()) {
+        backScene()
+        return
+      }
+    }
   }
   exec()
 }

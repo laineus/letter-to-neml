@@ -978,16 +978,21 @@
           {
             "name": "ウルフリック",
             "text": "お前みたいなのは放っといても死ぬだろうよ"
-          },
-          {
-            "name": "ウルフリック",
-            "text": "じゃあな"
           }
         ]
       },
       {
         "type": "if",
         "if": "悪夢予防薬を片付けない"
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ウルフリック",
+            "text": "じゃあな"
+          }
+        ]
       },
       {
         "type": "speakers",
@@ -1463,6 +1468,15 @@
         "if": "悪夢予防薬を片付ける"
       },
       {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ウルフリック",
+            "text": "じゃあな"
+          }
+        ]
+      },
+      {
         "type": "speakers",
         "list": [
           {
@@ -1476,6 +1490,38 @@
             "facing": "right"
           }
         ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml",
+            "x": 0.3,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "……"
+          },
+          {
+            "name": "ネムル",
+            "text": "ライベル、強盗は出ていったよ"
+          }
+        ]
+      },
+      {
+        "type": "fade",
+        "fade": "in",
+        "duration": 1000
       },
       {
         "type": "endIf"
@@ -5587,12 +5633,12 @@
       {
         "type": "fade",
         "fade": "in",
-        "duration": 250
+        "duration": 500
       },
       {
         "type": "fade",
         "fade": "out",
-        "duration": 250
+        "duration": 500
       },
       {
         "type": "messages",
@@ -6362,7 +6408,7 @@
           },
           {
             "name": "ライベル",
-            "text": "後は何を聞けばいい？"
+            "text": "あとは何を聞けばいい？"
           },
           {
             "name": "ニーナ",
@@ -8272,6 +8318,11 @@
         ]
       },
       {
+        "type": "fade",
+        "fade": "in",
+        "duration": 1000
+      },
+      {
         "type": "endIf"
       },
       {
@@ -8335,12 +8386,37 @@
         ]
       },
       {
-        "type": "endIf"
-      },
-      {
         "type": "fade",
         "fade": "in",
         "duration": 1000
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
+            "name": "ネムル",
+            "text": "……"
+          },
+          {
+            "name": "ネムル",
+            "text": "これは……夢？"
+          },
+          {
+            "name": "ネムル",
+            "text": "こんな幸せな夢……初めて"
+          },
+          {
+            "name": "ネムル",
+            "text": "ニーナ、待っててね"
+          }
+        ]
+      },
+      {
+        "type": "endIf"
       }
     ],
     "if": "ウルフリックの家"
