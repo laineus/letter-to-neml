@@ -1,4 +1,8 @@
 <script lang="ts">
+import { Container, FxBlur, Rectangle } from 'phavuer'
+import { computed, type PropType, ref } from 'vue'
+import config from '../lib/config'
+import CustomText from './CustomText.vue'
 export type DialogOption = {
   text: string
   action?: () => any
@@ -34,9 +38,6 @@ export const useDialogs = () => {
 </script>
 
 <script setup lang="ts">
-import { Container, FxBlur, Rectangle, Text } from 'phavuer'
-import { computed, type PropType, ref } from 'vue'
-import config from '../lib/config'
 const emit = defineEmits(['select', 'close'])
 const props = defineProps({
   title: { type: String, required: false },
@@ -81,11 +82,11 @@ const onSelect = (v: DialogOption) => {
         <!-- <FxBlur :strength="3" :quality="1" :steps="7" /> -->
         <FxBlur :strength="1.5" :quality="1" :steps="4" />
       </Rectangle>
-      <Text v-if="title" @create="onCreatedTitle" :key="title" :x="width.half()" :y="40" :text="title" :originY="0" :originX="0.5" :lineSpacing="16" :padding="{ top: 3 }" :style="{ fontStyle: 'bold', fontSize: '22px', align: 'center', wordWrap: { width: width - 30, useAdvancedWrap: true } }" />
-      <Text v-if="desc" @create="onCreatedDesc" :key="desc" :x="width.half()" :y="titleHeight + 40" :text="desc" :originY="0" :originX="0.5" :lineSpacing="15" :padding="{ top: 3 }" :style="{ fontSize: '20px', align: 'center', wordWrap: { width: width - 30, useAdvancedWrap: true } }" />
+      <CustomText v-if="title" @create="onCreatedTitle" :key="title" :x="width.half()" :y="40" :text="title" :originY="0" :originX="0.5" :lineSpacing="16" :padding="{ top: 3 }" :style="{ fontStyle: 'bold', fontSize: '22px', align: 'center', wordWrap: { width: width - 30, useAdvancedWrap: true } }" />
+      <CustomText v-if="desc" @create="onCreatedDesc" :key="desc" :x="width.half()" :y="titleHeight + 40" :text="desc" :originY="0" :originX="0.5" :lineSpacing="15" :padding="{ top: 3 }" :style="{ fontSize: '20px', align: 'center', wordWrap: { width: width - 30, useAdvancedWrap: true } }" />
       <Container v-for="(v, i) in fixedOptions" :x="windowPadding" :y="windowPadding + (i * (optionHeight + optionMargin)) + titleHeight + descHeight">
         <Rectangle :width="width - 80" :height="optionHeight" :fillColor="0x000000" :fillAlpha="0" :origin="0" :strokeColor="0xAAAAAA" :lineWidth="2" @pointerdown="onSelect(v)" />
-        <Text :x="(width - 80).half()" :y="23" :text="v.text" :origin="0.5" :padding="{ top: 3 }" :style="{ fontStyle: 'bold', fontSize: '22px', align: 'center' }" />
+        <CustomText :x="(width - 80).half()" :y="23" :text="v.text" :origin="0.5" :padding="{ top: 3 }" :style="{ fontStyle: 'bold', fontSize: '22px', align: 'center' }" />
       </Container>
     </Container>
   </Container>

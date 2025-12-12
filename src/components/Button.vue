@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { Container, Rectangle, Text } from 'phavuer'
+import { Container, Rectangle } from 'phavuer'
+import CustomText from './CustomText.vue'
 
 defineEmits(['click'])
 
@@ -20,6 +21,6 @@ const height = computed(() => {
 <template>
   <Container>
     <Rectangle :fillColor="0x000000" :strokeColor="0xFFFFFF" :lineWidth="2" :width="width" :height="height" :origin="0" @pointerdown="$emit('click')" />
-    <Text :text="text" :padding="{ top: 1 }" :style="{ fontSize, fontStyle: 'bold' }" :x="width.half()" :y="height.half() + 1" :origin="0.5" />
+    <CustomText :text="text" :padding="{ top: 1 }" :style="{ fontSize, fontStyle: 'bold' }" :x="width.half()" :y="height.half() + 1" :origin="0.5" />
   </Container>
 </template>
