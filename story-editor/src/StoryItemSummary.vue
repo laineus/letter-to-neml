@@ -29,7 +29,7 @@ const getSummary = (item: StoryItem): string => {
     case 'endIf':
       return ''
     case 'function':
-      return item.function
+      return item.argument ? `${item.function}（${item.argument}）` : item.function
   }
 }
 const labels = {

@@ -50,6 +50,7 @@ export type StoryEndIf = {
 export type StoryFunction = {
   type: 'function'
   function: string
+  argument: string
 }
 
 export type MessageConfig = {

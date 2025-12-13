@@ -4,7 +4,8 @@
     "list": [
       {
         "type": "function",
-        "function": "オブジェクト:自宅:ビン有り"
+        "function": "オブジェクト",
+        "argument": "自宅:ビン有り"
       },
       {
         "type": "fade",
@@ -79,7 +80,12 @@
       },
       {
         "type": "function",
-        "function": "手紙執筆"
+        "function": "手紙執筆",
+        "argument": ""
+      },
+      {
+        "type": "sleep",
+        "duration": 500
       },
       {
         "type": "messages",
@@ -161,7 +167,8 @@
     "list": [
       {
         "type": "function",
-        "function": "オブジェクト:自宅:ビン有り"
+        "function": "オブジェクト",
+        "argument": "自宅:ビン有り"
       },
       {
         "type": "fade",
@@ -471,7 +478,8 @@
     "list": [
       {
         "type": "function",
-        "function": "オブジェクト:自宅:デフォルト"
+        "function": "オブジェクト",
+        "argument": "自宅:デフォルト"
       },
       {
         "type": "fade",
@@ -492,7 +500,8 @@
       },
       {
         "type": "function",
-        "function": "オブジェクト:自宅:ビン有り"
+        "function": "オブジェクト",
+        "argument": "自宅:ビン有り"
       },
       {
         "type": "endIf"
@@ -764,7 +773,8 @@
       },
       {
         "type": "function",
-        "function": "衝撃"
+        "function": "衝撃",
+        "argument": ""
       },
       {
         "type": "messages",
@@ -1140,7 +1150,8 @@
       },
       {
         "type": "function",
-        "function": "ダメージ"
+        "function": "ダメージ",
+        "argument": ""
       },
       {
         "type": "sleep",
@@ -1148,7 +1159,8 @@
       },
       {
         "type": "function",
-        "function": "UI非表示"
+        "function": "UI非表示",
+        "argument": ""
       },
       {
         "type": "fade",
@@ -1179,7 +1191,8 @@
       },
       {
         "type": "function",
-        "function": "ゲームオーバー:報復"
+        "function": "ゲームオーバー",
+        "argument": "報復"
       },
       {
         "type": "endIf"
@@ -1203,7 +1216,8 @@
       },
       {
         "type": "function",
-        "function": "衝撃"
+        "function": "衝撃",
+        "argument": ""
       },
       {
         "type": "messages",
@@ -1272,7 +1286,8 @@
       },
       {
         "type": "function",
-        "function": "ダメージ"
+        "function": "ダメージ",
+        "argument": ""
       },
       {
         "type": "speakers",
@@ -1400,7 +1415,8 @@
       },
       {
         "type": "function",
-        "function": "オブジェクト:削除"
+        "function": "オブジェクト",
+        "argument": "削除"
       },
       {
         "type": "fade",
@@ -1533,7 +1549,8 @@
     "list": [
       {
         "type": "function",
-        "function": "オブジェクト:自宅:デフォルト"
+        "function": "オブジェクト",
+        "argument": "自宅:デフォルト"
       },
       {
         "type": "fade",
@@ -1584,7 +1601,8 @@
       },
       {
         "type": "function",
-        "function": "オブジェクト:自宅:ビン有り"
+        "function": "オブジェクト",
+        "argument": "自宅:ビン有り"
       },
       {
         "type": "endIf"
@@ -2370,7 +2388,8 @@
     "list": [
       {
         "type": "function",
-        "function": "オブジェクト:市場:デフォルト"
+        "function": "オブジェクト",
+        "argument": "市場:デフォルト"
       },
       {
         "type": "fade",
@@ -2678,7 +2697,8 @@
       },
       {
         "type": "function",
-        "function": "オブジェクト:市場:ボロくわえ"
+        "function": "オブジェクト",
+        "argument": "市場:ボロくわえ"
       },
       {
         "type": "speakers",
@@ -3224,7 +3244,8 @@
       },
       {
         "type": "function",
-        "function": "UI非表示"
+        "function": "UI非表示",
+        "argument": ""
       },
       {
         "type": "fade",
@@ -3246,7 +3267,8 @@
       },
       {
         "type": "function",
-        "function": "ゲームオーバー:投獄"
+        "function": "ゲームオーバー",
+        "argument": "投獄"
       },
       {
         "type": "endIf"
@@ -3534,7 +3556,8 @@
       },
       {
         "type": "function",
-        "function": "オブジェクト:削除"
+        "function": "オブジェクト",
+        "argument": "削除"
       },
       {
         "type": "fade",
@@ -3628,7 +3651,8 @@
       },
       {
         "type": "function",
-        "function": "オブジェクト:市場:ボロ無し"
+        "function": "オブジェクト",
+        "argument": "市場:ボロ無し"
       },
       {
         "type": "speakers",
@@ -3819,7 +3843,8 @@
       },
       {
         "type": "function",
-        "function": "オブジェクト:削除"
+        "function": "オブジェクト",
+        "argument": "削除"
       },
       {
         "type": "fade",
@@ -3877,7 +3902,8 @@
     "list": [
       {
         "type": "function",
-        "function": "オブジェクト:薬局:デフォルト"
+        "function": "オブジェクト",
+        "argument": "薬局:デフォルト"
       },
       {
         "type": "fade",
@@ -4358,7 +4384,8 @@
       },
       {
         "type": "function",
-        "function": "UI非表示"
+        "function": "UI非表示",
+        "argument": ""
       },
       {
         "type": "fade",
@@ -4393,7 +4420,8 @@
       },
       {
         "type": "function",
-        "function": "ゲームオーバー:昏睡"
+        "function": "ゲームオーバー",
+        "argument": "昏睡"
       },
       {
         "type": "endIf"
@@ -4445,7 +4473,8 @@
     "list": [
       {
         "type": "function",
-        "function": "オブジェクト:浜辺:デフォルト"
+        "function": "オブジェクト",
+        "argument": "浜辺:デフォルト"
       },
       {
         "type": "fade",
@@ -5498,7 +5527,8 @@
       },
       {
         "type": "function",
-        "function": "UI非表示"
+        "function": "UI非表示",
+        "argument": ""
       },
       {
         "type": "fade",
@@ -5529,7 +5559,8 @@
       },
       {
         "type": "function",
-        "function": "ゲームオーバー:心中"
+        "function": "ゲームオーバー",
+        "argument": "心中"
       },
       {
         "type": "endIf"
@@ -5711,7 +5742,8 @@
       },
       {
         "type": "function",
-        "function": "オブジェクト:浜辺:コンパス無し"
+        "function": "オブジェクト",
+        "argument": "浜辺:コンパス無し"
       },
       {
         "type": "speakers",
@@ -5824,7 +5856,8 @@
     "list": [
       {
         "type": "function",
-        "function": "オブジェクト:自宅:デフォルト"
+        "function": "オブジェクト",
+        "argument": "自宅:デフォルト"
       },
       {
         "type": "fade",
@@ -5845,7 +5878,8 @@
       },
       {
         "type": "function",
-        "function": "オブジェクト:自宅:ビン有り"
+        "function": "オブジェクト",
+        "argument": "自宅:ビン有り"
       },
       {
         "type": "endIf"
@@ -5979,7 +6013,8 @@
     "list": [
       {
         "type": "function",
-        "function": "オブジェクト:自宅:デフォルト"
+        "function": "オブジェクト",
+        "argument": "自宅:デフォルト"
       },
       {
         "type": "fade",
@@ -6000,7 +6035,8 @@
       },
       {
         "type": "function",
-        "function": "オブジェクト:自宅:ビン有り"
+        "function": "オブジェクト",
+        "argument": "自宅:ビン有り"
       },
       {
         "type": "endIf"
@@ -6408,7 +6444,7 @@
           },
           {
             "name": "ライベル",
-            "text": "あとは何を聞けばいい？"
+            "text": "後は何を聞けばいい？"
           },
           {
             "name": "ニーナ",
@@ -6755,7 +6791,8 @@
     "list": [
       {
         "type": "function",
-        "function": "オブジェクト:自宅:デフォルト"
+        "function": "オブジェクト",
+        "argument": "自宅:デフォルト"
       },
       {
         "type": "fade",
@@ -6776,7 +6813,8 @@
       },
       {
         "type": "function",
-        "function": "オブジェクト:自宅:ビン有り"
+        "function": "オブジェクト",
+        "argument": "自宅:ビン有り"
       },
       {
         "type": "endIf"
@@ -6892,7 +6930,8 @@
       },
       {
         "type": "function",
-        "function": "オブジェクト:削除"
+        "function": "オブジェクト",
+        "argument": "削除"
       },
       {
         "type": "fade",
@@ -7291,7 +7330,8 @@
     "list": [
       {
         "type": "function",
-        "function": "オブジェクト:ウルフリックの家:デフォルト"
+        "function": "オブジェクト",
+        "argument": "ウルフリックの家:デフォルト"
       },
       {
         "type": "fade",
@@ -7300,7 +7340,8 @@
       },
       {
         "type": "function",
-        "function": "オブジェクト:ウルフリックの家:デフォルト"
+        "function": "オブジェクト",
+        "argument": "ウルフリックの家:デフォルト"
       },
       {
         "type": "background",
@@ -7541,7 +7582,8 @@
       },
       {
         "type": "function",
-        "function": "オブジェクト:削除"
+        "function": "オブジェクト",
+        "argument": "削除"
       },
       {
         "type": "fade",
@@ -7624,7 +7666,8 @@
     "list": [
       {
         "type": "function",
-        "function": "オブジェクト:ウルフリックの家:デフォルト"
+        "function": "オブジェクト",
+        "argument": "ウルフリックの家:デフォルト"
       },
       {
         "type": "fade",
@@ -7855,7 +7898,8 @@
       },
       {
         "type": "function",
-        "function": "オブジェクト:削除"
+        "function": "オブジェクト",
+        "argument": "削除"
       },
       {
         "type": "fade",
@@ -8655,7 +8699,8 @@
     "list": [
       {
         "type": "function",
-        "function": "オブジェクト:自宅:デフォルト"
+        "function": "オブジェクト",
+        "argument": "自宅:デフォルト"
       },
       {
         "type": "fade",
@@ -8676,7 +8721,8 @@
       },
       {
         "type": "function",
-        "function": "オブジェクト:自宅:ビン有り"
+        "function": "オブジェクト",
+        "argument": "自宅:ビン有り"
       },
       {
         "type": "endIf"
@@ -8744,7 +8790,8 @@
       },
       {
         "type": "function",
-        "function": "UI非表示"
+        "function": "UI非表示",
+        "argument": ""
       },
       {
         "type": "sleep",
@@ -8791,7 +8838,8 @@
       },
       {
         "type": "function",
-        "function": "エンディング:ニーナのいない夜"
+        "function": "エンディング",
+        "argument": "ニーナのいない夜"
       }
     ],
     "if": "バッドエンド1"
@@ -8810,7 +8858,8 @@
       },
       {
         "type": "function",
-        "function": "オブジェクト:自宅:ビン有り"
+        "function": "オブジェクト",
+        "argument": "自宅:ビン有り"
       },
       {
         "type": "speakers",
@@ -8986,7 +9035,8 @@
       },
       {
         "type": "function",
-        "function": "UI非表示"
+        "function": "UI非表示",
+        "argument": ""
       },
       {
         "type": "fade",
@@ -9021,7 +9071,8 @@
       },
       {
         "type": "function",
-        "function": "エンディング:ニーナの使命"
+        "function": "エンディング",
+        "argument": "ニーナの使命"
       }
     ],
     "if": "バッドエンド2"
@@ -9040,7 +9091,8 @@
       },
       {
         "type": "function",
-        "function": "オブジェクト:自宅:デフォルト"
+        "function": "オブジェクト",
+        "argument": "自宅:デフォルト"
       },
       {
         "type": "speakers",
@@ -9572,7 +9624,8 @@
       },
       {
         "type": "function",
-        "function": "UI非表示"
+        "function": "UI非表示",
+        "argument": ""
       },
       {
         "type": "fade",
@@ -9649,7 +9702,8 @@
       },
       {
         "type": "function",
-        "function": "エンディング:二人で過ごす終焉"
+        "function": "エンディング",
+        "argument": "二人で過ごす終焉"
       }
     ],
     "if": "ノーマルエンド"
@@ -9806,7 +9860,8 @@
       },
       {
         "type": "function",
-        "function": "UI非表示"
+        "function": "UI非表示",
+        "argument": ""
       },
       {
         "type": "fade",
@@ -9946,7 +10001,8 @@
       },
       {
         "type": "function",
-        "function": "エンディング:ネムルの見た夢"
+        "function": "エンディング",
+        "argument": "ネムルの見た夢"
       }
     ],
     "if": "グッドエンド"

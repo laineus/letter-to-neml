@@ -57,7 +57,7 @@ const addItem = (index: number, type: typeof itemTypes[number]) => {
       newItem.value = prevIf?.type === 'if' ? { type: 'endIf' } : { type: 'if', if: '' }
       break
     case 'function':
-      newItem.value = { type: 'function', function: '' }
+      newItem.value = { type: 'function', function: '', argument: '' }
       break
   }
   props.story.list.splice(index, 0, newItem.value)

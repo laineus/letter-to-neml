@@ -28,7 +28,7 @@ const props = defineProps({
   }
 })
 type Functions = {
-  [key: string]: () => boolean
+  [key: string]: (argument: string) => boolean
 }
 const functions = {
   '手紙執筆': () => {
@@ -47,14 +47,8 @@ const functions = {
   'UI非表示': () => {
     return true
   },
-  'ゲームオーバー:報復': () => false,
-  'ゲームオーバー:投獄': () => false,
-  'ゲームオーバー:昏睡': () => false,
-  'ゲームオーバー:心中': () => false,
-  'エンディング:ニーナのいない夜': () => false,
-  'エンディング:ニーナの使命': () => false,
-  'エンディング:二人で過ごす終焉': () => false,
-  'エンディング:ネムルの見た夢': () => false
+  'ゲームオーバー': () => false,
+  'エンディング': () => false
 } as Functions
 const toTitle = () => {
   scene.scene.start('TitleScene')
@@ -117,9 +111,9 @@ const currentFade = computed(() => {
 const currentIf = computed(() => findLastRow('if'))
 const uiHidden = computed(() => findLastRow(v => v.type === 'function' && v.function === 'UI非表示'))
 const currentThings = computed(() => {
-  const result = findLastRow<'function'>(v => v.type === 'function' && v.function.startsWith('オブジェクト:'))
+  const result = findLastRow<'function'>(v => v.type === 'function' && v.function === 'オブジェクト')
   if (!result) return undefined
-  const ids = thingDefinitions[result.function.replace('オブジェクト:', '')]
+  const ids = thingDefinitions[result.argument]
   return ids.map(id => things.find(v => v.id === id)!)
 })
 /** 次の行へ進む */
@@ -206,7 +200,7 @@ const exec = () => {
       next()
       return
     }
-    if (functionFunc()) next()
+    if (functionFunc(props.player.currentStoryItem.argument)) next()
   } else if (props.player.currentStoryItem?.type === 'messages') {
     if (fastForward.value) {
       scene.time.addEvent({
@@ -230,8 +224,8 @@ const skipScene = () => {
   if (!props.player.next()) return
   if (props.player.storyItemIndex === 0) return exec()
   if (props.player.currentStoryItem.type === 'function') {
-    if (props.player.currentStoryItem.function.startsWith('ゲームオーバー')) return
-    if (props.player.currentStoryItem.function.startsWith('エンディング')) return
+    if (props.player.currentStoryItem.function === 'ゲームオーバー') return
+    if (props.player.currentStoryItem.function === 'エンディング') return
     if (props.player.currentStoryItem.function === '手紙執筆') return exec()
   }
   if (props.player.currentStoryItem.type === 'if') {
@@ -285,7 +279,7 @@ const backScene = () => {
   exec()
 }
 const tapScreen = () => {
-  if (props.player.currentStoryItem.type === 'function' && props.player.currentStoryItem.function.startsWith('ゲームオーバー')) {
+  if (props.player.currentStoryItem.type === 'function' && props.player.currentStoryItem.function === 'ゲームオーバー') {
     goingToTitle.value = true
     if (!state.value.completedStories.includes(state.value.currentStory)) {
       state.value.completedStories.push(state.value.currentStory)
@@ -295,7 +289,7 @@ const tapScreen = () => {
     return
   }
   // 仮
-  if (props.player.currentStoryItem.type === 'function' && props.player.currentStoryItem.function.startsWith('エンディング')) {
+  if (props.player.currentStoryItem.type === 'function' && props.player.currentStoryItem.function === 'エンディング') {
     goingToTitle.value = true
     if (!state.value.completedStories.includes(state.value.currentStory)) {
       state.value.completedStories.push(state.value.currentStory)
