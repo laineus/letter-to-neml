@@ -47,6 +47,12 @@ const resolveWaiting = () => {
 const cancelWaiting = () => {
   waiting = false
 }
+const completeEnding = (endIndex: number) => {
+  if (!state.value.completedEndings.includes(endIndex)) {
+    state.value.completedEndings.push(endIndex)
+    save()
+  }
+}
 const functions = {
   '手紙執筆': () => {
     fastForward.value = false
@@ -62,8 +68,14 @@ const functions = {
     return false
   },
   'UI非表示': () => true,
-  'ゲームオーバー': () => false,
-  'エンディング': () => false
+  'ゲームオーバー': arg => {
+    completeEnding(parseInt(arg))
+    return false
+  },
+  'エンディング': arg => {
+    completeEnding(parseInt(arg))
+    return false
+  }
 } as Functions
 const toTitle = () => {
   scene.scene.start('TitleScene')

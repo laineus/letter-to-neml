@@ -27,7 +27,6 @@ const currentSpeaker = computed(() => {
 const scene = useScene()
 watch(() => props.speakers, (newSpeakers, oldSpeakers) => {
   if (newSpeakers === oldSpeakers) return
-  // TODO: tweenでフェードインアウトさせる
   const delay = Math.max(...newSpeakers.map(v => {
     const old = oldSpeakers?.find(o => o.image.split(':')[0] === v.image.split(':')[0])
     if (!old) return 0
