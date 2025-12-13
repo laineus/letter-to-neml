@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "concurrently \"yarn run server\" \"vite\"",
     "server": "node ./server.js",
-    "build": "vue-tsc -b && vite build",
+    "typecheck": "vue-tsc -b",
+    "build": "vite build",
     "preview": "vite preview"
   }
 }
