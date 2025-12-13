@@ -17,6 +17,7 @@ import Dialog, { useDialogs } from './Dialog.vue'
 import { useDamage, useShake } from '../lib/effect'
 import IconButton from './IconButton.vue'
 import { thingDefinitions, things } from '../story/things'
+import Hint, { useHint } from './Hint.vue'
 const props = defineProps({
   player: {
     type: Object as PropType<ReturnType<typeof useStoryPlayer>>,
@@ -347,6 +348,14 @@ const toggleExploring = () => {
   fastForward.value = false
   exploring.value = !exploring.value
 }
+const showHint = () => {
+  const hint = useHint()
+  dialog.show({
+    title: 'ヒント',
+    desc: hint.currentHint,
+    options: [{ text: '閉じる', close: true }]
+  })
+}
 </script>
 
 <template>
@@ -362,7 +371,8 @@ const toggleExploring = () => {
   <Fade v-if="currentFade" :fade="currentFade" :depth="3000" @end="resolveWaiting" />
   <!-- UI -->
   <template v-if="!uiHidden && !dialog.current && !showLetter && !currentFade">
-    <Button v-if="currentThings?.length" :text="exploring ? 'もどる' : 'あたりを見回す'" :x="(200).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="toggleExploring" />
+    <Hint :x="(140).byRight()" :y="20" :size="18" :width="120" :depth="4000" @click="showHint" />
+    <Button v-if="currentThings?.length" :text="exploring ? 'もどる' : 'あたりを見回す'" :x="(330).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="toggleExploring" />
     <template v-if="!exploring">
       <IconButton icon="settings" :x="((50 * 0) + 60).byRight()" :y="(60).byBottom()" :depth="8000" />
       <IconButton icon="next" :x="((50 * 1) + 60).byRight()" :y="(60).byBottom()" :depth="8000" @click="skipScene" />
