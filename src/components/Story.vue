@@ -30,6 +30,22 @@ const props = defineProps({
 type Functions = {
   [key: string]: (argument: string) => boolean
 }
+let waiting = false
+const resolveWaiting = () => {
+  if (!waiting) return
+  if (exploring.value || showLetter.value || dialog.current) {
+    scene.time.addEvent({
+      delay: 100,
+      callback: resolveWaiting
+    })
+    return
+  }
+  waiting = false
+  next()
+}
+const cancelWaiting = () => {
+  waiting = false
+}
 const functions = {
   '手紙執筆': () => {
     fastForward.value = false
@@ -37,16 +53,14 @@ const functions = {
     return false
   },
   '衝撃': () => {
-    shake.exec(() => next())
+    shake.exec(() => resolveWaiting())
     return false
   },
   'ダメージ': () => {
-    damage.exec(() => next())
+    damage.exec(() => resolveWaiting())
     return false
   },
-  'UI非表示': () => {
-    return true
-  },
+  'UI非表示': () => true,
   'ゲームオーバー': () => false,
   'エンディング': () => false
 } as Functions
@@ -119,15 +133,14 @@ const currentThings = computed(() => {
 /** 次の行へ進む */
 const next = () => {
   if (props.static) return
-  waitingStageUpdate = false
-  waitingFade = false
-  waitingSleep = false
+  cancelWaiting()
   const result = props.player.next()
   if (!result) return
   exec()
 }
 /** その行を処理する */
 const exec = () => {
+  cancelWaiting()
   if (props.player.storyItemIndex === 0) {
     if (props.player.story.if) {
       const func = ifFunctions[props.player.story.if]
@@ -167,32 +180,19 @@ const exec = () => {
       next()
     }
   } else if (props.player.currentStoryItem?.type === 'endIf') {
-    // if入った時点で保存するように変更
-    // プレイ済みの分岐として保存
-    // if (currentIf.value) {
-    //   const ifName = getIfName(currentIf.value)
-    //   if (!state.value.completedBranches.includes(ifName)) {
-    //     state.value.completedBranches.push(ifName)
-    //     save()
-    //   }
-    // }
     next()
   } else if (props.player.currentStoryItem?.type === 'background') {
     next()
   } else if (props.player.currentStoryItem?.type === 'speakers') {
-    waitingStageUpdate = true
+    waiting = true
   } else if (props.player.currentStoryItem?.type === 'sleep') {
-    waitingSleep = true
+    waiting = true
     scene.time.addEvent({
       delay: fastForward.value ? 70 : props.player.currentStoryItem.duration,
-      callback: () => {
-        if (!waitingSleep) return
-        waitingSleep = false
-        next()
-      }
+      callback: resolveWaiting
     })
   } else if (props.player.currentStoryItem?.type === 'fade') {
-    waitingFade = true
+    waiting = true
   } else if (props.player.currentStoryItem?.type === 'function') {
     const functionFunc = functions[props.player.currentStoryItem.function]
     if (!functionFunc) {
@@ -203,11 +203,10 @@ const exec = () => {
     if (functionFunc(props.player.currentStoryItem.argument)) next()
   } else if (props.player.currentStoryItem?.type === 'messages') {
     if (fastForward.value) {
+      waiting = true
       scene.time.addEvent({
         delay: 100,
-        callback: () => {
-          if (fastForward.value) next()
-        }
+        callback: resolveWaiting
       })
     }
   }
@@ -251,6 +250,7 @@ const skipScene = () => {
   skipScene()
 }
 const backToFirst = () => {
+  fastForward.value = false
   dialog.show({
     title: '最初のシーンへ戻る',
     desc: 'ニーナ出発前のシーンへ戻り、手紙を書き直します。\nよろしいですか？',
@@ -306,20 +306,6 @@ const tapScreen = () => {
   if (!props.player.currentMessage) return
   next()
 }
-/** フェーズ移行待ちフラグ */
-let waitingSleep = false
-/** ステージ更新待ちフラグ */
-let waitingStageUpdate = false
-/** フェード待ちフラグ */
-let waitingFade = false
-const onStageUpdate = () => {
-  if (!waitingStageUpdate) return
-  next()
-}
-const onFadeEnd = () => {
-  if (!waitingFade) return
-  next()
-}
 exec()
 // 手紙執筆関連
 const showLetter = ref(false)
@@ -358,7 +344,6 @@ const toggleFastForward = () => {
   next()
 }
 const toggleExploring = () => {
-  if (!props.player.currentMessages) return
   fastForward.value = false
   exploring.value = !exploring.value
 }
@@ -370,11 +355,11 @@ const toggleExploring = () => {
   <!-- Background and Stage -->
   <Container :depth="1000">
     <Background v-if="currentBackground" :x="shake.x" :y="shake.y" :texture="currentBackground?.image" />
-    <Stage v-if="currentSpeakers" :visible="!exploring" :speaking="player.currentMessage?.name" :speakers="currentSpeakers.list" @end="onStageUpdate" />
+    <Stage v-if="currentSpeakers" :visible="!exploring" :speaking="player.currentMessage?.name" :speakers="currentSpeakers.list" @end="resolveWaiting" />
     <FxBlur v-if="dialog.current || showLetter" :post="true" :strength="2" :quality="1" :steps="7" />
   </Container>
   <Rectangle :width="config.WIDTH" :height="config.HEIGHT" :origin="0" :fillColor="0xFF1100" :alpha="damage.alpha" :depth="2500" />
-  <Fade v-if="currentFade" :fade="currentFade" :depth="3000" @end="onFadeEnd" />
+  <Fade v-if="currentFade" :fade="currentFade" :depth="3000" @end="resolveWaiting" />
   <!-- UI -->
   <template v-if="!uiHidden && !dialog.current && !showLetter && !currentFade">
     <Button v-if="currentThings?.length" :text="exploring ? 'もどる' : 'あたりを見回す'" :x="(200).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="toggleExploring" />
