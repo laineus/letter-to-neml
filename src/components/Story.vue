@@ -362,6 +362,9 @@ const toggleExploring = () => {
 }
 const showHint = () => {
   const hint = useHint()
+  if (hint.currentHintIndex && !state.value.checkedHints.includes(hint.currentHintIndex)) {
+    state.value.checkedHints.push(hint.currentHintIndex)
+  }
   dialog.show({
     title: 'ヒント',
     desc: hint.currentHint,
@@ -383,7 +386,7 @@ const showHint = () => {
   <Fade v-if="currentFade" :fade="currentFade" :depth="3000" @end="resolveWaiting" />
   <!-- UI -->
   <template v-if="!uiHidden && !dialog.current && !showLetter && !currentFade">
-    <Hint :x="(140).byRight()" :y="20" :size="18" :width="120" :depth="4000" @click="showHint" />
+    <Hint :x="(140).byRight()" :y="20" :depth="4000" @click="showHint" />
     <Button v-if="currentThings?.length" :text="exploring ? 'もどる' : 'あたりを見回す'" :x="(330).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="toggleExploring" />
     <template v-if="!exploring">
       <IconButton icon="settings" :x="((50 * 0) + 60).byRight()" :y="(60).byBottom()" :depth="8000" />

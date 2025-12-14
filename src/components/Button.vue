@@ -7,14 +7,14 @@ defineEmits(['click'])
 
 const props = defineProps({
   text: { type: String, required: true },
-  size: { type: Number, default: 24 },
+  size: { type: Number, default: 20 },
   width: { type: Number, default: 320 }
 })
 const fontSize = computed(() => {
   return `${props.size}px`
 })
 const height = computed(() => {
-  return props.size + 20
+  return props.size + 22
 })
 </script>
 

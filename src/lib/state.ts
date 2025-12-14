@@ -10,6 +10,7 @@ export type GameState = {
   completedStories: number[]
   completedBranches: string[]
   completedEndings: number[]
+  checkedHints: number[]
   prev: StateRecord | null
   current: StateRecord | null
 }
@@ -27,6 +28,7 @@ const makeState = (): GameState => {
     completedStories: [],
     completedBranches: [],
     completedEndings: [],
+    checkedHints: [],
     prev: null,
     current: null
   }
