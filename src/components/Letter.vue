@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { chatAi } from '../lib/ai'
-import { Container, FxBlur, Rectangle } from 'phavuer'
+import { Container, FxBlur, Image, Rectangle } from 'phavuer'
 import Dialog from './Dialog.vue'
 import config from '../lib/config'
 import type { Branch } from '../story/types'
@@ -222,14 +222,18 @@ const validateAiResponse = (response: SuccessResponse | ErrorResponse) => {
     <Rectangle :width="600" :height="600" :fillColor="0x000000" :alpha="0.6" :origin="0.5" :radius="0" @pointerdown="">
       <FxBlur :strength="1.5" :quality="1" :steps="4" />
     </Rectangle>
+    <Image texture="etc/frame2" :x="-210" :y="-210" :scale="0.3" :alpha="0.2" />
+    <Image texture="etc/frame1" :x="190" :y="190" :scale="0.35" :alpha="0.2" :rotation="Math.PI" />
     <textarea class="Textarea preview" v-model="message" maxlength="800" readonly></textarea>
     <CustomButton :text="'変更する'" :origin="0.5" :y="180" @click="startEdit" />
     <CustomButton :text="'変更せず進む'" :origin="0.5" :y="240" @click="continueWithoutEdit" />
   </Container>
   <Container v-else-if="status === 'edit'" :depth="20000" :x="config.WIDTH.half()" :y="config.HEIGHT.half()">
-    <Rectangle :width="600" :height="600" :fillColor="0x000000" :alpha="0.7" :origin="0.5" :radius="0" @pointerdown="">
+    <Rectangle :width="600" :height="600" :fillColor="0x000000" :alpha="0.6" :origin="0.5" :radius="0" @pointerdown="">
       <FxBlur :strength="1.5" :quality="1" :steps="4" />
     </Rectangle>
+    <Image texture="etc/frame2" :x="-210" :y="-210" :scale="0.3" :alpha="0.2" />
+    <Image texture="etc/frame1" :x="190" :y="190" :scale="0.35" :alpha="0.2" :rotation="Math.PI" />
     <textarea class="Textarea edit" v-model="message" maxlength="800"></textarea>
     <CustomButton :text="'確定する'" :origin="0.5" :y="120" @click="submit" />
     <CustomButton :text="'初期状態に戻す'" :origin="0.5" :y="180" @click="reset" />
