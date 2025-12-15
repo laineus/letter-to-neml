@@ -60,10 +60,12 @@ const functions = {
     return false
   },
   '衝撃': () => {
+    waiting = true
     shake.exec(() => resolveWaiting())
     return false
   },
   'ダメージ': () => {
+    waiting = true
     damage.exec(() => resolveWaiting())
     return false
   },
@@ -385,9 +387,9 @@ const showHint = () => {
   <Rectangle :width="config.WIDTH" :height="config.HEIGHT" :origin="0" :fillColor="0xFF1100" :alpha="damage.alpha" :depth="2500" />
   <Fade v-if="currentFade" :fade="currentFade" :depth="3000" @end="resolveWaiting" />
   <!-- UI -->
-  <template v-if="!uiHidden && !dialog.current && !showLetter && !currentFade">
+  <template v-if="!uiHidden && !dialog.current && !showLetter">
     <Hint :x="(140).byRight()" :y="20" :depth="4000" @click="showHint" />
-    <Button v-if="currentThings?.length" :text="exploring ? 'もどる' : 'あたりを見回す'" :x="(330).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="toggleExploring" />
+    <Button v-if="currentThings?.length && !currentFade" :text="exploring ? 'もどる' : 'あたりを見回す'" :x="(330).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="toggleExploring" />
     <template v-if="!exploring">
       <IconButton icon="settings" :x="((50 * 0) + 60).byRight()" :y="(60).byBottom()" :depth="8000" />
       <IconButton icon="next" :x="((50 * 1) + 60).byRight()" :y="(60).byBottom()" :depth="8000" @click="skipScene" />
