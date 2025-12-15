@@ -8,7 +8,8 @@ defineEmits(['click'])
 const props = defineProps({
   text: { type: String, required: true },
   size: { type: Number, default: 20 },
-  width: { type: Number, default: 320 }
+  width: { type: Number, default: 320 },
+  origin: { type: Number, default: 0 }
 })
 const fontSize = computed(() => {
   return `${props.size}px`
@@ -20,7 +21,7 @@ const height = computed(() => {
 
 <template>
   <Container>
-    <Rectangle :fillColor="0x000000" :strokeColor="0xFFFFFF" :lineWidth="2" :width="width" :height="height" :origin="0" @pointerdown="$emit('click')" />
-    <CustomText :text="text" :padding="{ top: 1 }" :style="{ fontSize, fontStyle: 'bold' }" :x="width.half()" :y="height.half() + 1" :origin="0.5" />
+    <Rectangle :fillColor="0x000000" :strokeColor="0xFFFFFF" :fillAlpha="0.3" :lineWidth="2" :width="width" :height="height" :origin="origin" @pointerdown="$emit('click')" />
+    <CustomText :text="text" :padding="{ top: 1 }" :style="{ fontSize, fontStyle: 'bold' }" :x="width * (0.5 - origin)" :y="height * (0.5 - origin)" :origin="0.5" />
   </Container>
 </template>

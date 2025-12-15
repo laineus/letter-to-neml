@@ -5,7 +5,7 @@ const props = defineProps<{
   text: string,
   style?: Partial<Phaser.Types.GameObjects.Text.TextStyle>
 }>()
-const mergedStyle = computed(() => {
+const mergedStyle = computed<Phaser.Types.GameObjects.Text.TextStyle>(() => {
   return {
     fontFamily: 'Hina Mincho',
     fontSize: 22,
