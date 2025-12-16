@@ -15,11 +15,18 @@ export const useHint = () => {
     // トゥルーエンド到達済み
     if (completedEndings.includes(7)) return undefined
     // ノーマルエンド到達済み
-    if (completedEndings.includes(6)) return 6
+    if (completedEndings.includes(6)) {
+      if (ifFunctions['グッドエンド']()) return undefined // 達成済み
+      return 6
+    }
     // バッドエンド(ニーナの使命)到達済み
-    if (completedEndings.includes(5)) return 5
+    if (completedEndings.includes(5)) {
+      if (ifFunctions['悪夢予防薬を片付ける']()) return undefined // 達成済み
+      return 5
+    }
     // バッドエンド(ニーナのいない夜)到達済み
     if (completedEndings.includes(4)) {
+      if (ifFunctions['お姉さんに精神安定剤をあげる']()) return undefined // 達成済み
       if (ifFunctions['ボロがカスラの実を吐き出す']()) return 4
       return 3
     }
