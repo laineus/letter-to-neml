@@ -1,3 +1,4 @@
+import type { Branch as _Branch } from '../../server/types'
 
 export type Story = {
   title: string
@@ -58,15 +59,7 @@ export type MessageConfig = {
   text: string
 }
 
-export type Branch = {
-  code: number
-  result: true
-  ref: string
-} | {
-  code: number
-  result: false
-  ref: null
-}
+export type Branch = _Branch
 
 export type Thing = {
   id: string

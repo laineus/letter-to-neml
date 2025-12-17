@@ -1,5 +1,13 @@
 import { GoogleGenerativeAI, HarmBlockThreshold, HarmCategory } from '@google/generative-ai'
 import OpenAI from 'openai'
+import dotenv from 'dotenv'
+
+dotenv.config()
+
+if (!process.env.GEMINI_API_KEY && !process.env.OPENAI_API_KEY) {
+  console.error('Error: GEMINI_API_KEY or OPENAI_API_KEY must be set in environment variables')
+  process.exit(1)
+}
 
 const GPT_MODELS = ['gpt-4o', 'gpt-4o-mini', 'gpt-5-nano', 'gpt-5-mini'] as const
 const GEMINI_MODELS = ['gemini-2.5-flash', 'gemini-2.5-flash-lite'] as const
@@ -8,11 +16,11 @@ type GEMINI_MODEL = typeof GEMINI_MODELS[number]
 type MODEL = GPT_MODEL | GEMINI_MODEL
 
 const openai = new OpenAI({
-  apiKey: import.meta.env.VITE_OPENAI_API_KEY ?? '',
+  apiKey: process.env.OPENAI_API_KEY ?? '',
   dangerouslyAllowBrowser: true
 })
 
-export const chatGpt = <T>(prompt: Prompt | Prompt[], model: GPT_MODEL): Promise<T> => {
+const chatGpt = <T>(prompt: Prompt | Prompt[], model: GPT_MODEL): Promise<T> => {
   const messages = (Array.isArray(prompt) ? prompt : [prompt]).map(v => {
     return typeof v === 'string'
       ? { role: 'user' as const, content: v }
@@ -27,7 +35,7 @@ export const chatGpt = <T>(prompt: Prompt | Prompt[], model: GPT_MODEL): Promise
   })
 }
 
-const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY)
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY ?? '')
 
 const safetySettings = [
   {
@@ -52,7 +60,7 @@ const safetySettings = [
   }
 ]
 
-export const chatGemini = <T>(prompt: Prompt | Prompt[], model: GEMINI_MODEL): Promise<T> => {
+const chatGemini = <T>(prompt: Prompt | Prompt[], model: GEMINI_MODEL): Promise<T> => {
   const getRole = (role: Role) => {
     if (role === 'user') return 'user'
     if (role === 'assistant') return 'model'

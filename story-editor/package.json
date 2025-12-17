@@ -9,5 +9,10 @@
     "typecheck": "vue-tsc -b",
     "build": "vite build",
     "preview": "vite preview"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "vue-router": "^4.6.3"
   }
 }
