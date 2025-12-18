@@ -13,6 +13,10 @@ export type GameState = {
   checkedHints: number[]
   prev: StateRecord | null
   current: StateRecord | null
+  settings: {
+    volume: number
+    language: 'ja' | 'en'
+  }
 }
 
 export const save = () => {
@@ -30,7 +34,11 @@ const makeState = (): GameState => {
     completedEndings: [],
     checkedHints: [],
     prev: null,
-    current: null
+    current: null,
+    settings: {
+      volume: 1,
+      language: 'ja'
+    }
   }
 }
 export const state = ref(load() ?? makeState())

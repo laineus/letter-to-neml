@@ -4,6 +4,7 @@ import type { StoryItem } from '../../src/story/types'
 import BackgroundItem from './BackgroundItem.vue'
 import SpeakersItem from './SpeakersItem.vue'
 import MessagesItem from './MessagesItem.vue'
+import AudioItem from './AudioItem.vue'
 import SleepItem from './SleepItem.vue'
 import FadeItem from './FadeItem.vue'
 import IfItem from './IfItem.vue'
@@ -22,6 +23,7 @@ defineProps({
     <BackgroundItem v-if="item.type === 'background'" :item="item" />
     <SpeakersItem v-else-if="item.type === 'speakers'" :item="item" />
     <MessagesItem v-else-if="item.type === 'messages'" :item="item" />
+    <AudioItem v-else-if="item.type === 'audio'" :item="item" />
     <SleepItem v-else-if="item.type === 'sleep'" :item="item" />
     <FadeItem v-else-if="item.type === 'fade'" :item="item" />
     <IfItem v-else-if="item.type === 'if' || item.type === 'endIf'" :item="item" />

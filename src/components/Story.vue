@@ -3,7 +3,7 @@ import { Container, FxBlur, Rectangle, useScene } from 'phavuer'
 import MessageWindow from './MessageWindow.vue'
 import Stage from './Stage.vue'
 import Fade from './Fade.vue'
-import { computed, ref, watch, type PropType } from 'vue'
+import { computed, onBeforeUnmount, ref, watch, type PropType } from 'vue'
 import Background from './Background.vue'
 import type { Branch, StoryIf, StoryItem, Thing } from '../story/types'
 import config from '../lib/config'
@@ -18,6 +18,7 @@ import { useDamage, useShake } from '../lib/effect'
 import IconButton from './IconButton.vue'
 import { thingDefinitions, things } from '../story/things'
 import Hint, { useHint } from './Hint.vue'
+import { useAudioPlayer } from '../lib/audioPlayer'
 const props = defineProps({
   player: {
     type: Object as PropType<ReturnType<typeof useStoryPlayer>>,
@@ -373,6 +374,13 @@ const showHint = () => {
     options: [{ text: '閉じる', close: true }]
   })
 }
+// BGM制御
+const audioPlayer = useAudioPlayer(scene)
+const bgm = computed(() => findLastRow<'audio'>(v => v.type === 'audio' && v.audioType === 'bgm')?.audio)
+if (!props.static) watch(bgm, key => audioPlayer.play(key || null), { immediate: true })
+onBeforeUnmount(() => {
+  audioPlayer.stop()
+})
 </script>
 
 <template>

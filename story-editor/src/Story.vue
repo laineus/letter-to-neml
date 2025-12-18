@@ -21,11 +21,12 @@ watch(selectedIndex, (newIndex) => {
   storyPlayer.storyItemIndex = newIndex
   storyPlayer.messageIndex = 0
 })
-const itemTypes = ['background', 'speakers', 'messages', 'sleep', 'fade', 'if', 'function'] as const
+const itemTypes = ['background', 'speakers', 'messages', 'audio', 'sleep', 'fade', 'if', 'function'] as const
 const labels = {
   background: '背景',
   speakers: 'キャラ',
   messages: 'セリフ',
+  audio: '音声',
   sleep: 'ウェイト',
   fade: '暗転',
   if: '条件分岐',
@@ -44,6 +45,9 @@ const addItem = (index: number, type: typeof itemTypes[number]) => {
       break
     case 'messages':
       newItem.value = { type: 'messages', list: [{ name: '', text: '' }] }
+      break
+    case 'audio':
+      newItem.value = { type: 'audio', audio: '', audioType: 'bgm' }
       break
     case 'sleep':
       newItem.value = { type: 'sleep', duration: 500 }

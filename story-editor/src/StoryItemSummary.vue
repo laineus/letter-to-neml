@@ -19,6 +19,8 @@ const getSummary = (item: StoryItem): string => {
       const firstMsg = item.list[0]
       if (!firstMsg) return ''
       return `${firstMsg.name}: ${firstMsg.text.slice(0, 20)}${firstMsg.text.length > 20 ? '...' : ''}`
+    case 'audio':
+      return item.audio ? `${item.audioType === 'bgm' ? 'BGM' : 'SE'}: ${item.audio}` : '停止'
     case 'sleep':
       return `${item.duration}ms`
     case 'fade':
@@ -36,6 +38,7 @@ const labels = {
   background: '背景',
   speakers: 'キャラ',
   messages: 'セリフ',
+  audio: '音声',
   sleep: 'ウェイト',
   fade: '暗転',
   if: '条件分岐',

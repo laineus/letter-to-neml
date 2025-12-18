@@ -6,7 +6,7 @@ export type Story = {
   list: StoryItem[]
 }
 
-export type StoryItem = StoryIf | StorySleep | StoryFade | StoryBackground | StorySpeakers | StoryMessages | StoryEndIf | StoryFunction
+export type StoryItem = StoryIf | StorySleep | StoryFade | StoryBackground | StorySpeakers | StoryMessages | StoryAudio | StoryEndIf | StoryFunction
 
 export type StorySleep = {
   type: 'sleep'
@@ -37,6 +37,12 @@ export type SpeakerConfig = {
 export type StoryMessages = {
   type: 'messages'
   list: MessageConfig[]
+}
+
+export type StoryAudio = {
+  type: 'audio'
+  audio: string
+  audioType: 'bgm' | 'se'
 }
 
 export type StoryIf = {
