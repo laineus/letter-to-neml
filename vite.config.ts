@@ -10,7 +10,8 @@ export default defineConfig({
       patterns: [
         { type: 'image', dir: '/images/chara', rule: /^[\w-:]+\.(webp|png|jpg)$/, prefix: 'chara/' },
         { type: 'image', dir: '/images/bg', rule: /^[\w-:]+\.(webp|png|jpg)$/, prefix: 'bg/' },
-        { type: 'image', dir: '/images/etc', rule: /^[\w-]+\.(webp|png|jpg)$/, prefix: 'etc/' }
+        { type: 'image', dir: '/images/etc', rule: /^[\w-]+\.(webp|png|jpg)$/, prefix: 'etc/' },
+        { type: 'audio', dir: '/audio/bgm', rule: /^[\w-]+\.(mp3|ogg|wav)$/, prefix: 'bgm/' }
       ],
       output: './src/assets.json'
     })
