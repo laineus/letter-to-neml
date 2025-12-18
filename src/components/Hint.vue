@@ -61,6 +61,5 @@ const unread = computed(() => {
   <Container>
     <Button text="ヒント" :size="18" :width="120" @click="$emit('click')" />
     <Circle v-if="unread" :x="94" :y="12"  :radius="5" :fillColor="0xFF0000" />
-    {{ hint.currentHintIndex }}
   </Container>
 </template>

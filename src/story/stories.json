@@ -36,6 +36,11 @@
         "duration": 1000
       },
       {
+        "type": "audio",
+        "audio": "bgm/life-of-noctarians",
+        "audioType": "bgm"
+      },
+      {
         "type": "sleep",
         "duration": 1000
       },
@@ -165,6 +170,11 @@
   {
     "title": "ライベルの来訪",
     "list": [
+      {
+        "type": "audio",
+        "audioType": "bgm",
+        "audio": "bgm/life-of-noctarians"
+      },
       {
         "type": "function",
         "function": "オブジェクト",
@@ -689,6 +699,11 @@
         ]
       },
       {
+        "type": "audio",
+        "audio": "bgm/whispers-of-shadows",
+        "audioType": "bgm"
+      },
+      {
         "type": "speakers",
         "list": [
           {
@@ -1078,7 +1093,17 @@
           {
             "name": "ウルフリック",
             "text": "悪いけど事情が変わった"
-          },
+          }
+        ]
+      },
+      {
+        "type": "audio",
+        "audio": "",
+        "audioType": "bgm"
+      },
+      {
+        "type": "messages",
+        "list": [
           {
             "name": "ウルフリック",
             "text": "お前に関してはぶっ殺してから帰る"
@@ -1398,6 +1423,11 @@
         "duration": 1500
       },
       {
+        "type": "audio",
+        "audio": "bgm/whispers-of-shadows",
+        "audioType": "bgm"
+      },
+      {
         "type": "messages",
         "list": [
           {
@@ -1514,6 +1544,11 @@
         ]
       },
       {
+        "type": "audio",
+        "audio": "",
+        "audioType": "bgm"
+      },
+      {
         "type": "speakers",
         "list": [
           {
@@ -1568,6 +1603,11 @@
   {
     "title": "ライベルとの会話",
     "list": [
+      {
+        "type": "audio",
+        "audio": "bgm/life-of-noctarians",
+        "audioType": "bgm"
+      },
       {
         "type": "function",
         "function": "オブジェクト",
@@ -2244,6 +2284,11 @@
         "duration": 1000
       },
       {
+        "type": "audio",
+        "audio": "bgm/night-market",
+        "audioType": "bgm"
+      },
+      {
         "type": "speakers",
         "list": [
           {
@@ -2411,6 +2456,11 @@
   {
     "title": "行商の青年",
     "list": [
+      {
+        "type": "audio",
+        "audio": "bgm/night-market",
+        "audioType": "bgm"
+      },
       {
         "type": "function",
         "function": "オブジェクト",
@@ -2811,6 +2861,11 @@
         ]
       },
       {
+        "type": "audio",
+        "audio": "",
+        "audioType": "bgm"
+      },
+      {
         "type": "speakers",
         "list": [
           {
@@ -2866,6 +2921,11 @@
             "facing": "left"
           }
         ]
+      },
+      {
+        "type": "audio",
+        "audio": "bgm/whispers-of-shadows",
+        "audioType": "bgm"
       },
       {
         "type": "messages",
@@ -3326,6 +3386,11 @@
         "duration": 500
       },
       {
+        "type": "audio",
+        "audio": "",
+        "audioType": "bgm"
+      },
+      {
         "type": "speakers",
         "list": []
       },
@@ -3374,6 +3439,11 @@
             "facing": "left"
           }
         ]
+      },
+      {
+        "type": "audio",
+        "audio": "",
+        "audioType": "bgm"
       },
       {
         "type": "messages",
@@ -3587,6 +3657,11 @@
         "duration": 500
       },
       {
+        "type": "audio",
+        "audio": "",
+        "audioType": "bgm"
+      },
+      {
         "type": "speakers",
         "list": [
           {
@@ -3609,6 +3684,11 @@
         "type": "fade",
         "fade": "out",
         "duration": 500
+      },
+      {
+        "type": "audio",
+        "audio": "bgm/night-market",
+        "audioType": "bgm"
       },
       {
         "type": "messages",
@@ -3703,7 +3783,17 @@
           {
             "name": "ネムル",
             "text": "ええと、その……"
-          },
+          }
+        ]
+      },
+      {
+        "type": "audio",
+        "audio": "",
+        "audioType": "bgm"
+      },
+      {
+        "type": "messages",
+        "list": [
           {
             "name": "",
             "text": "ネムルが困っていると、店先に座っていたボロがネムルに反応した"
@@ -3862,6 +3952,11 @@
         ]
       },
       {
+        "type": "audio",
+        "audio": "bgm/night-market",
+        "audioType": "bgm"
+      },
+      {
         "type": "speakers",
         "list": [
           {
@@ -4006,6 +4101,11 @@
         "type": "fade",
         "fade": "out",
         "duration": 1000
+      },
+      {
+        "type": "audio",
+        "audio": "bgm/magic-apothecary",
+        "audioType": "bgm"
       },
       {
         "type": "sleep",
@@ -4349,6 +4449,11 @@
         ]
       },
       {
+        "type": "audio",
+        "audio": "",
+        "audioType": "bgm"
+      },
+      {
         "type": "messages",
         "list": [
           {
@@ -4414,6 +4519,11 @@
         "type": "fade",
         "fade": "out",
         "duration": 1000
+      },
+      {
+        "type": "audio",
+        "audio": "bgm/whispers-of-shadows",
+        "audioType": "bgm"
       },
       {
         "type": "messages",
@@ -4502,6 +4612,11 @@
       {
         "type": "if",
         "if": "カラフルな薬を飲まない"
+      },
+      {
+        "type": "audio",
+        "audio": "",
+        "audioType": "bgm"
       },
       {
         "type": "messages",
@@ -4653,6 +4768,11 @@
             "facing": "left"
           }
         ]
+      },
+      {
+        "type": "audio",
+        "audio": "bgm/moon-floating-on-the-sea",
+        "audioType": "bgm"
       },
       {
         "type": "messages",
@@ -5331,6 +5451,11 @@
         "duration": 500
       },
       {
+        "type": "audio",
+        "audio": "",
+        "audioType": "bgm"
+      },
+      {
         "type": "speakers",
         "list": [
           {
@@ -5391,6 +5516,11 @@
       {
         "type": "if",
         "if": "お姉さんと海に入る"
+      },
+      {
+        "type": "audio",
+        "audio": "",
+        "audioType": "bgm"
       },
       {
         "type": "messages",
@@ -5495,6 +5625,11 @@
             "text": "……"
           }
         ]
+      },
+      {
+        "type": "audio",
+        "audio": "bgm/whispers-of-shadows",
+        "audioType": "bgm"
       },
       {
         "type": "speakers",
@@ -5973,6 +6108,11 @@
         "duration": 1000
       },
       {
+        "type": "audio",
+        "audio": "bgm/life-of-noctarians",
+        "audioType": "bgm"
+      },
+      {
         "type": "speakers",
         "list": [
           {
@@ -6350,6 +6490,11 @@
         "duration": 500
       },
       {
+        "type": "audio",
+        "audio": "bgm/life-of-noctarians",
+        "audioType": "bgm"
+      },
+      {
         "type": "messages",
         "list": [
           {
@@ -6459,6 +6604,11 @@
             "text": "え、うん、\n分かった"
           }
         ]
+      },
+      {
+        "type": "audio",
+        "audio": "bgm/letter-to-neml",
+        "audioType": "bgm"
       },
       {
         "type": "sleep",
@@ -6583,7 +6733,27 @@
           {
             "name": "ニーナ",
             "text": "……"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina:sad",
+            "x": 0.6,
+            "facing": "left"
           },
+          {
+            "image": "chara/rybel:normal",
+            "x": 0.3,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
           {
             "name": "ニーナ",
             "text": "ネム、ル……"
@@ -6852,6 +7022,15 @@
         ]
       },
       {
+        "type": "audio",
+        "audio": "",
+        "audioType": "bgm"
+      },
+      {
+        "type": "sleep",
+        "duration": 1000
+      },
+      {
         "type": "fade",
         "fade": "in",
         "duration": 1000
@@ -6906,6 +7085,11 @@
         "type": "fade",
         "fade": "out",
         "duration": 1000
+      },
+      {
+        "type": "audio",
+        "audio": "bgm/life-of-noctarians",
+        "audioType": "bgm"
       },
       {
         "type": "messages",
@@ -7147,6 +7331,11 @@
     "title": "コリンの家へ続く森",
     "list": [
       {
+        "type": "audio",
+        "audio": "bgm/life-of-noctarians",
+        "audioType": "bgm"
+      },
+      {
         "type": "fade",
         "fade": "in",
         "duration": 0
@@ -7252,7 +7441,17 @@
           {
             "name": "コリン",
             "text": "怖い夢の世界の出来事を、本当の世界にも起こしたりするんだ"
-          },
+          }
+        ]
+      },
+      {
+        "type": "audio",
+        "audio": "",
+        "audioType": "bgm"
+      },
+      {
+        "type": "messages",
+        "list": [
           {
             "name": "ネムル",
             "text": "！！"
@@ -7277,6 +7476,11 @@
             "facing": "right"
           }
         ]
+      },
+      {
+        "type": "audio",
+        "audio": "bgm/life-of-noctarians",
+        "audioType": "bgm"
       },
       {
         "type": "messages",
@@ -7401,6 +7605,11 @@
   {
     "title": "コリンの家",
     "list": [
+      {
+        "type": "audio",
+        "audio": "bgm/life-of-chaotix",
+        "audioType": "bgm"
+      },
       {
         "type": "function",
         "function": "オブジェクト",
@@ -7659,6 +7868,11 @@
         "argument": "削除"
       },
       {
+        "type": "audio",
+        "audio": "",
+        "audioType": "bgm"
+      },
+      {
         "type": "fade",
         "fade": "in",
         "duration": 1000
@@ -7737,6 +7951,11 @@
   {
     "title": "ウルフリックの家",
     "list": [
+      {
+        "type": "audio",
+        "audio": "bgm/life-of-chaotix",
+        "audioType": "bgm"
+      },
       {
         "type": "function",
         "function": "オブジェクト",
@@ -8055,6 +8274,11 @@
         ]
       },
       {
+        "type": "audio",
+        "audio": "",
+        "audioType": "bgm"
+      },
+      {
         "type": "messages",
         "list": [
           {
@@ -8094,6 +8318,11 @@
             "facing": "right"
           }
         ]
+      },
+      {
+        "type": "audio",
+        "audio": "bgm/whispers-of-shadows",
+        "audioType": "bgm"
       },
       {
         "type": "messages",
@@ -8251,6 +8480,11 @@
         ]
       },
       {
+        "type": "audio",
+        "audio": "",
+        "audioType": "bgm"
+      },
+      {
         "type": "messages",
         "list": [
           {
@@ -8294,6 +8528,11 @@
   {
     "title": "帰りの馬車",
     "list": [
+      {
+        "type": "audio",
+        "audio": "bgm/moon-floating-on-the-sea",
+        "audioType": "bgm"
+      },
       {
         "type": "fade",
         "fade": "in",
@@ -8575,6 +8814,11 @@
         "duration": 1000
       },
       {
+        "type": "audio",
+        "audio": "bgm/tower-of-shamani",
+        "audioType": "bgm"
+      },
+      {
         "type": "sleep",
         "duration": 500
       },
@@ -8761,11 +9005,17 @@
         ]
       },
       {
+        "type": "audio",
+        "audio": "",
+        "audioType": "bgm"
+      },
+      {
         "type": "fade",
         "fade": "in",
         "duration": 1000
       }
-    ]
+    ],
+    "if": "ライベルの再訪"
   },
   {
     "title": "ED1:ニーナのいない夜",
@@ -8814,6 +9064,11 @@
         "type": "fade",
         "fade": "out",
         "duration": 1000
+      },
+      {
+        "type": "audio",
+        "audio": "bgm/life-of-noctarians",
+        "audioType": "bgm"
       },
       {
         "type": "messages",
@@ -9003,6 +9258,11 @@
         "type": "fade",
         "fade": "out",
         "duration": 500
+      },
+      {
+        "type": "audio",
+        "audio": "bgm/tower-of-shamani",
+        "audioType": "bgm"
       },
       {
         "type": "messages",
@@ -9242,6 +9502,11 @@
         "duration": 1000
       },
       {
+        "type": "audio",
+        "audio": "bgm/tower-of-shamani",
+        "audioType": "bgm"
+      },
+      {
         "type": "messages",
         "list": [
           {
@@ -9412,6 +9677,11 @@
         ]
       },
       {
+        "type": "audio",
+        "audio": "",
+        "audioType": "bgm"
+      },
+      {
         "type": "speakers",
         "list": [
           {
@@ -9505,7 +9775,17 @@
           {
             "name": "ネムル",
             "text": "ニーナ、"
-          },
+          }
+        ]
+      },
+      {
+        "type": "audio",
+        "audio": "bgm/letter-to-neml",
+        "audioType": "bgm"
+      },
+      {
+        "type": "messages",
+        "list": [
           {
             "name": "ネムル",
             "text": "帰ろう？\n一緒に、おうちに"
@@ -9557,6 +9837,18 @@
           {
             "name": "ネムル",
             "text": "帰ろう"
+          },
+          {
+            "name": "ニーナ",
+            "text": "……うん"
+          },
+          {
+            "name": "ニーナ",
+            "text": "分かった"
+          },
+          {
+            "name": "ニーナ",
+            "text": "ありがとう、ネムル"
           }
         ]
       },
@@ -9727,8 +10019,17 @@
           },
           {
             "name": "ニーナ",
-            "text": "うん"
-          },
+            "text": "少しだけ"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 1500
+      },
+      {
+        "type": "messages",
+        "list": [
           {
             "name": "ネムル",
             "text": "ねえ、さっき言ってた伝えたいことって？"
@@ -9769,6 +10070,10 @@
           {
             "name": "ニーナ",
             "text": "迎えに来てくれて"
+          },
+          {
+            "name": "ニーナ",
+            "text": "すごく嬉しかったよ"
           },
           {
             "name": "ネムル",
@@ -9820,10 +10125,34 @@
           {
             "name": "ネムル",
             "text": "私ね、\nニーナが伝えてくれたこと、とっても嬉しかったんだ"
+          }
+        ]
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/nina:sad",
+            "x": 0.3,
+            "facing": "right"
           },
           {
+            "image": "chara/neml",
+            "x": 0.7,
+            "facing": "left"
+          }
+        ]
+      },
+      {
+        "type": "messages",
+        "list": [
+          {
             "name": "ニーナ",
-            "text": "うん"
+            "text": "……"
+          },
+          {
+            "name": "ネムル",
+            "text": "それでね"
           }
         ]
       },
@@ -9847,11 +10176,11 @@
         "list": [
           {
             "name": "ニーナ",
-            "text": "読んでくれてありがとう"
+            "text": "ネムル"
           },
           {
             "name": "ニーナ",
-            "text": "それでね、私、気持ちに決心がついたの"
+            "text": "私、もう決めたの"
           },
           {
             "name": "ニーナ",
@@ -9877,7 +10206,7 @@
           },
           {
             "image": "chara/neml:rush2",
-            "x": 0.6,
+            "x": 0.7,
             "facing": "left"
           }
         ]
@@ -9895,31 +10224,11 @@
           },
           {
             "name": "ネムル",
-            "text": "待って！！"
-          }
-        ]
-      },
-      {
-        "type": "speakers",
-        "list": [
-          {
-            "image": "chara/nina:sad",
-            "x": 0.1,
-            "facing": "right"
+            "text": "だめ！！"
           },
           {
-            "image": "chara/neml:rush2",
-            "x": 0.5,
-            "facing": "left"
-          }
-        ]
-      },
-      {
-        "type": "messages",
-        "list": [
-          {
             "name": "ネムル",
-            "text": "だめ！！"
+            "text": "待って！！"
           }
         ]
       },
@@ -9970,9 +10279,14 @@
         "image": "bg/ed4"
       },
       {
+        "type": "audio",
+        "audio": "bgm/letter-to-neml-guitar",
+        "audioType": "bgm"
+      },
+      {
         "type": "fade",
         "fade": "out",
-        "duration": 500
+        "duration": 1000
       },
       {
         "type": "messages",

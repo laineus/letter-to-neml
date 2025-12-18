@@ -2,10 +2,17 @@
 import { Container, Rectangle, Image, useScene } from 'phavuer'
 import config from '../lib/config'
 import CustomText from './CustomText.vue'
+import { onBeforeUnmount } from 'vue'
+import { state } from '../lib/state'
 const scene = useScene()
 const start = () => {
   scene.scene.start('MainScene')
 }
+const bgm = scene.sound.add('bgm/letter-to-neml', { loop: true, volume: state.value.settings.volume })
+bgm.play()
+onBeforeUnmount(() => {
+  bgm.stop()
+})
 </script>
 
 <template>

@@ -199,6 +199,11 @@ const exec = () => {
     next()
   } else if (props.player.currentStoryItem?.type === 'background') {
     next()
+  } else if (props.player.currentStoryItem?.type === 'audio') {
+    if (props.player.currentStoryItem.audioType === 'se') {
+      scene.sound.play(props.player.currentStoryItem.audio)
+    }
+    next()
   } else if (props.player.currentStoryItem?.type === 'speakers') {
     waiting = true
   } else if (props.player.currentStoryItem?.type === 'sleep') {
@@ -297,9 +302,6 @@ const backScene = () => {
 const tapScreen = () => {
   if (props.player.currentStoryItem.type === 'function' && props.player.currentStoryItem.function === 'ゲームオーバー') {
     goingToTitle.value = true
-    if (!state.value.completedStories.includes(state.value.currentStory)) {
-      state.value.completedStories.push(state.value.currentStory)
-    }
     state.value.currentStory = 0
     save()
     return
