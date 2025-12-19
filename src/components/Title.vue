@@ -51,8 +51,8 @@ const TITLE_FADE_IN = {
 
 <template>
   <Container>
-    <Rectangle 
-      v-show="type === 'title'"
+    <Rectangle
+      :visible="type === 'title'"
       :width="config.WIDTH" 
       :height="config.HEIGHT" 
       :origin="0"

@@ -100,11 +100,11 @@ const sumHeight = (rows * rectHeight) + ((rows - 1) * padding)
     <Image
       v-if="selectedEnding !== undefined"
       :texture="selectedEnding.image"
-      :x="1920 / 2"
-      :y="1080 / 2"
-      :origin="0.5"
-      width="1920"
-      height="1080"
+      :x="0"
+      :y="0"
+      :origin="0"
+      :displayWidth="config.WIDTH"
+      :displayHeight="config.HEIGHT"
       :tween="{ props: { alpha: { from: 0, to: 1 } }, duration: 200 }"
       @pointerdown="handleCloseFullscreen"
     />
