@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Circle, Container, Rectangle } from 'phavuer'
 import CustomText from './CustomText.vue'
+defineEmits(['click'])
 const props = defineProps({
   text: { type: String, default: '' },
   active: { type: Boolean, default: false },

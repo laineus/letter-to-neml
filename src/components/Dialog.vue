@@ -45,7 +45,7 @@ const props = defineProps({
   options: { type: Array as PropType<(string | DialogOption)[]>, default: () => [{ text: 'OK', close: true }] }
 })
 const width = 600
-const optionHeight = 44
+const optionHeight = 40
 const optionMargin = 16
 const windowPadding = 40
 const windowHeight = computed(() => {
@@ -86,7 +86,7 @@ const onSelect = (v: DialogOption) => {
       <CustomText v-if="desc" @create="onCreatedDesc" :key="desc" :x="width.half()" :y="titleHeight + 40" :text="desc" :originY="0" :originX="0.5" :lineSpacing="15" :padding="{ top: 3 }" :style="{ fontSize: '20px', align: 'center', wordWrap: { width: width - 65, useAdvancedWrap: true } }" />
       <Container v-for="(v, i) in fixedOptions" :x="windowPadding" :y="windowPadding + (i * (optionHeight + optionMargin)) + titleHeight + descHeight">
         <Rectangle :width="width - 80" :height="optionHeight" :fillColor="0x000000" :fillAlpha="0.3" :origin="0" :strokeColor="0xFFFFFF" :lineWidth="2" @pointerdown="onSelect(v)" />
-        <CustomText :x="(width - 80).half()" :y="23" :text="v.text" :origin="0.5" :padding="{ top: 3 }" :style="{ fontStyle: 'bold', fontSize: '20px', align: 'center' }" />
+        <CustomText :x="(width - 80).half()" :y="20" :text="v.text" :origin="0.5" :padding="{ top: 3 }" :style="{ fontStyle: 'bold', fontSize: '20px', align: 'center' }" />
       </Container>
     </Container>
   </Container>

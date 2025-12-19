@@ -12,7 +12,7 @@ bgm.play()
 onBeforeUnmount(() => {
   bgm.stop()
 })
-const type = ref<'title' | 'menu' | 'gallery' | 'config'>('config')
+const type = ref<'title' | 'menu' | 'gallery' | 'config'>('title')
 const menu = [
   {
     label: computed(() => {
@@ -85,7 +85,7 @@ const TITLE_FADE_IN = {
       </Container>
     </Container>
     <Gallery v-else-if="type === 'gallery'" @back="type = 'menu'" />
-    <Config v-else-if="type === 'config'" @back="type = 'menu'" />
+    <Config v-else-if="type === 'config'" :showBackToTitle="false" @close="type = 'menu'" />
     <Rectangle
       :width="config.WIDTH" 
       :height="config.HEIGHT" 

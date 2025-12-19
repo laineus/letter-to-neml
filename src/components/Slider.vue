@@ -10,7 +10,7 @@ const props = defineProps({
   max: { type: Number, default: 100 },
   step: { type: Number, default: 1 }
 })
-const height = 12
+const height = 10
 const model = defineModel({ type: Number, required: true })
 const percentage = computed(() => {
   return ((model.value - props.min) / (props.max - props.min))
