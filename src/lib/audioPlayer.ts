@@ -1,5 +1,4 @@
-import { ref, watch } from 'vue'
-import { state } from './state'
+import { ref } from 'vue'
 
 export const useAudioPlayer = (scene: Phaser.Scene) => {
   const current = ref<ReturnType<typeof scene.sound.add>>()
@@ -14,14 +13,13 @@ export const useAudioPlayer = (scene: Phaser.Scene) => {
     }
     if (!key) return
     current.value = scene.sound.add(key)
-    current.value.play({ loop: true, volume: state.value.settings.volume })
+    current.value.play({ loop: true })
   }
   const stop = () => {
     if (!current.value) return
     current.value.stop()
     current.value = undefined
   }
-  watch(() => state.value.settings.volume, volume => current.value?.setVolume(volume))
   return {
     play,
     stop

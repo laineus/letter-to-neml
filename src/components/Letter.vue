@@ -106,7 +106,7 @@ const errorMessage = computed(() => {
     <div class="Loading"></div>
   </Container>
   <Container v-else-if="status === 'preview'" :depth="20000" :x="config.WIDTH.half()" :y="config.HEIGHT.half()">
-    <Rectangle :width="600" :height="600" :fillColor="0x000000" :alpha="0.6" :origin="0.5" :radius="0" @pointerdown="">
+    <Rectangle :width="600" :height="600" :fillColor="0x000000" :alpha="0.6" :origin="0.5" :radius="0">
       <FxBlur :strength="1.5" :quality="1" :steps="4" />
     </Rectangle>
     <Image texture="etc/frame2" :x="-210" :y="-210" :scale="0.3" :alpha="0.2" />
@@ -116,7 +116,7 @@ const errorMessage = computed(() => {
     <CustomButton :text="'変更せず進む'" :origin="0.5" :y="240" @click="continueWithoutEdit" />
   </Container>
   <Container v-else-if="status === 'edit'" :depth="20000" :x="config.WIDTH.half()" :y="config.HEIGHT.half()">
-    <Rectangle :width="600" :height="600" :fillColor="0x000000" :alpha="0.6" :origin="0.5" :radius="0" @pointerdown="">
+    <Rectangle :width="600" :height="600" :fillColor="0x000000" :alpha="0.6" :origin="0.5" :radius="0">
       <FxBlur :strength="1.5" :quality="1" :steps="4" />
     </Rectangle>
     <Image texture="etc/frame2" :x="-210" :y="-210" :scale="0.3" :alpha="0.2" />

@@ -5,13 +5,14 @@ import CustomText from './CustomText.vue'
 import { computed, onBeforeUnmount, ref } from 'vue'
 import { state } from '../lib/state'
 import Gallery from './Gallery.vue'
+import Config from './Config.vue'
 const scene = useScene()
-const bgm = scene.sound.add('bgm/letter-to-neml', { loop: true, volume: state.value.settings.volume })
+const bgm = scene.sound.add('bgm/letter-to-neml', { loop: true })
 bgm.play()
 onBeforeUnmount(() => {
   bgm.stop()
 })
-const type = ref<'title' | 'menu' | 'gallery' | 'config'>('title')
+const type = ref<'title' | 'menu' | 'gallery' | 'config'>('config')
 const menu = [
   {
     label: computed(() => {
@@ -33,6 +34,7 @@ const menu = [
   {
     label: computed(() => '設定'),
     action: () => {
+      type.value = 'config'
     }
   },
   {
@@ -76,13 +78,14 @@ const TITLE_FADE_IN = {
       :style="{ fontSize: '22px' }"
       :tween="{ props: { alpha: { from: 0.3, to: 1 } }, duration: 1000, yoyo: true, repeat: -1 }"
     />
-    <Container :x="config.WIDTH / 2" :y="config.HEIGHT * 0.62" v-if="type === 'menu'">
+    <Container :x="config.WIDTH / 2" :y="config.HEIGHT * 0.62" v-else-if="type === 'menu'">
       <Container v-for="(item, i) in menu" :key="i" :y="i * 50" :tween="{ props: { alpha: 1 }, duration: 100 * (i + 1) }" :alpha="0">
         <Rectangle :width="360" :height="36" :fillColor="0x000000" :alpha="0.4" :origin="0.5" @pointerdown="item.action" />
         <CustomText :text="item.label.value" :origin="0.5" :style="{ fontSize: '17px' }" />
       </Container>
     </Container>
-    <Gallery v-if="type === 'gallery'" @back="type = 'menu'" />
+    <Gallery v-else-if="type === 'gallery'" @back="type = 'menu'" />
+    <Config v-else-if="type === 'config'" @back="type = 'menu'" />
     <Rectangle
       :width="config.WIDTH" 
       :height="config.HEIGHT" 
