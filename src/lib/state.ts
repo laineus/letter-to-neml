@@ -15,7 +15,7 @@ export type GameState = {
   current: StateRecord | null
   settings: {
     volume: number
-    language: 'ja' | 'en'
+    lang: string
   }
 }
 
@@ -37,7 +37,7 @@ const makeState = (): GameState => {
     current: null,
     settings: {
       volume: 1,
-      language: 'ja'
+      lang: 'ja'
     }
   }
 }
