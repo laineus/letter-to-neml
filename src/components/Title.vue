@@ -42,6 +42,11 @@ const menu = [
     }
   },
 ]
+const TITLE_FADE_IN = {
+  alpha: 1,
+  y: (config.HEIGHT * 0.3) - 10,
+  duration: 1500
+}
 </script>
 
 <template>
@@ -57,10 +62,10 @@ const menu = [
     <Image texture="etc/title-bg" :origin="0">
       <FxBlur :quality="1" :x="4" :y="4" :steps="5" :strength="1.5" v-if="type === 'gallery' || type === 'config'" />
     </Image>
-    <template v-if="type === 'title' || type === 'menu'">
-      <Image texture="etc/logo-bg" :origin="0.5" :x="config.WIDTH / 2" :y="config.HEIGHT * 0.3" />
-      <Image texture="etc/logo-color" :origin="0.5" :x="config.WIDTH / 2" :y="config.HEIGHT * 0.3" :blendMode="1" />
-    </template>
+    <Container v-if="type === 'title' || type === 'menu'" :x="config.WIDTH / 2" :y="config.HEIGHT * 0.3" :alpha="0" :tween="TITLE_FADE_IN">
+      <Image texture="etc/logo-bg" :origin="0.5" />
+      <Image texture="etc/logo-color" :origin="0.5" :blendMode="1" />
+    </Container>
     <!-- <Image texture="etc/logo" :origin="0.5" :x="config.WIDTH / 2" :y="config.HEIGHT * 0.3" /> -->
     <CustomText
       v-if="type === 'title'"
@@ -69,13 +74,22 @@ const menu = [
       :y="config.HEIGHT * 0.8"
       :origin="0.5"
       :style="{ fontSize: '22px' }"
+      :tween="{ props: { alpha: { from: 0.3, to: 1 } }, duration: 1000, yoyo: true, repeat: -1 }"
     />
     <Container :x="config.WIDTH / 2" :y="config.HEIGHT * 0.62" v-if="type === 'menu'">
-      <Container v-for="(item, i) in menu" :key="i" :y="i * 50">
+      <Container v-for="(item, i) in menu" :key="i" :y="i * 50" :tween="{ props: { alpha: 1 }, duration: 100 * (i + 1) }" :alpha="0">
         <Rectangle :width="360" :height="36" :fillColor="0x000000" :alpha="0.4" :origin="0.5" @pointerdown="item.action" />
         <CustomText :text="item.label.value" :origin="0.5" :style="{ fontSize: '17px' }" />
       </Container>
     </Container>
     <Gallery v-if="type === 'gallery'" @back="type = 'menu'" />
+    <Rectangle
+      :width="config.WIDTH" 
+      :height="config.HEIGHT" 
+      :origin="0"
+      :fillColor="0x000000"
+      :tween="{ duration: 1000, alpha: 0 }"
+      :depth="100000"
+    />
   </Container>
 </template>

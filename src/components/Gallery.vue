@@ -59,6 +59,8 @@ const sumHeight = (rows * rectHeight) + ((rows - 1) * padding)
         :key="ending.storyIndex"
         :x="(index % cols) * (thumbWidth + padding)"
         :y="Math.floor(index / cols) * (rectHeight + padding)"
+        :alpha="0"
+        :tween="{ props: { alpha: 1 }, delay: 40 * index, duration: 500 - (20 * index) }"
       >
         <Rectangle
           :width="thumbWidth"
@@ -91,8 +93,8 @@ const sumHeight = (rows * rectHeight) + ((rows - 1) * padding)
           :style="{ fontSize: 17, color: '#ffffff' }"
         />
       </Container>
-      <CustomText text="Gallery" :x="sumWidth.half()" :y="-60" :origin="0.5" :style="{ fontSize: 42 }" />
-      <Button :text="'戻る'" :origin="0.5" :x="sumWidth.half()" :y="sumHeight + 70" @click="$emit('back')" />
+      <CustomText text="Gallery" :x="sumWidth.half()" :y="-60" :origin="0.5" :style="{ fontSize: 42 }" :tween="{ props: { alpha: { from: 0, to: 1 } }, duration: 800 }" />
+      <Button :text="'戻る'" :origin="0.5" :x="sumWidth.half()" :y="sumHeight + 70" @click="$emit('back')" :tween="{ props: { alpha: { from: 0, to: 1 } }, duration: 800 }" />
     </Container>
     <!-- フルスクリーン表示 -->
     <Image
@@ -103,6 +105,7 @@ const sumHeight = (rows * rectHeight) + ((rows - 1) * padding)
       :origin="0.5"
       width="1920"
       height="1080"
+      :tween="{ props: { alpha: { from: 0, to: 1 } }, duration: 200 }"
       @pointerdown="handleCloseFullscreen"
     />
   </Container>
