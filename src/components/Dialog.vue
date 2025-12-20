@@ -75,7 +75,7 @@ const onSelect = (v: DialogOption) => {
 </script>
 
 <template>
-  <Container>
+  <Container :tween="{ alpha: { from: 0, to: 1 }, duration: 300 }">
     <Rectangle :width="config.WIDTH" :height="config.HEIGHT" :fillColor="0x000000" :fillAlpha="0" :origin="0" @pointerdown="emit('close')" />
     <Container :x="config.WIDTH.half() - width.half()" :y="config.HEIGHT.half() - windowHeight.half()">
       <Rectangle :width="width" :height="windowHeight" :fillColor="0x000000" :alpha="0.6" :origin="0" :radius="0" @pointerdown="">

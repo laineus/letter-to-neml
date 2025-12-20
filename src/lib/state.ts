@@ -20,10 +20,10 @@ export type GameState = {
 }
 
 export const save = () => {
-  localStorage.setItem('data1', JSON.stringify(state.value))
+  localStorage.setItem('saveData', JSON.stringify(state.value))
 }
 export const load = () => {
-  const saved = localStorage.getItem('data1')
+  const saved = localStorage.getItem('saveData')
   return saved ? JSON.parse(saved) as GameState : undefined
 }
 const makeState = (): GameState => {

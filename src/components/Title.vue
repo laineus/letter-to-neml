@@ -85,7 +85,7 @@ const TITLE_FADE_IN = {
       </Container>
     </Container>
     <Gallery v-else-if="type === 'gallery'" @back="type = 'menu'" />
-    <Config v-else-if="type === 'config'" :showBackToTitle="false" @close="type = 'menu'" />
+    <Config v-else-if="type === 'config'" :showDataReset="true" @close="type = 'menu'" />
     <Rectangle
       :width="config.WIDTH" 
       :height="config.HEIGHT" 

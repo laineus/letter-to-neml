@@ -11,7 +11,8 @@ import Dialog from './Dialog.vue'
 
 defineEmits(['close'])
 defineProps({
-  showBackToTitle: { type: Boolean, default: true }
+  showBackToTitle: { type: Boolean, default: false },
+  showDataReset: { type: Boolean, default: false }
 })
 
 const game = useGame()
@@ -36,6 +37,11 @@ const confirmBackToTitle = ref(false)
 const backToTitle = () => {
   scene.scene.start('TitleScene')
 }
+const confirmReset = ref(false)
+const resetData = () => {
+  localStorage.removeItem('saveData')
+  window.location.reload()
+}
 </script>
 
 <template>
@@ -48,6 +54,13 @@ const backToTitle = () => {
       :options="[{ text: 'OK', action: backToTitle }, { text: 'キャンセル', close: true }]"
       @close="confirmBackToTitle = false"
     />
+    <Dialog
+      v-else-if="confirmReset"
+      title="確認"
+      desc="全てのデータをリセットしますか？"
+      :options="[{ text: 'OK', action: resetData }, { text: 'キャンセル', close: true }]"
+      @close="confirmReset = false"
+    />
     <Container v-else :x="config.WIDTH.half()" :y="config.HEIGHT.half()" :tween="{ alpha: { from: 0, to: 1 }, duration: 300 }">
       <Rectangle :width="500" :height="420" :fillColor="0x000000" :alpha="0.6" :origin="0.5" :radius="0">
         <FxBlur :strength="1.5" :quality="1" :steps="4" />
@@ -58,6 +71,7 @@ const backToTitle = () => {
       <CustomText :text="'Language'" :style="{ fontSize: 19, shadow: { blur: 5, color: '#000', offsetX: 0, offsetY: 0, fill: true } }" :origin="0.5" :y="-20" />
       <RadioList :x="-100" :y="5" :list="[{ text: '日本語', value: 'ja' }, { text: 'English', value: 'en' }]" v-model="lang" />
       <Button v-if="showBackToTitle" :text="'Back to Title'" :size="15" :width="240" :x="0" :y="80" :origin="0.5" :outline="false" @click="confirmBackToTitle = true" />
+      <Button v-if="showDataReset" :text="'Reset all data'" :size="15" :width="240" :x="0" :y="80" :origin="0.5" :outline="false" @click="confirmReset = true" />
       <Button :text="'OK'" :width="420" :x="0" :y="150" :origin="0.5" @click="$emit('close')" />
     </Container>
   </Container>

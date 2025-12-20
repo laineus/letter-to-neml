@@ -414,7 +414,7 @@ onBeforeUnmount(() => {
   <MessageWindow v-if="player.currentMessage" :visible="!dialog.current && !configModal && !showLetter && !exploring" :title="player.currentMessage.name" :text="player.currentMessage.text" />
   <Letter v-if="showLetter" @submit="submitLetter" />
   <Fade v-if="goingToTitle" :fade="{ type: 'fade', fade: 'in', duration: 3000 }" :depth="3000" @end="toTitle" />
-  <Config v-if="configModal" @close="configModal = false" :depth="8000" />
+  <Config v-if="configModal" :showBackToTitle="true" @close="configModal = false" :depth="8000" />
   <!-- Dialog -->
   <Rectangle :origin="0" :width="config.WIDTH" :height="config.HEIGHT" :depth="2000" :fillColor="0x888888" :alpha="0.2" v-if="dialog.current || showLetter" />
   <Dialog v-if="dialog.current" :title="dialog.current.title" :desc="dialog.current.desc" :options="dialog.current.options" @close="dialog.close" :depth="8000" />
