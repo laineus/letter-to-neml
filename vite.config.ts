@@ -11,7 +11,8 @@ export default defineConfig({
         { type: 'image', dir: '/images/chara', rule: /^[\w-:]+\.(webp|png|jpg)$/, prefix: 'chara/' },
         { type: 'image', dir: '/images/bg', rule: /^[\w-:]+\.(webp|png|jpg)$/, prefix: 'bg/' },
         { type: 'image', dir: '/images/etc', rule: /^[\w-]+\.(webp|png|jpg)$/, prefix: 'etc/' },
-        { type: 'audio', dir: '/audio/bgm', rule: /^[\w-]+\.(mp3|ogg|wav)$/, prefix: 'bgm/' }
+        { type: 'audio', dir: '/audio/bgm', rule: /^[\w-]+\.(mp3|ogg|wav)$/, prefix: 'bgm/' },
+        { type: 'audio', dir: '/audio/se', rule: /^[\w-]+\.(mp3|ogg|wav)$/, prefix: 'se/' }
       ],
       output: './src/assets.json'
     })

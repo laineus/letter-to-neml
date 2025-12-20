@@ -84,9 +84,19 @@
         "duration": 500
       },
       {
+        "type": "audio",
+        "audio": "se/letter",
+        "audioType": "se"
+      },
+      {
         "type": "function",
         "function": "手紙執筆",
         "argument": ""
+      },
+      {
+        "type": "audio",
+        "audio": "se/letter",
+        "audioType": "se"
       },
       {
         "type": "sleep",
@@ -213,6 +223,11 @@
         ]
       },
       {
+        "type": "audio",
+        "audio": "se/getting-up-from-bed",
+        "audioType": "se"
+      },
+      {
         "type": "fade",
         "fade": "out",
         "duration": 1000
@@ -279,6 +294,11 @@
         "duration": 500
       },
       {
+        "type": "audio",
+        "audio": "se/letter",
+        "audioType": "se"
+      },
+      {
         "type": "fade",
         "fade": "out",
         "duration": 500
@@ -309,6 +329,11 @@
         "duration": 1000
       },
       {
+        "type": "audio",
+        "audio": "se/knocks",
+        "audioType": "se"
+      },
+      {
         "type": "messages",
         "list": [
           {
@@ -335,6 +360,11 @@
             "facing": "left"
           }
         ]
+      },
+      {
+        "type": "audio",
+        "audio": "se/door-opened1",
+        "audioType": "se"
       },
       {
         "type": "sleep",
@@ -799,6 +829,11 @@
         ]
       },
       {
+        "type": "audio",
+        "audio": "se/impact",
+        "audioType": "se"
+      },
+      {
         "type": "function",
         "function": "衝撃",
         "argument": ""
@@ -816,6 +851,11 @@
         "type": "fade",
         "fade": "in",
         "duration": 500
+      },
+      {
+        "type": "audio",
+        "audio": "se/jump1",
+        "audioType": "se"
       },
       {
         "type": "speakers",
@@ -865,6 +905,11 @@
             "facing": "left"
           }
         ]
+      },
+      {
+        "type": "audio",
+        "audio": "se/door-opened2",
+        "audioType": "se"
       },
       {
         "type": "speakers",
@@ -1195,6 +1240,11 @@
         ]
       },
       {
+        "type": "audio",
+        "audio": "se/sword-slash",
+        "audioType": "se"
+      },
+      {
         "type": "function",
         "function": "ダメージ",
         "argument": ""
@@ -1259,6 +1309,15 @@
             "text": "ネムルはベッドの下からナイフを取り出した"
           }
         ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
+        "type": "audio",
+        "audio": "se/knife-dropped",
+        "audioType": "se"
       },
       {
         "type": "function",
@@ -1331,6 +1390,11 @@
         ]
       },
       {
+        "type": "audio",
+        "audio": "se/knife-slash",
+        "audioType": "se"
+      },
+      {
         "type": "function",
         "function": "ダメージ",
         "argument": ""
@@ -1380,6 +1444,11 @@
         "type": "fade",
         "fade": "in",
         "duration": 500
+      },
+      {
+        "type": "audio",
+        "audio": "se/person-falling",
+        "audioType": "se"
       },
       {
         "type": "speakers",
@@ -1547,6 +1616,30 @@
         "type": "audio",
         "audio": "",
         "audioType": "bgm"
+      },
+      {
+        "type": "speakers",
+        "list": [
+          {
+            "image": "chara/neml:rush1",
+            "x": 0.2,
+            "facing": "right"
+          },
+          {
+            "image": "chara/wulfric",
+            "x": 0.9,
+            "facing": "right"
+          }
+        ]
+      },
+      {
+        "type": "sleep",
+        "duration": 200
+      },
+      {
+        "type": "audio",
+        "audio": "se/door-opened2",
+        "audioType": "se"
       },
       {
         "type": "speakers",
@@ -2780,6 +2873,11 @@
             "facing": "left"
           }
         ]
+      },
+      {
+        "type": "audio",
+        "audio": "se/coins",
+        "audioType": "se"
       },
       {
         "type": "messages",
@@ -4108,6 +4206,11 @@
         "audioType": "bgm"
       },
       {
+        "type": "audio",
+        "audio": "se/door-opened1",
+        "audioType": "se"
+      },
+      {
         "type": "sleep",
         "duration": 500
       },
@@ -4245,6 +4348,11 @@
             "facing": "left"
           }
         ]
+      },
+      {
+        "type": "audio",
+        "audio": "se/bottle",
+        "audioType": "se"
       },
       {
         "type": "messages",
@@ -4465,6 +4573,11 @@
             "text": "ネムルは医者から渡されたカラフルな薬を飲んだ"
           }
         ]
+      },
+      {
+        "type": "audio",
+        "audio": "se/drink",
+        "audioType": "se"
       },
       {
         "type": "sleep",
@@ -5566,6 +5679,11 @@
         ]
       },
       {
+        "type": "audio",
+        "audio": "se/into-water1",
+        "audioType": "se"
+      },
+      {
         "type": "messages",
         "list": [
           {
@@ -5717,6 +5835,11 @@
       {
         "type": "sleep",
         "duration": 500
+      },
+      {
+        "type": "audio",
+        "audio": "se/into-water2",
+        "audioType": "se"
       },
       {
         "type": "speakers",
@@ -6109,6 +6232,11 @@
       },
       {
         "type": "audio",
+        "audio": "se/door-opened1",
+        "audioType": "se"
+      },
+      {
+        "type": "audio",
         "audio": "bgm/life-of-noctarians",
         "audioType": "bgm"
       },
@@ -6121,6 +6249,10 @@
             "facing": "left"
           }
         ]
+      },
+      {
+        "type": "sleep",
+        "duration": 500
       },
       {
         "type": "messages",
@@ -6268,6 +6400,11 @@
         "type": "fade",
         "fade": "out",
         "duration": 1000
+      },
+      {
+        "type": "audio",
+        "audio": "se/knocks",
+        "audioType": "se"
       },
       {
         "type": "messages",
@@ -6546,6 +6683,11 @@
         "type": "fade",
         "fade": "out",
         "duration": 1000
+      },
+      {
+        "type": "audio",
+        "audio": "se/knocks",
+        "audioType": "se"
       },
       {
         "type": "messages",
@@ -7196,6 +7338,11 @@
         "duration": 500
       },
       {
+        "type": "audio",
+        "audio": "se/door-opened1",
+        "audioType": "se"
+      },
+      {
         "type": "background",
         "image": "bg/outfront"
       },
@@ -7645,6 +7792,11 @@
         ]
       },
       {
+        "type": "audio",
+        "audio": "se/door-opened1",
+        "audioType": "se"
+      },
+      {
         "type": "fade",
         "fade": "out",
         "duration": 1000
@@ -7991,6 +8143,11 @@
         ]
       },
       {
+        "type": "audio",
+        "audio": "se/door-opened1",
+        "audioType": "se"
+      },
+      {
         "type": "fade",
         "fade": "out",
         "duration": 1000
@@ -8196,7 +8353,7 @@
       {
         "type": "fade",
         "fade": "in",
-        "duration": 500
+        "duration": 1000
       },
       {
         "type": "background",
@@ -8205,7 +8362,7 @@
       {
         "type": "fade",
         "fade": "out",
-        "duration": 500
+        "duration": 1000
       },
       {
         "type": "messages",
@@ -8424,6 +8581,11 @@
         ]
       },
       {
+        "type": "audio",
+        "audio": "se/coins",
+        "audioType": "se"
+      },
+      {
         "type": "messages",
         "list": [
           {
@@ -8619,6 +8781,20 @@
         ]
       },
       {
+        "type": "fade",
+        "fade": "in",
+        "duration": 1000
+      },
+      {
+        "type": "audio",
+        "audio": "se/getting-up-from-bed",
+        "audioType": "se"
+      },
+      {
+        "type": "sleep",
+        "duration": 1000
+      },
+      {
         "type": "endIf"
       },
       {
@@ -8676,6 +8852,15 @@
       {
         "type": "fade",
         "fade": "in",
+        "duration": 1000
+      },
+      {
+        "type": "audio",
+        "audio": "se/getting-up-from-bed",
+        "audioType": "se"
+      },
+      {
+        "type": "sleep",
         "duration": 1000
       },
       {
@@ -8747,8 +8932,13 @@
         "duration": 1000
       },
       {
+        "type": "audio",
+        "audio": "se/getting-up-from-bed",
+        "audioType": "se"
+      },
+      {
         "type": "sleep",
-        "duration": 500
+        "duration": 1000
       },
       {
         "type": "messages",
@@ -9061,6 +9251,11 @@
         ]
       },
       {
+        "type": "audio",
+        "audio": "se/door-opened1",
+        "audioType": "se"
+      },
+      {
         "type": "fade",
         "fade": "out",
         "duration": 1000
@@ -9198,6 +9393,11 @@
             "facing": "left"
           }
         ]
+      },
+      {
+        "type": "audio",
+        "audio": "se/door-opened1",
+        "audioType": "se"
       },
       {
         "type": "fade",
@@ -9436,6 +9636,11 @@
             "facing": "left"
           }
         ]
+      },
+      {
+        "type": "audio",
+        "audio": "se/door-opened1",
+        "audioType": "se"
       },
       {
         "type": "fade",
