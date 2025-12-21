@@ -1598,6 +1598,11 @@
         ]
       },
       {
+        "type": "audio",
+        "audio": "",
+        "audioType": "bgm"
+      },
+      {
         "type": "fade",
         "fade": "in",
         "duration": 1000
@@ -3491,11 +3496,6 @@
         "type": "fade",
         "fade": "in",
         "duration": 500
-      },
-      {
-        "type": "audio",
-        "audio": "",
-        "audioType": "bgm"
       },
       {
         "type": "speakers",
