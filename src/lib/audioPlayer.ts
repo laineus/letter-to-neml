@@ -11,7 +11,10 @@ export const useAudioPlayer = (scene: Phaser.Scene) => {
         duration: 1000
       })
     }
-    if (!key) return
+    if (!key) {
+      current.value = undefined
+      return
+    }
     current.value = scene.sound.add(key)
     current.value.play({ loop: true })
   }
