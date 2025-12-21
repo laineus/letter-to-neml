@@ -20,6 +20,7 @@ import { thingDefinitions, things } from '../story/things'
 import Hint, { useHint } from './Hint.vue'
 import { useAudioPlayer } from '../lib/audioPlayer'
 import Config from './Config.vue'
+import Ending from './Ending.vue'
 const props = defineProps({
   player: {
     type: Object as PropType<ReturnType<typeof useStoryPlayer>>,
@@ -72,10 +73,6 @@ const functions = {
     return false
   },
   'UI非表示': () => true,
-  'ゲームオーバー': arg => {
-    completeEnding(parseInt(arg))
-    return false
-  },
   'エンディング': arg => {
     completeEnding(parseInt(arg))
     return false
@@ -86,8 +83,6 @@ const toTitle = () => {
 }
 const scene = useScene()
 const dialog = useDialogs()
-/** タイトル画面に戻るかどうか */
-const goingToTitle = ref(false)
 /** フィールド探索中かどうか */
 const exploring = ref(false)
 /** 早送り中かどうか */
@@ -245,7 +240,6 @@ const skipScene = () => {
   if (!props.player.next()) return
   if (props.player.storyItemIndex === 0) return exec()
   if (props.player.currentStoryItem.type === 'function') {
-    if (props.player.currentStoryItem.function === 'ゲームオーバー') return
     if (props.player.currentStoryItem.function === 'エンディング') return
     if (props.player.currentStoryItem.function === '手紙執筆') return exec()
   }
@@ -301,20 +295,8 @@ const backScene = () => {
   exec()
 }
 const tapScreen = () => {
-  if (props.player.currentStoryItem.type === 'function' && props.player.currentStoryItem.function === 'ゲームオーバー') {
-    goingToTitle.value = true
-    state.value.currentStory = 0
-    save()
-    return
-  }
-  // 仮
   if (props.player.currentStoryItem.type === 'function' && props.player.currentStoryItem.function === 'エンディング') {
-    goingToTitle.value = true
-    if (!state.value.completedStories.includes(state.value.currentStory)) {
-      state.value.completedStories.push(state.value.currentStory)
-    }
-    state.value.currentStory = 0
-    save()
+    endingIndex.value = parseInt(props.player.currentStoryItem.argument)
     return
   }
   if (fastForward.value) {
@@ -378,6 +360,20 @@ const showHint = () => {
   })
 }
 const configModal = ref(false)
+const endingIndex = ref<number>()
+const finishEnding = () => {
+  if (endingIndex.value && endingIndex.value >= 4) {
+    if (!state.value.completedStories.includes(state.value.currentStory)) {
+      state.value.completedStories.push(state.value.currentStory)
+    }
+  }
+  state.value.currentStory = 0
+  save()
+  toTitle()
+}
+const isShowingDialog = computed(() => {
+  return dialog.current || showLetter.value || configModal.value
+})
 // BGM制御
 const audioPlayer = useAudioPlayer(scene)
 const bgm = computed(() => findLastRow<'audio'>(v => v.type === 'audio' && v.audioType === 'bgm')?.audio)
@@ -394,12 +390,13 @@ onBeforeUnmount(() => {
   <Container :depth="1000">
     <Background v-if="currentBackground" :x="shake.x" :y="shake.y" :texture="currentBackground?.image" />
     <Stage v-if="currentSpeakers" :visible="!exploring" :speaking="player.currentMessage?.name" :speakers="currentSpeakers.list" @end="resolveWaiting" />
-    <FxBlur v-if="dialog.current || configModal || showLetter" :post="true" :strength="2" :quality="1" :steps="7" />
+    <FxBlur v-if="isShowingDialog" :post="true" :strength="2" :quality="1" :steps="7" />
   </Container>
+  <Rectangle v-if="isShowingDialog" :origin="0" :width="config.WIDTH" :height="config.HEIGHT" :depth="2000" :fillColor="0x888888" :alpha="0.2" />
   <Rectangle :width="config.WIDTH" :height="config.HEIGHT" :origin="0" :fillColor="0xFF1100" :alpha="damage.alpha" :depth="2500" />
   <Fade v-if="currentFade" :fade="currentFade" :depth="3000" @end="resolveWaiting" />
   <!-- UI -->
-  <template v-if="!uiHidden && !dialog.current && !configModal && !showLetter">
+  <template v-if="!uiHidden && !isShowingDialog">
     <Hint :x="(140).byRight()" :y="20" :depth="4000" @click="showHint" />
     <Button v-if="currentThings?.length && !currentFade" :text="exploring ? 'もどる' : 'あたりを見回す'" :x="(330).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="toggleExploring" />
     <template v-if="!exploring">
@@ -411,11 +408,11 @@ onBeforeUnmount(() => {
     </template>
   </template>
   <Things v-if="exploring && !dialog.current" :things="currentThings ?? []" @select="selectThing" />
-  <MessageWindow v-if="player.currentMessage" :visible="!dialog.current && !configModal && !showLetter && !exploring" :title="player.currentMessage.name" :text="player.currentMessage.text" />
-  <Letter v-if="showLetter" @submit="submitLetter" />
-  <Fade v-if="goingToTitle" :fade="{ type: 'fade', fade: 'in', duration: 3000 }" :depth="3000" @end="toTitle" />
-  <Config v-if="configModal" :showBackToTitle="true" @close="configModal = false" :depth="8000" />
+  <MessageWindow v-if="player.currentMessage" :visible="!isShowingDialog && !exploring" :title="player.currentMessage.name" :text="player.currentMessage.text" />
   <!-- Dialog -->
-  <Rectangle :origin="0" :width="config.WIDTH" :height="config.HEIGHT" :depth="2000" :fillColor="0x888888" :alpha="0.2" v-if="dialog.current || showLetter" />
   <Dialog v-if="dialog.current" :title="dialog.current.title" :desc="dialog.current.desc" :options="dialog.current.options" @close="dialog.close" :depth="8000" />
+  <Config v-else-if="configModal" :showBackToTitle="true" @close="configModal = false" :depth="8000" />
+  <Letter v-else-if="showLetter" @submit="submitLetter" />
+  <!-- Ending -->
+  <Ending v-if="endingIndex !== undefined" :depth="7000" :endingIndex @end="finishEnding" />
 </template>

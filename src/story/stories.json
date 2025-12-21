@@ -1287,7 +1287,7 @@
       },
       {
         "type": "function",
-        "function": "ゲームオーバー",
+        "function": "エンディング",
         "argument": "0"
       },
       {
@@ -3503,7 +3503,7 @@
       },
       {
         "type": "function",
-        "function": "ゲームオーバー",
+        "function": "エンディング",
         "argument": "1"
       },
       {
@@ -4716,7 +4716,7 @@
       },
       {
         "type": "function",
-        "function": "ゲームオーバー",
+        "function": "エンディング",
         "argument": "2"
       },
       {
@@ -5890,7 +5890,7 @@
       },
       {
         "type": "function",
-        "function": "ゲームオーバー",
+        "function": "エンディング",
         "argument": "3"
       },
       {
