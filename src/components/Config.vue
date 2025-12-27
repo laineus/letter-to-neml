@@ -8,11 +8,23 @@ import Button from './Button.vue'
 import Slider from './Slider.vue'
 import RadioList from './RadioList.vue'
 import Dialog from './Dialog.vue'
+import { useGamePad } from '../lib/gamePad'
 
-defineEmits(['close'])
-defineProps({
+ const emit = defineEmits(['close'])
+const props = defineProps({
   showBackToTitle: { type: Boolean, default: false },
   showDataReset: { type: Boolean, default: false }
+})
+
+type ConfigType = 'bgm' | 'lang' | 'backToTitle' | 'dataReset' | 'submit'
+const configTypes = computed<ConfigType[]>(() => {
+  return [
+    'bgm',
+    'lang',
+    ...(props.showBackToTitle ? ['backToTitle'] : []),
+    ...(props.showDataReset ? ['dataReset'] : []),
+    'submit'
+  ] as ConfigType[]
 })
 
 const game = useGame()
@@ -42,6 +54,49 @@ const resetData = () => {
   localStorage.removeItem('saveData')
   window.location.reload()
 }
+
+const gamePad = useGamePad()
+gamePad.onPress(key => {
+  if (confirmBackToTitle.value || confirmReset.value) return
+  if (key === 'b') {
+    emit('close')
+  } else if (key === 'down' || key === 'up') {
+    const direction = key === 'down' ? 1 : -1
+    if (selectedType.value === undefined) {
+      selectedType.value = configTypes.value[0]
+    } else {
+      const currentIndex = configTypes.value.indexOf(selectedType.value)
+      const nextIndex = (currentIndex + direction + configTypes.value.length) % configTypes.value.length
+      selectedType.value = configTypes.value[nextIndex]
+    }
+  }
+  if (selectedType.value === 'bgm') {
+    if (key === 'left') {
+      volume.value = Math.max(volume.value - 10, 0)
+    } else if (key === 'right') {
+      volume.value = Math.min(volume.value + 10, 100)
+    }
+  } else if (selectedType.value === 'lang') {
+    if (key === 'left') {
+      lang.value = 'ja'
+    } else if (key === 'right') {
+      lang.value = 'en'
+    }
+  } else if (key === 'a') {
+    if (selectedType.value === 'backToTitle') {
+      confirmBackToTitle.value = true
+    } else if (selectedType.value === 'dataReset') {
+      confirmReset.value = true
+    } else if (selectedType.value === 'submit') {
+      emit('close')
+    }
+  }
+})
+gamePad.onDeactivate(() => {
+  selectedType.value = undefined
+})
+
+const selectedType = ref<ConfigType | undefined>(gamePad.active ? 'bgm' : undefined)
 </script>
 
 <template>
@@ -66,13 +121,20 @@ const resetData = () => {
         <FxBlur :strength="1.5" :quality="1" :steps="4" />
       </Rectangle>
       <CustomText :text="'設定'" :style="{ fontSize: 24, shadow: { blur: 10, color: '#000', offsetX: 0, offsetY: 0, fill: true } }" :origin="0.5" :y="-160" />
+      <!-- BGM音量 -->
       <CustomText :text="'BGM音量'" :style="{ fontSize: 19, shadow: { blur: 5, color: '#000', offsetX: 0, offsetY: 0, fill: true } }" :origin="0.5" :y="-100" />
       <Slider :x="0" :y="-60" :origin="0.5" v-model="volume" :max="100" :min="0" :step="10" :width="230" />
+      <Rectangle v-if="selectedType === 'bgm'" :x="0" :y="-65" :width="260" :height="35" :origin="0.5" :strokeColor="0x66bb00" :lineWidth="2" />
+      <!-- 言語設定 -->
       <CustomText :text="'Language'" :style="{ fontSize: 19, shadow: { blur: 5, color: '#000', offsetX: 0, offsetY: 0, fill: true } }" :origin="0.5" :y="-20" />
       <RadioList :x="-100" :y="5" :list="[{ text: '日本語', value: 'ja' }, { text: 'English', value: 'en' }]" v-model="lang" />
-      <Button v-if="showBackToTitle" :text="'Back to Title'" :size="15" :width="240" :x="0" :y="80" :origin="0.5" :outline="false" @click="confirmBackToTitle = true" />
-      <Button v-if="showDataReset" :text="'Reset all data'" :size="15" :width="240" :x="0" :y="80" :origin="0.5" :outline="false" @click="confirmReset = true" />
-      <Button :text="'OK'" :width="420" :x="0" :y="150" :origin="0.5" @click="$emit('close')" />
+      <Rectangle v-if="selectedType === 'lang'" :x="0" :y="21" :width="210" :height="35" :origin="0.5" :strokeColor="0x66bb00" :lineWidth="2" />
+      <!-- タイトルに戻る -->
+      <Button v-if="showBackToTitle" :active="selectedType === 'backToTitle'" :text="'Back to Title'" :size="15" :width="240" :x="0" :y="80" :origin="0.5" :outline="false" @click="confirmBackToTitle = true" />
+      <!-- データリセット -->
+      <Button v-if="showDataReset" :active="selectedType === 'dataReset'" :text="'Reset all data'" :size="15" :width="240" :x="0" :y="80" :origin="0.5" :outline="false" @click="confirmReset = true" />
+      <!-- 決定 -->
+      <Button :active="selectedType === 'submit'" :text="'OK'" :width="420" :x="0" :y="150" :origin="0.5" @click="$emit('close')" />
     </Container>
   </Container>
 </template>

@@ -3,6 +3,7 @@ import { Container, FxBlur, Rectangle } from 'phavuer'
 import { computed, type PropType, ref } from 'vue'
 import config from '../lib/config'
 import CustomText from './CustomText.vue'
+import Button from './Button.vue'
 export type DialogOption = {
   text: string
   action?: () => any
@@ -38,6 +39,8 @@ export const useDialogs = () => {
 </script>
 
 <script setup lang="ts">
+import { useGamePad } from '../lib/gamePad'
+
 const emit = defineEmits(['select', 'close'])
 const props = defineProps({
   title: { type: String, required: false },
@@ -72,6 +75,31 @@ const onSelect = (v: DialogOption) => {
   v.action?.()
   v.close ? emit('close') : emit('select', v.text)
 }
+
+const gamePad = useGamePad()
+const selectedIndex = ref<number | undefined>(gamePad.active ? 0 : undefined)
+
+gamePad.onPress(key => {
+  if (key === 'b') {
+    emit('close')
+  } else if (key === 'down' || key === 'up') {
+    const direction = key === 'down' ? 1 : -1
+    if (selectedIndex.value === undefined) {
+      selectedIndex.value = 0
+    } else {
+      const nextIndex = (selectedIndex.value + direction + fixedOptions.value.length) % fixedOptions.value.length
+      selectedIndex.value = nextIndex
+    }
+  } else if (key === 'a') {
+    if (selectedIndex.value !== undefined) {
+      onSelect(fixedOptions.value[selectedIndex.value])
+    }
+  }
+})
+
+gamePad.onDeactivate(() => {
+  selectedIndex.value = undefined
+})
 </script>
 
 <template>
@@ -85,8 +113,7 @@ const onSelect = (v: DialogOption) => {
       <CustomText v-if="title" @create="onCreatedTitle" :key="title" :x="width.half()" :y="40" :text="title" :originY="0" :originX="0.5" :lineSpacing="16" :padding="{ top: 3 }" :style="{ fontStyle: 'bold', fontSize: '22px', align: 'center', wordWrap: { width: width - 65, useAdvancedWrap: true } }" />
       <CustomText v-if="desc" @create="onCreatedDesc" :key="desc" :x="width.half()" :y="titleHeight + 40" :text="desc" :originY="0" :originX="0.5" :lineSpacing="15" :padding="{ top: 3 }" :style="{ fontSize: '20px', align: 'center', wordWrap: { width: width - 65, useAdvancedWrap: true } }" />
       <Container v-for="(v, i) in fixedOptions" :x="windowPadding" :y="windowPadding + (i * (optionHeight + optionMargin)) + titleHeight + descHeight">
-        <Rectangle :width="width - 80" :height="optionHeight" :fillColor="0x000000" :fillAlpha="0.3" :origin="0" :strokeColor="0xFFFFFF" :lineWidth="2" @pointerdown="onSelect(v)" />
-        <CustomText :x="(width - 80).half()" :y="20" :text="v.text" :origin="0.5" :padding="{ top: 3 }" :style="{ fontStyle: 'bold', fontSize: '20px', align: 'center' }" />
+        <Button :active="selectedIndex === i" :text="v.text" :width="width - (windowPadding * 2)" :height="optionHeight" :size="20" :origin="0" @click="onSelect(v)" />
       </Container>
     </Container>
   </Container>

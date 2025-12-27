@@ -6,6 +6,7 @@ import { computed, onBeforeUnmount, ref } from 'vue'
 import { state } from '../lib/state'
 import Gallery from './Gallery.vue'
 import Config from './Config.vue'
+import { useGamePad } from '../lib/gamePad'
 const scene = useScene()
 const bgm = scene.sound.add('bgm/letter-to-neml', { loop: true })
 bgm.play()
@@ -49,6 +50,35 @@ const TITLE_FADE_IN = {
   y: (config.HEIGHT * 0.3) - 10,
   duration: 1500
 }
+
+const gamePad = useGamePad()
+gamePad.onPress(key => {
+  if (type.value === 'config' || type.value === 'gallery') return
+  if (key === 'down') {
+    selectedIndex.value = (selectedIndex.value === undefined) ? 0 : (selectedIndex.value + 1) % menu.length
+  } else if (key === 'up') {
+    selectedIndex.value = (selectedIndex.value === undefined) ? 0 : (selectedIndex.value - 1 + menu.length) % menu.length
+  } else if (key === 'a') {
+    if (type.value === 'title') {
+      type.value = 'menu'
+      selectedIndex.value = 0
+    } else if (type.value === 'menu') {
+      if (selectedIndex.value !== undefined) {
+        menu[selectedIndex.value].action()
+      }
+    }
+  } else if (key === 'b') {
+    if (type.value === 'menu') {
+      type.value = 'title'
+    }
+  }
+})
+gamePad.onActivate(() => {
+})
+gamePad.onDeactivate(() => {
+  selectedIndex.value = undefined
+})
+const selectedIndex = ref<number | undefined>(gamePad.active ? 0 : undefined)
 </script>
 
 <template>
@@ -80,7 +110,14 @@ const TITLE_FADE_IN = {
     />
     <Container :x="config.WIDTH / 2" :y="config.HEIGHT * 0.62" v-else-if="type === 'menu'">
       <Container v-for="(item, i) in menu" :key="i" :y="i * 50" :tween="{ props: { alpha: 1 }, duration: 100 * (i + 1) }" :alpha="0">
-        <Rectangle :width="360" :height="36" :fillColor="0x000000" :alpha="0.4" :origin="0.5" @pointerdown="item.action" />
+        <Rectangle
+          :width="360"
+          :height="36"
+          :fillColor="gamePad.active && selectedIndex === i ? 0x77bb00 : 0x000000"
+          :alpha="0.4"
+          :origin="0.5"
+          @pointerdown="item.action"
+        />
         <CustomText :text="item.label.value" :origin="0.5" :style="{ fontSize: '17px' }" />
       </Container>
     </Container>
