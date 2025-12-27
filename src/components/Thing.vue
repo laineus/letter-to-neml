@@ -17,6 +17,7 @@ const tween = {
 <script setup lang="ts">
 const emit = defineEmits(['select'])
 const props = defineProps({
+  active: { type: Boolean, default: false },
   thing: { type: Object as PropType<Thing>, required: true }
 })
 </script>
@@ -32,14 +33,14 @@ const props = defineProps({
       :key="thing.name"
       :origin="0.5"
       :radius="8"
-      :fillColor="0xEE3300"
+      :fillColor="active ? 0x66bb00 : 0xEE3300"
       :alpha="0.5"
     />
     <Circle
       :key="thing.name"
       :origin="0.5"
       :radius="30"
-      :fillColor="0xEE3300"
+      :fillColor="active ? 0x66bb00 : 0xEE3300"
       :alpha="0.3"
       :tween="tween"
     />

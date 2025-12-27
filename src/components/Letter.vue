@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, nextTick, ref } from 'vue'
 import { Container, FxBlur, Image, Rectangle } from 'phavuer'
 import Dialog from './Dialog.vue'
 import config from '../lib/config'
@@ -7,6 +7,7 @@ import type { SuccessResponse, ErrorResponse } from '../../server/types'
 import { state } from '../lib/state'
 import CustomText from './CustomText.vue'
 import CustomButton from './Button.vue'
+import { useGamePad } from '../lib/gamePad'
 
 const DEFAULT_MESSAGE = `ネムルへ、
 急に出かけないといけなくなっちゃった。
@@ -15,10 +16,14 @@ const DEFAULT_MESSAGE = `ネムルへ、
 const emit = defineEmits(['submit'])
 
 type LetterState = 'rules' | 'preview' | 'edit' | 'alert' | 'error' | 'loading' | 'submit'
+type PreviewButton = 'edit' | 'continue'
+type EditButton = 'textarea' | 'submit' | 'reset' | 'cancel'
 
 const message = ref<string>(state.value.current?.letter ?? DEFAULT_MESSAGE)
 const status = ref<LetterState>('rules')
 const error = ref<ErrorResponse>()
+const textareaRef = ref<HTMLTextAreaElement>()
+const textareaFocused = ref(false)
 const submit = () => {
   if (state.value.current && message.value === state.value.current.letter) {
     continueWithoutEdit()
@@ -94,6 +99,79 @@ const errorMessage = computed(() => {
   const ref = error.value.error.ref ? `\n\n（該当部分: "${error.value.error.ref}"）` : ''
   return ERROR_MESSAGES[error.value.error.code] + ref
 })
+
+const gamePad = useGamePad()
+
+const previewButtons: PreviewButton[] = ['edit', 'continue']
+const editButtons: EditButton[] = ['textarea', 'submit', 'reset', 'cancel']
+const selectedPreviewButton = ref<PreviewButton | undefined>(gamePad.active ? 'edit' : undefined)
+const selectedEditButton = ref<EditButton | undefined>(undefined)
+
+gamePad.onPress(key => {
+  if (status.value === 'preview') {
+    if (key === 'up' || key === 'down') {
+      const direction = key === 'down' ? 1 : -1
+      if (selectedPreviewButton.value === undefined) {
+        selectedPreviewButton.value = previewButtons[0]
+      } else {
+        const currentIndex = previewButtons.indexOf(selectedPreviewButton.value)
+        const nextIndex = (currentIndex + direction + previewButtons.length) % previewButtons.length
+        selectedPreviewButton.value = previewButtons[nextIndex]
+      }
+    } else if (key === 'a') {
+      if (selectedPreviewButton.value === 'edit') {
+        selectedEditButton.value = 'textarea'
+        startEdit()
+      } else if (selectedPreviewButton.value === 'continue') {
+        continueWithoutEdit()
+      }
+    } else if (key === 'b') {
+      selectedPreviewButton.value = 'continue'
+    }
+  } else if (status.value === 'edit') {
+    if (textareaFocused.value) {
+      if (key === 'b') {
+        textareaFocused.value = false
+        textareaRef.value?.blur()
+      }
+      return
+    }
+    if (key === 'up' || key === 'down') {
+      const direction = key === 'down' ? 1 : -1
+      if (selectedEditButton.value === undefined) {
+        selectedEditButton.value = editButtons[0]
+      } else {
+        const currentIndex = editButtons.indexOf(selectedEditButton.value)
+        const nextIndex = (currentIndex + direction + editButtons.length) % editButtons.length
+        selectedEditButton.value = editButtons[nextIndex]
+      }
+    } else if (key === 'a') {
+      if (selectedEditButton.value === 'textarea') {
+        textareaFocused.value = true
+        textareaRef.value?.focus()
+      } else if (selectedEditButton.value === 'submit') {
+        submit()
+      } else if (selectedEditButton.value === 'reset') {
+        reset()
+      } else if (selectedEditButton.value === 'cancel') {
+        cancelEdit()
+      }
+    } else if (key === 'b') {
+      if (document.activeElement === textareaRef.value) {
+        textareaFocused.value = false
+        textareaRef.value?.blur()
+        selectedEditButton.value = 'textarea'
+        return
+      }
+      cancelEdit()
+    }
+  }
+})
+
+gamePad.onDeactivate(() => {
+  selectedPreviewButton.value = undefined
+  selectedEditButton.value = undefined
+})
 </script>
 
 <template>
@@ -112,8 +190,8 @@ const errorMessage = computed(() => {
     <Image texture="etc/frame2" :x="-210" :y="-210" :scale="0.3" :alpha="0.2" />
     <Image texture="etc/frame1" :x="190" :y="190" :scale="0.35" :alpha="0.2" :rotation="Math.PI" />
     <textarea class="Textarea preview" v-model="message" maxlength="800" readonly></textarea>
-    <CustomButton :text="'変更する'" :origin="0.5" :y="180" @click="startEdit" />
-    <CustomButton :text="'変更せず進む'" :origin="0.5" :y="240" @click="continueWithoutEdit" />
+    <CustomButton :active="selectedPreviewButton === 'edit'" :text="'変更する'" :origin="0.5" :y="180" @click="startEdit" />
+    <CustomButton :active="selectedPreviewButton === 'continue'" :text="'変更せず進む'" :origin="0.5" :y="240" @click="continueWithoutEdit" />
   </Container>
   <Container v-else-if="status === 'edit'" :depth="20000" :x="config.WIDTH.half()" :y="config.HEIGHT.half()">
     <Rectangle :width="600" :height="600" :fillColor="0x000000" :alpha="0.6" :origin="0.5" :radius="0">
@@ -121,10 +199,11 @@ const errorMessage = computed(() => {
     </Rectangle>
     <Image texture="etc/frame2" :x="-210" :y="-210" :scale="0.3" :alpha="0.2" />
     <Image texture="etc/frame1" :x="190" :y="190" :scale="0.35" :alpha="0.2" :rotation="Math.PI" />
-    <textarea class="Textarea edit" v-model="message" maxlength="800"></textarea>
-    <CustomButton :text="'確定する'" :origin="0.5" :y="120" @click="submit" />
-    <CustomButton :text="'初期状態に戻す'" :origin="0.5" :y="180" @click="reset" />
-    <CustomButton :text="'キャンセル'" :origin="0.5" :y="240" @click="cancelEdit" />
+    <Rectangle v-if="selectedEditButton === 'textarea'" :width="540" :height="338" :fillColor="0x000000" :fillAlpha="0" :origin="0.5" :strokeColor="0x66bb00" :lineWidth="2" :y="-97" />
+    <textarea ref="textareaRef" class="Textarea edit" :class="selectedEditButton === 'textarea' ? 'gamePad' : undefined" v-model="message" maxlength="800" @blur="textareaFocused = false"></textarea>
+    <CustomButton :active="selectedEditButton === 'submit'" :text="'確定する'" :origin="0.5" :y="120" @click="submit" />
+    <CustomButton :active="selectedEditButton === 'reset'" :text="'初期状態に戻す'" :origin="0.5" :y="180" @click="reset" />
+    <CustomButton :active="selectedEditButton === 'cancel'" :text="'キャンセル'" :origin="0.5" :y="240" @click="cancelEdit" />
   </Container>
 </template>
 
@@ -149,6 +228,9 @@ const errorMessage = computed(() => {
 }
 .Textarea:focus {
   outline: none;
+}
+.Textarea.gamePad:focus {
+  background-color: #67bb0033;
 }
 .Textarea.edit {
   bottom: 40%;

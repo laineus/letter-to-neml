@@ -51,6 +51,9 @@ export const useHint = () => {
 
 <script lang="ts" setup>
 defineEmits(['click'])
+defineProps({
+  active: { type: Boolean, default: false }
+})
 const hint = useHint()
 const unread = computed(() => {
   return hint.currentHintIndex && !state.value.checkedHints.includes(hint.currentHintIndex)
@@ -59,7 +62,7 @@ const unread = computed(() => {
 
 <template>
   <Container>
-    <Button text="ヒント" :size="18" :width="120" @click="$emit('click')" />
+    <Button :active="active" text="ヒント" :size="18" :width="120" @click="$emit('click')" />
     <Circle v-if="unread" :x="94" :y="12"  :radius="5" :fillColor="0xFF0000" />
   </Container>
 </template>

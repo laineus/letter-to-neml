@@ -21,6 +21,7 @@ import Hint, { useHint } from './Hint.vue'
 import { useAudioPlayer } from '../lib/audioPlayer'
 import Config from './Config.vue'
 import Ending from './Ending.vue'
+import { useGamePad } from '../lib/gamePad'
 const props = defineProps({
   player: {
     type: Object as PropType<ReturnType<typeof useStoryPlayer>>,
@@ -60,6 +61,7 @@ const functions = {
   '手紙執筆': () => {
     fastForward.value = false
     showLetter.value = true
+    selectedButton.value = undefined
     return false
   },
   '衝撃': () => {
@@ -72,7 +74,10 @@ const functions = {
     damage.exec(() => resolveWaiting())
     return false
   },
-  'UI非表示': () => true,
+  'UI非表示': () => {
+    selectedButton.value = undefined
+    return true
+  },
   'エンディング': arg => {
     completeEnding(parseInt(arg))
     return false
@@ -179,6 +184,7 @@ const exec = () => {
       if (!state.value.completedBranches.includes(ifName)) {
         if (fastForward.value) {
           fastForward.value = false
+          selectedButton.value = undefined
           dialog.show({
             title: '初めての分岐',
             desc: '早送りを停止しました。',
@@ -251,6 +257,7 @@ const skipScene = () => {
       // 初めてプレイする分岐ならスキップ中断
       const ifName = getIfName(props.player.currentStoryItem)
       if (!state.value.completedBranches.includes(ifName)) {
+        selectedButton.value = undefined
         dialog.show({
           title: '初めての分岐',
           desc: 'スキップを中断しました。',
@@ -381,6 +388,98 @@ if (!props.static) watch(bgm, key => audioPlayer.play(key || null), { immediate:
 onBeforeUnmount(() => {
   audioPlayer.stop()
 })
+
+// ゲームパッド操作
+type selectionType = typeof headerButtons[number] | typeof footerButtons[number] | undefined
+const headerButtons = ['lookaround', 'hint'] as const
+const footerButtons = ['replay', 'prev', 'fastforward', 'next', 'settings'] as const
+const selectedButton = ref<selectionType>(undefined)
+const gamePad = useGamePad()
+gamePad.onPress(key => {
+  if (isShowingDialog.value) return
+  // 探索中
+  if (exploring.value) {
+    if (selectedButton.value === undefined) return
+    if (key === 'right') {
+      selectedButton.value = 'hint'
+    } else if (key === 'left') {
+      selectedButton.value = selectedButton.value === 'lookaround' ? undefined : 'lookaround'
+    } else if (key === 'down') {
+      selectedButton.value = undefined
+    } else if (key === 'a') {
+      if (selectedButton.value === 'lookaround') {
+        toggleExploring()
+      } else if (selectedButton.value === 'hint') {
+        showHint()
+      }
+    } else if (key === 'b') {
+      toggleExploring()
+    }
+    return
+  }
+  // uiHidden
+  if (uiHidden.value) {
+    selectedButton.value = undefined
+    if (key === 'a') {
+      tapScreen()
+    }
+    return
+  }
+  // 通常時
+  if (key === 'b') {
+    selectedButton.value = undefined
+  } else if (key === 'up') {
+    if (selectedButton.value === undefined || footerButtons.includes(selectedButton.value as any)) {
+      // footerまたはundefinedから上を押したらheaderの右端へ
+      selectedButton.value = currentThings.value?.length && !currentFade.value ? 'lookaround' : 'hint'
+    }
+  } else if (key === 'down') {
+    if (selectedButton.value === undefined || headerButtons.includes(selectedButton.value as any)) {
+      // headerまたはundefinedから下を押したらfooterの右端へ
+      selectedButton.value = 'fastforward'
+    }
+  } else if (key === 'left' || key === 'right') {
+    const direction = key === 'left' ? -1 : 1
+    
+    if (headerButtons.includes(selectedButton.value as any)) {
+      const availableButtons = currentThings.value?.length && !currentFade.value ? headerButtons : headerButtons.filter(v => v !== 'lookaround')
+      const currentIndex = availableButtons.indexOf(selectedButton.value as any)
+      const nextIndex = (currentIndex + direction + availableButtons.length) % availableButtons.length
+      selectedButton.value = availableButtons[nextIndex]
+    } else if (footerButtons.includes(selectedButton.value as any)) {
+      const currentIndex = footerButtons.indexOf(selectedButton.value as any)
+      const nextIndex = (currentIndex + direction + footerButtons.length) % footerButtons.length
+      selectedButton.value = footerButtons[nextIndex]
+    }
+  } else if (key === 'a') {
+    if (selectedButton.value === undefined) {
+      tapScreen()
+    } else if (selectedButton.value === 'lookaround' && !currentFade.value) {
+      toggleExploring()
+      if (exploring.value) {
+        selectedButton.value = undefined
+      }
+    } else if (selectedButton.value === 'hint') {
+      showHint()
+    } else if (selectedButton.value === 'replay') {
+      backToFirst()
+    } else if (selectedButton.value === 'prev') {
+      backScene()
+    } else if (selectedButton.value === 'fastforward') {
+      toggleFastForward()
+    } else if (selectedButton.value === 'next') {
+      skipScene()
+    } else if (selectedButton.value === 'settings') {
+      configModal.value = true
+    }
+  }
+})
+gamePad.onDeactivate(() => {
+  selectedButton.value = undefined
+})
+const unfocus = () => {
+  selectedButton.value = 'lookaround'
+}
 </script>
 
 <template>
@@ -397,17 +496,17 @@ onBeforeUnmount(() => {
   <Fade v-if="currentFade" :fade="currentFade" :depth="3000" @end="resolveWaiting" />
   <!-- UI -->
   <template v-if="!uiHidden && !isShowingDialog">
-    <Hint :x="(140).byRight()" :y="20" :depth="4000" @click="showHint" />
-    <Button v-if="currentThings?.length && !currentFade" :text="exploring ? 'もどる' : 'あたりを見回す'" :x="(330).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="toggleExploring" />
+    <Hint :active="selectedButton === 'hint'" :x="(140).byRight()" :y="20" :depth="4000" @click="showHint" />
+    <Button v-if="currentThings?.length && !currentFade" :active="selectedButton === 'lookaround'" :text="exploring ? 'もどる' : 'あたりを見回す'" :x="(330).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="toggleExploring" />
     <template v-if="!exploring">
-      <IconButton icon="settings" :x="((50 * 0) + 60).byRight()" :y="(60).byBottom()" :depth="8000" @click="configModal = true" />
-      <IconButton icon="next" :x="((50 * 1) + 60).byRight()" :y="(60).byBottom()" :depth="8000" @click="skipScene" />
-      <IconButton :icon="fastForward ? 'pause' : 'fastforward'" :x="((50 * 2) + 60).byRight()" :y="(60).byBottom()" :depth="8000" @click="toggleFastForward" />
-      <IconButton icon="prev" :x="((50 * 3) + 60).byRight()" :y="(60).byBottom()" :depth="8000" @click="backScene" />
-      <IconButton icon="replay" :x="((50 * 4) + 60).byRight()" :y="(60).byBottom()" :depth="8000" @click="backToFirst" />
+      <IconButton :active="selectedButton === 'settings'" icon="settings" :x="((50 * 0) + 60).byRight()" :y="(60).byBottom()" :depth="8000" @click="configModal = true" />
+      <IconButton :active="selectedButton === 'next'" icon="next" :x="((50 * 1) + 60).byRight()" :y="(60).byBottom()" :depth="8000" @click="skipScene" />
+      <IconButton :active="selectedButton === 'fastforward'" :icon="fastForward ? 'pause' : 'fastforward'" :x="((50 * 2) + 60).byRight()" :y="(60).byBottom()" :depth="8000" @click="toggleFastForward" />
+      <IconButton :active="selectedButton === 'prev'" icon="prev" :x="((50 * 3) + 60).byRight()" :y="(60).byBottom()" :depth="8000" @click="backScene" />
+      <IconButton :active="selectedButton === 'replay'" icon="replay" :x="((50 * 4) + 60).byRight()" :y="(60).byBottom()" :depth="8000" @click="backToFirst" />
     </template>
   </template>
-  <Things v-if="exploring && !dialog.current" :things="currentThings ?? []" @select="selectThing" />
+  <Things v-if="exploring" :visible="!dialog.current" :focus="selectedButton === undefined" :things="currentThings ?? []" @select="selectThing" @unfocus="unfocus" />
   <MessageWindow v-if="player.currentMessage" :visible="!isShowingDialog && !exploring" :title="player.currentMessage.name" :text="player.currentMessage.text" />
   <!-- Dialog -->
   <Dialog v-if="dialog.current" :title="dialog.current.title" :desc="dialog.current.desc" :options="dialog.current.options" @close="dialog.close" :depth="8000" />
