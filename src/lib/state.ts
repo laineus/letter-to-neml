@@ -26,6 +26,17 @@ export const load = () => {
   const saved = localStorage.getItem('saveData')
   return saved ? JSON.parse(saved) as GameState : undefined
 }
+const getBrowserLang = (): string => {
+  const nav = window.navigator
+  if (nav.languages) return nav.languages[0]
+  // @ts-ignore
+  return nav.language || nav.userLanguage || nav.browserLanguage
+}
+const getDefaultLangSetting = () => {
+  const lang = getBrowserLang()
+  if (lang.startsWith('ja')) return 'ja'
+  return 'en'
+}
 const makeState = (): GameState => {
   return {
     currentStory: 0,
@@ -37,7 +48,7 @@ const makeState = (): GameState => {
     current: null,
     settings: {
       volume: 1,
-      lang: 'ja'
+      lang: getDefaultLangSetting()
     }
   }
 }
