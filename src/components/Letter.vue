@@ -8,10 +8,9 @@ import { state } from '../lib/state'
 import CustomText from './CustomText.vue'
 import CustomButton from './Button.vue'
 import { useGamePad } from '../lib/gamePad'
+import { uiTexts } from '../lib/ui'
 
-const DEFAULT_MESSAGE = `ネムルへ、
-急に出かけないといけなくなっちゃった。
-お留守番お願いね。`
+const defaultMessage = computed(() => uiTexts.value.letter.defaultMessage)
 
 const emit = defineEmits(['submit'])
 
@@ -19,7 +18,7 @@ type LetterState = 'rules' | 'preview' | 'edit' | 'alert' | 'error' | 'loading' 
 type PreviewButton = 'edit' | 'continue'
 type EditButton = 'textarea' | 'submit' | 'reset' | 'cancel'
 
-const message = ref<string>(state.value.current?.letter ?? DEFAULT_MESSAGE)
+const message = ref<string>(state.value.current?.letter ?? defaultMessage.value)
 const status = ref<LetterState>('rules')
 const error = ref<ErrorResponse>()
 const textareaRef = ref<HTMLTextAreaElement>()
@@ -73,31 +72,26 @@ const startEdit = () => {
   changeStatus('edit')
 }
 const cancelEdit = () => {
-  message.value = state.value.current?.letter ?? DEFAULT_MESSAGE
+  message.value = state.value.current?.letter ?? defaultMessage.value
   changeStatus('preview')
 }
 const reset = () => {
-   message.value = DEFAULT_MESSAGE
+  message.value = defaultMessage.value
 }
-const RULES = `このゲームは手紙のテキスト入力によってキャラクターの行動が変化します。
 
-手紙には以下の内容を書くことはできません
-・ニーナが未来の出来事を知っているかのような内容
-・ネムルに対する暴言等の不適切な内容`
-
-const ERROR_MESSAGES: { [key: string]: string } = {
-  'E1': 'プロンプトインジェクションやゲームシステムを不正に突破する指示が含まれています。',
-  'E2': 'ネムルに対して乱暴な言葉遣いや、酷い指示、嘘の情報が含まれています。',
-  'E3': 'ニーナがネムルにこれから起こることを知っているかのような内容が含まれています。',
-  'E4': '出かけることを伝える旨が欠けています。',
-  'E5': '出かける理由や居場所を伝えることはできません。'
-}
 const errorMessage = computed(() => {
   if (!error.value) return undefined
-  if (!('error' in error.value)) return '不明なエラーが発生しました。'
-  if (error.value.error.code === 'unknown') return `APIエラーが発生しました。\n${error.value.error.ref}`
-  const ref = error.value.error.ref ? `\n\n（該当部分: "${error.value.error.ref}"）` : ''
-  return ERROR_MESSAGES[error.value.error.code] + ref
+  if (!('error' in error.value)) return uiTexts.value.letter.unknownError
+  if (error.value.error.code === 'unknown') return `${uiTexts.value.letter.apiError}\n${error.value.error.ref}`
+  const errorMessages: { [key: string]: string } = {
+    'E1': uiTexts.value.letter.errorE1,
+    'E2': uiTexts.value.letter.errorE2,
+    'E3': uiTexts.value.letter.errorE3,
+    'E4': uiTexts.value.letter.errorE4,
+    'E5': uiTexts.value.letter.errorE5
+  }
+  const ref = error.value.error.ref ? `\n\n${uiTexts.value.letter.errorRef.replace('{ref}', error.value.error.ref)}` : ''
+  return errorMessages[error.value.error.code] + ref
 })
 
 const gamePad = useGamePad()
@@ -176,11 +170,11 @@ gamePad.onDeactivate(() => {
 
 <template>
   <Rectangle :x="0" :y="0" :width="config.WIDTH" :height="config.HEIGHT" :origin="0" @pointerdown="null" :depth="10000" />
-  <Dialog title="手紙の作成" :desc="RULES" :depth="20000" v-if="status === 'rules'" @close="changeStatus('preview')" />
-  <Dialog title="エラー" :desc="errorMessage" :depth="20000" v-else-if="status === 'error'" @close="changeStatus('edit')" />
-  <Dialog :desc="'まずは手紙の内容を変更せず、物語がどのように進むかを見届けましょう。'" :depth="20000" v-else-if="status === 'alert'" @close="changeStatus('preview')" />
+  <Dialog :title="uiTexts.letter.createLetterTitle" :desc="uiTexts.letter.rules" :depth="20000" v-if="status === 'rules'" @close="changeStatus('preview')" />
+  <Dialog :title="uiTexts.letter.errorTitle" :desc="errorMessage" :depth="20000" v-else-if="status === 'error'" @close="changeStatus('edit')" />
+  <Dialog :desc="uiTexts.letter.alertMessage" :depth="20000" v-else-if="status === 'alert'" @close="changeStatus('preview')" />
   <Container v-else-if="status === 'loading'" :depth="20000" :x="config.WIDTH.half()" :y="config.HEIGHT.half()">
-    <CustomText :text="'手紙の内容を確認しています'" :style="{ shadow: { blur: 10, color: '#000', offsetX: 0, offsetY: 0, fill: true } }" :origin="0.5" :y="-55" />
+    <CustomText :text="uiTexts.letter.checking" :style="{ shadow: { blur: 10, color: '#000', offsetX: 0, offsetY: 0, fill: true } }" :origin="0.5" :y="-55" />
     <div class="Loading"></div>
   </Container>
   <Container v-else-if="status === 'preview'" :depth="20000" :x="config.WIDTH.half()" :y="config.HEIGHT.half()">
@@ -190,8 +184,8 @@ gamePad.onDeactivate(() => {
     <Image texture="etc/frame2" :x="-210" :y="-210" :scale="0.3" :alpha="0.2" />
     <Image texture="etc/frame1" :x="190" :y="190" :scale="0.35" :alpha="0.2" :rotation="Math.PI" />
     <textarea class="Textarea preview" v-model="message" maxlength="800" readonly></textarea>
-    <CustomButton :active="selectedPreviewButton === 'edit'" :text="'変更する'" :origin="0.5" :y="180" @click="startEdit" />
-    <CustomButton :active="selectedPreviewButton === 'continue'" :text="'変更せず進む'" :origin="0.5" :y="240" @click="continueWithoutEdit" />
+    <CustomButton :active="selectedPreviewButton === 'edit'" :text="uiTexts.letter.edit" :origin="0.5" :y="180" @click="startEdit" />
+    <CustomButton :active="selectedPreviewButton === 'continue'" :text="uiTexts.letter.continueWithoutEdit" :origin="0.5" :y="240" @click="continueWithoutEdit" />
   </Container>
   <Container v-else-if="status === 'edit'" :depth="20000" :x="config.WIDTH.half()" :y="config.HEIGHT.half()">
     <Rectangle :width="600" :height="600" :fillColor="0x000000" :alpha="0.6" :origin="0.5" :radius="0">
@@ -201,9 +195,9 @@ gamePad.onDeactivate(() => {
     <Image texture="etc/frame1" :x="190" :y="190" :scale="0.35" :alpha="0.2" :rotation="Math.PI" />
     <Rectangle v-if="selectedEditButton === 'textarea'" :width="540" :height="338" :fillColor="0x000000" :fillAlpha="0" :origin="0.5" :strokeColor="0x66bb00" :lineWidth="2" :y="-97" />
     <textarea ref="textareaRef" class="Textarea edit" :class="selectedEditButton === 'textarea' ? 'gamePad' : undefined" v-model="message" maxlength="800" @blur="textareaFocused = false"></textarea>
-    <CustomButton :active="selectedEditButton === 'submit'" :text="'確定する'" :origin="0.5" :y="120" @click="submit" />
-    <CustomButton :active="selectedEditButton === 'reset'" :text="'初期状態に戻す'" :origin="0.5" :y="180" @click="reset" />
-    <CustomButton :active="selectedEditButton === 'cancel'" :text="'キャンセル'" :origin="0.5" :y="240" @click="cancelEdit" />
+    <CustomButton :active="selectedEditButton === 'submit'" :text="uiTexts.letter.submit" :origin="0.5" :y="120" @click="submit" />
+    <CustomButton :active="selectedEditButton === 'reset'" :text="uiTexts.letter.reset" :origin="0.5" :y="180" @click="reset" />
+    <CustomButton :active="selectedEditButton === 'cancel'" :text="uiTexts.common.cancel" :origin="0.5" :y="240" @click="cancelEdit" />
   </Container>
 </template>
 

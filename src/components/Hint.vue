@@ -5,6 +5,7 @@ import { state } from '../lib/state'
 import { useIfFunctions } from '../lib/ifFunctions'
 import hintsJson from '../story/hints.json' with { type: 'json' }
 import { Circle, Container } from 'phavuer'
+import { uiTexts } from '../lib/ui'
 export const useHint = () => {
   const hints = hintsJson as string[]
   const ifFunctions = useIfFunctions()
@@ -62,7 +63,7 @@ const unread = computed(() => {
 
 <template>
   <Container>
-    <Button :active="active" text="ヒント" :size="18" :width="120" @click="$emit('click')" />
+    <Button :active="active" :text="uiTexts.story.hint" :size="18" :width="120" @click="$emit('click')" />
     <Circle v-if="unread" :x="94" :y="12"  :radius="5" :fillColor="0xFF0000" />
   </Container>
 </template>

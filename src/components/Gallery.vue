@@ -6,6 +6,7 @@ import { state } from '../lib/state'
 import config from '../lib/config'
 import Button from './Button.vue'
 import { useGamePad } from '../lib/gamePad'
+import { uiTexts } from '../lib/ui'
 
 const emit = defineEmits(['back'])
 
@@ -173,7 +174,7 @@ const tween = { props: { alpha: { from: 0, to: 1 } }, duration: 800 }
         />
       </Container>
       <CustomText text="Gallery" :x="sumWidth.half()" :y="-60" :origin="0.5" :style="{ fontSize: 42 }" :tween />
-      <Button :active="selectedIndex === 'back'" :text="'戻る'" :origin="0.5" :x="sumWidth.half()" :y="sumHeight + 70" @click="emit('back')" :tween />
+      <Button :active="selectedIndex === 'back'" :text="uiTexts.common.back" :origin="0.5" :x="sumWidth.half()" :y="sumHeight + 70" @click="emit('back')" :tween />
     </Container>
     <!-- フルスクリーン表示 -->
     <Image

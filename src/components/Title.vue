@@ -7,6 +7,7 @@ import { state } from '../lib/state'
 import Gallery from './Gallery.vue'
 import Config from './Config.vue'
 import { useGamePad } from '../lib/gamePad'
+import { uiTexts } from '../lib/ui'
 const scene = useScene()
 const bgm = scene.sound.add('bgm/letter-to-neml', { loop: true })
 bgm.play()
@@ -17,29 +18,26 @@ const type = ref<'title' | 'menu' | 'gallery' | 'config'>('title')
 const menu = [
   {
     label: computed(() => {
-      if (state.value.current) {
-        return 'ゲームを再開'
-      }
-      return 'ゲームを開始'
+      return state.value.current ? uiTexts.value.title.continue : uiTexts.value.title.newGame
     }),
     action: () => {
       scene.scene.start('MainScene')
     }
   },
   {
-    label: computed(() => 'ギャラリー'),
+    label: computed(() => uiTexts.value.common.gallery),
     action: () => {
       type.value = 'gallery'
     }
   },
   {
-    label: computed(() => '設定'),
+    label: computed(() => uiTexts.value.common.settings),
     action: () => {
       type.value = 'config'
     }
   },
   {
-    label: computed(() => '終了'),
+    label: computed(() => uiTexts.value.common.exit),
     action: () => {
       type.value = 'title'
     }

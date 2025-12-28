@@ -9,6 +9,7 @@ import Slider from './Slider.vue'
 import RadioList from './RadioList.vue'
 import Dialog from './Dialog.vue'
 import { useGamePad } from '../lib/gamePad'
+import { uiTexts } from '../lib/ui'
 
  const emit = defineEmits(['close'])
 const props = defineProps({
@@ -104,37 +105,37 @@ const selectedType = ref<ConfigType | undefined>(gamePad.active ? 'bgm' : undefi
     <Rectangle :width="config.WIDTH" :height="config.HEIGHT" :origin="0" :fillAlpha="0" @pointerdown="null" />
     <Dialog
       v-if="confirmBackToTitle"
-      title="確認"
-      desc="タイトルに戻りますか？"
-      :options="[{ text: 'OK', action: backToTitle }, { text: 'キャンセル', close: true }]"
+      :title="uiTexts.common.confirm"
+      :desc="uiTexts.settings.confirmBackToTitle"
+      :options="[{ text: uiTexts.common.ok, action: backToTitle }, { text: uiTexts.common.cancel, close: true }]"
       @close="confirmBackToTitle = false"
     />
     <Dialog
       v-else-if="confirmReset"
-      title="確認"
-      desc="全てのデータをリセットしますか？"
-      :options="[{ text: 'OK', action: resetData }, { text: 'キャンセル', close: true }]"
+      :title="uiTexts.common.confirm"
+      :desc="uiTexts.settings.confirmResetData"
+      :options="[{ text: uiTexts.common.ok, action: resetData }, { text: uiTexts.common.cancel, close: true }]"
       @close="confirmReset = false"
     />
     <Container v-else :x="config.WIDTH.half()" :y="config.HEIGHT.half()" :tween="{ alpha: { from: 0, to: 1 }, duration: 300 }">
       <Rectangle :width="500" :height="420" :fillColor="0x000000" :alpha="0.6" :origin="0.5" :radius="0">
         <FxBlur :strength="1.5" :quality="1" :steps="4" />
       </Rectangle>
-      <CustomText :text="'設定'" :style="{ fontSize: 24, shadow: { blur: 10, color: '#000', offsetX: 0, offsetY: 0, fill: true } }" :origin="0.5" :y="-160" />
+      <CustomText :text="uiTexts.common.settings" :style="{ fontSize: 24, shadow: { blur: 10, color: '#000', offsetX: 0, offsetY: 0, fill: true } }" :origin="0.5" :y="-160" />
       <!-- BGM音量 -->
-      <CustomText :text="'BGM音量'" :style="{ fontSize: 19, shadow: { blur: 5, color: '#000', offsetX: 0, offsetY: 0, fill: true } }" :origin="0.5" :y="-100" />
+      <CustomText :text="uiTexts.settings.bgmVolume" :style="{ fontSize: 19, shadow: { blur: 5, color: '#000', offsetX: 0, offsetY: 0, fill: true } }" :origin="0.5" :y="-100" />
       <Slider :x="0" :y="-60" :origin="0.5" v-model="volume" :max="100" :min="0" :step="10" :width="230" />
       <Rectangle v-if="selectedType === 'bgm'" :x="0" :y="-65" :width="260" :height="35" :origin="0.5" :strokeColor="0x66bb00" :lineWidth="2" />
       <!-- 言語設定 -->
-      <CustomText :text="'Language'" :style="{ fontSize: 19, shadow: { blur: 5, color: '#000', offsetX: 0, offsetY: 0, fill: true } }" :origin="0.5" :y="-20" />
+      <CustomText text="Language" :style="{ fontSize: 19, shadow: { blur: 5, color: '#000', offsetX: 0, offsetY: 0, fill: true } }" :origin="0.5" :y="-20" />
       <RadioList :x="-100" :y="5" :list="[{ text: '日本語', value: 'ja' }, { text: 'English', value: 'en' }]" v-model="lang" />
       <Rectangle v-if="selectedType === 'lang'" :x="0" :y="21" :width="210" :height="35" :origin="0.5" :strokeColor="0x66bb00" :lineWidth="2" />
       <!-- タイトルに戻る -->
-      <Button v-if="showBackToTitle" :active="selectedType === 'backToTitle'" :text="'Back to Title'" :size="15" :width="240" :x="0" :y="80" :origin="0.5" :outline="false" @click="confirmBackToTitle = true" />
+      <Button v-if="showBackToTitle" :active="selectedType === 'backToTitle'" :text="uiTexts.settings.backToTitle" :size="15" :width="240" :x="0" :y="80" :origin="0.5" :outline="false" @click="confirmBackToTitle = true" />
       <!-- データリセット -->
-      <Button v-if="showDataReset" :active="selectedType === 'dataReset'" :text="'Reset all data'" :size="15" :width="240" :x="0" :y="80" :origin="0.5" :outline="false" @click="confirmReset = true" />
+      <Button v-if="showDataReset" :active="selectedType === 'dataReset'" :text="uiTexts.settings.resetAllData" :size="15" :width="240" :x="0" :y="80" :origin="0.5" :outline="false" @click="confirmReset = true" />
       <!-- 決定 -->
-      <Button :active="selectedType === 'submit'" :text="'OK'" :width="420" :x="0" :y="150" :origin="0.5" @click="$emit('close')" />
+      <Button :active="selectedType === 'submit'" :text="uiTexts.common.ok" :width="420" :x="0" :y="150" :origin="0.5" @click="$emit('close')" />
     </Container>
   </Container>
 </template>

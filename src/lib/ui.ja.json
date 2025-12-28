@@ -1,0 +1,53 @@
+{
+  "title": {
+    "newGame": "ゲームを開始",
+    "continue": "ゲームを再開"
+  },
+  "common": {
+    "ok": "OK",
+    "cancel": "キャンセル",
+    "confirm": "確認",
+    "back": "戻る",
+    "close": "閉じる",
+    "gallery": "ギャラリー",
+    "settings": "設定",
+    "exit": "終了"
+  },
+  "settings": {
+    "bgmVolume": "BGM音量",
+    "confirmBackToTitle": "タイトルに戻りますか？",
+    "confirmResetData": "全てのデータをリセットしますか？",
+    "backToTitle": "タイトルに戻る",
+    "resetAllData": "全てのデータをリセット"
+  },
+  "story": {
+    "firstBranch": "初めての分岐",
+    "fastForwardStopped": "早送りを停止しました。",
+    "incompleteScene": "未完了のシーン",
+    "cannotSkipIncompleteScene": "このシーンは未完了のためスキップできません。",
+    "skipInterrupted": "スキップを中断しました。",
+    "backToFirstScene": "最初のシーンへ戻る",
+    "backToFirstSceneConfirm": "ニーナ出発前のシーンへ戻り、手紙を書き直します。\nよろしいですか？",
+    "hint": "ヒント",
+    "lookBack": "もどる",
+    "lookAround": "あたりを見回す"  },
+  "letter": {
+    "defaultMessage": "ネムルへ、\n急に出かけないといけなくなっちゃった。\nお留守番お願いね。",
+    "createLetterTitle": "手紙の作成",
+    "rules": "このゲームは手紙のテキスト入力によってキャラクターの行動が変化します。\n\n手紙には以下の内容を書くことはできません\n・ニーナが未来の出来事を知っているかのような内容\n・ネムルに対する暴言等の不適切な内容",
+    "errorTitle": "エラー",
+    "alertMessage": "まずは手紙の内容を変更せず、物語がどのように進むかを見届けましょう。",
+    "checking": "手紙の内容を確認しています",
+    "edit": "変更する",
+    "continueWithoutEdit": "変更せず進む",
+    "submit": "確定する",
+    "reset": "初期状態に戻す",
+    "errorE1": "プロンプトインジェクションやゲームシステムを不正に突破する指示が含まれています。",
+    "errorE2": "ネムルに対して乱暴な言葉遣いや、酷い指示、嘘の情報が含まれています。",
+    "errorE3": "ニーナがネムルにこれから起こることを知っているかのような内容が含まれています。",
+    "errorE4": "出かけることを伝える旨が欠けています。",
+    "errorE5": "出かける理由や居場所を伝えることはできません。",
+    "unknownError": "不明なエラーが発生しました。",
+    "apiError": "APIエラーが発生しました。",
+    "errorRef": "（該当部分: \"{ref}\"）"  }
+}

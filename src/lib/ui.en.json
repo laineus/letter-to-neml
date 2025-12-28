@@ -1,0 +1,55 @@
+{
+  "title": {
+    "newGame": "Start",
+    "continue": "Continue"
+  },
+  "common": {
+    "ok": "OK",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "back": "Back",
+    "close": "Close",
+    "gallery": "Gallery",
+    "settings": "Settings",
+    "exit": "Exit"
+  },
+  "settings": {
+    "bgmVolume": "BGM Volume",
+    "confirmBackToTitle": "Are you sure you want to return to the title?",
+    "confirmResetData": "Are you sure you want to reset all data?",
+    "backToTitle": "Back to Title",
+    "resetAllData": "Reset all data"
+  },
+  "story": {
+    "firstBranch": "First Branch",
+    "fastForwardStopped": "Fast forward has been stopped.",
+    "incompleteScene": "Incomplete Scene",
+    "cannotSkipIncompleteScene": "This scene is incomplete and cannot be skipped.",
+    "skipInterrupted": "Skip has been interrupted.",
+    "backToFirstScene": "Back to First Scene",
+    "backToFirstSceneConfirm": "Return to the scene before Nina's departure and rewrite the letter.\nAre you sure?",
+    "hint": "Hint",
+    "lookBack": "Back",
+    "lookAround": "Look Around"
+  },
+  "letter": {
+    "defaultMessage": "Dear Neml,\nI have to go out suddenly.\nPlease stay home.",
+    "createLetterTitle": "Create Letter",
+    "rules": "In this game, the character's actions change based on the text input in the letter.\n\nYou cannot write the following content in the letter:\n・Content that suggests Nina knows about future events\n・Inappropriate content such as abusive language toward Neml",
+    "errorTitle": "Error",
+    "alertMessage": "First, let's see how the story progresses without changing the letter content.",
+    "checking": "Checking letter content",
+    "edit": "Edit",
+    "continueWithoutEdit": "Continue without editing",
+    "submit": "Submit",
+    "reset": "Reset to default",
+    "errorE1": "The letter contains instructions for prompt injection or attempts to illegally bypass the game system.",
+    "errorE2": "The letter contains rough language, terrible instructions, or false information toward Neml.",
+    "errorE3": "The letter contains content that suggests Nina knows about future events.",
+    "errorE4": "The letter is missing the message about going out.",
+    "errorE5": "You cannot tell the reason for going out or the destination.",
+    "unknownError": "An unknown error occurred.",
+    "apiError": "An API error occurred.",
+    "errorRef": "(Relevant part: \"{ref}\")"
+  }
+}

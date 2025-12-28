@@ -22,6 +22,7 @@ import { useAudioPlayer } from '../lib/audioPlayer'
 import Config from './Config.vue'
 import Ending from './Ending.vue'
 import { useGamePad } from '../lib/gamePad'
+import { uiTexts } from '../lib/ui'
 const props = defineProps({
   player: {
     type: Object as PropType<ReturnType<typeof useStoryPlayer>>,
@@ -237,9 +238,9 @@ const exec = () => {
 const skipScene = () => {
   if (!state.value.completedStories.includes(props.player.storyIndex)) {
     dialog.show({
-      title: '未完了のシーン',
-      desc: 'このシーンは未完了のためスキップできません。',
-      options: [{ text: 'OK', close: true }]
+      title: uiTexts.value.story.incompleteScene,
+      desc: uiTexts.value.story.cannotSkipIncompleteScene,
+      options: [{ text: uiTexts.value.common.ok, close: true }]
     })
     return
   }
@@ -259,9 +260,9 @@ const skipScene = () => {
       if (!state.value.completedBranches.includes(ifName)) {
         selectedButton.value = undefined
         dialog.show({
-          title: '初めての分岐',
-          desc: 'スキップを中断しました。',
-          options: [{ text: 'OK', close: true }]
+          title: uiTexts.value.story.firstBranch,
+          desc: uiTexts.value.story.skipInterrupted,
+          options: [{ text: uiTexts.value.common.ok, close: true }]
         })
         // プレイ済みの分岐として保存
         state.value.completedBranches.push(ifName)
@@ -275,14 +276,14 @@ const skipScene = () => {
 const backToFirst = () => {
   fastForward.value = false
   dialog.show({
-    title: '最初のシーンへ戻る',
-    desc: 'ニーナ出発前のシーンへ戻り、手紙を書き直します。\nよろしいですか？',
+    title: uiTexts.value.story.backToFirstScene,
+    desc: uiTexts.value.story.backToFirstSceneConfirm,
     options: [
-      { text: 'OK', close: true, action: () => {
+      { text: uiTexts.value.common.ok, close: true, action: () => {
         props.player.reset()
         exec()
       } },
-      { text: 'キャンセル', close: true }
+      { text: uiTexts.value.common.cancel, close: true }
     ]
   })
 }
@@ -336,7 +337,7 @@ const selectThing = (thing: Thing) => {
   dialog.show({
     title: thing.name,
     desc: thing.desc,
-    options: [{ text: '閉じる', close: true }]
+    options: [{ text: uiTexts.value.common.close, close: true }]
   })
 }
 const toggleFastForward = () => {
@@ -361,9 +362,9 @@ const showHint = () => {
     state.value.checkedHints.push(hint.currentHintIndex)
   }
   dialog.show({
-    title: 'ヒント',
+    title: uiTexts.value.story.hint,
     desc: hint.currentHint,
-    options: [{ text: '閉じる', close: true }]
+    options: [{ text: uiTexts.value.common.close, close: true }]
   })
 }
 const configModal = ref(false)
@@ -497,7 +498,7 @@ const unfocus = () => {
   <!-- UI -->
   <template v-if="!uiHidden && !isShowingDialog">
     <Hint :active="selectedButton === 'hint'" :x="(140).byRight()" :y="20" :depth="4000" @click="showHint" />
-    <Button v-if="currentThings?.length && !currentFade" :active="selectedButton === 'lookaround'" :text="exploring ? 'もどる' : 'あたりを見回す'" :x="(330).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="toggleExploring" />
+    <Button v-if="currentThings?.length && !currentFade" :active="selectedButton === 'lookaround'" :text="exploring ? uiTexts.story.lookBack : uiTexts.story.lookAround" :x="(330).byRight()" :y="20" :size="18" :width="180" :depth="4000" @click="toggleExploring" />
     <template v-if="!exploring">
       <IconButton :active="selectedButton === 'settings'" icon="settings" :x="((50 * 0) + 60).byRight()" :y="(60).byBottom()" :depth="8000" @click="configModal = true" />
       <IconButton :active="selectedButton === 'next'" icon="next" :x="((50 * 1) + 60).byRight()" :y="(60).byBottom()" :depth="8000" @click="skipScene" />

@@ -4,6 +4,7 @@ import { computed, type PropType, ref } from 'vue'
 import config from '../lib/config'
 import CustomText from './CustomText.vue'
 import Button from './Button.vue'
+import { uiTexts } from '../lib/ui'
 export type DialogOption = {
   text: string
   action?: () => any
@@ -45,7 +46,7 @@ const emit = defineEmits(['select', 'close'])
 const props = defineProps({
   title: { type: String, required: false },
   desc: { type: String, required: false },
-  options: { type: Array as PropType<(string | DialogOption)[]>, default: () => [{ text: 'OK', close: true }] }
+  options: { type: Array as PropType<(string | DialogOption)[]>, default: () => [{ text: uiTexts.value.common.ok, close: true }] }
 })
 const width = 600
 const optionHeight = 40
