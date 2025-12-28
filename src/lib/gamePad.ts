@@ -8,8 +8,59 @@ const active = ref(false)
 
 const e = new EventTarget()
 
+const dispatch = (button: GamePadKey) => {
+  if (!active.value) {
+    active.value = true
+    const activateEvent = new Event('activate')
+    e.dispatchEvent(activateEvent)
+  }
+  const event = new CustomEvent<PressEventDetail>('press', { detail: { button } })
+  e.dispatchEvent(event)
+}
+
 // gamepad
-// TODO
+const downHandler = (gamepad: Phaser.Input.Gamepad.Gamepad) => {
+  if (gamepad.A) dispatch('a')
+  if (gamepad.B) dispatch('b')
+  if (gamepad.left) dispatch('left')
+  if (gamepad.right) dispatch('right')
+  if (gamepad.up) dispatch('up')
+  if (gamepad.down) dispatch('down')
+}
+let prevLeftStick: GamePadKey | undefined = undefined
+const stickDown = (button: GamePadKey) => {
+  if (prevLeftStick !== button) {
+    prevLeftStick = button
+    dispatch(button)
+    cancel()
+  }
+}
+let cancelTimer: number | undefined = undefined
+const cancel = () => {
+  if (cancelTimer) {
+    clearTimeout(cancelTimer)
+    cancelTimer = undefined
+  }
+  cancelTimer = setTimeout(() => {
+    prevLeftStick = undefined
+  }, 170)
+}
+export const initGamePad = (scene: Phaser.Scene) => {
+  scene.input.gamepad?.on('down', downHandler)
+  scene.events.on('update', () => {
+    scene?.input.gamepad?.gamepads.forEach(pad => {
+      if (pad.leftStick.x < -0.5) {
+        stickDown('left')
+      } else if (pad.leftStick.x > 0.5) {
+        stickDown('right')
+      } else if (pad.leftStick.y < -0.5) {
+        stickDown('up')
+      } else if (pad.leftStick.y > 0.5) {
+        stickDown('down')
+      }
+    })
+  })
+}
 
 // keyboard
 window.addEventListener('keydown', evt => {
@@ -37,13 +88,7 @@ window.addEventListener('keydown', evt => {
   })()
   if (!button) return
   evt.preventDefault()
-  if (!active.value) {
-    active.value = true
-    const activateEvent = new Event('activate')
-    e.dispatchEvent(activateEvent)
-  }
-  const event = new CustomEvent<PressEventDetail>('press', { detail: { button } })
-  e.dispatchEvent(event)
+  dispatch(button)
 })
 
 window.addEventListener('mousedown', () => {

@@ -5,6 +5,9 @@ import MainScene from './components/MainScene.vue'
 import TitleScene from './components/TitleScene.vue'
 import { state } from './lib/state.ts'
 const gameConfig: Phaser.Types.Core.GameConfig = {
+  input: {
+    gamepad: true
+  },
   width: config.WIDTH,
   height: config.HEIGHT,
   preserveDrawingBuffer: true

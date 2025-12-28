@@ -5,8 +5,10 @@ import { stories } from '../story/stories'
 import { useStoryPlayer } from '../lib/storyPlayer'
 import { ref } from 'vue'
 import { state } from '../lib/state'
+import { initGamePad } from '../lib/gamePad'
 const storyPlayer = ref<ReturnType<typeof useStoryPlayer>>()
-const init = () => {
+const init = (scene: Phaser.Scene) => {
+  initGamePad(scene)
   storyPlayer.value = useStoryPlayer(stories)
   storyPlayer.value.storyIndex = state.value.currentStory ?? 0
 }
