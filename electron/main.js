@@ -2,6 +2,8 @@ const { app, BrowserWindow, ipcMain } = require('electron')
 const path = require('path')
 const steamworks = require('steamworks.js')
 
+app.commandLine.appendSwitch('--in-process-gpu', '--disable-direct-composition') // Allows the Steam overlay to work
+
 // ゲームがホスティングされているURL
 const GAME_URL = 'https://neml.laineus.com'
 const GAME_URL_LOCAL = 'http://localhost:5900'
