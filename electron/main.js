@@ -4,6 +4,7 @@ const steamworks = require('steamworks.js');
 
 // ゲームがホスティングされているURL
 const GAME_URL = 'https://neml.laineus.com';
+const GAME_URL_LOCAL = 'http://localhost:5900';
 
 // Steamクライアントを初期化
 const initSteamClient = () => {
@@ -37,16 +38,18 @@ function createWindow() {
     }
   });
 
+  const isDev = process.env.NODE_ENV === 'development';
+
   // セキュリティ警告を開発時のみ無効化
-  if (process.env.NODE_ENV === 'development') {
+  if (isDev) {
     process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = 'true';
   }
 
   // ゲームURLを読み込み
-  mainWindow.loadURL(GAME_URL);
+  mainWindow.loadURL(isDev ? GAME_URL_LOCAL : GAME_URL);
 
   // 開発時はDevToolsを開く
-  if (process.env.NODE_ENV === 'development') {
+  if (isDev) {
     mainWindow.webContents.openDevTools();
   }
 
