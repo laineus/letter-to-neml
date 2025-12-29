@@ -40,6 +40,57 @@ yarn build:mac     # macOS (Intel & Apple Silicon)
 - **Windows**: `win64/steam_api64.dll`
 - **macOS**: `osx/libsteam_api.dylib`
 
+## Steam API の使用方法
+
+Webページ（フロントエンド）から、`window.steamAPI`を通じてSteam APIを呼び出すことができます。
+
+### サンプルコード
+
+```javascript
+// Steam APIが利用可能かチェック
+const isSteamAvailable = await window.steamAPI.isAvailable();
+if (!isSteamAvailable) {
+  console.warn('Steam API is not available');
+  return;
+}
+
+// プレイヤー名を取得
+window.steamAPI.getPlayerName().then(name => {
+  console.log('Steam Player Name:', name);
+});
+
+// Steam IDを取得
+window.steamAPI.getSteamId().then(steamId => {
+  console.log('Steam ID:', steamId);
+});
+
+// アチーブメントを解除
+window.steamAPI.activateAchievement('ACHIEVEMENT_NAME').then(result => {
+  console.log('Achievement activated:', result);
+});
+
+// クラウドセーブに保存
+window.steamAPI.saveToCloud('savegame.json', JSON.stringify(gameData)).then(result => {
+  console.log('Saved to cloud:', result);
+});
+
+// クラウドセーブから読み込み
+window.steamAPI.loadFromCloud('savegame.json').then(data => {
+  if (data) {
+    const gameData = JSON.parse(data);
+    console.log('Loaded from cloud:', gameData);
+  }
+});
+```
+
+### ブラウザコンソールでのテスト
+
+開発時（`yarn start`）は検証ツールが開くので、コンソールで直接APIをテストできます:
+
+```javascript
+await window.steamAPI.getPlayerName()
+```
+
 ## 注意事項
 
 - このアプリは https://neml.laineus.com をロードするだけのシンプルなブラウザです

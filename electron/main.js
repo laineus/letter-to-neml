@@ -6,12 +6,22 @@ const steamworks = require('steamworks.js');
 const GAME_URL = 'https://neml.laineus.com';
 
 // Steamクライアントを初期化
-let client;
-try {
-  client = steamworks.init(); // steam_appid.txtを使用
-  console.log('Steam initialized successfully');
-} catch (error) {
-  console.error('Failed to initialize Steam:', error);
+const initSteamClient = () => {
+  try {
+    const client = steamworks.init(); // steam_appid.txtを使用
+    console.log('Steam initialized successfully');
+    return client;
+  } catch (error) {
+    console.error('Failed to initialize Steam:', error);
+    return undefined;
+  }
+}
+const client = initSteamClient();
+const useSteamClient = () => {
+  if (!client) {
+    throw new Error('Steam client is not initialized.');
+  }
+  return client;
 }
 
 let mainWindow;
@@ -26,6 +36,11 @@ function createWindow() {
       preload: path.join(__dirname, 'preload.js')
     }
   });
+
+  // セキュリティ警告を開発時のみ無効化
+  if (process.env.NODE_ENV === 'development') {
+    process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = 'true';
+  }
 
   // ゲームURLを読み込み
   mainWindow.loadURL(GAME_URL);
@@ -60,36 +75,38 @@ if (client) {
 }
 
 // Steam APIのIPCハンドラ
-if (client) {
-  ipcMain.handle('steam:getPlayerName', () => {
-    return client.localplayer.getName();
-  });
+ipcMain.handle('steam:isAvailable', () => {
+  return client !== undefined;
+});
 
-  ipcMain.handle('steam:getSteamId', () => {
-    return client.localplayer.getSteamId();
-  });
+ipcMain.handle('steam:getPlayerName', () => {
+  return useSteamClient().localplayer.getName();
+});
 
-  ipcMain.handle('steam:activateAchievement', (event, name) => {
-    return client.achievement.activate(name);
-  });
+ipcMain.handle('steam:getSteamId', () => {
+  return useSteamClient().localplayer.getSteamId();
+});
 
-  ipcMain.handle('steam:getAchievement', (event, name) => {
-    return client.achievement.isActivated(name);
-  });
+ipcMain.handle('steam:activateAchievement', (event, name) => {
+  return useSteamClient().achievement.activate(name);
+});
 
-  ipcMain.handle('steam:activateOverlay', (event, dialog) => {
-    client.overlay.activateDialog(dialog);
-  });
+ipcMain.handle('steam:getAchievement', (event, name) => {
+  return useSteamClient().achievement.isActivated(name);
+});
 
-  ipcMain.handle('steam:saveToCloud', (event, filename, content) => {
-    return client.cloud.writeFile(filename, content);
-  });
+ipcMain.handle('steam:activateOverlay', (event, dialog) => {
+  useSteamClient().overlay.activateDialog(dialog);
+});
 
-  ipcMain.handle('steam:loadFromCloud', (event, filename) => {
-    try {
-      return client.cloud.readFile(filename);
-    } catch (e) {
-      return null;
-    }
-  });
-}
+ipcMain.handle('steam:saveToCloud', (event, filename, content) => {
+  return useSteamClient().cloud.writeFile(filename, content);
+});
+
+ipcMain.handle('steam:loadFromCloud', (event, filename) => {
+  try {
+    return useSteamClient().cloud.readFile(filename);
+  } catch (e) {
+    return null;
+  }
+});
