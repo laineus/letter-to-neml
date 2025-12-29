@@ -1,0 +1,43 @@
+{
+  "name": "letter-to-neml-steam",
+  "version": "1.0.0",
+  "description": "Steam版 Letter to Neml",
+  "main": "main.js",
+  "scripts": {
+    "start": "NODE_ENV=development electron .",
+    "build": "electron-builder",
+    "build:linux": "electron-builder --linux",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac"
+  },
+  "build": {
+    "appId": "com.laineus.letter-to-neml",
+    "productName": "Letter to Neml",
+    "files": [
+      "main.js",
+      "preload.js",
+      "node_modules/**/*"
+    ],
+    "linux": {
+      "target": "dir",
+      "category": "Game"
+    },
+    "win": {
+      "target": "dir"
+    },
+    "mac": {
+      "target": "dir",
+      "category": "public.app-category.games"
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^39.2.7",
+    "electron-builder": "^26.0.12"
+  },
+  "dependencies": {
+    "steamworks.js": "^0.4.0"
+  }
+}
