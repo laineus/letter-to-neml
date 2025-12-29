@@ -1,7 +1,19 @@
-const { contextBridge } = require('electron');
+const { contextBridge, ipcRenderer } = require('electron');
 
-// Steam APIをWebページに公開する準備
-// steamworks.jsインストール後に実装
+// Steam APIをWebページに公開（IPC経由でメインプロセスと通信）
 contextBridge.exposeInMainWorld('steamAPI', {
-  // Steam APIの関数をここで公開
+  // ユーザー情報
+  getPlayerName: () => ipcRenderer.invoke('steam:getPlayerName'),
+  getSteamId: () => ipcRenderer.invoke('steam:getSteamId'),
+  
+  // アチーブメント
+  activateAchievement: (name) => ipcRenderer.invoke('steam:activateAchievement', name),
+  getAchievement: (name) => ipcRenderer.invoke('steam:getAchievement', name),
+  
+  // オーバーレイ
+  activateOverlay: (dialog) => ipcRenderer.invoke('steam:activateOverlay', dialog),
+  
+  // クラウドセーブ
+  saveToCloud: (filename, content) => ipcRenderer.invoke('steam:saveToCloud', filename, content),
+  loadFromCloud: (filename) => ipcRenderer.invoke('steam:loadFromCloud', filename),
 });
