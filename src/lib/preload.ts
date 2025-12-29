@@ -8,8 +8,4 @@ export const preloadAssets = (scene: Phaser.Scene) => {
       case 'audio': return list.forEach(([name, path]) => scene.load.audio(name, path))
     }
   })
-  Object.keys(localStorage).filter(key => key.startsWith('chara/')).forEach(key => {
-    const charaImage = JSON.parse(localStorage.getItem(key)!)
-    scene.textures.addBase64(key, charaImage)
-  })
 }
