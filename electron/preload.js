@@ -1,4 +1,4 @@
-const { contextBridge, ipcRenderer } = require('electron');
+const { contextBridge, ipcRenderer } = require('electron')
 
 // Steam APIをWebページに公開（IPC経由でメインプロセスと通信）
 contextBridge.exposeInMainWorld('steamAPI', {
@@ -18,5 +18,5 @@ contextBridge.exposeInMainWorld('steamAPI', {
   
   // クラウドセーブ
   saveToCloud: (filename, content) => ipcRenderer.invoke('steam:saveToCloud', filename, content),
-  loadFromCloud: (filename) => ipcRenderer.invoke('steam:loadFromCloud', filename),
-});
+  loadFromCloud: (filename) => ipcRenderer.invoke('steam:loadFromCloud', filename)
+})
