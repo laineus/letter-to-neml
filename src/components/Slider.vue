@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Container, Rectangle } from 'phavuer'
 import { computed } from 'vue'
+import { useUISound } from '../lib/se'
 const props = defineProps({
   x: { type: Number, default: 0 },
   y: { type: Number, default: 0 },
@@ -10,6 +11,7 @@ const props = defineProps({
   max: { type: Number, default: 100 },
   step: { type: Number, default: 1 }
 })
+const se = useUISound()
 const height = 10
 const model = defineModel({ type: Number, required: true })
 const percentage = computed(() => {
@@ -25,7 +27,9 @@ const drag = (_: Phaser.Input.Pointer, dragX: number) => {
   const rawValue = props.min + (relativeX / props.width) * (props.max - props.min)
   const stepValue = Math.round(rawValue / props.step) * props.step
   const fixedValue = Math.min(props.max, Math.max(props.min, stepValue))
+  if (fixedValue === model.value) return
   model.value = fixedValue
+  se.select()
 }
 const containerX = computed(() => props.x - (props.width * props.origin))
 const containerY = computed(() => props.y - ((height + 10) * props.origin))

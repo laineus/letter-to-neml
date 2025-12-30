@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { Container, Rectangle, FxBlur, Line } from 'phavuer'
-import { computed } from 'vue'
+import { computed, watch } from 'vue'
 import config from '../lib/config'
 import { state } from '../lib/state'
 import CustomText from './CustomText.vue'
+import { useUISound } from '../lib/se'
 const titleSize = 20
 const fontSize = 21
 const props = defineProps<{
@@ -23,6 +24,12 @@ const color = computed(() => {
   if (green.value) return '#77FF11'
   return '#FFFFFF'
 })
+const se = useUISound()
+watch(viewMessage, () => {
+  if (viewMessage.value && props.title) {
+    se.talk()
+  }
+}, { immediate: true })
 </script>
 
 <template>

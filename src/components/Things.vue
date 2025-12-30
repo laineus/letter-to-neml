@@ -4,6 +4,7 @@ import ThingComponent from './Thing.vue'
 import type { PropType } from 'vue'
 import type { Thing } from '../story/types'
 import { useGamePad } from '../lib/gamePad'
+import { useUISound } from '../lib/se'
 </script>
 
 <script setup lang="ts">
@@ -15,6 +16,8 @@ const props = defineProps({
   focus: { type: Boolean, default: false },
   things: { type: Array as PropType<Thing[]>, required: true }
 })
+
+const se = useUISound()
 
 watch(() => props.focus, (newFocus) => {
   if (newFocus) {
@@ -62,7 +65,9 @@ gamePad.onPress(key => {
   } else if (key === 'b') {
     selectedThingId.value = undefined
     emit('unfocus')
+    se.cancel()
   } else if (key === 'up' || key === 'down' || key === 'left' || key === 'right') {
+    se.select()
     if (selectedThingId.value === undefined) {
       // 最初の選択
       if (props.things.length > 0) {

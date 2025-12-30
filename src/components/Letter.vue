@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, nextTick, ref } from 'vue'
+import { computed, ref } from 'vue'
 import { Container, FxBlur, Image, Rectangle } from 'phavuer'
 import Dialog from './Dialog.vue'
 import config from '../lib/config'
@@ -9,10 +9,13 @@ import CustomText from './CustomText.vue'
 import CustomButton from './Button.vue'
 import { useGamePad } from '../lib/gamePad'
 import { uiTexts } from '../lib/ui'
+import { useUISound } from '../lib/se'
 
 const defaultMessage = computed(() => uiTexts.value.letter.defaultMessage)
 
 const emit = defineEmits(['submit'])
+
+const se = useUISound()
 
 type LetterState = 'rules' | 'preview' | 'edit' | 'alert' | 'error' | 'loading' | 'submit'
 type PreviewButton = 'edit' | 'continue'
@@ -24,6 +27,7 @@ const error = ref<ErrorResponse>()
 const textareaRef = ref<HTMLTextAreaElement>()
 const textareaFocused = ref(false)
 const submit = () => {
+  se.click()
   if (state.value.current && message.value === state.value.current.letter) {
     continueWithoutEdit()
     return
@@ -61,10 +65,12 @@ const changeStatus = (newStatus: LetterState) => {
   status.value = newStatus
 }
 const continueWithoutEdit = () => {
+  se.click()
   changeStatus('submit')
   emit('submit', undefined)
 }
 const startEdit = () => {
+  se.click()
   if (!state.value.completedEndings.length) {
     changeStatus('alert')
     return
@@ -72,10 +78,12 @@ const startEdit = () => {
   changeStatus('edit')
 }
 const cancelEdit = () => {
+  se.cancel()
   message.value = state.value.current?.letter ?? defaultMessage.value
   changeStatus('preview')
 }
 const reset = () => {
+  se.click()
   message.value = defaultMessage.value
 }
 
@@ -104,6 +112,7 @@ const selectedEditButton = ref<EditButton | undefined>(undefined)
 gamePad.onPress(key => {
   if (status.value === 'preview') {
     if (key === 'up' || key === 'down') {
+      se.select()
       const direction = key === 'down' ? 1 : -1
       if (selectedPreviewButton.value === undefined) {
         selectedPreviewButton.value = previewButtons[0]
@@ -125,12 +134,14 @@ gamePad.onPress(key => {
   } else if (status.value === 'edit') {
     if (textareaFocused.value) {
       if (key === 'b') {
+        se.cancel()
         textareaFocused.value = false
         textareaRef.value?.blur()
       }
       return
     }
     if (key === 'up' || key === 'down') {
+      se.select()
       const direction = key === 'down' ? 1 : -1
       if (selectedEditButton.value === undefined) {
         selectedEditButton.value = editButtons[0]
@@ -143,6 +154,7 @@ gamePad.onPress(key => {
       if (selectedEditButton.value === 'textarea') {
         textareaFocused.value = true
         textareaRef.value?.focus()
+        se.click()
       } else if (selectedEditButton.value === 'submit') {
         submit()
       } else if (selectedEditButton.value === 'reset') {

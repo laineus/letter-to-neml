@@ -8,6 +8,7 @@ import Gallery from './Gallery.vue'
 import Config from './Config.vue'
 import { useGamePad } from '../lib/gamePad'
 import { uiTexts } from '../lib/ui'
+import { useUISound } from '../lib/se'
 const scene = useScene()
 const bgm = scene.sound.add('bgm/letter-to-neml', { loop: true })
 bgm.play()
@@ -21,24 +22,28 @@ const menu = [
       return state.value.current ? uiTexts.value.title.continue : uiTexts.value.title.newGame
     }),
     action: () => {
+      se.click()
       scene.scene.start('MainScene')
     }
   },
   {
     label: computed(() => uiTexts.value.common.gallery),
     action: () => {
+      se.click()
       type.value = 'gallery'
     }
   },
   {
     label: computed(() => uiTexts.value.common.settings),
     action: () => {
+      se.click()
       type.value = 'config'
     }
   },
   {
     label: computed(() => uiTexts.value.common.exit),
     action: () => {
+      se.click()
       type.value = 'title'
     }
   },
@@ -49,17 +54,22 @@ const TITLE_FADE_IN = {
   duration: 1500
 }
 
+const se = useUISound()
+
 const gamePad = useGamePad()
 gamePad.onPress(key => {
   if (type.value === 'config' || type.value === 'gallery') return
   if (key === 'down') {
     selectedIndex.value = (selectedIndex.value === undefined) ? 0 : (selectedIndex.value + 1) % menu.length
+    se.select()
   } else if (key === 'up') {
     selectedIndex.value = (selectedIndex.value === undefined) ? 0 : (selectedIndex.value - 1 + menu.length) % menu.length
+    se.select()
   } else if (key === 'a') {
     if (type.value === 'title') {
       type.value = 'menu'
       selectedIndex.value = 0
+      se.select()
     } else if (type.value === 'menu') {
       if (selectedIndex.value !== undefined) {
         menu[selectedIndex.value].action()
@@ -68,6 +78,7 @@ gamePad.onPress(key => {
   } else if (key === 'b') {
     if (type.value === 'menu') {
       type.value = 'title'
+      se.cancel()
     }
   }
 })
@@ -87,7 +98,7 @@ const selectedIndex = ref<number | undefined>(gamePad.active ? 0 : undefined)
       :height="config.HEIGHT" 
       :origin="0"
       :fillColor="0x000000"
-      @pointerdown="type = 'menu'"
+      @pointerdown="type = 'menu', se.click()"
     />
     <Image texture="etc/title-bg" :origin="0">
       <FxBlur :quality="1" :x="4" :y="4" :steps="5" :strength="1.5" v-if="type === 'gallery' || type === 'config'" />

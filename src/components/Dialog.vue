@@ -5,6 +5,7 @@ import config from '../lib/config'
 import CustomText from './CustomText.vue'
 import Button from './Button.vue'
 import { uiTexts } from '../lib/ui'
+import { useUISound } from '../lib/se'
 export type DialogOption = {
   text: string
   action?: () => any
@@ -48,6 +49,7 @@ const props = defineProps({
   desc: { type: String, required: false },
   options: { type: Array as PropType<(string | DialogOption)[]>, default: () => [{ text: uiTexts.value.common.ok, close: true }] }
 })
+const se = useUISound()
 const width = 600
 const optionHeight = 40
 const optionMargin = 16
@@ -75,6 +77,7 @@ const fixedOptions = computed(() => {
 const onSelect = (v: DialogOption) => {
   v.action?.()
   v.close ? emit('close') : emit('select', v.text)
+  se.click()
 }
 
 const gamePad = useGamePad()
@@ -83,6 +86,7 @@ const selectedIndex = ref<number | undefined>(gamePad.active ? 0 : undefined)
 gamePad.onPress(key => {
   if (key === 'b') {
     emit('close')
+    se.cancel()
   } else if (key === 'down' || key === 'up') {
     const direction = key === 'down' ? 1 : -1
     if (selectedIndex.value === undefined) {
@@ -91,6 +95,7 @@ gamePad.onPress(key => {
       const nextIndex = (selectedIndex.value + direction + fixedOptions.value.length) % fixedOptions.value.length
       selectedIndex.value = nextIndex
     }
+    se.select()
   } else if (key === 'a') {
     if (selectedIndex.value !== undefined) {
       onSelect(fixedOptions.value[selectedIndex.value])
@@ -105,7 +110,7 @@ gamePad.onDeactivate(() => {
 
 <template>
   <Container :tween="{ alpha: { from: 0, to: 1 }, duration: 300 }">
-    <Rectangle :width="config.WIDTH" :height="config.HEIGHT" :fillColor="0x000000" :fillAlpha="0" :origin="0" @pointerdown="emit('close')" />
+    <Rectangle :width="config.WIDTH" :height="config.HEIGHT" :fillColor="0x000000" :fillAlpha="0" :origin="0" @pointerdown="emit('close'), se.cancel()" />
     <Container :x="config.WIDTH.half() - width.half()" :y="config.HEIGHT.half() - windowHeight.half()">
       <Rectangle :width="width" :height="windowHeight" :fillColor="0x000000" :alpha="0.6" :origin="0" :radius="0" @pointerdown="">
         <!-- <FxBlur :strength="3" :quality="1" :steps="7" /> -->

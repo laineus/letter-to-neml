@@ -10,6 +10,7 @@ import RadioList from './RadioList.vue'
 import Dialog from './Dialog.vue'
 import { useGamePad } from '../lib/gamePad'
 import { uiTexts } from '../lib/ui'
+import { useUISound } from '../lib/se'
 
  const emit = defineEmits(['close'])
 const props = defineProps({
@@ -48,18 +49,23 @@ const lang = computed({
 
 const confirmBackToTitle = ref(false)
 const backToTitle = () => {
+  se.click()
   scene.scene.start('TitleScene')
 }
 const confirmReset = ref(false)
 const resetData = () => {
+  se.click()
   localStorage.removeItem('saveData')
   window.location.reload()
 }
+
+const se = useUISound()
 
 const gamePad = useGamePad()
 gamePad.onPress(key => {
   if (confirmBackToTitle.value || confirmReset.value) return
   if (key === 'b') {
+    se.cancel()
     emit('close')
   } else if (key === 'down' || key === 'up') {
     const direction = key === 'down' ? 1 : -1
@@ -70,6 +76,7 @@ gamePad.onPress(key => {
       const nextIndex = (currentIndex + direction + configTypes.value.length) % configTypes.value.length
       selectedType.value = configTypes.value[nextIndex]
     }
+    se.select()
   }
   if (selectedType.value === 'bgm') {
     if (key === 'left') {
@@ -77,12 +84,14 @@ gamePad.onPress(key => {
     } else if (key === 'right') {
       volume.value = Math.min(volume.value + 10, 100)
     }
+    se.select()
   } else if (selectedType.value === 'lang') {
     if (key === 'left') {
       lang.value = 'ja'
     } else if (key === 'right') {
       lang.value = 'en'
     }
+    se.select()
   } else if (key === 'a') {
     if (selectedType.value === 'backToTitle') {
       confirmBackToTitle.value = true
@@ -91,6 +100,7 @@ gamePad.onPress(key => {
     } else if (selectedType.value === 'submit') {
       emit('close')
     }
+    se.click()
   }
 })
 gamePad.onDeactivate(() => {
@@ -102,7 +112,7 @@ const selectedType = ref<ConfigType | undefined>(gamePad.active ? 'bgm' : undefi
 
 <template>
   <Container>
-    <Rectangle :width="config.WIDTH" :height="config.HEIGHT" :origin="0" :fillAlpha="0" @pointerdown="null" />
+    <Rectangle :width="config.WIDTH" :height="config.HEIGHT" :origin="0" :fillAlpha="0" @pointerdown="$emit('close'), se.click()" />
     <Dialog
       v-if="confirmBackToTitle"
       :title="uiTexts.common.confirm"
@@ -118,7 +128,7 @@ const selectedType = ref<ConfigType | undefined>(gamePad.active ? 'bgm' : undefi
       @close="confirmReset = false"
     />
     <Container v-else :x="config.WIDTH.half()" :y="config.HEIGHT.half()" :tween="{ alpha: { from: 0, to: 1 }, duration: 300 }">
-      <Rectangle :width="500" :height="420" :fillColor="0x000000" :alpha="0.6" :origin="0.5" :radius="0">
+      <Rectangle :width="500" :height="420" :fillColor="0x000000" :alpha="0.6" :origin="0.5" :radius="0" @pointerdown="">
         <FxBlur :strength="1.5" :quality="1" :steps="4" />
       </Rectangle>
       <CustomText :text="uiTexts.common.settings" :style="{ fontSize: 24, shadow: { blur: 10, color: '#000', offsetX: 0, offsetY: 0, fill: true } }" :origin="0.5" :y="-160" />
@@ -131,11 +141,11 @@ const selectedType = ref<ConfigType | undefined>(gamePad.active ? 'bgm' : undefi
       <RadioList :x="-100" :y="5" :list="[{ text: '日本語', value: 'ja' }, { text: 'English', value: 'en' }]" v-model="lang" />
       <Rectangle v-if="selectedType === 'lang'" :x="0" :y="21" :width="210" :height="35" :origin="0.5" :strokeColor="0x66bb00" :lineWidth="2" />
       <!-- タイトルに戻る -->
-      <Button v-if="showBackToTitle" :active="selectedType === 'backToTitle'" :text="uiTexts.settings.backToTitle" :size="15" :width="240" :x="0" :y="80" :origin="0.5" :outline="false" @click="confirmBackToTitle = true" />
+      <Button v-if="showBackToTitle" :active="selectedType === 'backToTitle'" :text="uiTexts.settings.backToTitle" :size="15" :width="240" :x="0" :y="80" :origin="0.5" :outline="false" @click="confirmBackToTitle = true, se.click()" />
       <!-- データリセット -->
-      <Button v-if="showDataReset" :active="selectedType === 'dataReset'" :text="uiTexts.settings.resetAllData" :size="15" :width="240" :x="0" :y="80" :origin="0.5" :outline="false" @click="confirmReset = true" />
+      <Button v-if="showDataReset" :active="selectedType === 'dataReset'" :text="uiTexts.settings.resetAllData" :size="15" :width="240" :x="0" :y="80" :origin="0.5" :outline="false" @click="confirmReset = true, se.click()" />
       <!-- 決定 -->
-      <Button :active="selectedType === 'submit'" :text="uiTexts.common.ok" :width="420" :x="0" :y="150" :origin="0.5" @click="$emit('close')" />
+      <Button :active="selectedType === 'submit'" :text="uiTexts.common.ok" :width="420" :x="0" :y="150" :origin="0.5" @click="$emit('close'), se.click()" />
     </Container>
   </Container>
 </template>

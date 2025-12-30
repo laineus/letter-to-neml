@@ -7,8 +7,11 @@ import config from '../lib/config'
 import Button from './Button.vue'
 import { useGamePad } from '../lib/gamePad'
 import { uiTexts } from '../lib/ui'
+import { useUISound } from '../lib/se'
 
 const emit = defineEmits(['back'])
+
+const se = useUISound()
 
 type EndingData = {
   title: ComputedRef<string>
@@ -36,10 +39,12 @@ const isUnlocked = (storyIndex: number) => {
 const handleThumbnailClick = (ending: EndingData) => {
   if (!isUnlocked(ending.storyIndex)) return
   selectedEnding.value = ending
+  se.click()
 }
 
 const handleCloseFullscreen = () => {
   selectedEnding.value = undefined
+  se.cancel()
 }
 
 const cols = 4
@@ -63,8 +68,10 @@ gamePad.onPress(key => {
   } else {
     // サムネイル一覧モード
     if (key === 'b') {
+      se.cancel()
       emit('back')
     } else if (key === 'left' || key === 'right' || key === 'up' || key === 'down') {
+      se.select()
       if (selectedIndex.value === undefined) {
         selectedIndex.value = 0
       } else if (selectedIndex.value === 'back') {
@@ -104,6 +111,7 @@ gamePad.onPress(key => {
     } else if (key === 'a') {
       if (selectedIndex.value === 'back') {
         emit('back')
+        se.click()
       } else if (typeof selectedIndex.value === 'number') {
         const ending = endings[selectedIndex.value]
         if (ending && isUnlocked(ending.storyIndex)) {
@@ -174,7 +182,7 @@ const tween = { props: { alpha: { from: 0, to: 1 } }, duration: 800 }
         />
       </Container>
       <CustomText text="Gallery" :x="sumWidth.half()" :y="-60" :origin="0.5" :style="{ fontSize: 42 }" :tween />
-      <Button :active="selectedIndex === 'back'" :text="uiTexts.common.back" :origin="0.5" :x="sumWidth.half()" :y="sumHeight + 70" @click="emit('back')" :tween />
+      <Button :active="selectedIndex === 'back'" :text="uiTexts.common.back" :origin="0.5" :x="sumWidth.half()" :y="sumHeight + 70" @click="emit('back'), se.click()" :tween />
     </Container>
     <!-- フルスクリーン表示 -->
     <Image

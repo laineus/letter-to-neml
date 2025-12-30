@@ -1,6 +1,7 @@
 <script lang="ts">
 import { Container } from 'phavuer'
 import RadioItem from './RadioItem.vue'
+import { useUISound } from '../lib/se'
 export type RadioConfig = {
   text: string
   value: string
@@ -13,8 +14,11 @@ const props = defineProps({
   active: { type: Boolean, default: false }
 })
 const model = defineModel({ type: String, required: true })
-const click = (lang: string) => {
-  model.value = lang
+const se = useUISound()
+const click = (v: string) => {
+  if (model.value === v) return
+  model.value = v
+  se.select()
 }
 </script>
 
