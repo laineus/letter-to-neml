@@ -12,27 +12,27 @@ export const useHint = () => {
   const currentHintIndex = computed(() => {
     const completedEndings = state.value.completedEndings
     // いずれのゲームオーバーにも達していない
-    if (!completedEndings.length) return 1
+    if (!completedEndings.length) return 2
     // トゥルーエンド到達済み
     if (completedEndings.includes(7)) return undefined
     // ノーマルエンド到達済み
     if (completedEndings.includes(6)) {
-      if (ifFunctions['グッドエンド']()) return undefined // 達成済み
-      return 6
+      if (ifFunctions['グッドエンド']()) return 1 // 達成済み
+      return 7
     }
     // バッドエンド(ニーナの使命)到達済み
     if (completedEndings.includes(5)) {
-      if (ifFunctions['悪夢予防薬を片付ける']()) return undefined // 達成済み
-      return 5
+      if (ifFunctions['悪夢予防薬を片付ける']()) return 1 // 達成済み
+      return 6
     }
     // バッドエンド(ニーナのいない夜)到達済み
     if (completedEndings.includes(4)) {
-      if (ifFunctions['お姉さんに精神安定剤をあげる']()) return undefined // 達成済み
-      if (ifFunctions['ボロがカスラの実を吐き出す']()) return 4
-      return 3
+      if (ifFunctions['お姉さんに精神安定剤をあげる']()) return 1 // 達成済み
+      if (ifFunctions['ボロがカスラの実を吐き出す']()) return 5
+      return 4
     }
     // いずれのエンドにも達していない
-    return 2
+    return 3
   })
   const currentHint = computed(() => {
     const index = currentHintIndex.value

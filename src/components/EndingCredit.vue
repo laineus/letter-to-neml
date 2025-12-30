@@ -46,7 +46,7 @@ const tween = {
   y: {
     from: config.HEIGHT,
     to: -calcSectionHeight(list),
-    duration: 3000
+    duration: 30000
   },
   onComplete: () => {
     emit('end')

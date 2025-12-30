@@ -359,6 +359,7 @@ const toggleFastForward = () => {
   fastForward.value ? se.click() : se.cancel()
 }
 const toggleExploring = () => {
+  selectedButton.value = undefined
   fastForward.value = false
   exploring.value = !exploring.value
   exploring.value ? se.click() : se.cancel()
@@ -369,6 +370,7 @@ const showHint = () => {
   if (hint.currentHintIndex && !state.value.checkedHints.includes(hint.currentHintIndex)) {
     state.value.checkedHints.push(hint.currentHintIndex)
   }
+  selectedButton.value = undefined
   dialog.show({
     title: uiTexts.value.story.hint,
     desc: hint.currentHint,
@@ -439,18 +441,27 @@ gamePad.onPress(key => {
   }
   // 通常時
   if (key === 'b') {
-    selectedButton.value = undefined
+    if (fastForward.value) {
+      toggleFastForward()
+    } else if (selectedButton.value) {
+      selectedButton.value = undefined
+      se.cancel()
+    }
   } else if (key === 'up') {
-    if (selectedButton.value === undefined || footerButtons.includes(selectedButton.value as any)) {
-      // footerまたはundefinedから上を押したらheaderの右端へ
+    if (selectedButton.value === undefined) {
       selectedButton.value = currentThings.value?.length && !currentFade.value ? 'lookaround' : 'hint'
       se.select()
+    } else if (footerButtons.includes(selectedButton.value as any)) {
+      selectedButton.value = undefined
+      se.cancel()
     }
   } else if (key === 'down') {
-    if (selectedButton.value === undefined || headerButtons.includes(selectedButton.value as any)) {
-      // headerまたはundefinedから下を押したらfooterの右端へ
+    if (selectedButton.value === undefined) {
       selectedButton.value = 'fastforward'
       se.select()
+    } else if (headerButtons.includes(selectedButton.value as any)) {
+      selectedButton.value = undefined
+      se.cancel()
     }
   } else if (key === 'left' || key === 'right') {
     const direction = key === 'left' ? -1 : 1
@@ -527,7 +538,7 @@ const unfocus = () => {
   <MessageWindow v-if="player.currentMessage" :visible="!isShowingDialog && !exploring" :title="player.currentMessage.name" :text="player.currentMessage.text" />
   <!-- Dialog -->
   <Dialog v-if="dialog.current" :title="dialog.current.title" :desc="dialog.current.desc" :options="dialog.current.options" @close="dialog.close" :depth="8000" />
-  <Config v-else-if="configModal" :showBackToTitle="true" @close="configModal = false" :depth="8000" />
+  <Config v-else-if="configModal" :showBackToTitle="true" @close="configModal = false, selectedButton = undefined" :depth="8000" />
   <Letter v-else-if="showLetter" @submit="submitLetter" />
   <!-- Ending -->
   <Ending v-if="endingIndex !== undefined" :depth="7000" :endingIndex @end="finishEnding" />

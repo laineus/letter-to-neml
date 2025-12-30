@@ -77,8 +77,7 @@ gamePad.onPress(key => {
       selectedType.value = configTypes.value[nextIndex]
     }
     se.select()
-  }
-  if (selectedType.value === 'bgm') {
+  } else if (selectedType.value === 'bgm') {
     if (key === 'left') {
       volume.value = Math.max(volume.value - 10, 0)
     } else if (key === 'right') {
