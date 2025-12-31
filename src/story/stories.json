@@ -6190,6 +6190,11 @@
         ]
       },
       {
+        "type": "audio",
+        "audio": "",
+        "audioType": "bgm"
+      },
+      {
         "type": "fade",
         "fade": "in",
         "duration": 1000
@@ -7193,6 +7198,10 @@
         "type": "fade",
         "fade": "in",
         "duration": 1000
+      },
+      {
+        "type": "sleep",
+        "duration": 500
       }
     ],
     "if": "ニーナの訪問"
@@ -7200,6 +7209,11 @@
   {
     "title": "助けを呼ぶ子供",
     "list": [
+      {
+        "type": "audio",
+        "audio": "bgm/life-of-noctarians",
+        "audioType": "bgm"
+      },
       {
         "type": "function",
         "function": "オブジェクト",
@@ -7241,14 +7255,13 @@
         ]
       },
       {
+        "type": "sleep",
+        "duration": 500
+      },
+      {
         "type": "fade",
         "fade": "out",
         "duration": 1000
-      },
-      {
-        "type": "audio",
-        "audio": "bgm/life-of-noctarians",
-        "audioType": "bgm"
       },
       {
         "type": "messages",
@@ -7640,11 +7653,6 @@
             "facing": "right"
           }
         ]
-      },
-      {
-        "type": "audio",
-        "audio": "bgm/life-of-noctarians",
-        "audioType": "bgm"
       },
       {
         "type": "messages",
@@ -8980,6 +8988,15 @@
       },
       {
         "type": "endIf"
+      },
+      {
+        "type": "audio",
+        "audio": "",
+        "audioType": "bgm"
+      },
+      {
+        "type": "sleep",
+        "duration": 1500
       }
     ],
     "if": "ウルフリックの家"
