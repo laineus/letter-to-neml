@@ -8,6 +8,12 @@ html {
   background-color: #242424;
   font-family: 'Alice', 'Hina Mincho', serif;
 }
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 input, textarea, select, button {
   font-family: inherit;
 }
@@ -17,4 +23,24 @@ canvas {
 }
 [data-phavuer-game] {
   position: relative;
+}
+.Container {
+  width: 1280px;
+}
+.Container.fullscreen {
+  width: 100vw;
+}
+.FullscreenButton {
+  display: block;
+  width: 32px;
+  margin: 10px 0 10px auto;
+}
+.FullscreenButton img {
+  display: block;
+  opacity: 0.2;
+}
+@media (max-width: 1300px) {
+  .FullscreenButton {
+    display: none;
+  }
 }
