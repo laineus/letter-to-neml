@@ -7,7 +7,7 @@ const props = defineProps<{
 }>()
 const mergedStyle = computed<Phaser.Types.GameObjects.Text.TextStyle>(() => {
   return {
-    fontFamily: 'Hina Mincho',
+    fontFamily: '"Alice", "Hina Mincho"',
     fontSize: 22,
     color: '#FFFFFF',
     ...props.style
@@ -15,7 +15,7 @@ const mergedStyle = computed<Phaser.Types.GameObjects.Text.TextStyle>(() => {
 })
 const revision = ref(0)
 watch(() => props.text, text => {
-  document.fonts.load('20px "Hina Mincho"', text).then(() => {
+  document.fonts.load('20px "Alice", "Hina Mincho"', text).then(() => {
     revision.value++
   })
 }, { immediate: true })

@@ -6,7 +6,7 @@
 }
 html {
   background-color: #242424;
-  font-family: 'Hina Mincho', serif;
+  font-family: 'Alice', 'Hina Mincho', serif;
 }
 input, textarea, select, button {
   font-family: inherit;
