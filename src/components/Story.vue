@@ -159,16 +159,30 @@ const next = () => {
   exec()
 }
 /** その行を処理する */
-const exec = () => {
+const exec = (fromSkip = false) => {
   cancelWaiting()
   if (props.player.storyItemIndex === 0) {
     if (props.player.story.if) {
       const func = ifFunctions[props.player.story.if]
       if (func && !func()) {
         if (props.player.skipStory()) {
-          exec()
+          exec(fromSkip)
         }
         return
+      }
+      // 初めてプレイする分岐かどうか
+      const ifName = String(props.player.storyIndex)
+      if (!state.value.completedBranches.includes(ifName)) {
+        if (fastForward.value || fromSkip) {
+          dialog.show({
+            title: '初めての分岐',
+            desc: fromSkip ? 'スキップを停止しました。' : '早送りを停止しました。',
+            options: [{ text: 'OK', close: true }]
+          })
+        }
+        // プレイ済みの分岐として保存
+        state.value.completedBranches.push(ifName)
+        save()
       }
     }
     state.value.currentStory = props.player.storyIndex
@@ -247,7 +261,7 @@ const skipScene = () => {
     return
   }
   if (!props.player.next()) return
-  if (props.player.storyItemIndex === 0) return exec()
+  if (props.player.storyItemIndex === 0) return exec(true)
   if (props.player.currentStoryItem.type === 'function') {
     if (props.player.currentStoryItem.function === 'エンディング') return
     if (props.player.currentStoryItem.function === '手紙執筆') return exec()
