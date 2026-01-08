@@ -19,6 +19,18 @@ export type GameState = {
   }
 }
 
+// ユーザーIDの生成・取得
+const generateUserId = (): string => {
+  return Date.now().toString()
+}
+export const getUserId = (): string => {
+  const userId = localStorage.getItem('userId')
+  if (userId) return userId
+  const newId = generateUserId()
+  localStorage.setItem('userId', newId)
+  return newId
+}
+
 export const save = () => {
   localStorage.setItem('saveData', JSON.stringify(state.value))
 }

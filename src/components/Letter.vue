@@ -4,7 +4,7 @@ import { Container, FxBlur, Image, Rectangle } from 'phavuer'
 import Dialog from './Dialog.vue'
 import config from '../lib/config'
 import type { SuccessResponse, ErrorResponse } from '../../server/types'
-import { state } from '../lib/state'
+import { state, getUserId } from '../lib/state'
 import CustomText from './CustomText.vue'
 import CustomButton from './Button.vue'
 import { useGamePad } from '../lib/gamePad'
@@ -38,7 +38,10 @@ const submit = () => {
   fetch('/api/letter', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ letter: message.value })
+    body: JSON.stringify({ 
+      userId: getUserId(),
+      letter: message.value 
+    })
   }).then(async (res) => {
     if (!res.ok) {
       throw new Error(`HTTP Error - Status: ${res.status}`)

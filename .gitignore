@@ -25,3 +25,4 @@ dist-ssr
 
 /src/assets.json
 .env
+server/letter-logs/*.csv

@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express'
 import dotenv from 'dotenv'
+import { appendFile } from 'fs/promises'
 import { chatAi } from './ai'
 import { ErrorResponse, SuccessResponse } from './types'
 
@@ -7,6 +8,7 @@ dotenv.config()
 
 const app = express()
 const PORT = process.env.PORT || 5901
+const LOG_DIR = './letter-logs'
 
 app.use(express.json())
 
@@ -139,9 +141,30 @@ const validateAiResponse = (response: SuccessResponse | ErrorResponse): void => 
   }
 }
 
+const sanitizeUserId = (userId: string): string => {
+  // パストラバーサル攻撃を防ぐため、安全な文字のみを許可（英数字とハイフンとアンダースコア）
+  return userId.replace(/[^a-zA-Z0-9_-]/g, '')
+}
+
+const writeLog = (userId: string, letter: string, result: SuccessResponse | ErrorResponse | { error: string }) => {
+  const safeUserId = sanitizeUserId(userId)
+  if (!safeUserId) {
+    console.error('Invalid userId for logging:', userId)
+    return
+  }
+  const timestamp = new Date().toISOString()
+  const escapedLetter = `"${letter.replace(/"/g, '""')}"`
+  const resultStr = `"${JSON.stringify(result).replace(/"/g, '""')}"`
+  const logLine = `${timestamp},${escapedLetter},${resultStr}\n`
+  const logFile = `${LOG_DIR}/${safeUserId}.csv`
+  appendFile(logFile, logLine, 'utf8').catch(error => {
+    console.error('Failed to write log:', error)
+  })
+}
+
 app.post('/letter', async (req: Request, res: Response) => {
   try {
-    const { letter } = req.body
+    const { userId, letter } = req.body
 
     if (!letter || typeof letter !== 'string') {
       return res.status(400).json({
@@ -163,15 +186,25 @@ app.post('/letter', async (req: Request, res: Response) => {
     // バリデーション
     validateAiResponse(response)
 
+    // ログ記録（userIdがある場合のみ）
+    if (userId && typeof userId === 'string') {
+      writeLog(userId, letter, response)
+    }
+
     res.json(response)
   } catch (error) {
     console.error('Server Error:', error)
-    res.status(500).json({
+    const errorResponse = {
       error: {
         code: 'SERVER_ERROR',
         ref: error instanceof Error ? error.message : 'Unknown error'
       }
-    })
+    }
+    // エラー時もログ記録（userIdがある場合のみ）
+    if (req.body.userId && typeof req.body.userId === 'string') {
+      writeLog(req.body.userId, req.body.letter || '', { error: error instanceof Error ? error.message : 'Unknown error' })
+    }
+    res.status(500).json(errorResponse)
   }
 })
 
