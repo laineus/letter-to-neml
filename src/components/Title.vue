@@ -50,7 +50,7 @@ const menu = [
 ]
 const TITLE_FADE_IN = {
   alpha: 1,
-  y: (config.HEIGHT * 0.3) - 10,
+  y: (config.HEIGHT * 0.36) - 10,
   duration: 1500
 }
 
@@ -103,11 +103,9 @@ const selectedIndex = ref<number | undefined>(gamePad.active ? 0 : undefined)
     <Image texture="etc/title-bg" :origin="0">
       <FxBlur :quality="1" :x="4" :y="4" :steps="5" :strength="1.5" v-if="type === 'gallery' || type === 'config'" />
     </Image>
-    <Container v-if="type === 'title' || type === 'menu'" :x="config.WIDTH / 2" :y="config.HEIGHT * 0.3" :alpha="0" :tween="TITLE_FADE_IN">
-      <Image texture="etc/logo-bg" :origin="0.5" />
-      <Image texture="etc/logo-color" :origin="0.5" :blendMode="1" />
+    <Container v-if="type === 'title' || type === 'menu'" :x="config.WIDTH / 2" :y="config.HEIGHT * 0.36" :alpha="0" :tween="TITLE_FADE_IN">
+      <Image :texture="state.settings.lang === 'ja' ? 'etc/logo-ja' : 'etc/logo-en'" :origin="0.5" :blendMode="1" :scale="0.65" />
     </Container>
-    <!-- <Image texture="etc/logo" :origin="0.5" :x="config.WIDTH / 2" :y="config.HEIGHT * 0.3" /> -->
     <CustomText
       v-if="type === 'title'"
       :text="'Click to Start'"

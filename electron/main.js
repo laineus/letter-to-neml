@@ -5,8 +5,8 @@ const steamworks = require('steamworks.js')
 app.commandLine.appendSwitch('--in-process-gpu', '--disable-direct-composition') // Allows the Steam overlay to work
 
 // ゲームがホスティングされているURL
-const GAME_URL = 'https://neml.laineus.com'
-const GAME_URL_LOCAL = 'http://localhost:5900'
+const GAME_URL = 'https://neml.laineus.com/app.html'
+const GAME_URL_LOCAL = 'http://localhost:5900/app.html'
 
 // Steamクライアントを初期化
 const initSteamClient = () => {
