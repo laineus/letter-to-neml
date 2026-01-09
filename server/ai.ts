@@ -1,6 +1,7 @@
 import { GoogleGenerativeAI, HarmBlockThreshold, HarmCategory } from '@google/generative-ai'
 import OpenAI from 'openai'
 import dotenv from 'dotenv'
+import { sendErrorNotification } from './lineNotify'
 
 dotenv.config()
 
@@ -32,6 +33,9 @@ const chatGpt = <T>(prompt: Prompt | Prompt[], model: GPT_MODEL): Promise<T> => 
     response_format: { type: 'json_object' }
   }).then(v => {
     return JSON.parse(v.choices[0].message.content as string) as T
+  }).catch(e => {
+    sendErrorNotification(`ネムルへの手紙: OpenAI API error: ${e.message || e}`)
+    throw e
   })
 }
 
@@ -80,6 +84,9 @@ const chatGemini = <T>(prompt: Prompt | Prompt[], model: GEMINI_MODEL): Promise<
   }).generateContent({ contents }).then(result => {
     const text = result.response.text()
     return JSON.parse(text) as T
+  }).catch(e => {
+    sendErrorNotification(`ネムルへの手紙: Gemini API error: ${e.message || e}`)
+    throw e
   })
 }
 
