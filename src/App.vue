@@ -3,7 +3,7 @@ import { Game } from 'phavuer'
 import config from './lib/config.ts'
 import MainScene from './components/MainScene.vue'
 import TitleScene from './components/TitleScene.vue'
-import { state } from './lib/state.ts'
+import { getUserId, state } from './lib/state.ts'
 import { ref } from 'vue'
 const gameConfig: Phaser.Types.Core.GameConfig = {
   input: {
@@ -20,6 +20,7 @@ const onCreate = (game: Phaser.Game) => {
 }
 const isElectron = navigator.userAgent.toLowerCase().includes(' electron/')
 const fullscreen = ref(isElectron ? true : false)
+const userId = getUserId()
 </script>
 
 <template>
@@ -31,5 +32,21 @@ const fullscreen = ref(isElectron ? true : false)
     <a href="#" class="FullscreenButton" v-if="!fullscreen" @click.prevent="fullscreen = true">
       <img src="/images/etc/fullscreen.png" alt="">
     </a>
+    <p class="SurveyLink">
+      <a :href="`https://docs.google.com/forms/d/e/1FAIpQLSdlRifE0S6I8MMKd66fHztDvgETyMjaepLjGaBmawJXkIlb2g/viewform?usp=pp_url&entry.2104594982=${userId}`" target="_blank">
+        アンケート/不具合報告フォーム
+      </a>
+    </p>
   </div>
 </template>
+
+<style>
+.SurveyLink {
+  padding: 15px;
+  text-align: center;
+}
+.SurveyLink a {
+  color: white;
+  font-size: 14px;
+}
+</style>
