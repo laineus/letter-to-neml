@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express'
 import dotenv from 'dotenv'
 import { appendFile } from 'fs/promises'
+import { resolve } from 'path'
 import { chatAi } from './ai'
 import { ErrorResponse, SuccessResponse } from './types'
 
@@ -8,7 +9,7 @@ dotenv.config()
 
 const app = express()
 const PORT = process.env.PORT || 5901
-const LOG_DIR = './letter-logs'
+const LOG_DIR = resolve(__dirname, 'letter-logs')
 
 // レートリミット設定
 const RATE_LIMIT_MAX_REQUESTS = 30 // 最大リクエスト数
