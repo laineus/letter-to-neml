@@ -94,6 +94,7 @@ const errorMessage = computed(() => {
   if (!error.value) return undefined
   if (!('error' in error.value)) return uiTexts.value.letter.unknownError
   if (error.value.error.code === 'unknown') return `${uiTexts.value.letter.apiError}\n${error.value.error.ref}`
+  if (error.value.error.code === 'RATE_LIMIT') return uiTexts.value.letter.errorRateLimit
   const errorMessages: { [key: string]: string } = {
     'E1': uiTexts.value.letter.errorE1,
     'E2': uiTexts.value.letter.errorE2,

@@ -10,6 +10,11 @@ const app = express()
 const PORT = process.env.PORT || 5901
 const LOG_DIR = './letter-logs'
 
+// レートリミット設定
+const RATE_LIMIT_MAX_REQUESTS = 30 // 最大リクエスト数
+const RATE_LIMIT_WINDOW_MS = 60 * 1000 // 1分
+const requestTimestamps: number[] = []
+
 app.use(express.json())
 
 const SYSTEM_INSTRUCTION = `あなたはアドベンチャーゲームのキャラクターの行動を決定するAIです。
@@ -164,6 +169,21 @@ const writeLog = (userId: string, letter: string, result: SuccessResponse | Erro
 
 app.post('/letter', async (req: Request, res: Response) => {
   try {
+    // 大量リクエストを防止
+    if (requestTimestamps.length >= RATE_LIMIT_MAX_REQUESTS) {
+      const oldest = requestTimestamps[0]
+      if (Date.now() - oldest < RATE_LIMIT_WINDOW_MS) {
+        return res.status(429).json({
+          error: {
+            code: 'RATE_LIMIT',
+            ref: null
+          }
+        })
+      }
+    }
+    requestTimestamps.push(Date.now())
+    requestTimestamps.splice(0, requestTimestamps.length - RATE_LIMIT_MAX_REQUESTS)
+
     const { userId, letter } = req.body
 
     if (!letter || typeof letter !== 'string') {

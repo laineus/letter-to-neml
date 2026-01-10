@@ -50,6 +50,7 @@
     "errorE5": "You cannot tell the reason for going out or the destination.",
     "unknownError": "An unknown error occurred.",
     "apiError": "An API error occurred.",
+    "errorRateLimit": "The server is busy.\nPlease try again in a moment.",
     "errorRef": "(Relevant part: \"{ref}\")"
   }
 }
