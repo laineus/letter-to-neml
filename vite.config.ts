@@ -17,6 +17,14 @@ export default defineConfig({
       output: './src/assets.json'
     })
   ],
+  build: {
+    rollupOptions: {
+      input: {
+        main: 'index.html',
+        app: 'app.html'
+      }
+    }
+  },
   server: {
     port: 5900,
     proxy: {

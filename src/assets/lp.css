@@ -150,6 +150,7 @@ body.es .changeLang[data-lang="es"] {
   font-weight: normal;
   letter-spacing: 0.6em;
   color: var(--theme);
+  margin-bottom: 50px;
 }
 
 .story {
