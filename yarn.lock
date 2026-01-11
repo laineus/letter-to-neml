@@ -1015,10 +1015,10 @@ phaser@^3.90.0:
   dependencies:
     eventemitter3 "^5.0.1"
 
-phavuer@^0.19.6:
-  version "0.19.6"
-  resolved "https://registry.yarnpkg.com/phavuer/-/phavuer-0.19.6.tgz#d7b81deff3c64f1efa7ed6ab91735f2786504644"
-  integrity sha512-VgJ2LTbEWfcYs57ve2NNoFsSCcKIAI4JmyMETCsfgQ4wmn5Whw9y3yq9qGNInCICGxy4wy7MkPOIh5OBVX0m1g==
+phavuer@^0.19.7:
+  version "0.19.7"
+  resolved "https://registry.yarnpkg.com/phavuer/-/phavuer-0.19.7.tgz#ef7b38327cb0efef096a5937e6a4c5dde4084c41"
+  integrity sha512-X9hnoIukgr2A2477EadfyOtYd+d7DXGeQw7qPTbh0s4eb8iIdBiR8WamWeFuVpb+c9+hLCdtUHooyFN7hWi8mw==
   dependencies:
     phaser "^3.90.0"
     vue "^3.5.24"
