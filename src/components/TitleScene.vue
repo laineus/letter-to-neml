@@ -20,7 +20,6 @@ const preload = (scene: Phaser.Scene) => {
     prepared.value = true
   })
   preloadAssets(scene)
-  scene.add.rectangle(0, 0, 10, 10, 0xff0000)
 }
 const logoTween: Phavuer.TweenConfig = {
   duration: 600,
