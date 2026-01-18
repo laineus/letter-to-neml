@@ -35,7 +35,8 @@ const createWindow = () => {
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
-      preload: path.join(__dirname, 'preload.js')
+      preload: path.join(__dirname, 'preload.js'),
+      cache: false
     }
   })
 
@@ -47,8 +48,11 @@ const createWindow = () => {
     process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = 'true'
   }
 
-  // ゲームURLを読み込み
-  mainWindow.loadURL(isDev ? GAME_URL_LOCAL : GAME_URL)
+  // キャッシュをクリア
+  mainWindow.webContents.session.clearCache().then(() => {
+    // ゲームURLを読み込み
+    mainWindow.loadURL(isDev ? GAME_URL_LOCAL : GAME_URL)
+  })
 
   // 開発時はDevToolsを開く
   if (isDev) {
