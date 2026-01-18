@@ -1,6 +1,8 @@
 import { ref } from 'vue'
 import type { Branch } from '../story/types'
 
+const KEY_NAME = 'saveData'
+
 type StateRecord = {
   letter: string
   branches: Branch[]
@@ -32,10 +34,13 @@ export const getUserId = (): string => {
 }
 
 export const save = () => {
-  localStorage.setItem('saveData', JSON.stringify(state.value))
+  localStorage.setItem(KEY_NAME, JSON.stringify(state.value))
+  window.steamAPI?.saveToCloud(KEY_NAME, JSON.stringify(state.value)).then(result => {
+    console.log('Cloud save result: ', result)
+  })
 }
 export const load = () => {
-  const saved = localStorage.getItem('saveData')
+  const saved = localStorage.getItem(KEY_NAME)
   return saved ? JSON.parse(saved) as GameState : undefined
 }
 const getBrowserLang = (): string => {
@@ -65,3 +70,16 @@ const makeState = (): GameState => {
   }
 }
 export const state = ref(load() ?? makeState())
+
+/** Steam Cloudからセーブデータ読み込み */
+export const loadFromSteamCloud = async () => {
+  return window.steamAPI?.loadFromCloud(KEY_NAME).then(dataRaw => {
+    console.log('Cloud save data retrieved:', dataRaw)
+    if (!dataRaw) return
+    try {
+      state.value = JSON.parse(dataRaw) as GameState
+    } catch (e) {
+      console.error('Failed to parse cloud save data:', e)
+    }
+  })
+}
