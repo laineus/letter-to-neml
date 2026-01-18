@@ -32,7 +32,7 @@ const userId = getUserId()
     <a href="#" class="FullscreenButton" v-if="!fullscreen" @click.prevent="fullscreen = true">
       <img src="/images/etc/fullscreen.png" alt="">
     </a>
-    <p class="SurveyLink">
+    <p class="SurveyLink" v-if="!isElectron">
       <a :href="`https://docs.google.com/forms/d/e/1FAIpQLSdlRifE0S6I8MMKd66fHztDvgETyMjaepLjGaBmawJXkIlb2g/viewform?usp=pp_url&entry.2104594982=${userId}`" target="_blank">
         アンケート/不具合報告フォーム
       </a>

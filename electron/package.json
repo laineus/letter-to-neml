@@ -4,7 +4,7 @@
   "description": "Steam版 Letter to Neml",
   "main": "main.js",
   "scripts": {
-    "start": "NODE_ENV=development electron .",
+    "dev": "NODE_ENV=development electron .",
     "build": "electron-builder",
     "build:linux": "electron-builder --linux",
     "build:win": "electron-builder --win",

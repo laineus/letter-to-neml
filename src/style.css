@@ -1,3 +1,6 @@
+:root {
+  --screen-width: min(100vw, 1280px);
+}
 * {
   margin: 0;
   padding: 0;

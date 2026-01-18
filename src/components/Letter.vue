@@ -227,10 +227,10 @@ gamePad.onDeactivate(() => {
   width: auto;
   height: auto;
   resize: none;
-  padding: 1vw;
+  padding: calc(var(--screen-width) * 0.01);
   background-color: transparent;
   border: 1px dashed transparent;
-  font-size: 1.5vw;
+  font-size: calc(var(--screen-width) * 0.015);
   font-weight: bold;
   line-height: 1.7;
   text-align: center;
@@ -249,10 +249,10 @@ gamePad.onDeactivate(() => {
 .Loading {
   position: absolute;
   top: 48%;
-  left: calc(50% - 3.5vw);
-  width: 6vw;
-  height: 6vw;
-  border: 0.6vw solid rgba(0, 0, 0, 0.3);
+  left: calc(50% - (var(--screen-width) * 0.03));
+  width: calc(var(--screen-width) * 0.06);
+  height: calc(var(--screen-width) * 0.06);
+  border: calc(var(--screen-width) * 0.006) solid rgba(0, 0, 0, 0.3);
   border-top-color: #ddd;
   border-radius: 100%;
   animation: linear rotate 1s infinite;
