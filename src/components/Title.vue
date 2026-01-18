@@ -125,7 +125,7 @@ const selectedIndex = ref<number | undefined>(gamePad.active ? 0 : undefined)
           :width="360"
           :height="36"
           :fillColor="gamePad.active && selectedIndex === i ? 0x77bb00 : 0x000000"
-          :alpha="0.4"
+          :alpha="gamePad.active && selectedIndex === i ? 0.6 : 0.4"
           :origin="0.5"
           @pointerdown="item.action"
         />

@@ -23,7 +23,16 @@ const height = computed(() => {
 
 <template>
   <Container>
-    <Rectangle :fillColor="active ? 0x66bb00 : 0x000000" :strokeColor="0xFFFFFF" :fillAlpha="0.3" :lineWidth="outline ? 2 : 0" :width="width" :height="height" :origin="origin" @pointerdown="$emit('click')" />
+    <Rectangle
+      :fillColor="active ? 0x66bb00 : 0x000000"
+      :fillAlpha="active ? 0.6 : 0.3"
+      :strokeColor="0xFFFFFF"
+      :lineWidth="outline ? 2 : 0"
+      :width="width"
+      :height="height"
+      :origin="origin"
+      @pointerdown="$emit('click')"
+    />
     <CustomText :text="text" :padding="{ top: 1 }" :style="{ fontSize, fontStyle: 'bold' }" :x="width * (0.5 - origin)" :y="height * (0.5 - origin)" :origin="0.5" />
   </Container>
 </template>
