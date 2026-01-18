@@ -1,0 +1,10 @@
+[
+  { "id": 0, "type": "Game Over", "title": "Revenge", "image": "bg/go1" },
+  { "id": 1, "type": "Game Over", "title": "Imprisonment", "image": "bg/go2" },
+  { "id": 2, "type": "Game Over", "title": "Coma", "image": "bg/go3" },
+  { "id": 3, "type": "Game Over", "title": "Dragged Under", "image": "bg/go4" },
+  { "id": 4, "type": "Bad Ending", "title": "A Night Without Nina", "image": "bg/ed1" },
+  { "id": 5, "type": "Bad Ending", "title": "Nina’s Duty", "image": "bg/ed2" },
+  { "id": 6, "type": "Normal Ending", "title": "The End with Nina", "image": "bg/ed3" },
+  { "id": 7, "type": "True Ending", "title": "The Dream Neml had", "image": "bg/ed4" }
+]
