@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require('electron')
+const { app, BrowserWindow, ipcMain, Menu } = require('electron')
 const path = require('path')
 const steamworks = require('steamworks.js')
 
@@ -23,13 +23,7 @@ const initSteamClient = () => {
     return undefined
   }
 }
-const client = initSteamClient()
-const useSteamClient = () => {
-  if (!client) {
-    throw new Error('Steam client is not initialized.')
-  }
-  return client
-}
+const steamClient = initSteamClient()
 
 let mainWindow
 
@@ -37,12 +31,16 @@ const createWindow = () => {
   mainWindow = new BrowserWindow({
     width: 1280,
     height: 720,
+    autoHideMenuBar: true,
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
       preload: path.join(__dirname, 'preload.js')
     }
   })
+
+  // メニューバーを完全に非表示
+  Menu.setApplicationMenu(null)
 
   // セキュリティ警告を開発時のみ無効化
   if (isDev) {
@@ -77,46 +75,46 @@ app.on('activate', () => {
 })
 
 // Steam Overlayを有効化
-if (client) {
+if (steamClient) {
   steamworks.electronEnableSteamOverlay()
 }
 
 // Steam APIのIPCハンドラ
 ipcMain.handle('steam:isAvailable', () => {
-  return client !== undefined
+  return steamClient !== undefined
 })
 
 ipcMain.handle('steam:getPlayerName', () => {
-  return useSteamClient().localplayer.getName()
+  return steamClient?.localplayer.getName()
 })
 
 ipcMain.handle('steam:getSteamId', () => {
-  return useSteamClient().localplayer.getSteamId()
+  return steamClient?.localplayer.getSteamId()
 })
 
 ipcMain.handle('steam:getAchievement', (event, name) => {
-  return useSteamClient().achievement.isActivated(name)
+  return steamClient?.achievement.isActivated(name)
 })
 
 ipcMain.handle('steam:activateAchievement', (event, name) => {
-  return useSteamClient().achievement.activate(name)
+  return steamClient?.achievement.activate(name)
 })
 
 ipcMain.handle('steam:clearAchievement', (event, name) => {
-  return useSteamClient().achievement.clear(name)
+  return steamClient?.achievement.clear(name)
 })
 
 ipcMain.handle('steam:activateOverlay', (event, dialog) => {
-  useSteamClient().overlay.activateDialog(dialog)
+  steamClient?.overlay.activateDialog(dialog)
 })
 
 ipcMain.handle('steam:saveToCloud', (event, filename, content) => {
-  return useSteamClient().cloud.writeFile(filename, content)
+  return steamClient?.cloud.writeFile(filename, content)
 })
 
 ipcMain.handle('steam:loadFromCloud', (event, filename) => {
   try {
-    return useSteamClient().cloud.readFile(filename)
+    return steamClient?.cloud.readFile(filename)
   } catch (e) {
     return null
   }
