@@ -21,3 +21,8 @@ contextBridge.exposeInMainWorld('steamAPI', {
   saveToCloud: (filename, content) => ipcRenderer.invoke('steam:saveToCloud', filename, content),
   loadFromCloud: (filename) => ipcRenderer.invoke('steam:loadFromCloud', filename)
 })
+
+// アプリケーション制御をWebページに公開
+contextBridge.exposeInMainWorld('electronAPI', {
+  quit: () => ipcRenderer.invoke('app:quit')
+})

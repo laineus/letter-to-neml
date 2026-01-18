@@ -44,7 +44,11 @@ const menu = [
     label: computed(() => uiTexts.value.common.exit),
     action: () => {
       se.click()
-      type.value = 'title'
+      if (window.electronAPI) {
+        window.electronAPI.quit()
+      } else {
+        type.value = 'title'
+      }
     }
   },
 ]

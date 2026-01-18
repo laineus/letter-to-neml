@@ -12,6 +12,11 @@ interface SteamAPI {
   loadFromCloud(filename: string): Promise<string | null>
 }
 
+interface ElectronAPI {
+  quit(): Promise<void>
+}
+
 interface Window {
   steamAPI?: SteamAPI
+  electronAPI?: ElectronAPI
 }
