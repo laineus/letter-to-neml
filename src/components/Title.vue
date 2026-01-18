@@ -9,6 +9,7 @@ import Config from './Config.vue'
 import { useGamePad } from '../lib/gamePad'
 import { uiTexts } from '../lib/ui'
 import { useUISound } from '../lib/se'
+import packageJson from '../../package.json'
 const scene = useScene()
 const bgm = scene.sound.add('bgm/letter-to-neml', { loop: true })
 bgm.play()
@@ -92,6 +93,7 @@ gamePad.onDeactivate(() => {
   selectedIndex.value = undefined
 })
 const selectedIndex = ref<number | undefined>(gamePad.active ? 0 : undefined)
+const appVersion = packageJson.version 
 </script>
 
 <template>
@@ -110,6 +112,7 @@ const selectedIndex = ref<number | undefined>(gamePad.active ? 0 : undefined)
     <Container v-if="type === 'title' || type === 'menu'" :x="config.WIDTH / 2" :y="config.HEIGHT * 0.36" :alpha="0" :tween="TITLE_FADE_IN">
       <Image :texture="state.settings.lang === 'ja' ? 'etc/logo-ja' : 'etc/logo-en'" :origin="0.5" :blendMode="1" :scale="0.65" />
     </Container>
+    <CustomText :text="`v${appVersion}`" :style="{ fontSize: 14 }" :x="(20).byRight()" :y="(20).byBottom()" :origin="1" :alpha="0.5" />
     <CustomText
       v-if="type === 'title'"
       :text="'Click to Start'"
