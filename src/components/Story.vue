@@ -24,6 +24,7 @@ import Ending from './Ending.vue'
 import { useGamePad } from '../lib/gamePad'
 import { uiTexts } from '../lib/ui'
 import { useUISound } from '../lib/se'
+import { completeEnding } from '../story/endings'
 const props = defineProps({
   player: {
     type: Object as PropType<ReturnType<typeof useStoryPlayer>>,
@@ -53,12 +54,6 @@ const resolveWaiting = () => {
 }
 const cancelWaiting = () => {
   waiting = false
-}
-const completeEnding = (endIndex: number) => {
-  if (!state.value.completedEndings.includes(endIndex)) {
-    state.value.completedEndings.push(endIndex)
-    save()
-  }
 }
 const functions = {
   '手紙執筆': () => {

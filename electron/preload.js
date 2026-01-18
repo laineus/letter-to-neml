@@ -10,8 +10,9 @@ contextBridge.exposeInMainWorld('steamAPI', {
   getSteamId: () => ipcRenderer.invoke('steam:getSteamId'),
   
   // アチーブメント
-  activateAchievement: (name) => ipcRenderer.invoke('steam:activateAchievement', name),
   getAchievement: (name) => ipcRenderer.invoke('steam:getAchievement', name),
+  activateAchievement: (name) => ipcRenderer.invoke('steam:activateAchievement', name),
+  clearAchievement: (name) => ipcRenderer.invoke('steam:clearAchievement', name),
   
   // オーバーレイ
   activateOverlay: (dialog) => ipcRenderer.invoke('steam:activateOverlay', dialog),

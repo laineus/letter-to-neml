@@ -92,12 +92,16 @@ ipcMain.handle('steam:getSteamId', () => {
   return useSteamClient().localplayer.getSteamId()
 })
 
+ipcMain.handle('steam:getAchievement', (event, name) => {
+  return useSteamClient().achievement.isActivated(name)
+})
+
 ipcMain.handle('steam:activateAchievement', (event, name) => {
   return useSteamClient().achievement.activate(name)
 })
 
-ipcMain.handle('steam:getAchievement', (event, name) => {
-  return useSteamClient().achievement.isActivated(name)
+ipcMain.handle('steam:clearAchievement', (event, name) => {
+  return useSteamClient().achievement.clear(name)
 })
 
 ipcMain.handle('steam:activateOverlay', (event, dialog) => {
