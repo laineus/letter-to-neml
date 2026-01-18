@@ -4,6 +4,10 @@ const steamworks = require('steamworks.js')
 
 app.commandLine.appendSwitch('--in-process-gpu', '--disable-direct-composition') // Allows the Steam overlay to work
 
+const isDev = process.env.NODE_ENV === 'development'
+
+const APP_ID = 4311740
+
 // ゲームがホスティングされているURL
 const GAME_URL = 'https://neml.laineus.com/app.html'
 const GAME_URL_LOCAL = 'http://localhost:5900/app.html'
@@ -11,7 +15,7 @@ const GAME_URL_LOCAL = 'http://localhost:5900/app.html'
 // Steamクライアントを初期化
 const initSteamClient = () => {
   try {
-    const client = steamworks.init() // steam_appid.txtを使用
+    const client = steamworks.init(isDev ? APP_ID : undefined)
     console.log('Steam initialized successfully')
     return client
   } catch (error) {
@@ -39,8 +43,6 @@ const createWindow = () => {
       preload: path.join(__dirname, 'preload.js')
     }
   })
-
-  const isDev = process.env.NODE_ENV === 'development'
 
   // セキュリティ警告を開発時のみ無効化
   if (isDev) {
