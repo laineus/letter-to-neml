@@ -4,7 +4,7 @@ const steamworks = require('steamworks.js')
 
 app.commandLine.appendSwitch('--in-process-gpu', '--disable-direct-composition') // Allows the Steam overlay to work
 
-const isDev = process.env.NODE_ENV === 'development' || true
+const isDev = process.env.NODE_ENV === 'development'
 
 const APP_ID = 4311740
 
