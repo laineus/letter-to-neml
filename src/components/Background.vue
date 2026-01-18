@@ -9,8 +9,8 @@ const props = defineProps({
     required: true
   }
 })
-const baseImage = computed(() => props.texture.split(':')[0])
-const objImage = computed(() =>  props.texture.split(':')[1] ? props.texture : undefined)
+const baseImage = computed(() => props.texture.split('.')[0])
+const objImage = computed(() =>  props.texture.split('.')[1] ? props.texture : undefined)
 </script>
 
 <template>

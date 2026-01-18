@@ -28,7 +28,7 @@ const scene = useScene()
 watch(() => props.speakers, (newSpeakers, oldSpeakers) => {
   if (newSpeakers === oldSpeakers) return
   const delay = Math.max(...newSpeakers.map(v => {
-    const old = oldSpeakers?.find(o => o.image.split(':')[0] === v.image.split(':')[0])
+    const old = oldSpeakers?.find(o => o.image.split('.')[0] === v.image.split('.')[0])
     if (!old) return 0
     const oldX = Math.round(old.x * config.WIDTH)
     const newX = Math.round(v.x * config.WIDTH)
@@ -44,6 +44,6 @@ watch(() => props.speakers, (newSpeakers, oldSpeakers) => {
 
 <template>
   <Container>
-    <Speaker :speaker="speaker" v-for="speaker in speakers" :key="speaker.image.split(':')[0]" :focus="!speaking || currentSpeaker === speaker" />
+    <Speaker :speaker="speaker" v-for="speaker in speakers" :key="speaker.image.split('.')[0]" :focus="!speaking || currentSpeaker === speaker" />
   </Container>
 </template>

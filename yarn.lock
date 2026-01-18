@@ -1008,6 +1008,13 @@ phaser-assets-loader@^1.2.0:
   dependencies:
     image-size "^1.0.0"
 
+phaser-assets-loader@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/phaser-assets-loader/-/phaser-assets-loader-1.2.1.tgz#6e8ecbf50b56a28b3e219e374098e5d9ace20dd4"
+  integrity sha512-fBiHBAfHPn2wGKJeaA2a4/3cNugAOP53M+wV1gq09d+JRwMvyCCmogb/3L3M3gRwUJd+pMLTcURUBRWrCrMjAg==
+  dependencies:
+    image-size "^1.0.0"
+
 phaser@^3.90.0:
   version "3.90.0"
   resolved "https://registry.npmjs.org/phaser/-/phaser-3.90.0.tgz"

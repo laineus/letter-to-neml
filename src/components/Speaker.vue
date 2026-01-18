@@ -33,9 +33,9 @@ watch(realX, (newX, oldX) => {
     duration: Math.abs(newX - oldX) * 1.5
   }
 })
-const baseImage = computed(() => props.speaker.image.split(':')[0])
+const baseImage = computed(() => props.speaker.image.split('.')[0])
 const charaKey = computed(() => baseImage.value.split('/').pop() ?? '')
-const faceImage = computed(() =>  props.speaker.image.split(':')[1] ? props.speaker.image : undefined)
+const faceImage = computed(() =>  props.speaker.image.split('.')[1] ? props.speaker.image : undefined)
 const scale = computed(() => charaScale[charaKey.value] ?? DEFAULT_SCALE)
 </script>
 

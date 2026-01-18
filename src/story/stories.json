@@ -18,7 +18,7 @@
       },
       {
         "type": "background",
-        "image": "bg/home:bottle"
+        "image": "bg/home.bottle"
       },
       {
         "type": "speakers",
@@ -197,7 +197,7 @@
       },
       {
         "type": "background",
-        "image": "bg/home:bottle"
+        "image": "bg/home.bottle"
       },
       {
         "type": "sleep",
@@ -548,7 +548,7 @@
       },
       {
         "type": "background",
-        "image": "bg/home:bottle"
+        "image": "bg/home.bottle"
       },
       {
         "type": "function",
@@ -567,7 +567,7 @@
             "facing": "right"
           },
           {
-            "image": "chara/rybel:amazed1",
+            "image": "chara/rybel.amazed1",
             "x": 0.5,
             "facing": "left"
           }
@@ -604,7 +604,7 @@
             "facing": "left"
           },
           {
-            "image": "chara/rybel:amazed1",
+            "image": "chara/rybel.amazed1",
             "x": 0.5,
             "facing": "left"
           }
@@ -705,7 +705,7 @@
             "facing": "right"
           },
           {
-            "image": "chara/rybel:rush2",
+            "image": "chara/rybel.rush2",
             "x": 0.85,
             "facing": "right"
           }
@@ -742,7 +742,7 @@
             "facing": "right"
           },
           {
-            "image": "chara/rybel:rush2",
+            "image": "chara/rybel.rush2",
             "x": 0.85,
             "facing": "left"
           }
@@ -773,12 +773,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.5,
             "facing": "right"
           },
           {
-            "image": "chara/rybel:rush2",
+            "image": "chara/rybel.rush2",
             "x": 0.85,
             "facing": "left"
           }
@@ -817,12 +817,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.5,
             "facing": "right"
           },
           {
-            "image": "chara/rybel:rush2",
+            "image": "chara/rybel.rush2",
             "x": 0.85,
             "facing": "right"
           }
@@ -861,7 +861,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.5,
             "facing": "right"
           }
@@ -885,7 +885,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.2,
             "facing": "right"
           }
@@ -895,7 +895,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.2,
             "facing": "right"
           },
@@ -915,7 +915,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.2,
             "facing": "right"
           },
@@ -963,7 +963,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.2,
             "facing": "right"
           },
@@ -1003,7 +1003,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.2,
             "facing": "right"
           },
@@ -1080,7 +1080,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.2,
             "facing": "right"
           },
@@ -1121,7 +1121,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.2,
             "facing": "right"
           },
@@ -1159,7 +1159,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush2",
+            "image": "chara/neml.rush2",
             "x": 0.2,
             "facing": "right"
           },
@@ -1187,7 +1187,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush2",
+            "image": "chara/neml.rush2",
             "x": 0.1,
             "facing": "right"
           },
@@ -1215,7 +1215,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush2",
+            "image": "chara/neml.rush2",
             "x": 0.1,
             "facing": "right"
           },
@@ -1358,7 +1358,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush2",
+            "image": "chara/neml.rush2",
             "x": 0.1,
             "facing": "right"
           },
@@ -1368,7 +1368,7 @@
             "facing": "left"
           },
           {
-            "image": "chara/rybel:rush2",
+            "image": "chara/rybel.rush2",
             "x": 0.8,
             "facing": "left"
           }
@@ -1382,7 +1382,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush2",
+            "image": "chara/neml.rush2",
             "x": 0.1,
             "facing": "right"
           },
@@ -1392,7 +1392,7 @@
             "facing": "left"
           },
           {
-            "image": "chara/rybel:rush2",
+            "image": "chara/rybel.rush2",
             "x": 0.5,
             "facing": "left"
           }
@@ -1412,17 +1412,17 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush2",
+            "image": "chara/neml.rush2",
             "x": 0.1,
             "facing": "right"
           },
           {
-            "image": "chara/wulfric:damage",
+            "image": "chara/wulfric.damage",
             "x": 0.4,
             "facing": "left"
           },
           {
-            "image": "chara/rybel:rush2",
+            "image": "chara/rybel.rush2",
             "x": 0.5,
             "facing": "left"
           }
@@ -1463,12 +1463,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush2",
+            "image": "chara/neml.rush2",
             "x": 0.1,
             "facing": "right"
           },
           {
-            "image": "chara/rybel:rush2",
+            "image": "chara/rybel.rush2",
             "x": 0.5,
             "facing": "left"
           }
@@ -1560,12 +1560,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.1,
             "facing": "right"
           },
           {
-            "image": "chara/rybel:rush1",
+            "image": "chara/rybel.rush1",
             "x": 0.5,
             "facing": "left"
           }
@@ -1635,7 +1635,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.2,
             "facing": "right"
           },
@@ -1659,7 +1659,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.2,
             "facing": "right"
           },
@@ -1757,7 +1757,7 @@
             "facing": "right"
           },
           {
-            "image": "chara/rybel:normal",
+            "image": "chara/rybel.normal",
             "x": 0.7,
             "facing": "left"
           }
@@ -1765,7 +1765,7 @@
       },
       {
         "type": "background",
-        "image": "bg/home:bottle"
+        "image": "bg/home.bottle"
       },
       {
         "type": "function",
@@ -2059,7 +2059,7 @@
             "facing": "right"
           },
           {
-            "image": "chara/rybel:amazed2",
+            "image": "chara/rybel.amazed2",
             "x": 0.7,
             "facing": "left"
           }
@@ -2580,7 +2580,7 @@
       },
       {
         "type": "background",
-        "image": "bg/stall:dog1"
+        "image": "bg/stall.dog1"
       },
       {
         "type": "speakers",
@@ -2928,7 +2928,7 @@
       },
       {
         "type": "background",
-        "image": "bg/stall:dog2"
+        "image": "bg/stall.dog2"
       },
       {
         "type": "function",
@@ -2949,7 +2949,7 @@
             "facing": "left"
           },
           {
-            "image": "chara/shopkeeper:angry",
+            "image": "chara/shopkeeper.angry",
             "x": 0.85,
             "facing": "left"
           }
@@ -2991,7 +2991,7 @@
             "facing": "right"
           },
           {
-            "image": "chara/shopkeeper:angry",
+            "image": "chara/shopkeeper.angry",
             "x": 0.85,
             "facing": "left"
           }
@@ -3023,12 +3023,12 @@
             "facing": "right"
           },
           {
-            "image": "chara/trader:angry",
+            "image": "chara/trader.angry",
             "x": 0.1,
             "facing": "right"
           },
           {
-            "image": "chara/shopkeeper:angry",
+            "image": "chara/shopkeeper.angry",
             "x": 0.85,
             "facing": "left"
           }
@@ -3077,12 +3077,12 @@
             "facing": "right"
           },
           {
-            "image": "chara/trader:angry",
+            "image": "chara/trader.angry",
             "x": 0.55,
             "facing": "right"
           },
           {
-            "image": "chara/shopkeeper:angry",
+            "image": "chara/shopkeeper.angry",
             "x": 0.85,
             "facing": "left"
           }
@@ -3126,12 +3126,12 @@
             "facing": "right"
           },
           {
-            "image": "chara/trader:angry",
+            "image": "chara/trader.angry",
             "x": 0.55,
             "facing": "left"
           },
           {
-            "image": "chara/shopkeeper:angry",
+            "image": "chara/shopkeeper.angry",
             "x": 0.85,
             "facing": "left"
           }
@@ -3158,17 +3158,17 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.35,
             "facing": "right"
           },
           {
-            "image": "chara/trader:angry",
+            "image": "chara/trader.angry",
             "x": 0.55,
             "facing": "left"
           },
           {
-            "image": "chara/shopkeeper:angry",
+            "image": "chara/shopkeeper.angry",
             "x": 0.85,
             "facing": "left"
           }
@@ -3209,12 +3209,12 @@
             "facing": "right"
           },
           {
-            "image": "chara/trader:angry",
+            "image": "chara/trader.angry",
             "x": 0.55,
             "facing": "right"
           },
           {
-            "image": "chara/shopkeeper:angry",
+            "image": "chara/shopkeeper.angry",
             "x": 0.85,
             "facing": "left"
           }
@@ -3267,12 +3267,12 @@
             "facing": "right"
           },
           {
-            "image": "chara/trader:angry",
+            "image": "chara/trader.angry",
             "x": 0.4,
             "facing": "right"
           },
           {
-            "image": "chara/shopkeeper:angry",
+            "image": "chara/shopkeeper.angry",
             "x": 0.65,
             "facing": "left"
           },
@@ -3337,17 +3337,17 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.2,
             "facing": "right"
           },
           {
-            "image": "chara/trader:angry",
+            "image": "chara/trader.angry",
             "x": 0.4,
             "facing": "right"
           },
           {
-            "image": "chara/shopkeeper:angry",
+            "image": "chara/shopkeeper.angry",
             "x": 0.65,
             "facing": "left"
           },
@@ -3383,17 +3383,17 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush2",
+            "image": "chara/neml.rush2",
             "x": 0.2,
             "facing": "right"
           },
           {
-            "image": "chara/trader:angry",
+            "image": "chara/trader.angry",
             "x": 0.4,
             "facing": "right"
           },
           {
-            "image": "chara/shopkeeper:angry",
+            "image": "chara/shopkeeper.angry",
             "x": 0.65,
             "facing": "left"
           },
@@ -3466,17 +3466,17 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.1,
             "facing": "left"
           },
           {
-            "image": "chara/trader:angry",
+            "image": "chara/trader.angry",
             "x": 0.25,
             "facing": "left"
           },
           {
-            "image": "chara/shopkeeper:angry",
+            "image": "chara/shopkeeper.angry",
             "x": 0.8,
             "facing": "left"
           },
@@ -3526,17 +3526,17 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.2,
             "facing": "right"
           },
           {
-            "image": "chara/trader:angry",
+            "image": "chara/trader.angry",
             "x": 0.4,
             "facing": "right"
           },
           {
-            "image": "chara/shopkeeper:angry",
+            "image": "chara/shopkeeper.angry",
             "x": 0.65,
             "facing": "left"
           },
@@ -3609,12 +3609,12 @@
             "facing": "right"
           },
           {
-            "image": "chara/trader:angry",
+            "image": "chara/trader.angry",
             "x": 0.55,
             "facing": "right"
           },
           {
-            "image": "chara/shopkeeper:angry",
+            "image": "chara/shopkeeper.angry",
             "x": 0.85,
             "facing": "left"
           }
@@ -3651,12 +3651,12 @@
             "facing": "right"
           },
           {
-            "image": "chara/trader:angry",
+            "image": "chara/trader.angry",
             "x": 0.4,
             "facing": "right"
           },
           {
-            "image": "chara/shopkeeper:angry",
+            "image": "chara/shopkeeper.angry",
             "x": 0.65,
             "facing": "left"
           },
@@ -3733,12 +3733,12 @@
             "facing": "left"
           },
           {
-            "image": "chara/trader:angry",
+            "image": "chara/trader.angry",
             "x": 0.15,
             "facing": "left"
           },
           {
-            "image": "chara/shopkeeper:angry",
+            "image": "chara/shopkeeper.angry",
             "x": 0.85,
             "facing": "left"
           },
@@ -3777,7 +3777,7 @@
             "facing": "right"
           },
           {
-            "image": "chara/shopkeeper:angry",
+            "image": "chara/shopkeeper.angry",
             "x": 0.65,
             "facing": "left"
           }
@@ -3933,12 +3933,12 @@
             "facing": "right"
           },
           {
-            "image": "chara/trader:angry",
+            "image": "chara/trader.angry",
             "x": 0.55,
             "facing": "left"
           },
           {
-            "image": "chara/shopkeeper:angry",
+            "image": "chara/shopkeeper.angry",
             "x": 0.85,
             "facing": "left"
           }
@@ -3990,12 +3990,12 @@
             "facing": "right"
           },
           {
-            "image": "chara/trader:angry",
+            "image": "chara/trader.angry",
             "x": 0.55,
             "facing": "right"
           },
           {
-            "image": "chara/shopkeeper:angry",
+            "image": "chara/shopkeeper.angry",
             "x": 0.85,
             "facing": "left"
           }
@@ -4077,7 +4077,7 @@
             "facing": "left"
           },
           {
-            "image": "chara/shopkeeper:angry",
+            "image": "chara/shopkeeper.angry",
             "x": 0.85,
             "facing": "left"
           }
@@ -4626,7 +4626,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:dark",
+            "image": "chara/neml.dark",
             "x": 0.35,
             "facing": "right"
           },
@@ -4793,7 +4793,7 @@
       },
       {
         "type": "background",
-        "image": "bg/shore:bag"
+        "image": "bg/shore.bag"
       },
       {
         "type": "speakers",
@@ -5182,7 +5182,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.3,
             "facing": "right"
           },
@@ -5396,7 +5396,7 @@
             "facing": "right"
           },
           {
-            "image": "chara/ceryth:dark",
+            "image": "chara/ceryth.dark",
             "x": 0.7,
             "facing": "right"
           }
@@ -5424,7 +5424,7 @@
             "facing": "right"
           },
           {
-            "image": "chara/ceryth:dark",
+            "image": "chara/ceryth.dark",
             "x": 0.65,
             "facing": "left"
           }
@@ -5533,7 +5533,7 @@
             "facing": "right"
           },
           {
-            "image": "chara/ceryth:dark",
+            "image": "chara/ceryth.dark",
             "x": 0.65,
             "facing": "right"
           }
@@ -5561,7 +5561,7 @@
             "facing": "left"
           },
           {
-            "image": "chara/ceryth:dark",
+            "image": "chara/ceryth.dark",
             "x": 0.65,
             "facing": "right"
           }
@@ -5666,7 +5666,7 @@
             "facing": "right"
           },
           {
-            "image": "chara/ceryth:dark",
+            "image": "chara/ceryth.dark",
             "x": 0.6,
             "facing": "left"
           }
@@ -5685,7 +5685,7 @@
             "facing": "right"
           },
           {
-            "image": "chara/ceryth:dark",
+            "image": "chara/ceryth.dark",
             "x": 0.55,
             "facing": "right"
           }
@@ -5734,7 +5734,7 @@
             "facing": "right"
           },
           {
-            "image": "chara/ceryth:dark",
+            "image": "chara/ceryth.dark",
             "x": 0.6,
             "facing": "right"
           }
@@ -5766,12 +5766,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.55,
             "facing": "right"
           },
           {
-            "image": "chara/ceryth:dark",
+            "image": "chara/ceryth.dark",
             "x": 0.65,
             "facing": "right"
           }
@@ -5798,12 +5798,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush2",
+            "image": "chara/neml.rush2",
             "x": 0.6,
             "facing": "right"
           },
           {
-            "image": "chara/ceryth:dark",
+            "image": "chara/ceryth.dark",
             "x": 0.7,
             "facing": "right"
           }
@@ -5834,12 +5834,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush2",
+            "image": "chara/neml.rush2",
             "x": 0.65,
             "facing": "right"
           },
           {
-            "image": "chara/ceryth:dark",
+            "image": "chara/ceryth.dark",
             "x": 0.75,
             "facing": "left"
           }
@@ -5858,12 +5858,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush2",
+            "image": "chara/neml.rush2",
             "x": 0.7,
             "facing": "right"
           },
           {
-            "image": "chara/ceryth:dark",
+            "image": "chara/ceryth.dark",
             "x": 0.8,
             "facing": "left"
           }
@@ -6227,7 +6227,7 @@
       },
       {
         "type": "background",
-        "image": "bg/home:bottle"
+        "image": "bg/home.bottle"
       },
       {
         "type": "function",
@@ -6353,7 +6353,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.4,
             "facing": "right"
           }
@@ -6398,7 +6398,7 @@
       },
       {
         "type": "background",
-        "image": "bg/home:bottle"
+        "image": "bg/home.bottle"
       },
       {
         "type": "function",
@@ -6695,7 +6695,7 @@
             "facing": "left"
           },
           {
-            "image": "chara/rybel:normal",
+            "image": "chara/rybel.normal",
             "x": 0.3,
             "facing": "left"
           }
@@ -6803,12 +6803,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina:sad",
+            "image": "chara/nina.sad",
             "x": 0.6,
             "facing": "left"
           },
           {
-            "image": "chara/rybel:normal",
+            "image": "chara/rybel.normal",
             "x": 0.3,
             "facing": "right"
           }
@@ -6856,7 +6856,7 @@
             "facing": "left"
           },
           {
-            "image": "chara/rybel:normal",
+            "image": "chara/rybel.normal",
             "x": 0.3,
             "facing": "left"
           }
@@ -6904,12 +6904,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina:sad",
+            "image": "chara/nina.sad",
             "x": 0.6,
             "facing": "left"
           },
           {
-            "image": "chara/rybel:normal",
+            "image": "chara/rybel.normal",
             "x": 0.3,
             "facing": "left"
           }
@@ -6985,12 +6985,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina:sad",
+            "image": "chara/nina.sad",
             "x": 0.6,
             "facing": "left"
           },
           {
-            "image": "chara/rybel:normal",
+            "image": "chara/rybel.normal",
             "x": 0.3,
             "facing": "right"
           }
@@ -7034,12 +7034,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina:sad",
+            "image": "chara/nina.sad",
             "x": 0.6,
             "facing": "left"
           },
           {
-            "image": "chara/rybel:normal",
+            "image": "chara/rybel.normal",
             "x": 0.3,
             "facing": "left"
           }
@@ -7066,12 +7066,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina:sad",
+            "image": "chara/nina.sad",
             "x": 0.55,
             "facing": "left"
           },
           {
-            "image": "chara/rybel:normal",
+            "image": "chara/rybel.normal",
             "x": 0.3,
             "facing": "left"
           }
@@ -7090,12 +7090,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina:cry",
+            "image": "chara/nina.cry",
             "x": 0.55,
             "facing": "left"
           },
           {
-            "image": "chara/rybel:normal",
+            "image": "chara/rybel.normal",
             "x": 0.3,
             "facing": "left"
           }
@@ -7118,12 +7118,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina:cry",
+            "image": "chara/nina.cry",
             "x": 0.55,
             "facing": "right"
           },
           {
-            "image": "chara/rybel:normal",
+            "image": "chara/rybel.normal",
             "x": 0.3,
             "facing": "right"
           }
@@ -7142,12 +7142,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina:cry",
+            "image": "chara/nina.cry",
             "x": 0.7,
             "facing": "right"
           },
           {
-            "image": "chara/rybel:normal",
+            "image": "chara/rybel.normal",
             "x": 0.3,
             "facing": "right"
           }
@@ -7174,12 +7174,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina:cry",
+            "image": "chara/nina.cry",
             "x": 1.2,
             "facing": "right"
           },
           {
-            "image": "chara/rybel:normal",
+            "image": "chara/rybel.normal",
             "x": 0.3,
             "facing": "right"
           }
@@ -7234,7 +7234,7 @@
       },
       {
         "type": "background",
-        "image": "bg/home:bottle"
+        "image": "bg/home.bottle"
       },
       {
         "type": "function",
@@ -7315,7 +7315,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.4,
             "facing": "right"
           }
@@ -7385,7 +7385,7 @@
             "facing": "right"
           },
           {
-            "image": "chara/korrin:cry",
+            "image": "chara/korrin.cry",
             "x": 0.7,
             "facing": "left"
           }
@@ -7430,7 +7430,7 @@
             "facing": "right"
           },
           {
-            "image": "chara/korrin:cry",
+            "image": "chara/korrin.cry",
             "x": 0.7,
             "facing": "left"
           }
@@ -7465,12 +7465,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.35,
             "facing": "right"
           },
           {
-            "image": "chara/korrin:cry",
+            "image": "chara/korrin.cry",
             "x": 0.7,
             "facing": "left"
           }
@@ -7530,7 +7530,7 @@
             "facing": "left"
           },
           {
-            "image": "chara/korrin:smile",
+            "image": "chara/korrin.smile",
             "x": 0.2,
             "facing": "left"
           }
@@ -7554,7 +7554,7 @@
             "facing": "left"
           },
           {
-            "image": "chara/korrin:smile",
+            "image": "chara/korrin.smile",
             "x": 0.2,
             "facing": "right"
           }
@@ -7643,7 +7643,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.6,
             "facing": "left"
           },
@@ -7724,7 +7724,7 @@
             "facing": "left"
           },
           {
-            "image": "chara/korrin:smile",
+            "image": "chara/korrin.smile",
             "x": 0.2,
             "facing": "right"
           }
@@ -7747,12 +7747,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.6,
             "facing": "left"
           },
           {
-            "image": "chara/korrin:smile",
+            "image": "chara/korrin.smile",
             "x": 0.2,
             "facing": "right"
           }
@@ -7810,7 +7810,7 @@
             "facing": "left"
           },
           {
-            "image": "chara/korrin:smile",
+            "image": "chara/korrin.smile",
             "x": 0.6,
             "facing": "left"
           }
@@ -7852,7 +7852,7 @@
             "facing": "left"
           },
           {
-            "image": "chara/korrin:smile",
+            "image": "chara/korrin.smile",
             "x": 0.5,
             "facing": "right"
           }
@@ -7880,7 +7880,7 @@
             "facing": "left"
           },
           {
-            "image": "chara/korrin:smile",
+            "image": "chara/korrin.smile",
             "x": 0.5,
             "facing": "left"
           }
@@ -7991,7 +7991,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.9,
             "facing": "left"
           },
@@ -8019,12 +8019,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.9,
             "facing": "left"
           },
           {
-            "image": "chara/korrin:smile",
+            "image": "chara/korrin.smile",
             "x": 0.5,
             "facing": "right"
           }
@@ -8062,7 +8062,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.3,
             "facing": "right"
           }
@@ -8156,7 +8156,7 @@
             "facing": "left"
           },
           {
-            "image": "chara/korrin:smile",
+            "image": "chara/korrin.smile",
             "x": 0.75,
             "facing": "left"
           },
@@ -8195,7 +8195,7 @@
             "facing": "left"
           },
           {
-            "image": "chara/korrin:smile",
+            "image": "chara/korrin.smile",
             "x": 0.5,
             "facing": "left"
           },
@@ -8247,12 +8247,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.9,
             "facing": "left"
           },
           {
-            "image": "chara/korrin:smile",
+            "image": "chara/korrin.smile",
             "x": 0.5,
             "facing": "right"
           },
@@ -8296,12 +8296,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.9,
             "facing": "left"
           },
           {
-            "image": "chara/korrin:smile",
+            "image": "chara/korrin.smile",
             "x": 0.5,
             "facing": "left"
           },
@@ -8338,7 +8338,7 @@
             "facing": "left"
           },
           {
-            "image": "chara/korrin:smile",
+            "image": "chara/korrin.smile",
             "x": 0.5,
             "facing": "right"
           },
@@ -8406,12 +8406,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.9,
             "facing": "left"
           },
           {
-            "image": "chara/korrin:smile",
+            "image": "chara/korrin.smile",
             "x": 0.7,
             "facing": "right"
           },
@@ -8439,7 +8439,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush2",
+            "image": "chara/neml.rush2",
             "x": 0.9,
             "facing": "left"
           },
@@ -8485,7 +8485,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush2",
+            "image": "chara/neml.rush2",
             "x": 0.9,
             "facing": "left"
           },
@@ -8523,12 +8523,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.9,
             "facing": "left"
           },
           {
-            "image": "chara/korrin:smile",
+            "image": "chara/korrin.smile",
             "x": 0.7,
             "facing": "right"
           },
@@ -8557,7 +8557,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.9,
             "facing": "left"
           },
@@ -8594,7 +8594,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush2",
+            "image": "chara/neml.rush2",
             "x": 0.9,
             "facing": "left"
           },
@@ -8786,7 +8786,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.35,
             "facing": "right"
           }
@@ -8851,7 +8851,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:smile",
+            "image": "chara/neml.smile",
             "x": 0.35,
             "facing": "right"
           }
@@ -8916,7 +8916,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:smile",
+            "image": "chara/neml.smile",
             "x": 0.35,
             "facing": "right"
           }
@@ -9123,7 +9123,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina:sad",
+            "image": "chara/nina.sad",
             "x": 0.75,
             "facing": "left"
           },
@@ -9280,7 +9280,7 @@
       },
       {
         "type": "background",
-        "image": "bg/home:bottle"
+        "image": "bg/home.bottle"
       },
       {
         "type": "function",
@@ -9355,7 +9355,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.5,
             "facing": "left"
           }
@@ -9427,7 +9427,7 @@
       },
       {
         "type": "background",
-        "image": "bg/home:bottle"
+        "image": "bg/home.bottle"
       },
       {
         "type": "function",
@@ -9555,7 +9555,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.8,
             "facing": "left"
           }
@@ -9578,7 +9578,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.5,
             "facing": "left"
           }
@@ -9597,7 +9597,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/neml:rush2",
+            "image": "chara/neml.rush2",
             "x": 0.5,
             "facing": "left"
           }
@@ -9855,7 +9855,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina:sad",
+            "image": "chara/nina.sad",
             "x": 0.2,
             "facing": "right"
           },
@@ -9883,12 +9883,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina:sad",
+            "image": "chara/nina.sad",
             "x": 0.2,
             "facing": "right"
           },
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.7,
             "facing": "left"
           }
@@ -9940,12 +9940,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina:sad",
+            "image": "chara/nina.sad",
             "x": 0.2,
             "facing": "right"
           },
           {
-            "image": "chara/neml:rush2",
+            "image": "chara/neml.rush2",
             "x": 0.7,
             "facing": "left"
           }
@@ -9986,12 +9986,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina:sad",
+            "image": "chara/nina.sad",
             "x": 0.2,
             "facing": "right"
           },
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.7,
             "facing": "left"
           }
@@ -10001,12 +10001,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina:sad",
+            "image": "chara/nina.sad",
             "x": 0.2,
             "facing": "right"
           },
           {
-            "image": "chara/neml:rush1",
+            "image": "chara/neml.rush1",
             "x": 0.5,
             "facing": "left"
           }
@@ -10075,12 +10075,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina:cry",
+            "image": "chara/nina.cry",
             "x": 0.2,
             "facing": "right"
           },
           {
-            "image": "chara/neml:smile",
+            "image": "chara/neml.smile",
             "x": 0.35,
             "facing": "left"
           }
@@ -10120,7 +10120,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina:sad",
+            "image": "chara/nina.sad",
             "x": 0.65,
             "facing": "left"
           },
@@ -10227,12 +10227,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina:smile",
+            "image": "chara/nina.smile",
             "x": 0.6,
             "facing": "left"
           },
           {
-            "image": "chara/neml:smile",
+            "image": "chara/neml.smile",
             "x": 0.45,
             "facing": "right"
           }
@@ -10387,7 +10387,7 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina:sad",
+            "image": "chara/nina.sad",
             "x": 0.3,
             "facing": "right"
           },
@@ -10455,12 +10455,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina:sad",
+            "image": "chara/nina.sad",
             "x": 0.2,
             "facing": "right"
           },
           {
-            "image": "chara/neml:rush2",
+            "image": "chara/neml.rush2",
             "x": 0.7,
             "facing": "left"
           }
@@ -10491,12 +10491,12 @@
         "type": "speakers",
         "list": [
           {
-            "image": "chara/nina:sad",
+            "image": "chara/nina.sad",
             "x": -0.2,
             "facing": "right"
           },
           {
-            "image": "chara/neml:rush2",
+            "image": "chara/neml.rush2",
             "x": 0.3,
             "facing": "left"
           }
