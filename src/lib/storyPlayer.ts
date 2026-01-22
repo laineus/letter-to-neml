@@ -1,13 +1,13 @@
-import { computed, reactive } from 'vue'
+import { computed, reactive, type ComputedRef } from 'vue'
 import type { Story } from '../story/types'
 
-export const useStoryPlayer = (stories: Story[]) => {
+export const useStoryPlayer = (stories: ComputedRef<Story[]>) => {
   const state = reactive({
     storyIndex: 0,
     storyItemIndex: 0,
     messageIndex: 0
   })
-  const story = computed(() => stories[state.storyIndex])
+  const story = computed(() => stories.value[state.storyIndex])
   const currentStoryItem = computed(() => story.value.list[state.storyItemIndex])
   const currentMessages = computed(() => {
     return currentStoryItem.value?.type === 'messages' ? currentStoryItem.value : undefined
@@ -29,7 +29,7 @@ export const useStoryPlayer = (stories: Story[]) => {
       return true
     }
     // 次のシーン
-    if (state.storyIndex < stories.length - 1) {
+    if (state.storyIndex < stories.value.length - 1) {
       state.storyItemIndex = 0
       state.messageIndex = 0
       state.storyIndex++
@@ -72,14 +72,14 @@ export const useStoryPlayer = (stories: Story[]) => {
     state.messageIndex = 0
   }
   const skipStory = () => {
-    if (state.storyIndex >= stories.length - 1) return false
+    if (state.storyIndex >= stories.value.length - 1) return false
     state.storyItemIndex = 0
     state.messageIndex = 0
     state.storyIndex++
     return true
   }
   return {
-    stories,
+    get stories () { return stories.value },
     get story () { return story.value },
     get storyItemIndex () { return state.storyItemIndex },
     set storyItemIndex (value: number) { state.storyItemIndex = value },

@@ -16,7 +16,7 @@ app.use(express.json({ limit: '10mb' }))
 // stories.json取得エンドポイント
 app.get('/api', async (req, res) => {
   try {
-    const storiesPath = path.join(__dirname, '../src/story', 'stories.json')
+    const storiesPath = path.join(__dirname, '../src/story', 'stories.ja.json')
     const data = await fs.readFile(storiesPath, 'utf8')
     const stories = JSON.parse(data)
     res.json(stories)
@@ -33,7 +33,7 @@ app.get('/api', async (req, res) => {
 // stories.json更新エンドポイント
 app.post('/api', async (req, res) => {
   try {
-    const storiesPath = path.join(__dirname, '../src/story', 'stories.json')
+    const storiesPath = path.join(__dirname, '../src/story', 'stories.ja.json')
     // リクエストボディをそのままファイルに書き込む
     req.body.forEach(story => {
       if (!story.if) {
@@ -43,13 +43,13 @@ app.post('/api', async (req, res) => {
     await fs.writeFile(storiesPath, JSON.stringify(req.body, null, 2))
     res.json({ 
       success: true, 
-      message: 'stories.json has been updated successfully' 
+      message: 'stories.ja.json has been updated successfully' 
     })
   } catch (error) {
-    console.error('Error updating stories.json:', error)
+    console.error('Error updating stories.ja.json:', error)
     res.status(500).json({ 
       success: false, 
-      error: 'Failed to update stories.json',
+      error: 'Failed to update stories.ja.json',
       details: error.message
     })
   }

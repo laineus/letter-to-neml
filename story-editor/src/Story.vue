@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 import type { PropType } from 'vue'
 import type { Story, StoryItem } from '../../src/story/types'
 import StoryItemComponent from './StoryItem.vue'
@@ -14,7 +14,7 @@ const props = defineProps({
   }
 })
 
-const storyPlayer = useStoryPlayer([props.story])
+const storyPlayer = useStoryPlayer(computed(() => [props.story]))
 const selectedIndex = ref<number>()
 watch(selectedIndex, (newIndex) => {
   if (newIndex === undefined) return
