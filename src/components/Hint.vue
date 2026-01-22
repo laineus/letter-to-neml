@@ -3,11 +3,16 @@ import { computed } from 'vue'
 import Button from './Button.vue'
 import { state } from '../lib/state'
 import { useIfFunctions } from '../lib/ifFunctions'
-import hintsJson from '../story/hints.json' with { type: 'json' }
+import hintsEnJson from '../story/hints.en.json' with { type: 'json' }
+import hintsJaJson from '../story/hints.ja.json' with { type: 'json' }
 import { Circle, Container } from 'phavuer'
 import { uiTexts } from '../lib/ui'
 export const useHint = () => {
-  const hints = hintsJson as string[]
+  const hints = computed<string[]>(() => {
+    const locale = state.value.settings.lang
+    if (locale === 'ja') return hintsJaJson
+    return hintsEnJson
+  })
   const ifFunctions = useIfFunctions()
   const currentHintIndex = computed(() => {
     const completedEndings = state.value.completedEndings
@@ -36,8 +41,8 @@ export const useHint = () => {
   })
   const currentHint = computed(() => {
     const index = currentHintIndex.value
-    if (index === undefined) return hints[0]
-    return hints[index]
+    if (index === undefined) return hints.value[0]
+    return hints.value[index]
   })
   return {
     get currentHintIndex() {

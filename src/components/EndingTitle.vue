@@ -8,8 +8,8 @@ const emit = defineEmits(['click'])
 const props = defineProps({
   endingIndex: Number
 })
-const ending = endings.find(e => e.id === props.endingIndex)!
-const title = computed(() => `\"${ending.title}\"`)
+const ending = computed(() => endings.value.find(e => e.id === props.endingIndex)!)
+const title = computed(() => `\"${ending.value.title}\"`)
 const tweenIn = {
   alpha: { from: 0, to: 1, duration: 1000 }
 }

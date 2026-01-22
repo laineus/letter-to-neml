@@ -1,13 +1,19 @@
 import { save, state } from '../lib/state'
-import endingsJson from './endings.ja.json' with { type: 'json' }
-type Ending = {
+import endingsJaJson from './endings.ja.json' with { type: 'json' }
+import endingsEnJson from './endings.en.json' with { type: 'json' }
+import { computed } from 'vue'
+export type Ending = {
   id: number
   type: string
   title: string
   image: string
 }
 
-export const endings = endingsJson as Ending[]
+export const endings = computed<Ending[]>(() => {
+  const locale = state.value.settings.lang
+  if (locale === 'ja') return endingsJaJson
+  return endingsEnJson
+})
 
 export const STEAM_ACHIEVEMENTS = [
   'revenge',

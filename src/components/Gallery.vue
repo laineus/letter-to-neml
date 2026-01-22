@@ -1,43 +1,27 @@
 <script setup lang="ts">
 import { Container, Rectangle, Image } from 'phavuer'
 import CustomText from './CustomText.vue'
-import { computed, ref, type ComputedRef } from 'vue'
+import { ref } from 'vue'
 import { state } from '../lib/state'
 import config from '../lib/config'
 import Button from './Button.vue'
 import { useGamePad } from '../lib/gamePad'
 import { uiTexts } from '../lib/ui'
 import { useUISound } from '../lib/se'
+import { endings, type Ending } from '../story/endings'
 
 const emit = defineEmits(['back'])
 
 const se = useUISound()
 
-type EndingData = {
-  title: ComputedRef<string>
-  image: string
-  storyIndex: number
+const selectedEnding = ref<Ending>()
+
+const isUnlocked = (endingId: number) => {
+  return state.value.completedEndings.includes(endingId)
 }
 
-const endings: EndingData[] = [
-  { title: computed(() => '復讐'), image: 'bg/go1', storyIndex: 0 },
-  { title: computed(() => '投獄'), image: 'bg/go2', storyIndex: 1 },
-  { title: computed(() => '昏睡'), image: 'bg/go3', storyIndex: 2 },
-  { title: computed(() => '心中'), image: 'bg/go4', storyIndex: 3 },
-  { title: computed(() => 'ニーナのいない夜'), image: 'bg/ed1', storyIndex: 4 },
-  { title: computed(() => 'ニーナの使命'), image: 'bg/ed2', storyIndex: 5 },
-  { title: computed(() => '二人で過ごす終焉'), image: 'bg/ed3', storyIndex: 6 },
-  { title: computed(() => 'ネムルの見た夢'), image: 'bg/ed4', storyIndex: 7 }
-]
-
-const selectedEnding = ref<EndingData>()
-
-const isUnlocked = (storyIndex: number) => {
-  return state.value.completedEndings.includes(storyIndex)
-}
-
-const handleThumbnailClick = (ending: EndingData) => {
-  if (!isUnlocked(ending.storyIndex)) return
+const handleThumbnailClick = (ending: Ending) => {
+  if (!isUnlocked(ending.id)) return
   selectedEnding.value = ending
   se.click()
 }
@@ -113,8 +97,8 @@ gamePad.onPress(key => {
         emit('back')
         se.click()
       } else if (typeof selectedIndex.value === 'number') {
-        const ending = endings[selectedIndex.value]
-        if (ending && isUnlocked(ending.storyIndex)) {
+        const ending = endings.value.find(e => e.id === selectedIndex.value)
+        if (ending && isUnlocked(ending.id)) {
           handleThumbnailClick(ending)
         }
       }
@@ -135,7 +119,7 @@ const tween = { props: { alpha: { from: 0, to: 1 } }, duration: 800 }
     <Container v-if="!selectedEnding" :x="config.WIDTH.half() - sumWidth.half()" :y="config.HEIGHT.half() - sumHeight.half()">
       <Container
         v-for="(ending, index) in endings"
-        :key="ending.storyIndex"
+        :key="ending.id"
         :x="(index % cols) * (thumbWidth + padding)"
         :y="Math.floor(index / cols) * (rectHeight + padding)"
         :alpha="0"
@@ -150,7 +134,7 @@ const tween = { props: { alpha: { from: 0, to: 1 } }, duration: 800 }
           @pointerdown="() => handleThumbnailClick(ending)"
         />
         <Image
-          v-if="isUnlocked(ending.storyIndex)"
+          v-if="isUnlocked(ending.id)"
           :texture="ending.image"
           :displayWidth="thumbWidth"
           :displayHeight="thumbHeight"
@@ -165,7 +149,7 @@ const tween = { props: { alpha: { from: 0, to: 1 } }, duration: 800 }
           :origin="0"
         />
         <CustomText
-          :text="isUnlocked(ending.storyIndex) ? ending.title.value : '？？？'"
+          :text="isUnlocked(ending.id) ? ending.title : '？？？'"
           :x="thumbWidth / 2"
           :y="thumbHeight + 20"
           :origin="0.5"

@@ -143,7 +143,7 @@ const currentThings = computed(() => {
   const result = findLastRow<'function'>(v => v.type === 'function' && v.function === 'オブジェクト')
   if (!result) return undefined
   const ids = thingDefinitions[result.argument]
-  return ids.map(id => things.find(v => v.id === id)!)
+  return ids.map(id => things.value.find(v => v.id === id)!)
 })
 /** 次の行へ進む */
 const next = () => {
