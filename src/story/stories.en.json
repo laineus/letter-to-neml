@@ -4246,16 +4246,16 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "あの……、"
+            "name": "Neml",
+            "text": "Um..."
           },
           {
-            "name": "ネムル",
-            "text": "こんばんは"
+            "name": "Neml",
+            "text": "Good evening."
           },
           {
-            "name": "医者",
-            "text": "おお、ネムルちゃんじゃない"
+            "name": "Doctor",
+            "text": "Oh, Neml, isn't it."
           }
         ]
       },
@@ -4278,68 +4278,68 @@
         "type": "messages",
         "list": [
           {
-            "name": "医者",
-            "text": "今日はニーナちゃんと一緒じゃないのかい？"
+            "name": "Doctor",
+            "text": "You're not with Nina today?"
           },
           {
-            "name": "ネムル",
-            "text": "ニーナはおでかけで……"
+            "name": "Neml",
+            "text": "Nina went out..."
           },
           {
-            "name": "医者",
-            "text": "そうかい"
+            "name": "Doctor",
+            "text": "I see."
           },
           {
-            "name": "医者",
-            "text": "今日は何が必要かな？"
+            "name": "Doctor",
+            "text": "What do you need today?"
           },
           {
-            "name": "ネムル",
-            "text": "悪夢予防薬と、それと精神安定剤も……"
+            "name": "Neml",
+            "text": "The Nightmare suppressant, and, um, the Tranquilizer as well..."
           },
           {
-            "name": "医者",
-            "text": "ああ、切らしちゃったんだね\nそれは大変だ"
+            "name": "Doctor",
+            "text": "Ah, you ran out.\nThat's rough."
           },
           {
-            "name": "医者",
-            "text": "すぐに用意してあげるからね"
+            "name": "Doctor",
+            "text": "I'll get them ready right away."
           },
           {
-            "name": "ネムル",
-            "text": "あの……、いつもありがとう"
+            "name": "Neml",
+            "text": "Um... thank you, as always."
           },
           {
-            "name": "ネムル",
-            "text": "私たちがノクタリアンって知ってるのに、親切にしてくれて"
+            "name": "Neml",
+            "text": "You're kind to us even though you know we're Noctarian."
           },
           {
-            "name": "医者",
-            "text": "そんなことかい"
+            "name": "Doctor",
+            "text": "Is that all?"
           },
           {
-            "name": "医者",
-            "text": "気にしていないよ"
+            "name": "Doctor",
+            "text": "I don't mind."
           },
           {
-            "name": "医者",
-            "text": "君たちの悪夢で災害が起きたとしても、君たちがそうしたくて起きるわけじゃない"
+            "name": "Doctor",
+            "text": "Even if your nightmares cause disasters, it's not because you want them to."
           },
           {
-            "name": "医者",
-            "text": "君たちは何も悪くないんだから"
+            "name": "Doctor",
+            "text": "You haven't done anything wrong."
           },
           {
-            "name": "医者",
-            "text": "自分を責めたりしちゃいけないよ"
+            "name": "Doctor",
+            "text": "Don't blame yourself."
           },
           {
-            "name": "ネムル",
-            "text": "ありがとう……"
+            "name": "Neml",
+            "text": "Thank you..."
           },
           {
-            "name": "医者",
-            "text": "それに、君たちにちゃんと悪夢予防薬を飲んでもらえないと、僕だって困るからね"
+            "name": "Doctor",
+            "text": "Besides, I'd be in trouble if you didn't take your Nightmare suppressant properly."
           }
         ]
       },
@@ -4368,27 +4368,27 @@
         "list": [
           {
             "name": "",
-            "text": "そういうと医者は棚から薬瓶を手に取った"
+            "text": "As he said that, the doctor took a medicine bottle from the shelf."
           },
           {
-            "name": "医者",
-            "text": "ああそうだった"
+            "name": "Doctor",
+            "text": "Oh, right."
           },
           {
-            "name": "医者",
-            "text": "ごめんね、悪夢予防薬はあるんだけど、精神安定剤のほうは切らしちゃってるんだ"
+            "name": "Doctor",
+            "text": "Sorry, I have the Nightmare suppressant, but I'm out of Tranquilizer."
           },
           {
-            "name": "医者",
-            "text": "そっちはまた今度でも大丈夫かな？"
+            "name": "Doctor",
+            "text": "Would it be okay to get that one another time?"
           },
           {
-            "name": "ネムル",
-            "text": "あ、うん、そっちは今日じゃなくても、大丈夫"
+            "name": "Neml",
+            "text": "Oh, yeah, that one doesn't have to be today."
           },
           {
-            "name": "医者",
-            "text": "材料があればできるんだけどねえ"
+            "name": "Doctor",
+            "text": "I could make it if I had the ingredients."
           }
         ]
       },
@@ -4404,32 +4404,32 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "（そういえばニーナが\"{ref:302}\"って）"
+            "name": "Neml",
+            "text": "(Come to think of it, Nina said \"{ref:302}\")"
           },
           {
-            "name": "ネムル",
-            "text": "あの、材料ってもしかしてこれ？"
+            "name": "Neml",
+            "text": "Um, are the ingredients... this?"
           },
           {
             "name": "",
-            "text": "ネムルは医者にカスラの実を見せた"
+            "text": "Neml showed the doctor the Kasra fruit."
           },
           {
-            "name": "医者",
-            "text": "おお、君よくそれを手に入れたね"
+            "name": "Doctor",
+            "text": "Oh, you did well to get that."
           },
           {
-            "name": "医者",
-            "text": "そうそうそれ、カスラの実があれば作れるんだ"
+            "name": "Doctor",
+            "text": "Yes, that's it. I can make it with Kasra fruit."
           },
           {
-            "name": "医者",
-            "text": "それじゃあ材料を代金代わりに薬を作っていいね？"
+            "name": "Doctor",
+            "text": "Then I'll make the medicine in exchange for the ingredients, okay?"
           },
           {
-            "name": "ネムル",
-            "text": "お願いします"
+            "name": "Neml",
+            "text": "Please."
           }
         ]
       },
@@ -4448,23 +4448,23 @@
         "list": [
           {
             "name": "",
-            "text": "ネムルは悪夢予防薬と精神安定剤を受け取った"
+            "text": "Neml received the Nightmare suppressant and the Tranquilizer."
           },
           {
-            "name": "ネムル",
-            "text": "ありがとう"
+            "name": "Neml",
+            "text": "Thank you."
           },
           {
-            "name": "医者",
-            "text": "こちらこそ、ありがとう"
+            "name": "Doctor",
+            "text": "Thank you as well."
           },
           {
-            "name": "医者",
-            "text": "また無くなってきたら早めに買いに来るんだよ"
+            "name": "Doctor",
+            "text": "Come back before you run out next time."
           },
           {
-            "name": "医者",
-            "text": "それじゃあ、気をつけて帰ってね"
+            "name": "Doctor",
+            "text": "Take care on your way home."
           }
         ]
       },
@@ -4484,8 +4484,8 @@
         "type": "messages",
         "list": [
           {
-            "name": "医者",
-            "text": "あ、そうだ"
+            "name": "Doctor",
+            "text": "Oh, right."
           }
         ]
       },
@@ -4493,56 +4493,56 @@
         "type": "messages",
         "list": [
           {
-            "name": "医者",
-            "text": "代わりにいいのがあるよ"
+            "name": "Doctor",
+            "text": "I have something else instead."
           },
           {
             "name": "",
-            "text": "医者はカラフルに光る薬をネムルに見せた"
+            "text": "The doctor showed Neml a colorfully glowing medicine."
           },
           {
-            "name": "医者",
-            "text": "これ、いつものとちょっと違う薬なんだけど"
+            "name": "Doctor",
+            "text": "This is a little different from your usual medicine."
           },
           {
-            "name": "医者",
-            "text": "飲むととっても心地良い気持ちになれるんだよ"
+            "name": "Doctor",
+            "text": "If you take it, you'll feel really good."
           },
           {
-            "name": "ネムル",
-            "text": "変な色……"
+            "name": "Neml",
+            "text": "What a strange color..."
           },
           {
-            "name": "医者",
-            "text": "リラックスして、嫌なことも全部忘れられるよ"
+            "name": "Doctor",
+            "text": "You'll relax and forget all the bad things."
           },
           {
-            "name": "ネムル",
-            "text": "そうなんだ"
+            "name": "Neml",
+            "text": "I see."
           },
           {
-            "name": "医者",
-            "text": "うん、\nよかったらちょっと試してみようか"
+            "name": "Doctor",
+            "text": "Yeah.\nIf you want, why not try a little?"
           },
           {
-            "name": "医者",
-            "text": "お代は気に入ったらでいいからね"
+            "name": "Doctor",
+            "text": "You can pay if you like it."
           },
           {
-            "name": "ネムル",
-            "text": "タダでいいの？"
+            "name": "Neml",
+            "text": "It's free?"
           },
           {
-            "name": "医者",
-            "text": "うん、いいよ"
+            "name": "Doctor",
+            "text": "Yeah, that's fine."
           },
           {
-            "name": "医者",
-            "text": "ほら、飲んでごらん"
+            "name": "Doctor",
+            "text": "Here, take it."
           },
           {
-            "name": "ネムル",
-            "text": "{red}（知らない薬だけど、試しに飲んでみてもいいかな……）"
+            "name": "Neml",
+            "text": "{red}(I don't know this medicine, but maybe I can try it...?)"
           }
         ]
       },
@@ -4574,12 +4574,12 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "それじゃあ……、いただきます"
+            "name": "Neml",
+            "text": "Then... here goes."
           },
           {
             "name": "",
-            "text": "ネムルは医者から渡されたカラフルな薬を飲んだ"
+            "text": "Neml drank the colorful medicine the doctor handed her."
           }
         ]
       },
@@ -4596,24 +4596,24 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "……"
+            "name": "Neml",
+            "text": "..."
           },
           {
-            "name": "ネムル",
-            "text": "あれ……"
+            "name": "Neml",
+            "text": "Huh..."
           },
           {
-            "name": "ネムル",
-            "text": "なんだか、ちょっとぼーっとする……"
+            "name": "Neml",
+            "text": "I'm feeling kind of foggy..."
           },
           {
-            "name": "医者",
-            "text": "そうだね、じゃあこの椅子に座ってもいいからね"
+            "name": "Doctor",
+            "text": "That's right, you can sit in this chair."
           },
           {
-            "name": "医者",
-            "text": "しばらく休んでいこうね"
+            "name": "Doctor",
+            "text": "Rest here for a while."
           }
         ]
       },
@@ -4651,24 +4651,24 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "……"
+            "name": "Neml",
+            "text": "..."
           },
           {
-            "name": "医者",
-            "text": "眠くなってきちゃったかな"
+            "name": "Doctor",
+            "text": "Getting sleepy?"
           },
           {
-            "name": "ネムル",
-            "text": "……"
+            "name": "Neml",
+            "text": "..."
           },
           {
-            "name": "医者",
-            "text": "それじゃあ、こっちの部屋で横になれるからね"
+            "name": "Doctor",
+            "text": "Then you can lie down in this room."
           },
           {
-            "name": "ネムル",
-            "text": "……"
+            "name": "Neml",
+            "text": "..."
           }
         ]
       },
@@ -4714,12 +4714,12 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "……"
+            "name": "Neml",
+            "text": "..."
           },
           {
-            "name": "医者",
-            "text": "大丈夫、良い気分になれるからね"
+            "name": "Doctor",
+            "text": "It's okay, you'll feel good."
           }
         ]
       },
@@ -4744,24 +4744,24 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "でも、ニーナは\"{ref:301}\"って言ってた"
+            "name": "Neml",
+            "text": "But Nina said \"{ref:301}\"."
           },
           {
-            "name": "ネムル",
-            "text": "そのお薬は、大丈夫"
+            "name": "Neml",
+            "text": "So I'm okay without it."
           },
           {
-            "name": "医者",
-            "text": "そうか……"
+            "name": "Doctor",
+            "text": "I see..."
           },
           {
-            "name": "医者",
-            "text": "じゃあまた気になったら言ってね"
+            "name": "Doctor",
+            "text": "Let me know if you change your mind."
           },
           {
             "name": "",
-            "text": "ネムルは悪夢予防薬の代金を支払うと薬屋を後にした"
+            "text": "Neml paid for the Nightmare suppressant and left the apothecary."
           }
         ]
       },
@@ -4814,16 +4814,16 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "食べ物もお薬も買えた"
+            "name": "Neml",
+            "text": "I bought food and medicine."
           },
           {
-            "name": "ネムル",
-            "text": "久しぶりに外を歩いたからちょっと疲れたな"
+            "name": "Neml",
+            "text": "I'm a bit tired from walking outside for the first time in a while."
           },
           {
-            "name": "ネムル",
-            "text": "ちょっと休んでから帰ろう"
+            "name": "Neml",
+            "text": "I'll rest a little before heading back."
           }
         ]
       },
@@ -4871,8 +4871,8 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "誰かいる……"
+            "name": "Neml",
+            "text": "Someone's here..."
           }
         ]
       },
@@ -4900,20 +4900,20 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "こんばんは"
+            "name": "Neml",
+            "text": "Good evening."
           },
           {
-            "name": "お姉さん",
-            "text": "こんばんは"
+            "name": "Ceryth",
+            "text": "Good evening."
           },
           {
-            "name": "ネムル",
-            "text": "あの、ここに座ってもいい？"
+            "name": "Neml",
+            "text": "Um, can I sit here?"
           },
           {
-            "name": "お姉さん",
-            "text": "もちろん"
+            "name": "Ceryth",
+            "text": "Of course."
           }
         ]
       },
@@ -4936,52 +4936,52 @@
         "type": "messages",
         "list": [
           {
-            "name": "お姉さん",
-            "text": "一人で来たの？"
+            "name": "Ceryth",
+            "text": "Did you come alone?"
           },
           {
-            "name": "ネムル",
-            "text": "うん、ちょっと歩き疲れて"
+            "name": "Neml",
+            "text": "Yeah, I got a little tired from walking."
           },
           {
-            "name": "お姉さん",
-            "text": "そう"
+            "name": "Ceryth",
+            "text": "I see."
           },
           {
-            "name": "ネムル",
-            "text": "……"
+            "name": "Neml",
+            "text": "..."
           },
           {
-            "name": "お姉さん",
-            "text": "今日は一段と月が大きいね"
+            "name": "Ceryth",
+            "text": "The moon looks even bigger today."
           },
           {
-            "name": "ネムル",
-            "text": "うん\n日を増すごとに大きくなってるよね"
+            "name": "Neml",
+            "text": "Yeah.\nIt keeps getting bigger every day."
           },
           {
-            "name": "お姉さん",
-            "text": "今日はいよいよ今にも落ちてきそう"
+            "name": "Ceryth",
+            "text": "Today it feels like it might fall any moment."
           },
           {
-            "name": "ネムル",
-            "text": "どうしてなのかな"
+            "name": "Neml",
+            "text": "Why is that?"
           },
           {
-            "name": "お姉さん",
-            "text": "みんな噂してるけど\n誰も分からないみたい"
+            "name": "Ceryth",
+            "text": "Everyone talks about it,\nbut no one seems to know."
           },
           {
-            "name": "お姉さん",
-            "text": "私はよくここで海を眺めてるんだけど、"
+            "name": "Ceryth",
+            "text": "I often watch the sea here,"
           },
           {
-            "name": "お姉さん",
-            "text": "月に照らされて、海も前よりずっと明るく見えるよ"
+            "name": "Ceryth",
+            "text": "and the moonlight makes it look much brighter than before."
           },
           {
-            "name": "ネムル",
-            "text": "そうなんだ"
+            "name": "Neml",
+            "text": "I see."
           }
         ]
       },
@@ -4993,188 +4993,188 @@
         "type": "messages",
         "list": [
           {
-            "name": "お姉さん",
-            "text": "ねえ、"
+            "name": "Ceryth",
+            "text": "Hey,"
           },
           {
-            "name": "お姉さん",
-            "text": "海の向こう、行ったことある？"
+            "name": "Ceryth",
+            "text": "Have you ever been beyond the sea?"
           },
           {
-            "name": "ネムル",
-            "text": "え、ないよ"
+            "name": "Neml",
+            "text": "No, I haven't."
           },
           {
-            "name": "ネムル",
-            "text": "そんな遠いところ……、\nきっと一生行かないんだと思う"
+            "name": "Neml",
+            "text": "It's so far away...\nI don't think I'll ever go."
           },
           {
-            "name": "お姉さん",
-            "text": "そうだよね\n遠いよね、とっても"
+            "name": "Ceryth",
+            "text": "Yeah.\nIt's very far."
           },
           {
-            "name": "ネムル",
-            "text": "行ってみたいの？"
+            "name": "Neml",
+            "text": "Do you want to go?"
           },
           {
-            "name": "お姉さん",
-            "text": "うん"
+            "name": "Ceryth",
+            "text": "Yes."
           },
           {
-            "name": "お姉さん",
-            "text": "行きたい"
+            "name": "Ceryth",
+            "text": "I want to go."
           },
           {
-            "name": "ネムル",
-            "text": "船とか、で行くのかな……"
+            "name": "Neml",
+            "text": "Would you go by ship, maybe...?"
           },
           {
-            "name": "お姉さん",
-            "text": "うーん、"
+            "name": "Ceryth",
+            "text": "Hmm,"
           },
           {
-            "name": "お姉さん",
-            "text": "普通の人は難しいかな、きっと"
+            "name": "Ceryth",
+            "text": "it would be hard for ordinary people, I think."
           },
           {
-            "name": "ネムル",
-            "text": "そうなんだ"
+            "name": "Neml",
+            "text": "I see."
           },
           {
-            "name": "お姉さん",
-            "text": "空を飛んで行けたらいいのに"
+            "name": "Ceryth",
+            "text": "I wish I could fly there."
           },
           {
-            "name": "ネムル",
-            "text": "それは無理だと思うけど……"
+            "name": "Neml",
+            "text": "I don't think that's possible, though..."
           },
           {
-            "name": "お姉さん",
-            "text": "そうかな"
+            "name": "Ceryth",
+            "text": "Is it?"
           },
           {
-            "name": "お姉さん",
-            "text": "昔の人はできたみたいだよ"
+            "name": "Ceryth",
+            "text": "People long ago could, it seems."
           },
           {
-            "name": "ネムル",
-            "text": "昔の人……"
+            "name": "Neml",
+            "text": "People long ago..."
           },
           {
-            "name": "ネムル",
-            "text": "魔法を使える人がいたんだよね、確か"
+            "name": "Neml",
+            "text": "There were people who could use magic, right?"
           },
           {
-            "name": "お姉さん",
-            "text": "そうだよ"
+            "name": "Ceryth",
+            "text": "That's right."
           },
           {
-            "name": "お姉さん",
-            "text": "いいよね"
+            "name": "Ceryth",
+            "text": "Wouldn't that be nice?"
           },
           {
-            "name": "お姉さん",
-            "text": "遠くに行っちゃった人にも、飛んで会いに行けるんだから"
+            "name": "Ceryth",
+            "text": "You could fly to meet someone who's gone far away."
           },
           {
-            "name": "ネムル",
-            "text": "遠くに行っちゃった人か……"
+            "name": "Neml",
+            "text": "Someone who's gone far away..."
           },
           {
-            "name": "お姉さん",
-            "text": "見て、このコンパス"
+            "name": "Ceryth",
+            "text": "Look at this compass."
           },
           {
             "name": "",
-            "text": "女性は古びたコンパスをネムルに見せた"
+            "text": "The woman showed Neml an old compass."
           },
           {
-            "name": "お姉さん",
-            "text": "これ、昔作られた魔法道具"
+            "name": "Ceryth",
+            "text": "It's a magical tool from long ago."
           },
           {
-            "name": "ネムル",
-            "text": "普通のコンパスとは違うの？"
+            "name": "Neml",
+            "text": "It's different from a normal compass?"
           },
           {
-            "name": "お姉さん",
-            "text": "うん"
+            "name": "Ceryth",
+            "text": "Yeah."
           },
           {
-            "name": "お姉さん",
-            "text": "これはね、北じゃなくて、持ち主の想い人の方向を指すんだ"
+            "name": "Ceryth",
+            "text": "It doesn't point north, it points toward the one the owner loves."
           },
           {
-            "name": "ネムル",
-            "text": "え、すごい"
+            "name": "Neml",
+            "text": "Wow, that's amazing."
           },
           {
-            "name": "お姉さん",
-            "text": "すごいでしょ"
+            "name": "Ceryth",
+            "text": "Pretty amazing, right?"
           },
           {
-            "name": "お姉さん",
-            "text": "私の恋人がね、くれたの"
+            "name": "Ceryth",
+            "text": "My lover gave it to me."
           },
           {
-            "name": "お姉さん",
-            "text": "彼はしばらくの間遠くに行かないといけなくなって、"
+            "name": "Ceryth",
+            "text": "He had to go far away for a while,"
           },
           {
-            "name": "お姉さん",
-            "text": "遠くにいても分かるようにって……くれたんだ"
+            "name": "Ceryth",
+            "text": "so I'd still know where he was... that's why he gave it to me."
           },
           {
-            "name": "ネムル",
-            "text": "そうなんだ"
+            "name": "Neml",
+            "text": "I see."
           },
           {
-            "name": "ネムル",
-            "text": "海の向こうを指してる……"
+            "name": "Neml",
+            "text": "It's pointing beyond the sea..."
           },
           {
-            "name": "お姉さん",
-            "text": "そう。彼は海の向こう"
+            "name": "Ceryth",
+            "text": "Yes. He's beyond the sea."
           },
           {
-            "name": "ネムル",
-            "text": "だから海の向こうに行きたかったんだね"
+            "name": "Neml",
+            "text": "That's why you wanted to go beyond the sea."
           },
           {
-            "name": "お姉さん",
-            "text": "うん"
+            "name": "Ceryth",
+            "text": "Yeah."
           },
           {
-            "name": "お姉さん",
-            "text": "でもね、きっともうだめなの"
+            "name": "Ceryth",
+            "text": "But I think it's too late now."
           },
           {
-            "name": "ネムル",
-            "text": "どうして？"
+            "name": "Neml",
+            "text": "Why?"
           },
           {
-            "name": "お姉さん",
-            "text": "しばらくの間は、毎日針が少しずつ動いていて、"
+            "name": "Ceryth",
+            "text": "For a while, the needle moved a little each day,"
           },
           {
-            "name": "お姉さん",
-            "text": "それを見て彼が海の向こうで頑張っているのを感じられて……、"
+            "name": "Ceryth",
+            "text": "and seeing that made me feel he was doing his best beyond the sea..."
           },
           {
-            "name": "お姉さん",
-            "text": "私も頑張ろうって思えていたんだ"
+            "name": "Ceryth",
+            "text": "It made me want to keep going too."
           },
           {
-            "name": "お姉さん",
-            "text": "でも……、"
+            "name": "Ceryth",
+            "text": "But..."
           },
           {
-            "name": "お姉さん",
-            "text": "動かなくなったの……"
+            "name": "Ceryth",
+            "text": "It stopped moving..."
           },
           {
-            "name": "お姉さん",
-            "text": "少しも……、もう、動かない……"
+            "name": "Ceryth",
+            "text": "Not even a little... it doesn't move anymore..."
           }
         ]
       },
@@ -5197,24 +5197,24 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "……"
+            "name": "Neml",
+            "text": "..."
           },
           {
-            "name": "ネムル",
-            "text": "壊れちゃったの、かな……"
+            "name": "Neml",
+            "text": "Maybe it's broken..."
           },
           {
             "name": "",
-            "text": "女性は悲しげに首を横に振った"
+            "text": "The woman sadly shook her head."
           },
           {
-            "name": "お姉さん",
-            "text": "動かなくなったのはコンパスじゃなくて……、\n彼……なんだと思う"
+            "name": "Ceryth",
+            "text": "It's not the compass that stopped moving...\nI think it's him."
           },
           {
-            "name": "ネムル",
-            "text": "……"
+            "name": "Neml",
+            "text": "..."
           }
         ]
       },
@@ -5237,84 +5237,84 @@
         "type": "messages",
         "list": [
           {
-            "name": "お姉さん",
-            "text": "ごめんね、暗い話しちゃって"
+            "name": "Ceryth",
+            "text": "Sorry for talking about something so dark."
           },
           {
-            "name": "お姉さん",
-            "text": "あなたは、恋人はいる？"
+            "name": "Ceryth",
+            "text": "Do you have a lover?"
           },
           {
-            "name": "ネムル",
-            "text": "え……、いないよ"
+            "name": "Neml",
+            "text": "Uh... no."
           },
           {
-            "name": "ネムル",
-            "text": "ニーナはいるけど、"
+            "name": "Neml",
+            "text": "I have Nina, but"
           },
           {
-            "name": "ネムル",
-            "text": "好きだけど、"
+            "name": "Neml",
+            "text": "I love her, but"
           },
           {
-            "name": "ネムル",
-            "text": "違うと思う"
+            "name": "Neml",
+            "text": "I think it's different."
           },
           {
-            "name": "お姉さん",
-            "text": "そうなんだ"
+            "name": "Ceryth",
+            "text": "I see."
           },
           {
-            "name": "ネムル",
-            "text": "よく……分かんない"
+            "name": "Neml",
+            "text": "I don't really... know."
           },
           {
-            "name": "お姉さん",
-            "text": "分からないなら……、"
+            "name": "Ceryth",
+            "text": "If you're not sure..."
           },
           {
-            "name": "お姉さん",
-            "text": "その人と手をつないだり、"
+            "name": "Ceryth",
+            "text": "Do you want to hold hands with them,"
           },
           {
-            "name": "お姉さん",
-            "text": "キスしたりしたいって思う？"
+            "name": "Ceryth",
+            "text": "or kiss them?"
           },
           {
-            "name": "ネムル",
-            "text": "え……、"
+            "name": "Neml",
+            "text": "Uh..."
           },
           {
-            "name": "ネムル",
-            "text": "そういうのは……、"
+            "name": "Neml",
+            "text": "That kind of thing..."
           },
           {
-            "name": "ネムル",
-            "text": "ニーナとは……、"
+            "name": "Neml",
+            "text": "With Nina..."
           },
           {
-            "name": "ネムル",
-            "text": "……私はしてみたい、けど"
+            "name": "Neml",
+            "text": "...I want to, but"
           },
           {
-            "name": "ネムル",
-            "text": "でも、ニーナはそんなことは思ってないと思う"
+            "name": "Neml",
+            "text": "I don't think Nina feels that way."
           },
           {
-            "name": "お姉さん",
-            "text": "そうなんだね"
+            "name": "Ceryth",
+            "text": "I see."
           },
           {
-            "name": "ネムル",
-            "text": "大事に思ってくれてると思うけど……"
+            "name": "Neml",
+            "text": "I think she cares about me, but..."
           },
           {
-            "name": "ネムル",
-            "text": "それは私が頼りなくて、可哀想だからで……"
+            "name": "Neml",
+            "text": "That's because I'm unreliable, and she feels sorry for me..."
           },
           {
-            "name": "お姉さん",
-            "text": "そっか"
+            "name": "Ceryth",
+            "text": "I see."
           }
         ]
       },
@@ -5326,64 +5326,64 @@
         "type": "messages",
         "list": [
           {
-            "name": "お姉さん",
-            "text": "それってつらいね"
+            "name": "Ceryth",
+            "text": "That sounds painful."
           },
           {
-            "name": "ネムル",
-            "text": "つらい？"
+            "name": "Neml",
+            "text": "Painful?"
           },
           {
-            "name": "お姉さん",
-            "text": "うん、だって自分だけその人のこと特別に感じてるんでしょ？"
+            "name": "Ceryth",
+            "text": "Yeah, because you feel they're special, right?"
           },
           {
-            "name": "お姉さん",
-            "text": "その人はそうじゃないのに"
+            "name": "Ceryth",
+            "text": "Even though they don't."
           },
           {
-            "name": "お姉さん",
-            "text": "それってとても悲しいよ"
+            "name": "Ceryth",
+            "text": "That's very sad."
           },
           {
-            "name": "ネムル",
-            "text": "え"
+            "name": "Neml",
+            "text": "Huh."
           },
           {
-            "name": "ネムル",
-            "text": "そう、なのかな"
+            "name": "Neml",
+            "text": "Is it?"
           },
           {
-            "name": "お姉さん",
-            "text": "絶対そうだよ"
+            "name": "Ceryth",
+            "text": "It absolutely is."
           },
           {
-            "name": "お姉さん",
-            "text": "あなたは、かわいそう"
+            "name": "Ceryth",
+            "text": "You poor thing."
           },
           {
-            "name": "お姉さん",
-            "text": "一緒に過ごしていても、心はすれ違っていて"
+            "name": "Ceryth",
+            "text": "Even when you're together, your hearts don't meet."
           },
           {
-            "name": "お姉さん",
-            "text": "あなたは、独りぼっち"
+            "name": "Ceryth",
+            "text": "You're all alone."
           },
           {
-            "name": "ネムル",
-            "text": "私は……、独り……？"
+            "name": "Neml",
+            "text": "I'm... alone...?"
           },
           {
-            "name": "お姉さん",
-            "text": "でも大丈夫だよ"
+            "name": "Ceryth",
+            "text": "But it's okay."
           },
           {
-            "name": "お姉さん",
-            "text": "私も、独りぼっちだから"
+            "name": "Ceryth",
+            "text": "I'm all alone too."
           },
           {
-            "name": "ネムル",
-            "text": "……"
+            "name": "Neml",
+            "text": "..."
           }
         ]
       },
@@ -5406,12 +5406,12 @@
         "type": "messages",
         "list": [
           {
-            "name": "お姉さん",
-            "text": "どうせ独りなら、世界にいなくても……"
+            "name": "Ceryth",
+            "text": "If someone is alone anyway, maybe they don't need to be in this world..."
           },
           {
-            "name": "ネムル",
-            "text": "お姉さん……？"
+            "name": "Neml",
+            "text": "Miss...?"
           }
         ]
       },
@@ -5434,60 +5434,60 @@
         "type": "messages",
         "list": [
           {
-            "name": "お姉さん",
-            "text": "ねえ、あなたは泳げる？"
+            "name": "Ceryth",
+            "text": "Hey, can you swim?"
           },
           {
-            "name": "ネムル",
-            "text": "ううん、泳げないよ"
+            "name": "Neml",
+            "text": "No, I can't."
           },
           {
-            "name": "ネムル",
-            "text": "試したこともない"
+            "name": "Neml",
+            "text": "I've never even tried."
           },
           {
-            "name": "お姉さん",
-            "text": "そっか"
+            "name": "Ceryth",
+            "text": "I see."
           },
           {
-            "name": "お姉さん",
-            "text": "じゃあちょっとだけ海に入ってみようよ"
+            "name": "Ceryth",
+            "text": "Then let's step into the sea, just a little."
           },
           {
-            "name": "ネムル",
-            "text": "え、でも"
+            "name": "Neml",
+            "text": "Huh, but"
           },
           {
-            "name": "お姉さん",
-            "text": "大丈夫だよ、足をつけるとひんやりして気持ちいいんだよ"
+            "name": "Ceryth",
+            "text": "It's okay, when you dip your feet in it's chilly and feels nice."
           },
           {
-            "name": "ネムル",
-            "text": "そうなの？"
+            "name": "Neml",
+            "text": "Really?"
           },
           {
-            "name": "お姉さん",
-            "text": "うん、冷たい波が足を何度もなでて、なんだか心が安らかになってくるの"
+            "name": "Ceryth",
+            "text": "Yeah, the cold waves brush your feet again and again, and your heart starts to feel calm."
           },
           {
-            "name": "ネムル",
-            "text": "そうなんだ"
+            "name": "Neml",
+            "text": "I see."
           },
           {
-            "name": "お姉さん",
-            "text": "じゃあ、行こう？"
+            "name": "Ceryth",
+            "text": "Shall we go?"
           },
           {
-            "name": "お姉さん",
-            "text": "しっかり手をつないでいてあげるから、大丈夫だよ"
+            "name": "Ceryth",
+            "text": "I'll hold your hand tight, so it's okay."
           },
           {
             "name": "",
-            "text": "女性は微笑みながらネムルに手を差し出した"
+            "text": "Smiling, the woman held out her hand to Neml."
           },
           {
-            "name": "ネムル",
-            "text": "{red}（ちょっと怖いけど、試してみようかな）"
+            "name": "Neml",
+            "text": "{red}(I'm a little scared, but maybe I'll try.)"
           }
         ]
       },
@@ -5499,28 +5499,28 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "（あ、でもニーナが\"{ref:401}\"って言ってた）"
+            "name": "Neml",
+            "text": "(Ah, but Nina said \"{ref:401}\")"
           },
           {
-            "name": "ネムル",
-            "text": "私は、やめておこうかな"
+            "name": "Neml",
+            "text": "I think I'll pass."
           },
           {
-            "name": "お姉さん",
-            "text": "え、どうして？\nとっても気持ちいいよ？"
+            "name": "Ceryth",
+            "text": "Huh, why?\nIt feels really nice, you know."
           },
           {
-            "name": "ネムル",
-            "text": "うーん、\nでも、やめておく"
+            "name": "Neml",
+            "text": "Hmm,\nbut I'm going to pass."
           },
           {
-            "name": "お姉さん",
-            "text": "そっか……"
+            "name": "Ceryth",
+            "text": "I see..."
           },
           {
-            "name": "ネムル",
-            "text": "それに、私、もう帰らなくちゃ"
+            "name": "Neml",
+            "text": "And I have to head home."
           }
         ]
       },
@@ -5543,12 +5543,12 @@
         "type": "messages",
         "list": [
           {
-            "name": "お姉さん",
-            "text": "……"
+            "name": "Ceryth",
+            "text": "..."
           },
           {
-            "name": "ネムル",
-            "text": "またね"
+            "name": "Neml",
+            "text": "See you."
           }
         ]
       },
@@ -5618,16 +5618,16 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "あれ？"
+            "name": "Neml",
+            "text": "Huh?"
           },
           {
             "name": "",
-            "text": "ふと振り返った浜辺には誰も居なくなっていた"
+            "text": "When she turned back, no one was on the shore."
           },
           {
-            "name": "ネムル",
-            "text": "お姉さんももう帰ったのかな"
+            "name": "Neml",
+            "text": "Maybe she already went home."
           }
         ]
       },
@@ -5652,8 +5652,8 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "じゃあ、少しだけ……"
+            "name": "Neml",
+            "text": "Then... just a little."
           }
         ]
       },
@@ -5701,27 +5701,27 @@
         "list": [
           {
             "name": "",
-            "text": "女性はネムルの手を握りながら海に足を入れた"
+            "text": "The woman stepped into the sea, holding Neml's hand."
           },
           {
-            "name": "お姉さん",
-            "text": "どう？"
+            "name": "Ceryth",
+            "text": "How is it?"
           },
           {
-            "name": "ネムル",
-            "text": "冷たい"
+            "name": "Neml",
+            "text": "It's cold."
           },
           {
-            "name": "ネムル",
-            "text": "冷たくて、ちょっと気持ちいい"
+            "name": "Neml",
+            "text": "Cold, but kind of nice."
           },
           {
-            "name": "お姉さん",
-            "text": "でしょ？"
+            "name": "Ceryth",
+            "text": "Right?"
           },
           {
-            "name": "お姉さん",
-            "text": "もうちょっと進んでみよう"
+            "name": "Ceryth",
+            "text": "Let's go a little farther."
           }
         ]
       },
@@ -5745,15 +5745,15 @@
         "list": [
           {
             "name": "",
-            "text": "海水がよりネムルの足をより力強く押した"
+            "text": "The seawater pushed against Neml's feet more strongly."
           },
           {
-            "name": "ネムル",
-            "text": "ちょっと、怖いかも"
+            "name": "Neml",
+            "text": "It might be a little scary."
           },
           {
-            "name": "お姉さん",
-            "text": "……"
+            "name": "Ceryth",
+            "text": "..."
           }
         ]
       },
@@ -5781,16 +5781,16 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "え、\nねえ、もう戻ろう"
+            "name": "Neml",
+            "text": "Hey,\nlet's go back now."
           },
           {
-            "name": "ネムル",
-            "text": "転んじゃいそうだよ"
+            "name": "Neml",
+            "text": "I feel like I'll fall."
           },
           {
-            "name": "お姉さん",
-            "text": "……"
+            "name": "Ceryth",
+            "text": "..."
           }
         ]
       },
@@ -5813,20 +5813,20 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "ねえ！"
+            "name": "Neml",
+            "text": "Hey!"
           },
           {
-            "name": "お姉さん",
-            "text": "……"
+            "name": "Ceryth",
+            "text": "..."
           },
           {
-            "name": "ネムル",
-            "text": "いや！もう離して！"
+            "name": "Neml",
+            "text": "No! Let go!"
           },
           {
             "name": "",
-            "text": "女性はネムルの手首を強く引き、深みに進んでいった"
+            "text": "The woman pulled Neml's wrist hard and went deeper."
           }
         ]
       },
@@ -5896,8 +5896,8 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "やめて！！溺れちゃう！！"
+            "name": "Neml",
+            "text": "Stop!! I'm going to drown!!"
           }
         ]
       },
@@ -5924,88 +5924,88 @@
         "type": "messages",
         "list": [
           {
-            "name": "お姉さん",
-            "text": "ところで、あなた薬屋に行っていたの？"
+            "name": "Ceryth",
+            "text": "By the way, did you go to the apothecary?"
           },
           {
-            "name": "ネムル",
-            "text": "あ、うん、"
+            "name": "Neml",
+            "text": "Oh, yeah,"
           },
           {
-            "name": "ネムル",
-            "text": "……これ、買いに"
+            "name": "Neml",
+            "text": "...to buy this."
           },
           {
-            "name": "お姉さん",
-            "text": "悪夢予防薬？"
+            "name": "Ceryth",
+            "text": "Nightmare suppressant?"
           },
           {
-            "name": "お姉さん",
-            "text": "それってたしかノクタリアンの人が飲む薬だよね"
+            "name": "Ceryth",
+            "text": "That's the medicine Noctarians take, right?"
           },
           {
-            "name": "お姉さん",
-            "text": "あなたはノクタリアンなの？"
+            "name": "Ceryth",
+            "text": "Are you Noctarian?"
           },
           {
-            "name": "ネムル",
-            "text": "うん……"
+            "name": "Neml",
+            "text": "Yeah..."
           },
           {
-            "name": "ネムル",
-            "text": "いつも人には言わないようにしてるんだけど"
+            "name": "Neml",
+            "text": "I usually try not to tell people."
           },
           {
-            "name": "お姉さん",
-            "text": "そうなんだ"
+            "name": "Ceryth",
+            "text": "I see."
           },
           {
-            "name": "お姉さん",
-            "text": "ノクタリアンの人が悪夢を見るとそれが現実になっちゃうんだっけ"
+            "name": "Ceryth",
+            "text": "When Noctarians have nightmares, they become reality, right?"
           },
           {
-            "name": "ネムル",
-            "text": "うん……\nごめんなさい"
+            "name": "Neml",
+            "text": "Yeah...\nI'm sorry."
           },
           {
-            "name": "お姉さん",
-            "text": "謝る必要なんてないよ"
+            "name": "Ceryth",
+            "text": "You don't need to apologize."
           },
           {
-            "name": "お姉さん",
-            "text": "大変なんだね"
+            "name": "Ceryth",
+            "text": "That must be hard."
           },
           {
-            "name": "お姉さん",
-            "text": "ところでそっちは、精神安定剤？"
+            "name": "Ceryth",
+            "text": "By the way, is that a Tranquilizer?"
           },
           {
-            "name": "ネムル",
-            "text": "うん"
+            "name": "Neml",
+            "text": "Yeah."
           },
           {
-            "name": "お姉さん",
-            "text": "どこに売っていたの？"
+            "name": "Ceryth",
+            "text": "Where did you get it?"
           },
           {
-            "name": "お姉さん",
-            "text": "私も今日買いたかったんだけど、売り切れって言われちゃったから"
+            "name": "Ceryth",
+            "text": "I wanted to buy one today, but they said it was sold out."
           },
           {
-            "name": "ネムル",
-            "text": "あ、これ、\nたまたま材料があって作ってもらえたの"
+            "name": "Neml",
+            "text": "Oh, this...\nI happened to have the ingredients, so he made it for me."
           },
           {
-            "name": "ネムル",
-            "text": "よかったらお姉さんにも分けてあげるよ"
+            "name": "Neml",
+            "text": "If you want, I can share some."
           },
           {
-            "name": "お姉さん",
-            "text": "え、いいの？"
+            "name": "Ceryth",
+            "text": "Really?"
           },
           {
-            "name": "ネムル",
-            "text": "うん、どうぞ"
+            "name": "Neml",
+            "text": "Yeah, here."
           }
         ]
       },
@@ -6024,67 +6024,67 @@
         "list": [
           {
             "name": "",
-            "text": "ネムルは女性が持っていた空き瓶に薬を半分移し替えた"
+            "text": "Neml poured half the medicine into the empty bottle the woman had."
           },
           {
-            "name": "お姉さん",
-            "text": "ほんとにありがとう"
+            "name": "Ceryth",
+            "text": "Thank you so much."
           },
           {
-            "name": "お姉さん",
-            "text": "結構困っていたから"
+            "name": "Ceryth",
+            "text": "I was really in trouble."
           },
           {
-            "name": "お姉さん",
-            "text": "これがあるって分かっただけで気持ちも落ち着いてきたよ"
+            "name": "Ceryth",
+            "text": "Just knowing I have this makes me feel calmer."
           },
           {
-            "name": "ネムル",
-            "text": "よかった"
+            "name": "Neml",
+            "text": "I'm glad."
           },
           {
-            "name": "お姉さん",
-            "text": "これを飲んだって、ほんとの意味では何も解決しないんだけど、"
+            "name": "Ceryth",
+            "text": "Even if I take this, it doesn't truly solve anything, but"
           },
           {
-            "name": "お姉さん",
-            "text": "解決するまでに使える時間は増えるでしょ"
+            "name": "Ceryth",
+            "text": "it gives me more time until it's solved."
           },
           {
-            "name": "ネムル",
-            "text": "そうだね"
+            "name": "Neml",
+            "text": "Yeah."
           },
           {
-            "name": "お姉さん",
-            "text": "ねえ、お礼にこれ"
+            "name": "Ceryth",
+            "text": "Here, as thanks."
           },
           {
             "name": "",
-            "text": "女性は魔法のコンパスを差し出した"
+            "text": "The woman offered the magic compass."
           },
           {
-            "name": "お姉さん",
-            "text": "あなたにあげる"
+            "name": "Ceryth",
+            "text": "I'll give it to you."
           },
           {
-            "name": "ネムル",
-            "text": "え、大事なものでしょ？"
+            "name": "Neml",
+            "text": "But it's important to you, right?"
           },
           {
-            "name": "お姉さん",
-            "text": "そうだったんだけど、今これが必要なのはあなたな気がするの"
+            "name": "Ceryth",
+            "text": "It was, but I feel you're the one who needs it now."
           },
           {
-            "name": "お姉さん",
-            "text": "それに、この動かない針を見ていると悲しい気持ちになるし……"
+            "name": "Ceryth",
+            "text": "And seeing the needle not move makes me sad..."
           },
           {
-            "name": "お姉さん",
-            "text": "だから、もらって"
+            "name": "Ceryth",
+            "text": "So please, take it."
           },
           {
-            "name": "ネムル",
-            "text": "うん、分かった"
+            "name": "Neml",
+            "text": "Okay, I will."
           }
         ]
       },
@@ -6131,36 +6131,36 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "ありがとう"
+            "name": "Neml",
+            "text": "Thank you."
           },
           {
-            "name": "お姉さん",
-            "text": "どう？"
+            "name": "Ceryth",
+            "text": "How is it?"
           },
           {
-            "name": "お姉さん",
-            "text": "針は何かを指してる？"
+            "name": "Ceryth",
+            "text": "Is the needle pointing at something?"
           },
           {
-            "name": "ネムル",
-            "text": "あ、うん"
+            "name": "Neml",
+            "text": "Ah, yeah."
           },
           {
-            "name": "ネムル",
-            "text": "さっきとは違う方向を指しているみたい"
+            "name": "Neml",
+            "text": "It seems to be pointing in a different direction now."
           },
           {
-            "name": "お姉さん",
-            "text": "よかった"
+            "name": "Ceryth",
+            "text": "That's good."
           },
           {
-            "name": "お姉さん",
-            "text": "それがあなたの役に立ってくれたら嬉しいな"
+            "name": "Ceryth",
+            "text": "I'd be happy if it helps you."
           },
           {
-            "name": "ネムル",
-            "text": "うん、\nなんだかニーナの存在がちょっと感じられて……、いいね、これ"
+            "name": "Neml",
+            "text": "Yeah,\nI can kind of feel Nina's presence... it's nice."
           }
         ]
       },
@@ -6172,20 +6172,20 @@
         "type": "messages",
         "list": [
           {
-            "name": "お姉さん",
-            "text": "さて、そろそろ帰ろうかな"
+            "name": "Ceryth",
+            "text": "Well, I should be going soon."
           },
           {
-            "name": "ネムル",
-            "text": "あ、うん、\n私も帰るね"
+            "name": "Neml",
+            "text": "Oh, yeah,\nI'll head back too."
           },
           {
-            "name": "ネムル",
-            "text": "ありがとう"
+            "name": "Neml",
+            "text": "Thank you."
           },
           {
-            "name": "お姉さん",
-            "text": "こちらこそだよ\nありがとう"
+            "name": "Ceryth",
+            "text": "Same to you.\nThank you."
           }
         ]
       },
@@ -6280,20 +6280,20 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "ただいま"
+            "name": "Neml",
+            "text": "I'm home."
           },
           {
-            "name": "ネムル",
-            "text": "あれ、ライベルがいない"
+            "name": "Neml",
+            "text": "Huh, Rybel isn't here."
           },
           {
-            "name": "ネムル",
-            "text": "結構時間かかっちゃったから、もう帰ったのかな"
+            "name": "Neml",
+            "text": "It took quite a while, so maybe he went home already."
           },
           {
-            "name": "ネムル",
-            "text": "まあいいか"
+            "name": "Neml",
+            "text": "Oh well."
           }
         ]
       },
@@ -6311,8 +6311,8 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "せっかく買ってきたし\nご飯にしようかな"
+            "name": "Neml",
+            "text": "Since I bought food,\nI guess I'll eat."
           }
         ]
       },
@@ -6340,12 +6340,12 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "一人で食べるのって、なんだか寂しいな"
+            "name": "Neml",
+            "text": "Eating alone feels kind of lonely."
           },
           {
-            "name": "ネムル",
-            "text": "ニーナ、元気にしてるかな"
+            "name": "Neml",
+            "text": "I wonder if Nina is doing well."
           }
         ]
       },
@@ -6363,8 +6363,8 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "会いたいよ"
+            "name": "Neml",
+            "text": "I miss you."
           }
         ]
       },
@@ -6433,27 +6433,27 @@
         "list": [
           {
             "name": "",
-            "text": "玄関のドアをノックする音が部屋に響き渡った"
+            "text": "Knocking at the front door echoed through the room."
           },
           {
-            "name": "ネムル",
-            "text": "え？"
+            "name": "Neml",
+            "text": "Huh?"
           },
           {
-            "name": "ネムル",
-            "text": "誰だろう……"
+            "name": "Neml",
+            "text": "Who could it be...?"
           },
           {
-            "name": "ネムル",
-            "text": "また、強盗……、じゃないよね？"
+            "name": "Neml",
+            "text": "Not another robber... right?"
           },
           {
-            "name": "ライベル",
-            "text": "おいネムル、俺だ"
+            "name": "Rybel",
+            "text": "Hey Neml, it's me."
           },
           {
-            "name": "ネムル",
-            "text": "あ、ライベル、\n今開けるね"
+            "name": "Neml",
+            "text": "Oh, Rybel,\nI'll open it now."
           }
         ]
       },
@@ -6471,32 +6471,32 @@
         "type": "messages",
         "list": [
           {
-            "name": "ライベル",
-            "text": "いや、待て"
+            "name": "Rybel",
+            "text": "No, wait."
           },
           {
-            "name": "ライベル",
-            "text": "開けなくて大丈夫だ"
+            "name": "Rybel",
+            "text": "You don't have to open it."
           },
           {
-            "name": "ネムル",
-            "text": "？"
+            "name": "Neml",
+            "text": "?"
           },
           {
-            "name": "ネムル",
-            "text": "どうしたの？"
+            "name": "Neml",
+            "text": "What's wrong?"
           },
           {
-            "name": "ライベル",
-            "text": "ちょっと様子を見に寄っただけだ"
+            "name": "Rybel",
+            "text": "I just stopped by to check on you."
           },
           {
-            "name": "ライベル",
-            "text": "だから開けなくて大丈夫だ"
+            "name": "Rybel",
+            "text": "So you don't have to open it."
           },
           {
-            "name": "ネムル",
-            "text": "え、うん、\n分かった"
+            "name": "Neml",
+            "text": "Oh, okay.\nGot it."
           }
         ]
       },
@@ -6508,16 +6508,16 @@
         "type": "messages",
         "list": [
           {
-            "name": "ライベル",
-            "text": "買い物は、大丈夫だったか？"
+            "name": "Rybel",
+            "text": "Did the shopping go okay?"
           },
           {
-            "name": "ネムル",
-            "text": "うん、なんとか、\n大丈夫だったよ"
+            "name": "Neml",
+            "text": "Yeah, somehow.\nIt was okay."
           },
           {
-            "name": "ライベル",
-            "text": "そうか"
+            "name": "Rybel",
+            "text": "I see."
           }
         ]
       },
@@ -6529,12 +6529,12 @@
         "type": "messages",
         "list": [
           {
-            "name": "ライベル",
-            "text": "……"
+            "name": "Rybel",
+            "text": "..."
           },
           {
-            "name": "ネムル",
-            "text": "……？"
+            "name": "Neml",
+            "text": "...?"
           }
         ]
       },
@@ -6546,32 +6546,32 @@
         "type": "messages",
         "list": [
           {
-            "name": "ライベル",
-            "text": "ネムル、"
+            "name": "Rybel",
+            "text": "Neml,"
           },
           {
-            "name": "ネムル",
-            "text": "？"
+            "name": "Neml",
+            "text": "?"
           },
           {
-            "name": "ライベル",
-            "text": "お前は、幸せか？"
+            "name": "Rybel",
+            "text": "Are you happy?"
           },
           {
-            "name": "ネムル",
-            "text": "え？"
+            "name": "Neml",
+            "text": "Huh?"
           },
           {
-            "name": "ネムル",
-            "text": "うーん"
+            "name": "Neml",
+            "text": "Hmm."
           },
           {
-            "name": "ネムル",
-            "text": "たぶん、そうかな"
+            "name": "Neml",
+            "text": "I think so."
           },
           {
-            "name": "ネムル",
-            "text": "ニーナと一緒に暮らせているだけで幸せ、だよ"
+            "name": "Neml",
+            "text": "Just living with Nina makes me happy."
           }
         ]
       },
@@ -6583,48 +6583,48 @@
         "type": "messages",
         "list": [
           {
-            "name": "ライベル",
-            "text": "そうか……"
+            "name": "Rybel",
+            "text": "I see..."
           },
           {
-            "name": "ネムル",
-            "text": "どうしてそんなこと聞くの？"
+            "name": "Neml",
+            "text": "Why do you ask?"
           },
           {
-            "name": "ライベル",
-            "text": "気にすんな"
+            "name": "Rybel",
+            "text": "Don't worry about it."
           },
           {
-            "name": "ライベル",
-            "text": "とにかく、あれだ"
+            "name": "Rybel",
+            "text": "Anyway."
           },
           {
-            "name": "ライベル",
-            "text": "強く生きろよ"
+            "name": "Rybel",
+            "text": "Stay strong."
           },
           {
-            "name": "ネムル",
-            "text": "え、うん"
+            "name": "Neml",
+            "text": "Uh, okay."
           },
           {
-            "name": "ライベル",
-            "text": "そんじゃあ帰るわ"
+            "name": "Rybel",
+            "text": "Alright, I'm heading out."
           },
           {
-            "name": "ネムル",
-            "text": "え、帰るの？"
+            "name": "Neml",
+            "text": "Huh, you're leaving?"
           },
           {
-            "name": "ネムル",
-            "text": "食べ物も買ってきたよ"
+            "name": "Neml",
+            "text": "I bought food too."
           },
           {
-            "name": "ライベル",
-            "text": "あー、悪いな\nまた明日にでももらいに来るよ"
+            "name": "Rybel",
+            "text": "Ah, sorry.\nMaybe tomorrow or the day after."
           },
           {
-            "name": "ネムル",
-            "text": "分かった"
+            "name": "Neml",
+            "text": "Okay."
           }
         ]
       },
@@ -6657,12 +6657,12 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "何だったんだろう"
+            "name": "Neml",
+            "text": "What was that about?"
           },
           {
-            "name": "ネムル",
-            "text": "なんだかちょっと怪しかったな"
+            "name": "Neml",
+            "text": "That felt a little suspicious."
           }
         ]
       },
@@ -6716,23 +6716,23 @@
         "list": [
           {
             "name": "",
-            "text": "ライベルは玄関のドアをノックした"
+            "text": "Rybel knocked on the front door."
           },
           {
-            "name": "ライベル",
-            "text": "おいネムル、俺だ"
+            "name": "Rybel",
+            "text": "Hey Neml, it's me."
           },
           {
-            "name": "ライベル",
-            "text": "……"
+            "name": "Rybel",
+            "text": "..."
           },
           {
-            "name": "ネムル",
-            "text": "あ、ライベル、\n今開けるね"
+            "name": "Neml",
+            "text": "Oh, Rybel,\nI'll open it now."
           },
           {
-            "name": "ニーナ",
-            "text": "！"
+            "name": "Nina",
+            "text": "!"
           }
         ]
       },
@@ -6740,32 +6740,32 @@
         "type": "messages",
         "list": [
           {
-            "name": "ライベル",
-            "text": "いや、待て"
+            "name": "Rybel",
+            "text": "No, wait."
           },
           {
-            "name": "ライベル",
-            "text": "開けなくて大丈夫だ"
+            "name": "Rybel",
+            "text": "You don't have to open it."
           },
           {
-            "name": "ネムル",
-            "text": "？"
+            "name": "Neml",
+            "text": "?"
           },
           {
-            "name": "ネムル",
-            "text": "どうしたの？"
+            "name": "Neml",
+            "text": "What's wrong?"
           },
           {
-            "name": "ライベル",
-            "text": "ちょっと様子を見に寄っただけだ"
+            "name": "Rybel",
+            "text": "I just stopped by to check on you."
           },
           {
-            "name": "ライベル",
-            "text": "だから開けなくて大丈夫だ"
+            "name": "Rybel",
+            "text": "So you don't have to open it."
           },
           {
-            "name": "ネムル",
-            "text": "え、うん、\n分かった"
+            "name": "Neml",
+            "text": "Oh, okay.\nGot it."
           }
         ]
       },
@@ -6782,16 +6782,16 @@
         "type": "messages",
         "list": [
           {
-            "name": "ライベル",
-            "text": "買い物は、大丈夫だったか？"
+            "name": "Rybel",
+            "text": "Did the shopping go okay?"
           },
           {
-            "name": "ネムル",
-            "text": "うん、なんとか、\n大丈夫だったよ"
+            "name": "Neml",
+            "text": "Yeah, somehow.\nIt was okay."
           },
           {
-            "name": "ライベル",
-            "text": "そうか"
+            "name": "Rybel",
+            "text": "I see."
           }
         ]
       },
@@ -6818,32 +6818,32 @@
         "type": "messages",
         "list": [
           {
-            "name": "ライベル",
-            "text": "おい、\n本当に話しておかなくていいのかよ？"
+            "name": "Rybel",
+            "text": "Hey,\nare you sure you don't want to tell her?"
           },
           {
-            "name": "ニーナ",
-            "text": "うん、\n……こんなこと伝えるなんて、できないから"
+            "name": "Nina",
+            "text": "Yeah,\n...I can't tell her something like this."
           },
           {
-            "name": "ライベル",
-            "text": "……そうかよ"
+            "name": "Rybel",
+            "text": "...I see."
           },
           {
-            "name": "ライベル",
-            "text": "あとは何を聞けばいい？"
+            "name": "Rybel",
+            "text": "What else should I ask?"
           },
           {
-            "name": "ニーナ",
-            "text": "ええと……"
+            "name": "Nina",
+            "text": "Um..."
           },
           {
-            "name": "ニーナ",
-            "text": "ネムルは……、幸せだったの、かな？"
+            "name": "Nina",
+            "text": "I wonder... was Neml happy?"
           },
           {
-            "name": "ライベル",
-            "text": "……"
+            "name": "Rybel",
+            "text": "..."
           }
         ]
       },
@@ -6866,28 +6866,28 @@
         "type": "messages",
         "list": [
           {
-            "name": "ライベル",
-            "text": "ネムル、"
+            "name": "Rybel",
+            "text": "Neml,"
           },
           {
-            "name": "ネムル",
-            "text": "？"
+            "name": "Neml",
+            "text": "?"
           },
           {
-            "name": "ライベル",
-            "text": "お前は、幸せか？"
+            "name": "Rybel",
+            "text": "Are you happy?"
           },
           {
-            "name": "ネムル",
-            "text": "え？\nうーん"
+            "name": "Neml",
+            "text": "Huh?\nHmm."
           },
           {
-            "name": "ネムル",
-            "text": "そうかな"
+            "name": "Neml",
+            "text": "I think so."
           },
           {
-            "name": "ネムル",
-            "text": "ニーナと一緒に暮らせているだけで、幸せ、かな"
+            "name": "Neml",
+            "text": "Just living with Nina makes me happy."
           }
         ]
       },
@@ -6895,8 +6895,8 @@
         "type": "messages",
         "list": [
           {
-            "name": "ニーナ",
-            "text": "……"
+            "name": "Nina",
+            "text": "..."
           }
         ]
       },
@@ -6919,12 +6919,12 @@
         "type": "messages",
         "list": [
           {
-            "name": "ニーナ",
-            "text": "ネム、ル……"
+            "name": "Nina",
+            "text": "Neml..."
           },
           {
-            "name": "ライベル",
-            "text": "……"
+            "name": "Rybel",
+            "text": "..."
           }
         ]
       },
@@ -6936,48 +6936,48 @@
         "type": "messages",
         "list": [
           {
-            "name": "ライベル",
-            "text": "そうか……"
+            "name": "Rybel",
+            "text": "I see..."
           },
           {
-            "name": "ネムル",
-            "text": "どうしてそんなこと聞くの？"
+            "name": "Neml",
+            "text": "Why do you ask?"
           },
           {
-            "name": "ライベル",
-            "text": "気にすんな"
+            "name": "Rybel",
+            "text": "Don't worry about it."
           },
           {
-            "name": "ライベル",
-            "text": "とにかく、あれだ"
+            "name": "Rybel",
+            "text": "Anyway."
           },
           {
-            "name": "ライベル",
-            "text": "強く生きろよ"
+            "name": "Rybel",
+            "text": "Stay strong."
           },
           {
-            "name": "ネムル",
-            "text": "え、うん"
+            "name": "Neml",
+            "text": "Uh, okay."
           },
           {
-            "name": "ライベル",
-            "text": "そんじゃあ帰るわ"
+            "name": "Rybel",
+            "text": "Alright, I'm heading out."
           },
           {
-            "name": "ネムル",
-            "text": "え、帰るの？"
+            "name": "Neml",
+            "text": "Huh, you're leaving?"
           },
           {
-            "name": "ネムル",
-            "text": "食べ物も買ってきたよ"
+            "name": "Neml",
+            "text": "I bought food too."
           },
           {
-            "name": "ライベル",
-            "text": "あー、悪いな\nまた明日にでももらいに来るよ"
+            "name": "Rybel",
+            "text": "Ah, sorry.\nMaybe tomorrow or the day after."
           },
           {
-            "name": "ネムル",
-            "text": "分かった"
+            "name": "Neml",
+            "text": "Okay."
           }
         ]
       },
@@ -7000,12 +7000,12 @@
         "type": "messages",
         "list": [
           {
-            "name": "ライベル",
-            "text": "これでよかったのか？"
+            "name": "Rybel",
+            "text": "Was this the right thing to do?"
           },
           {
-            "name": "ニーナ",
-            "text": "うん、\n最後に声がきけてよかった"
+            "name": "Nina",
+            "text": "Yeah,\nI'm glad I got to hear her voice one last time."
           }
         ]
       },
@@ -7017,16 +7017,16 @@
         "type": "messages",
         "list": [
           {
-            "name": "ライベル",
-            "text": "……なあ、\n本当にお前が死ぬしかないのか？"
+            "name": "Rybel",
+            "text": "...Hey,\nIs there really no choice but for you to die?"
           },
           {
-            "name": "ニーナ",
-            "text": "……うん"
+            "name": "Nina",
+            "text": "...Yeah."
           },
           {
-            "name": "ライベル",
-            "text": "……"
+            "name": "Rybel",
+            "text": "..."
           }
         ]
       },
@@ -7049,16 +7049,16 @@
         "type": "messages",
         "list": [
           {
-            "name": "ライベル",
-            "text": "あいつはまあ、\nなんとかなると思うぜ"
+            "name": "Rybel",
+            "text": "She'll manage,\nI think."
           },
           {
-            "name": "ライベル",
-            "text": "俺もたまに気にかけといてやるからさ"
+            "name": "Rybel",
+            "text": "I'll check on her sometimes."
           },
           {
-            "name": "ニーナ",
-            "text": "……うん"
+            "name": "Nina",
+            "text": "...Yeah."
           }
         ]
       },
@@ -7081,8 +7081,8 @@
         "type": "messages",
         "list": [
           {
-            "name": "ニーナ",
-            "text": "ネムル、"
+            "name": "Nina",
+            "text": "Neml,"
           }
         ]
       },
@@ -7105,12 +7105,12 @@
         "type": "messages",
         "list": [
           {
-            "name": "ニーナ",
-            "text": "……ごめんね"
+            "name": "Nina",
+            "text": "...I'm sorry."
           },
           {
-            "name": "ニーナ",
-            "text": "バイバイ"
+            "name": "Nina",
+            "text": "Goodbye."
           }
         ]
       },
@@ -7133,8 +7133,8 @@
         "type": "messages",
         "list": [
           {
-            "name": "ライベル",
-            "text": "……"
+            "name": "Rybel",
+            "text": "..."
           }
         ]
       },
@@ -7161,8 +7161,8 @@
         "type": "messages",
         "list": [
           {
-            "name": "ニーナ",
-            "text": "……"
+            "name": "Nina",
+            "text": "..."
           }
         ]
       },
@@ -7268,27 +7268,27 @@
         "list": [
           {
             "name": "",
-            "text": "外から子供が泣いているような声が聞こえている"
+            "text": "A child's crying can be heard outside."
           },
           {
-            "name": "ネムル",
-            "text": "こんどは、子供の泣き声……？"
+            "name": "Neml",
+            "text": "Now it's a child crying...?"
           },
           {
-            "name": "ネムル",
-            "text": "今日は色々なことが起きるな"
+            "name": "Neml",
+            "text": "So much is happening today."
           },
           {
-            "name": "ネムル",
-            "text": "どうしよう……"
+            "name": "Neml",
+            "text": "What should I do..."
           },
           {
-            "name": "ネムル",
-            "text": "強盗のこともあるし、\nさっきのライベルも怪しかったし"
+            "name": "Neml",
+            "text": "There was that robber,\nand Rybel was acting strange earlier, too."
           },
           {
-            "name": "ネムル",
-            "text": "また何かに巻き込まれたら怖いな……"
+            "name": "Neml",
+            "text": "I'm scared I'll get dragged into something again..."
           }
         ]
       },
@@ -7307,7 +7307,7 @@
         "list": [
           {
             "name": "",
-            "text": "外からは相変わらず子供の泣き声が続いている"
+            "text": "The child's crying continues outside."
           }
         ]
       },
@@ -7325,8 +7325,8 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "ううーん、\nずっと放っておくのは、よくないよね"
+            "name": "Neml",
+            "text": "Hmm,\nleaving it alone isn't right."
           }
         ]
       },
@@ -7345,15 +7345,15 @@
         "list": [
           {
             "name": "",
-            "text": "ネムルは外の様子をうかがった"
+            "text": "Neml peered outside."
           },
           {
-            "name": "ネムル",
-            "text": "子供が一人で泣いていて、\n他には何も無さそう……"
+            "name": "Neml",
+            "text": "A child is crying alone,\nand it doesn't look like anything else is there..."
           },
           {
-            "name": "ネムル",
-            "text": "……よし、話を聞きに行ってみよう"
+            "name": "Neml",
+            "text": "...Alright, I'll go ask what's wrong."
           }
         ]
       },
@@ -7401,23 +7401,23 @@
         "list": [
           {
             "name": "",
-            "text": "家の前の広場で子供が座り込んで泣いている"
+            "text": "In the square in front of the house, a child is sitting and crying."
           },
           {
-            "name": "ネムル",
-            "text": "ねえ、どうしたの？"
+            "name": "Neml",
+            "text": "Hey, what's wrong?"
           },
           {
-            "name": "子供",
-            "text": "うう……\n置いて行かれたんだ……"
+            "name": "Korrin",
+            "text": "Uu...\nI got left behind..."
           },
           {
-            "name": "ネムル",
-            "text": "ええと、迷子？"
+            "name": "Neml",
+            "text": "Um, are you lost?"
           },
           {
-            "name": "子供",
-            "text": "仲間のみんなからはぐれて、気づいたら置いて行かれちゃって……\nうぐ……うぇ……"
+            "name": "Korrin",
+            "text": "I got separated from everyone, and before I knew it I was left behind...\nUgh... ueh..."
           }
         ]
       },
@@ -7440,24 +7440,24 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "あなたの名前は？"
+            "name": "Neml",
+            "text": "What's your name?"
           },
           {
-            "name": "子供",
-            "text": "えう……、コリン"
+            "name": "Korrin",
+            "text": "Uh... Korrin."
           },
           {
-            "name": "ネムル",
-            "text": "コリン、君のおうちはどこか分かる？"
+            "name": "Neml",
+            "text": "Korrin, do you know where your home is?"
           },
           {
-            "name": "コリン",
-            "text": "山のほうで、\n……遠くて、一人じゃ帰れない……"
+            "name": "Korrin",
+            "text": "It's toward the mountains,\n...it's far, I can't get back alone..."
           },
           {
-            "name": "ネムル",
-            "text": "うーん、そうか"
+            "name": "Neml",
+            "text": "Hmm, I see."
           }
         ]
       },
@@ -7480,20 +7480,20 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "（見た感じカオティクスみたいだし、できれば関わりたくはないけど……）"
+            "name": "Neml",
+            "text": "(He looks like a Chaotix... I'd rather not get involved, but...)"
           },
           {
-            "name": "コリン",
-            "text": "ねーちゃん……"
+            "name": "Korrin",
+            "text": "Miss..."
           },
           {
-            "name": "コリン",
-            "text": "連れてって……！"
+            "name": "Korrin",
+            "text": "Take me with you...!"
           },
           {
-            "name": "ネムル",
-            "text": "うーん、\nそう、なるよね……"
+            "name": "Neml",
+            "text": "Hmm,\nyeah, I guess so..."
           }
         ]
       },
@@ -7564,60 +7564,60 @@
         "type": "messages",
         "list": [
           {
-            "name": "コリン",
-            "text": "ねーちゃん、おせーぞ！"
+            "name": "Korrin",
+            "text": "Miss, you're slow!"
           },
           {
             "name": "",
-            "text": "すっかり泣き止んだコリンが森の中を元気に歩いている"
+            "text": "Korrin, who has stopped crying, is walking cheerfully through the forest."
           },
           {
-            "name": "ネムル",
-            "text": "疲れた……"
+            "name": "Neml",
+            "text": "I'm tired..."
           },
           {
-            "name": "ネムル",
-            "text": "君のおうち、すごく遠いね"
+            "name": "Neml",
+            "text": "Your home is really far."
           },
           {
-            "name": "ネムル",
-            "text": "なんでこんな遠くまで来てたの？"
+            "name": "Neml",
+            "text": "Why did you come all this way?"
           },
           {
-            "name": "コリン",
-            "text": "とーちゃんたちの仕事だよ！"
+            "name": "Korrin",
+            "text": "It's my dad's job!"
           },
           {
-            "name": "コリン",
-            "text": "悪い奴らを倒してお金をもらうんだ"
+            "name": "Korrin",
+            "text": "He beats bad guys and gets paid."
           },
           {
-            "name": "ネムル",
-            "text": "悪い奴ら？"
+            "name": "Neml",
+            "text": "Bad guys?"
           },
           {
-            "name": "コリン",
-            "text": "ああ、世の中には悪い奴らがたくさん居るってとーちゃんが言ってたぜ"
+            "name": "Korrin",
+            "text": "Yeah, Dad says there are lots of bad guys in the world."
           },
           {
-            "name": "コリン",
-            "text": "お金や食べ物を独り占めしてるやつらとか"
+            "name": "Korrin",
+            "text": "Like people who hog all the money and food."
           },
           {
-            "name": "コリン",
-            "text": "あとは魔女とかな"
+            "name": "Korrin",
+            "text": "And witches, too."
           },
           {
-            "name": "ネムル",
-            "text": "魔女？\nそんなのいるの？"
+            "name": "Neml",
+            "text": "Witches?\nDo they really exist?"
           },
           {
-            "name": "コリン",
-            "text": "ああ、いるぜ"
+            "name": "Korrin",
+            "text": "Yeah, they do."
           },
           {
-            "name": "コリン",
-            "text": "怖い夢の世界の出来事を、本当の世界にも起こしたりするんだ"
+            "name": "Korrin",
+            "text": "They make things from scary dream worlds happen in the real world."
           }
         ]
       },
@@ -7630,12 +7630,12 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "！！"
+            "name": "Neml",
+            "text": "!!"
           },
           {
-            "name": "コリン",
-            "text": "怖いだろ？"
+            "name": "Korrin",
+            "text": "Scary, right?"
           }
         ]
       },
@@ -7658,24 +7658,24 @@
         "type": "messages",
         "list": [
           {
-            "name": "コリン",
-            "text": "昔そのせいで大きな洪水が起きて、俺たちの国が流されちゃったり、\nうちのじーちゃんやばーちゃんも死んじまったんだ"
+            "name": "Korrin",
+            "text": "Because of that, there was a huge flood long ago, our country got washed away,\nand my grandpa and grandma died too."
           },
           {
-            "name": "ネムル",
-            "text": "え……"
+            "name": "Neml",
+            "text": "Huh..."
           },
           {
-            "name": "コリン",
-            "text": "だから俺のとーちゃんはその魔女たちのことが大っ嫌いなんだ"
+            "name": "Korrin",
+            "text": "That's why my dad hates those witches."
           },
           {
-            "name": "コリン",
-            "text": "見つけたら絶対にやっつけるんだぜ"
+            "name": "Korrin",
+            "text": "If he finds them, he'll definitely take them down."
           },
           {
-            "name": "ネムル",
-            "text": "……そうなんだ"
+            "name": "Neml",
+            "text": "...I see."
           }
         ]
       },
@@ -7698,20 +7698,20 @@
         "type": "messages",
         "list": [
           {
-            "name": "コリン",
-            "text": "とーちゃん、俺がちゃんと馬車で待ってなかったから、先に帰っちゃったんだろうな……"
+            "name": "Korrin",
+            "text": "Dad probably went home first because I didn't wait by the wagon..."
           },
           {
-            "name": "コリン",
-            "text": "帰ったら怒られるかな"
+            "name": "Korrin",
+            "text": "Think he'll be mad?"
           },
           {
-            "name": "ネムル",
-            "text": "きっと大丈夫"
+            "name": "Neml",
+            "text": "I'm sure it'll be okay."
           },
           {
-            "name": "ネムル",
-            "text": "心配して待っていてくれてると思うから、早く行こう"
+            "name": "Neml",
+            "text": "He must be worried, so let's hurry."
           }
         ]
       },
@@ -7734,12 +7734,12 @@
         "type": "messages",
         "list": [
           {
-            "name": "コリン",
-            "text": "そうだな！"
+            "name": "Korrin",
+            "text": "Yeah!"
           },
           {
-            "name": "コリン",
-            "text": "とーちゃん、きっと晩飯作ってるはずだから、お礼に食っていってくれよ！"
+            "name": "Korrin",
+            "text": "Dad's probably making dinner, so eat with us as thanks!"
           }
         ]
       },
@@ -7762,8 +7762,8 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "ええと……うん……お腹空いてたらね"
+            "name": "Neml",
+            "text": "Um... yeah... if I'm hungry."
           }
         ]
       },
@@ -7830,16 +7830,16 @@
         "type": "messages",
         "list": [
           {
-            "name": "コリン",
-            "text": "やった！帰ってこれた！"
+            "name": "Korrin",
+            "text": "Yes! We made it back!"
           },
           {
-            "name": "コリン",
-            "text": "歩くとすごく遠いんだな"
+            "name": "Korrin",
+            "text": "It's really far on foot."
           },
           {
-            "name": "コリン",
-            "text": "いつもはとーちゃんたちの馬車であっという間なのに"
+            "name": "Korrin",
+            "text": "It's so quick when we use Dad's wagon."
           }
         ]
       },
@@ -7862,12 +7862,12 @@
         "type": "messages",
         "list": [
           {
-            "name": "コリン",
-            "text": "ねーちゃん、ありがとな！"
+            "name": "Korrin",
+            "text": "Thanks, Miss!"
           },
           {
-            "name": "ネムル",
-            "text": "うん……"
+            "name": "Neml",
+            "text": "Yeah..."
           }
         ]
       },
@@ -7890,12 +7890,12 @@
         "type": "messages",
         "list": [
           {
-            "name": "コリン",
-            "text": "おーい！とーちゃん！\n帰ってきたぜ！"
+            "name": "Korrin",
+            "text": "Hey! Dad!\nI'm back!"
           },
           {
-            "name": "コリン",
-            "text": "歩いて来たんだからな！"
+            "name": "Korrin",
+            "text": "I walked here!"
           }
         ]
       },
@@ -7918,28 +7918,28 @@
         "type": "messages",
         "list": [
           {
-            "name": "コリン",
-            "text": "あれ？とーちゃんどこだ？"
+            "name": "Korrin",
+            "text": "Huh? Where's Dad?"
           },
           {
-            "name": "コリン",
-            "text": "なんでいない？"
+            "name": "Korrin",
+            "text": "Why isn't he here?"
           },
           {
-            "name": "コリン",
-            "text": "おかしいな"
+            "name": "Korrin",
+            "text": "That's weird."
           },
           {
-            "name": "ネムル",
-            "text": "……"
+            "name": "Neml",
+            "text": "..."
           },
           {
-            "name": "コリン",
-            "text": "後でとーちゃんの仲間たちに聞いてみよう"
+            "name": "Korrin",
+            "text": "I'll ask Dad's buddies later."
           },
           {
-            "name": "コリン",
-            "text": "帰ったら会えると思ったのにな……"
+            "name": "Korrin",
+            "text": "I thought I'd see him when we got back..."
           }
         ]
       },
@@ -7962,28 +7962,28 @@
         "type": "messages",
         "list": [
           {
-            "name": "コリン",
-            "text": "ごめんなねーちゃん、\n飯はご馳走できないみたいだ"
+            "name": "Korrin",
+            "text": "Sorry, Miss.\nLooks like I can't treat you to a meal."
           },
           {
-            "name": "ネムル",
-            "text": "大丈夫"
+            "name": "Neml",
+            "text": "It's okay."
           },
           {
-            "name": "ネムル",
-            "text": "私も家に戻らないといけないし"
+            "name": "Neml",
+            "text": "I need to get home too."
           },
           {
-            "name": "コリン",
-            "text": "そうか"
+            "name": "Korrin",
+            "text": "I see."
           },
           {
-            "name": "ネムル",
-            "text": "君は一人で大丈夫？"
+            "name": "Neml",
+            "text": "Will you be okay on your own?"
           },
           {
-            "name": "コリン",
-            "text": "ああ\n後でとーちゃんも帰ってくるだろ"
+            "name": "Korrin",
+            "text": "Yeah.\nDad will come back later."
           }
         ]
       },
@@ -8006,12 +8006,12 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "……"
+            "name": "Neml",
+            "text": "..."
           },
           {
-            "name": "ネムル",
-            "text": "それじゃあ私帰るね"
+            "name": "Neml",
+            "text": "Then I'll head back."
           }
         ]
       },
@@ -8034,8 +8034,8 @@
         "type": "messages",
         "list": [
           {
-            "name": "コリン",
-            "text": "おう！\nほんとにありがとな！"
+            "name": "Korrin",
+            "text": "Yeah!\nThanks so much!"
           }
         ]
       },
@@ -8077,16 +8077,16 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "コリンのお父さんって、もしかして……"
+            "name": "Neml",
+            "text": "Korrin's father, could he be...?"
           },
           {
-            "name": "ネムル",
-            "text": "ちがう……よね……？"
+            "name": "Neml",
+            "text": "No... right...?"
           },
           {
-            "name": "ネムル",
-            "text": "もしそうだとしても……、\nあれは仕方なかった……よね"
+            "name": "Neml",
+            "text": "Even if he is...\nI didn't have a choice... right?"
           }
         ]
       },
@@ -8108,12 +8108,12 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "……帰ろう"
+            "name": "Neml",
+            "text": "...Let's go home."
           },
           {
-            "name": "ネムル",
-            "text": "帰ったら、ニーナは帰ってきてるかな"
+            "name": "Neml",
+            "text": "I wonder if Nina will be back when I get home."
           }
         ]
       },
@@ -8181,8 +8181,8 @@
         "type": "messages",
         "list": [
           {
-            "name": "コリン",
-            "text": "とーちゃん！\n帰ってきたぜ！"
+            "name": "Korrin",
+            "text": "Dad!\nI'm back!"
           }
         ]
       },
@@ -8210,36 +8210,36 @@
         "type": "messages",
         "list": [
           {
-            "name": "ウルフリック",
-            "text": "コリン！"
+            "name": "Wulfric",
+            "text": "Korrin!"
           },
           {
-            "name": "ネムル",
-            "text": "！"
+            "name": "Neml",
+            "text": "!"
           },
           {
-            "name": "ウルフリック",
-            "text": "お前、馬車にちゃんと乗ってなかったな？"
+            "name": "Wulfric",
+            "text": "You weren't on the wagon, were you?"
           },
           {
-            "name": "コリン",
-            "text": "だって暇なんだよいつも！"
+            "name": "Korrin",
+            "text": "I'm always bored!"
           },
           {
-            "name": "ウルフリック",
-            "text": "ったく、心配させやがって"
+            "name": "Wulfric",
+            "text": "Sheesh, you had me worried."
           },
           {
-            "name": "ウルフリック",
-            "text": "ん？そっちのは……"
+            "name": "Wulfric",
+            "text": "Huh? And over there..."
           },
           {
-            "name": "ウルフリック",
-            "text": "！！"
+            "name": "Wulfric",
+            "text": "!!"
           },
           {
-            "name": "ウルフリック",
-            "text": "お前は……"
+            "name": "Wulfric",
+            "text": "You're..."
           }
         ]
       },
@@ -8267,28 +8267,28 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "どうも……"
+            "name": "Neml",
+            "text": "Hello..."
           },
           {
-            "name": "コリン",
-            "text": "このねーちゃんが送ってくれたんだぜ！"
+            "name": "Korrin",
+            "text": "This miss brought me home!"
           },
           {
-            "name": "ウルフリック",
-            "text": "おう……\nそうだったのか"
+            "name": "Wulfric",
+            "text": "Oh...\nSo that's what happened."
           },
           {
-            "name": "ウルフリック",
-            "text": "ああ、\nあんた"
+            "name": "Wulfric",
+            "text": "Ah,\nyou."
           },
           {
-            "name": "ウルフリック",
-            "text": "……息子を運んでくれてありがとうな"
+            "name": "Wulfric",
+            "text": "...Thanks for bringing my son."
           },
           {
-            "name": "ネムル",
-            "text": "あ、……うん"
+            "name": "Neml",
+            "text": "Uh... yeah."
           }
         ]
       },
@@ -8316,16 +8316,16 @@
         "type": "messages",
         "list": [
           {
-            "name": "コリン",
-            "text": "そうだ！とーちゃん、メシはあるか？\nお礼にご馳走してあげようぜ！"
+            "name": "Korrin",
+            "text": "Right! Dad, got food?\nLet's treat her as thanks!"
           },
           {
-            "name": "ネムル",
-            "text": "あ、私は……"
+            "name": "Neml",
+            "text": "Uh, I..."
           },
           {
-            "name": "ネムル",
-            "text": "すぐ帰らないと"
+            "name": "Neml",
+            "text": "I have to get back soon."
           }
         ]
       },
@@ -8353,20 +8353,20 @@
         "type": "messages",
         "list": [
           {
-            "name": "ウルフリック",
-            "text": "急いでるのか？"
+            "name": "Wulfric",
+            "text": "In a hurry?"
           },
           {
-            "name": "ウルフリック",
-            "text": "迷惑かけたな"
+            "name": "Wulfric",
+            "text": "Sorry for the trouble."
           },
           {
-            "name": "ウルフリック",
-            "text": "そうだ、帰りは馬車を出すから、それで帰ってくれ"
+            "name": "Wulfric",
+            "text": "Tell you what, I'll send the wagon back, so take that home."
           },
           {
-            "name": "ネムル",
-            "text": "え、うん\nありがとう"
+            "name": "Neml",
+            "text": "Oh, yeah\nThanks."
           }
         ]
       },
@@ -8393,12 +8393,12 @@
         "type": "messages",
         "list": [
           {
-            "name": "コリン",
-            "text": "どうだ！良い馬車だろ！"
+            "name": "Korrin",
+            "text": "See? Nice wagon, right?"
           },
           {
-            "name": "コリン",
-            "text": "ほら、俺が荷物を積んでやるからな！"
+            "name": "Korrin",
+            "text": "Here, I'll load your stuff!"
           }
         ]
       },
@@ -8426,12 +8426,12 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "あ！大丈夫！自分で"
+            "name": "Neml",
+            "text": "Ah! It's fine! I'll do it myself."
           },
           {
-            "name": "コリン",
-            "text": "ねーちゃんの荷物これだけ？"
+            "name": "Korrin",
+            "text": "Is this all your stuff, Miss?"
           }
         ]
       },
@@ -8464,20 +8464,20 @@
         "type": "messages",
         "list": [
           {
-            "name": "コリン",
-            "text": "なんだこれ？薬か？"
+            "name": "Korrin",
+            "text": "What's this? Medicine?"
           },
           {
-            "name": "ウルフリック",
-            "text": "！！"
+            "name": "Wulfric",
+            "text": "!!"
           },
           {
-            "name": "ネムル",
-            "text": "……"
+            "name": "Neml",
+            "text": "..."
           },
           {
-            "name": "コリン",
-            "text": "ねーちゃん病気なのか？"
+            "name": "Korrin",
+            "text": "Miss, are you sick?"
           }
         ]
       },
@@ -8510,12 +8510,12 @@
         "type": "messages",
         "list": [
           {
-            "name": "ウルフリック",
-            "text": "コリン、お前はもういいから先に部屋に戻ってろ"
+            "name": "Wulfric",
+            "text": "Korrin, that's enough. Go back to your room."
           },
           {
-            "name": "コリン",
-            "text": "なんだよ"
+            "name": "Korrin",
+            "text": "What?"
           }
         ]
       },
@@ -8543,8 +8543,8 @@
         "type": "messages",
         "list": [
           {
-            "name": "コリン",
-            "text": "ねーちゃん、またいつでも遊びに来てくれよな！"
+            "name": "Korrin",
+            "text": "Miss, come hang out again anytime!"
           }
         ]
       },
@@ -8577,16 +8577,16 @@
         "type": "messages",
         "list": [
           {
-            "name": "ウルフリック",
-            "text": "なあ、お前ってもしかして"
+            "name": "Wulfric",
+            "text": "Hey, are you maybe..."
           },
           {
-            "name": "ネムル",
-            "text": "……"
+            "name": "Neml",
+            "text": "..."
           },
           {
-            "name": "ウルフリック",
-            "text": "はあ……"
+            "name": "Wulfric",
+            "text": "Hah..."
           }
         ]
       },
@@ -8615,7 +8615,7 @@
         "list": [
           {
             "name": "",
-            "text": "ウルフリックはネムルに硬貨が入った革の小袋を差し出した"
+            "text": "Wulfric held out a small leather pouch filled with coins to Neml."
           }
         ]
       },
@@ -8638,16 +8638,16 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "？"
+            "name": "Neml",
+            "text": "?"
           },
           {
-            "name": "ウルフリック",
-            "text": "昼間にお前から奪った分と、コリンを送ってくれた礼だ"
+            "name": "Wulfric",
+            "text": "It's what I took from you earlier, and thanks for bringing Korrin home."
           },
           {
-            "name": "ネムル",
-            "text": "え……"
+            "name": "Neml",
+            "text": "Huh..."
           }
         ]
       },
@@ -8675,8 +8675,8 @@
         "type": "messages",
         "list": [
           {
-            "name": "ウルフリック",
-            "text": "気をつけて帰れよ"
+            "name": "Wulfric",
+            "text": "Get home safe."
           }
         ]
       },
@@ -8699,8 +8699,8 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "……"
+            "name": "Neml",
+            "text": "..."
           }
         ]
       },
@@ -8748,12 +8748,12 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "今日はなんだか色々なことがあったな"
+            "name": "Neml",
+            "text": "A lot happened today."
           },
           {
-            "name": "ネムル",
-            "text": "疲れたし、\n家につくまで寝てようかな"
+            "name": "Neml",
+            "text": "I'm tired,\nmaybe I'll sleep until I get home."
           }
         ]
       },
@@ -8769,12 +8769,12 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "家に帰ったら、ニーナはいるかな？"
+            "name": "Neml",
+            "text": "Will Nina be home when I get back?"
           },
           {
-            "name": "ネムル",
-            "text": "もし居なかったら……"
+            "name": "Neml",
+            "text": "If she's not..."
           }
         ]
       },
@@ -8796,12 +8796,12 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "もし……、そのまま帰ってこなかったら……"
+            "name": "Neml",
+            "text": "If... she never comes back..."
           },
           {
-            "name": "ネムル",
-            "text": "……だめ\n悲しいこと考えたら悪い夢を見ちゃう"
+            "name": "Neml",
+            "text": "...No\nThinking sad thoughts gives me bad dreams."
           }
         ]
       },
@@ -8830,20 +8830,20 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "浜辺でお姉さんと話したこと、\nニーナはどう思ってるんだろう……"
+            "name": "Neml",
+            "text": "I wonder what Nina thinks about what I talked about with that woman on the beach..."
           },
           {
-            "name": "ネムル",
-            "text": "これは、私だけの気持ちなのかな"
+            "name": "Neml",
+            "text": "Is this just my own feeling?"
           },
           {
-            "name": "ネムル",
-            "text": "{red}ニーナがもし、\n私と同じ気持ちでいてくれたら……"
+            "name": "Neml",
+            "text": "{red}If Nina felt the same way about me..."
           },
           {
-            "name": "ネムル",
-            "text": "{red}そうだとしたらとっても嬉しいな"
+            "name": "Neml",
+            "text": "{red}That would make me really happy."
           }
         ]
       },
@@ -8861,16 +8861,16 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "きっと悪夢なんてなくて、\n毎日幸せな夢を見られるんだろうな"
+            "name": "Neml",
+            "text": "Surely there won't be any nightmares,\nand I'll be able to have happy dreams every day."
           },
           {
-            "name": "ネムル",
-            "text": "もしかしたら空も飛べちゃうかも"
+            "name": "Neml",
+            "text": "Maybe I could even fly."
           },
           {
-            "name": "ネムル",
-            "text": "……なんてね"
+            "name": "Neml",
+            "text": "...Just kidding."
           }
         ]
       },
@@ -8899,16 +8899,16 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "でも今日は、そんなに悪くなかったかな"
+            "name": "Neml",
+            "text": "But today wasn't so bad."
           },
           {
-            "name": "ネムル",
-            "text": "それに……、"
+            "name": "Neml",
+            "text": "And..."
           },
           {
-            "name": "ネムル",
-            "text": "ニーナが手紙で言ってくれたこと……、"
+            "name": "Neml",
+            "text": "What Nina wrote in her letter..."
           }
         ]
       },
@@ -8926,28 +8926,28 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "\"{ref:501}\"って"
+            "name": "Neml",
+            "text": "\"{ref:501}\"," 
           },
           {
-            "name": "ネムル",
-            "text": "なんだか照れちゃうな"
+            "name": "Neml",
+            "text": "It's kind of embarrassing."
           },
           {
-            "name": "ネムル",
-            "text": "気持ちがふわふわして"
+            "name": "Neml",
+            "text": "My feelings are all floaty."
           },
           {
-            "name": "ネムル",
-            "text": "このまま眠ったら、\nきっととっても幸せな夢が見れちゃいそう"
+            "name": "Neml",
+            "text": "If I fall asleep like this,\nI'm sure I'll have a very happy dream."
           },
           {
-            "name": "ネムル",
-            "text": "悪夢なんてなくて……、"
+            "name": "Neml",
+            "text": "No nightmares..."
           },
           {
-            "name": "ネムル",
-            "text": "もしかしたら空だって飛べちゃうかも"
+            "name": "Neml",
+            "text": "Maybe I could even fly."
           }
         ]
       },
@@ -8969,20 +8969,20 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "……"
+            "name": "Neml",
+            "text": "..."
           },
           {
-            "name": "ネムル",
-            "text": "これは……夢？"
+            "name": "Neml",
+            "text": "Is this... a dream?"
           },
           {
-            "name": "ネムル",
-            "text": "こんな幸せな夢……初めて"
+            "name": "Neml",
+            "text": "Such a happy dream... for the first time."
           },
           {
-            "name": "ネムル",
-            "text": "ニーナ、待っててね"
+            "name": "Neml",
+            "text": "Nina, wait for me."
           }
         ]
       },
@@ -9050,72 +9050,72 @@
         "type": "messages",
         "list": [
           {
-            "name": "シャーマン",
-            "text": "お前たちノクタリアンの運命は知っての通りだ"
+            "name": "Shaman",
+            "text": "As you know, this is the fate of you Noctarians."
           },
           {
-            "name": "シャーマン",
-            "text": "{red}お前たちが悪夢を見たとき、それは災厄として現実となる"
+            "name": "Shaman",
+            "text": "{red}When you have nightmares, they become calamities in reality."
           },
           {
-            "name": "シャーマン",
-            "text": "大きなものを挙げるならお前が生まれる少し前のこと"
+            "name": "Shaman",
+            "text": "A major example was shortly before you were born."
           },
           {
-            "name": "シャーマン",
-            "text": "あるノクタリアンが見た悪夢によって世界に大洪水が起きた"
+            "name": "Shaman",
+            "text": "A nightmare seen by a Noctarian caused a great flood across the world."
           },
           {
-            "name": "シャーマン",
-            "text": "多くの者が死に、多くの者が住処を追われた"
+            "name": "Shaman",
+            "text": "Many died, and many were driven from their homes."
           },
           {
-            "name": "シャーマン",
-            "text": "特にカオティクスが住んでいた地域の大部分は流され、\n彼らのその後の運命は大きく変わった"
+            "name": "Shaman",
+            "text": "Most of the regions where the Chaotix lived were washed away,\nand their fate afterward changed greatly."
           },
           {
-            "name": "ニーナ",
-            "text": "私たちは何故こんな運命を背負っているの？"
+            "name": "Nina",
+            "text": "Why do we have to bear this fate?"
           },
           {
-            "name": "シャーマン",
-            "text": "世界は大きな変化が起きたとき、進化していく"
+            "name": "Shaman",
+            "text": "The world evolves when great changes occur."
           },
           {
-            "name": "シャーマン",
-            "text": "その為に、その大きな変異を引き起こす存在が必要となる"
+            "name": "Shaman",
+            "text": "For that, there must be something that brings about those great shifts."
           },
           {
-            "name": "シャーマン",
-            "text": "その役割を担うのがお前たちノクタリアン"
+            "name": "Shaman",
+            "text": "You Noctarians bear that role."
           },
           {
-            "name": "シャーマン",
-            "text": "お前たちはこの世の仕組みの一部なのだ"
+            "name": "Shaman",
+            "text": "You are part of how this world works."
           },
           {
-            "name": "ニーナ",
-            "text": "でも、それで世界が滅んだら？"
+            "name": "Nina",
+            "text": "But what if the world is destroyed because of it?"
           },
           {
-            "name": "シャーマン",
-            "text": "それも世界の選択だ"
+            "name": "Shaman",
+            "text": "That, too, is the world's choice."
           },
           {
-            "name": "シャーマン",
-            "text": "我々の今のこの文明も、この世において初めてのものではない"
+            "name": "Shaman",
+            "text": "Our current civilization is not the first in this world."
           },
           {
-            "name": "シャーマン",
-            "text": "そして最後でもないだろう"
+            "name": "Shaman",
+            "text": "And it will not be the last."
           },
           {
-            "name": "シャーマン",
-            "text": "文明の終焉もまた、大きな変異の一つに過ぎない"
+            "name": "Shaman",
+            "text": "The end of civilization is merely another great shift."
           },
           {
-            "name": "シャーマン",
-            "text": "さて、お前はどのような悪夢を見た？"
+            "name": "Shaman",
+            "text": "Now, what kind of nightmare did you see?"
           }
         ]
       },
@@ -9138,36 +9138,36 @@
         "type": "messages",
         "list": [
           {
-            "name": "ニーナ",
-            "text": "月が……、\n落ちてくる夢"
+            "name": "Nina",
+            "text": "A dream where the moon...\nfalls."
           },
           {
-            "name": "ニーナ",
-            "text": "そして世界が……終わる"
+            "name": "Nina",
+            "text": "And the world... ends."
           },
           {
-            "name": "シャーマン",
-            "text": "そうか"
+            "name": "Shaman",
+            "text": "I see."
           },
           {
-            "name": "シャーマン",
-            "text": "月の接近はやはりお前たちの影響だったのか"
+            "name": "Shaman",
+            "text": "So the moon's approach was your influence after all."
           },
           {
-            "name": "ニーナ",
-            "text": "この夢はいつ実現してしまうの？"
+            "name": "Nina",
+            "text": "When will this dream come true?"
           },
           {
-            "name": "シャーマン",
-            "text": "夢を見た翌日"
+            "name": "Shaman",
+            "text": "The day after you saw it."
           },
           {
-            "name": "シャーマン",
-            "text": "つまり今夜にも世界は終わることだろう"
+            "name": "Shaman",
+            "text": "In other words, the world may end tonight."
           },
           {
-            "name": "ニーナ",
-            "text": "実現するのを止める方法はある？"
+            "name": "Nina",
+            "text": "Is there a way to stop it from happening?"
           }
         ]
       },
@@ -9190,44 +9190,44 @@
         "type": "messages",
         "list": [
           {
-            "name": "シャーマン",
-            "text": "唯一の方法を知っている"
+            "name": "Shaman",
+            "text": "I know the only way."
           },
           {
-            "name": "シャーマン",
-            "text": "その悪夢を見たノクタリアンが死んだとき、悪夢は実現しない"
+            "name": "Shaman",
+            "text": "If the Noctarian who saw the nightmare dies, the nightmare will not be realized."
           },
           {
-            "name": "ニーナ",
-            "text": "……"
+            "name": "Nina",
+            "text": "..."
           },
           {
-            "name": "ニーナ",
-            "text": "私が自ら命を捨てれば悪夢は現実にならない、\nそういうこと？"
+            "name": "Nina",
+            "text": "So if I give up my own life, the nightmare won't become reality?"
           },
           {
-            "name": "シャーマン",
-            "text": "その通り"
+            "name": "Shaman",
+            "text": "That's right."
           },
           {
-            "name": "ニーナ",
-            "text": "それはこの世の理に反する？"
+            "name": "Nina",
+            "text": "Does that go against the order of this world?"
           },
           {
-            "name": "シャーマン",
-            "text": "それも世界の選択の一つ"
+            "name": "Shaman",
+            "text": "That, too, is one of the world's choices."
           },
           {
-            "name": "シャーマン",
-            "text": "我々は伝承の民\nお前の選択を否定も肯定もしない"
+            "name": "Shaman",
+            "text": "We are a people of tradition.\nWe neither deny nor affirm your choice."
           },
           {
-            "name": "シャーマン",
-            "text": "我々はこの世の選択ただ見届け、伝えていくのみ"
+            "name": "Shaman",
+            "text": "We only witness and pass on the choices of this world."
           },
           {
-            "name": "ニーナ",
-            "text": "……"
+            "name": "Nina",
+            "text": "..."
           }
         ]
       },
@@ -9239,8 +9239,8 @@
         "type": "messages",
         "list": [
           {
-            "name": "ニーナ",
-            "text": "分かった"
+            "name": "Nina",
+            "text": "I understand."
           }
         ]
       },
@@ -9393,19 +9393,19 @@
         "list": [
           {
             "name": "",
-            "text": "ネムルは窓の外を見上げた"
+            "text": "Neml looked up at the sky outside the window."
           },
           {
-            "name": "ネムル",
-            "text": "なんだか、あんなに近かったお月さまが遠くなっているような気がする"
+            "name": "Neml",
+            "text": "Somehow, the moon that felt so close now seems far away."
           },
           {
-            "name": "ネムル",
-            "text": "ニーナ……"
+            "name": "Neml",
+            "text": "Nina..."
           },
           {
-            "name": "ネムル",
-            "text": "寂しいよ……"
+            "name": "Neml",
+            "text": "I'm lonely..."
           }
         ]
       },
@@ -9468,20 +9468,20 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "やっと戻ってこれた"
+            "name": "Neml",
+            "text": "I finally made it back."
           },
           {
-            "name": "ネムル",
-            "text": "ニーナ、まだ帰ってない……"
+            "name": "Neml",
+            "text": "Nina still isn't home..."
           },
           {
-            "name": "ネムル",
-            "text": "もうすぐ夜明けも近いのに……\nほんとにどうしたんだろう？"
+            "name": "Neml",
+            "text": "It's almost dawn...\nWhat really happened?"
           },
           {
-            "name": "ネムル",
-            "text": "お姉さんにもらったコンパス、\nこれでニーナを探しに行こう"
+            "name": "Neml",
+            "text": "The compass I got from that woman...\nI'll use it to look for Nina."
           }
         ]
       },
@@ -9518,16 +9518,16 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "ニーナがいるのはこのあたりみたい"
+            "name": "Neml",
+            "text": "It looks like Nina is around here."
           },
           {
-            "name": "ネムル",
-            "text": "ここって確か、\nシャーマンの塔の近くのはず"
+            "name": "Neml",
+            "text": "This should be near Shamani's Tower."
           },
           {
-            "name": "ネムル",
-            "text": "ニーナはどうしてこんなのところに居るのかな"
+            "name": "Neml",
+            "text": "Why would Nina be in a place like this?"
           }
         ]
       },
@@ -9565,12 +9565,12 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "あれ？"
+            "name": "Neml",
+            "text": "Huh?"
           },
           {
-            "name": "ネムル",
-            "text": "あそこに倒れているのって……！"
+            "name": "Neml",
+            "text": "That person collapsed over there...!"
           }
         ]
       },
@@ -9588,8 +9588,8 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "え…………？"
+            "name": "Neml",
+            "text": "Huh...?"
           }
         ]
       },
@@ -9607,12 +9607,12 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "……！！"
+            "name": "Neml",
+            "text": "...!!"
           },
           {
             "name": "",
-            "text": "ネムルは変わり果てた姿となったニーナを見つけた"
+            "text": "Neml found Nina, changed beyond recognition."
           }
         ]
       },
@@ -9643,12 +9643,12 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "ニーナ……なの？"
+            "name": "Neml",
+            "text": "Nina... is that you?"
           },
           {
-            "name": "ネムル",
-            "text": "どう……して……？"
+            "name": "Neml",
+            "text": "Why...?"
           }
         ]
       },
@@ -9711,24 +9711,24 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "馬車で送ってもらったおかげで割とすぐ戻ってこれたな"
+            "name": "Neml",
+            "text": "Thanks to the wagon ride, I got back pretty quickly."
           },
           {
-            "name": "ネムル",
-            "text": "……"
+            "name": "Neml",
+            "text": "..."
           },
           {
-            "name": "ネムル",
-            "text": "ニーナ、まだ帰ってない……"
+            "name": "Neml",
+            "text": "Nina still isn't home..."
           },
           {
-            "name": "ネムル",
-            "text": "心配だな……"
+            "name": "Neml",
+            "text": "I'm worried..."
           },
           {
-            "name": "ネムル",
-            "text": "お姉さんにもらったコンパス、\nこれでニーナを探しに行こう"
+            "name": "Neml",
+            "text": "The compass I got from that woman...\nI'll use it to look for Nina."
           }
         ]
       },
@@ -9765,16 +9765,16 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "ここって確かシャーマンの塔に続く森……"
+            "name": "Neml",
+            "text": "This should be the forest leading to Shamani's Tower..."
           },
           {
-            "name": "ネムル",
-            "text": "ニーナはどうしてこんなところに居るんだろう"
+            "name": "Neml",
+            "text": "Why would Nina be in a place like this?"
           },
           {
-            "name": "ネムル",
-            "text": "とにかく先を急ごう"
+            "name": "Neml",
+            "text": "Anyway, I'd better hurry."
           }
         ]
       },
@@ -9826,28 +9826,28 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "ニーナ！！"
+            "name": "Neml",
+            "text": "Nina!!"
           },
           {
-            "name": "ニーナ",
-            "text": "ネムル！？"
+            "name": "Nina",
+            "text": "Neml!?"
           },
           {
-            "name": "ニーナ",
-            "text": "どうしてここが分かったの？"
+            "name": "Nina",
+            "text": "How did you find this place?"
           },
           {
-            "name": "ネムル",
-            "text": "ニーナ……、遅いんだから"
+            "name": "Neml",
+            "text": "Nina... you're late."
           },
           {
-            "name": "ネムル",
-            "text": "迎えに来たよ"
+            "name": "Neml",
+            "text": "I came to get you."
           },
           {
-            "name": "ニーナ",
-            "text": "ネムル……、"
+            "name": "Nina",
+            "text": "Neml..."
           }
         ]
       },
@@ -9870,12 +9870,12 @@
         "type": "messages",
         "list": [
           {
-            "name": "ニーナ",
-            "text": "ごめんね"
+            "name": "Nina",
+            "text": "I'm sorry."
           },
           {
-            "name": "ニーナ",
-            "text": "私、帰れない"
+            "name": "Nina",
+            "text": "I can't go back."
           }
         ]
       },
@@ -9898,36 +9898,36 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "どうして？"
+            "name": "Neml",
+            "text": "Why?"
           },
           {
-            "name": "ニーナ",
-            "text": "私……、悪夢を見たの"
+            "name": "Nina",
+            "text": "I... had a nightmare."
           },
           {
-            "name": "ネムル",
-            "text": "どんな？"
+            "name": "Neml",
+            "text": "What kind?"
           },
           {
-            "name": "ニーナ",
-            "text": "月が、落ちてくる夢"
+            "name": "Nina",
+            "text": "A dream where the moon falls."
           },
           {
-            "name": "ニーナ",
-            "text": "それで、世界が壊れちゃう"
+            "name": "Nina",
+            "text": "And the world gets destroyed."
           },
           {
-            "name": "ネムル",
-            "text": "そんな……"
+            "name": "Neml",
+            "text": "No way..."
           },
           {
-            "name": "ニーナ",
-            "text": "でも大丈夫なの"
+            "name": "Nina",
+            "text": "But it's okay."
           },
           {
-            "name": "ニーナ",
-            "text": "私が居なくなれば、悪夢は実現しないんだ"
+            "name": "Nina",
+            "text": "If I'm gone, the nightmare won't come true."
           }
         ]
       },
@@ -9955,20 +9955,20 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "！！"
+            "name": "Neml",
+            "text": "!!"
           },
           {
-            "name": "ネムル",
-            "text": "居なくなるってどういうこと！？"
+            "name": "Neml",
+            "text": "What do you mean, gone!?"
           },
           {
-            "name": "ニーナ",
-            "text": "…………"
+            "name": "Nina",
+            "text": "..."
           },
           {
-            "name": "ネムル",
-            "text": "そんなの全然大丈夫じゃない！！"
+            "name": "Neml",
+            "text": "That's not okay at all!!"
           }
         ]
       }
@@ -10016,20 +10016,20 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "ニーナが居なくなって、いいわけがないよ……"
+            "name": "Neml",
+            "text": "There's no way I can accept you being gone..."
           },
           {
-            "name": "ニーナ",
-            "text": "じゃあ……"
+            "name": "Nina",
+            "text": "Then..."
           },
           {
-            "name": "ニーナ",
-            "text": "どうすればいいの……？……私"
+            "name": "Nina",
+            "text": "What am I supposed to do...? I..."
           },
           {
-            "name": "ネムル",
-            "text": "ニーナ、"
+            "name": "Neml",
+            "text": "Nina,"
           }
         ]
       },
@@ -10042,32 +10042,32 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "帰ろう？\n一緒に、おうちに"
+            "name": "Neml",
+            "text": "Let's go home.\nTogether, to our home."
           },
           {
-            "name": "ニーナ",
-            "text": "でも……！\nみんな、死んじゃうんだよ"
+            "name": "Nina",
+            "text": "But...!\nEveryone will die."
           },
           {
-            "name": "ネムル",
-            "text": "私、ニーナだけが死んで続いていく世界なんて絶対に嫌だよ"
+            "name": "Neml",
+            "text": "I don't want a world that goes on with only you gone."
           },
           {
-            "name": "ネムル",
-            "text": "そんな世界……、ないほうがいい"
+            "name": "Neml",
+            "text": "A world like that... shouldn't exist."
           },
           {
-            "name": "ネムル",
-            "text": "死ぬのは怖いけど……、"
+            "name": "Neml",
+            "text": "I'm afraid to die, but..."
           },
           {
-            "name": "ネムル",
-            "text": "死ぬならニーナと一緒がいい"
+            "name": "Neml",
+            "text": "If I'm going to die, I want it to be with you."
           },
           {
-            "name": "ニーナ",
-            "text": "ネムル……"
+            "name": "Nina",
+            "text": "Neml..."
           }
         ]
       },
@@ -10090,20 +10090,20 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "帰ろう"
+            "name": "Neml",
+            "text": "Let's go home."
           },
           {
-            "name": "ニーナ",
-            "text": "……うん"
+            "name": "Nina",
+            "text": "...Yeah."
           },
           {
-            "name": "ニーナ",
-            "text": "分かった"
+            "name": "Nina",
+            "text": "All right."
           },
           {
-            "name": "ニーナ",
-            "text": "ありがとう、ネムル"
+            "name": "Nina",
+            "text": "Thank you, Neml."
           }
         ]
       },
@@ -10140,12 +10140,12 @@
         "type": "messages",
         "list": [
           {
-            "name": "ニーナ",
-            "text": "月、とっても近くなってきたね"
+            "name": "Nina",
+            "text": "The moon's getting really close, isn't it?"
           },
           {
-            "name": "ネムル",
-            "text": "うん"
+            "name": "Neml",
+            "text": "Yeah."
           }
         ]
       },
@@ -10168,8 +10168,8 @@
         "type": "messages",
         "list": [
           {
-            "name": "ニーナ",
-            "text": "帰ったら……、\nネムルに伝えたいことがあるんだ"
+            "name": "Nina",
+            "text": "When we get home...\nthere's something I want to tell you, Neml."
           }
         ]
       },
@@ -10206,20 +10206,20 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "もうすぐ……、\n終わっちゃうんだね"
+            "name": "Neml",
+            "text": "It's almost...\nthe end, isn't it?"
           },
           {
-            "name": "ニーナ",
-            "text": "……うん"
+            "name": "Nina",
+            "text": "...Yeah."
           },
           {
-            "name": "ニーナ",
-            "text": "ねえネムル、\n手、繋いでほしい、な"
+            "name": "Nina",
+            "text": "Hey, Neml...\nWill you hold my hand...?"
           },
           {
-            "name": "ネムル",
-            "text": "うん、いいよ"
+            "name": "Neml",
+            "text": "Yeah. Of course."
           }
         ]
       },
@@ -10269,12 +10269,12 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "怖いの？"
+            "name": "Neml",
+            "text": "Are you scared?"
           },
           {
-            "name": "ニーナ",
-            "text": "少しだけ"
+            "name": "Nina",
+            "text": "Just a little."
           }
         ]
       },
@@ -10286,28 +10286,28 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "ねえ、さっき言ってた伝えたいことって？"
+            "name": "Neml",
+            "text": "Hey, what was it you wanted to tell me earlier?"
           },
           {
-            "name": "ニーナ",
-            "text": "ええと……"
+            "name": "Nina",
+            "text": "Um..."
           },
           {
-            "name": "ニーナ",
-            "text": "……"
+            "name": "Nina",
+            "text": "..."
           },
           {
-            "name": "ニーナ",
-            "text": "……やっぱりなんでもない"
+            "name": "Nina",
+            "text": "...No, never mind."
           },
           {
-            "name": "ネムル",
-            "text": "え、気になるよ"
+            "name": "Neml",
+            "text": "Come on, I want to hear it."
           },
           {
-            "name": "ニーナ",
-            "text": "もうすぐ終わっちゃうのに言えないなんて\n情けないね、私"
+            "name": "Nina",
+            "text": "It's pathetic that I can't say it when it's almost over."
           }
         ]
       },
@@ -10319,24 +10319,24 @@
         "type": "messages",
         "list": [
           {
-            "name": "ニーナ",
-            "text": "でも、ありがとう、ネムル"
+            "name": "Nina",
+            "text": "But... thank you, Neml."
           },
           {
-            "name": "ニーナ",
-            "text": "迎えに来てくれて"
+            "name": "Nina",
+            "text": "For coming to get me."
           },
           {
-            "name": "ニーナ",
-            "text": "すごく嬉しかったよ"
+            "name": "Nina",
+            "text": "It made me so happy."
           },
           {
-            "name": "ネムル",
-            "text": "うん\nニーナのこと見つけられてよかった"
+            "name": "Neml",
+            "text": "Yeah.\nI'm glad I found you, Nina."
           },
           {
-            "name": "ネムル",
-            "text": "最期まで一緒に居てくれてありがとう"
+            "name": "Neml",
+            "text": "Thank you for staying with me until the end."
           }
         ]
       },
@@ -10374,12 +10374,12 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "ねえ、聞いて"
+            "name": "Neml",
+            "text": "Hey, listen."
           },
           {
-            "name": "ネムル",
-            "text": "私ね、\nニーナが伝えてくれたこと、とっても嬉しかったんだ"
+            "name": "Neml",
+            "text": "What you told me...\nit made me so happy."
           }
         ]
       },
@@ -10402,12 +10402,12 @@
         "type": "messages",
         "list": [
           {
-            "name": "ニーナ",
-            "text": "……"
+            "name": "Nina",
+            "text": "..."
           },
           {
-            "name": "ネムル",
-            "text": "それでね"
+            "name": "Neml",
+            "text": "And then..."
           }
         ]
       },
@@ -10430,24 +10430,24 @@
         "type": "messages",
         "list": [
           {
-            "name": "ニーナ",
-            "text": "ネムル"
+            "name": "Nina",
+            "text": "Neml."
           },
           {
-            "name": "ニーナ",
-            "text": "私、自分の気持ちに素直になってから決心がついたの"
+            "name": "Nina",
+            "text": "Once I faced my true feelings, I made my decision."
           },
           {
-            "name": "ニーナ",
-            "text": "ネムルが悲しむかもしれないけど、"
+            "name": "Nina",
+            "text": "You might be sad, but..."
           },
           {
-            "name": "ニーナ",
-            "text": "それでも私はネムルに生きていてほしいんだ"
+            "name": "Nina",
+            "text": "I still want you to live."
           },
           {
-            "name": "ネムル",
-            "text": "え……"
+            "name": "Neml",
+            "text": "Huh..."
           }
         ]
       },
@@ -10470,20 +10470,20 @@
         "type": "messages",
         "list": [
           {
-            "name": "ニーナ",
-            "text": "ごめんね、ネムル"
+            "name": "Nina",
+            "text": "I'm sorry, Neml."
           },
           {
-            "name": "ニーナ",
-            "text": "……元気でね"
+            "name": "Nina",
+            "text": "...Please live on."
           },
           {
-            "name": "ネムル",
-            "text": "だめ！！"
+            "name": "Neml",
+            "text": "No!!"
           },
           {
-            "name": "ネムル",
-            "text": "待って！！"
+            "name": "Neml",
+            "text": "Wait!!"
           }
         ]
       },
@@ -10521,7 +10521,7 @@
         "list": [
           {
             "name": "",
-            "text": "飛び降りたニーナを追ってネムルが駆け出すと、\nその背中に輝く大きな翼が広がった"
+            "text": "As Neml ran after Nina, who had leapt,\nlarge shining wings spread from her back."
           }
         ]
       },
@@ -10547,104 +10547,104 @@
         "type": "messages",
         "list": [
           {
-            "name": "ネムル",
-            "text": "ニーナ！！！！"
+            "name": "Neml",
+            "text": "Nina!!!!"
           },
           {
-            "name": "ニーナ",
-            "text": "ネムル！！"
+            "name": "Nina",
+            "text": "Neml!!"
           },
           {
-            "name": "ニーナ",
-            "text": "ど、どうなってるの！？これ"
+            "name": "Nina",
+            "text": "W-what is this!?"
           },
           {
-            "name": "ニーナ",
-            "text": "空、飛んで……！"
+            "name": "Nina",
+            "text": "We're... flying!"
           },
           {
-            "name": "ネムル",
-            "text": "飛んでる……ね"
+            "name": "Neml",
+            "text": "We are..."
           },
           {
-            "name": "ネムル",
-            "text": "ニーナ、もうこんなこと、しなくていいんだよ"
+            "name": "Neml",
+            "text": "Nina, you don't have to do this anymore."
           },
           {
-            "name": "ニーナ",
-            "text": "でも……！私が生きてたら……！"
+            "name": "Nina",
+            "text": "But...! If I stay alive...!"
           },
           {
-            "name": "ネムル",
-            "text": "ニーナ、私ね、夢を見たの"
+            "name": "Neml",
+            "text": "Nina, I had a dream."
           },
           {
-            "name": "ネムル",
-            "text": "とっても素敵な夢"
+            "name": "Neml",
+            "text": "A beautiful dream."
           },
           {
-            "name": "ネムル",
-            "text": "この世界が、これからも続いていく夢"
+            "name": "Neml",
+            "text": "A dream where this world keeps going."
           },
           {
-            "name": "ネムル",
-            "text": "ニーナも一緒にね"
+            "name": "Neml",
+            "text": "With you in it, Nina."
           },
           {
-            "name": "ニーナ",
-            "text": "え……？"
+            "name": "Nina",
+            "text": "Huh...?"
           },
           {
-            "name": "ネムル",
-            "text": "実現するのは私の見た夢"
+            "name": "Neml",
+            "text": "The dream that will come true is mine."
           },
           {
-            "name": "ネムル",
-            "text": "ニーナの悪夢は実現しない"
+            "name": "Neml",
+            "text": "Your nightmare won't come true."
           },
           {
-            "name": "ニーナ",
-            "text": "ほんと……に？"
+            "name": "Nina",
+            "text": "Really...?"
           },
           {
-            "name": "ネムル",
-            "text": "うん、\nだってほら、私こうして空だって飛べちゃった"
+            "name": "Neml",
+            "text": "Yeah.\nLook, I can even fly now."
           },
           {
-            "name": "ネムル",
-            "text": "ニーナが伝えてくれたこと、とっても嬉しくて"
+            "name": "Neml",
+            "text": "What you told me made me so happy."
           },
           {
-            "name": "ネムル",
-            "text": "こんな奇跡が起きるくらいに"
+            "name": "Neml",
+            "text": "So happy it brought a miracle like this."
           },
           {
-            "name": "ニーナ",
-            "text": "じゃあ私、これからも生きていていいの？"
+            "name": "Nina",
+            "text": "Then... can I keep living?"
           },
           {
-            "name": "ニーナ",
-            "text": "ネムルと一緒に、生きていていいの？"
+            "name": "Nina",
+            "text": "Can I live... with you?"
           },
           {
-            "name": "ネムル",
-            "text": "うん、\nだから一緒に……"
+            "name": "Neml",
+            "text": "Yeah.\nSo together..."
           },
           {
-            "name": "ネムル",
-            "text": "帰ろう"
+            "name": "Neml",
+            "text": "Let's go home."
           },
           {
-            "name": "ニーナ",
-            "text": "うん！！"
+            "name": "Nina",
+            "text": "Yeah!!"
           },
           {
-            "name": "ネムル",
-            "text": "ニーナ、"
+            "name": "Neml",
+            "text": "Nina..."
           },
           {
-            "name": "ネムル",
-            "text": "大好きだよ"
+            "name": "Neml",
+            "text": "I love you."
           }
         ]
       },
