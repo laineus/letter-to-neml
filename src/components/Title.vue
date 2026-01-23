@@ -10,6 +10,8 @@ import { useGamePad } from '../lib/gamePad'
 import { uiTexts } from '../lib/ui'
 import { useUISound } from '../lib/se'
 import packageJson from '../../package.json'
+import { useHint } from './Hint.vue'
+import Dialog, { useDialogs } from './Dialog.vue'
 const scene = useScene()
 const bgm = scene.sound.add('bgm/letter-to-neml', { loop: true })
 bgm.play()
@@ -63,6 +65,7 @@ const se = useUISound()
 
 const gamePad = useGamePad()
 gamePad.onPress(key => {
+  if (dialog.current) return
   if (type.value === 'config' || type.value === 'gallery') return
   if (key === 'down') {
     selectedIndex.value = (selectedIndex.value === undefined) ? 0 : (selectedIndex.value + 1) % menu.length
@@ -93,7 +96,18 @@ gamePad.onDeactivate(() => {
   selectedIndex.value = undefined
 })
 const selectedIndex = ref<number | undefined>(gamePad.active ? 0 : undefined)
-const appVersion = packageJson.version 
+const appVersion = packageJson.version
+const hint = useHint()
+const dialog = useDialogs()
+const shouldShowFirstHint = hint.currentHintIndex === 3 && !state.value.checkedHints.includes(3)
+if (shouldShowFirstHint) {
+  state.value.checkedHints.push(hint.currentHintIndex)
+  dialog.show({
+    title: uiTexts.value.story.hint,
+    desc: hint.currentHint,
+    options: [{ text: uiTexts.value.common.close, close: true }]
+  })
+}
 </script>
 
 <template>
@@ -107,14 +121,15 @@ const appVersion = packageJson.version
       @pointerdown="type = 'menu', se.click()"
     />
     <Image texture="etc/title-bg" :origin="0">
-      <FxBlur :quality="1" :x="4" :y="4" :steps="5" :strength="1.5" v-if="type === 'gallery' || type === 'config'" />
+      <FxBlur :quality="1" :x="4" :y="4" :steps="5" :strength="1.5" v-if="type === 'gallery' || type === 'config' || dialog.current" />
     </Image>
-    <Container v-if="type === 'title' || type === 'menu'" :x="config.WIDTH / 2" :y="config.HEIGHT * 0.36" :alpha="0" :tween="TITLE_FADE_IN">
+    <Container v-if="(type === 'title' || type === 'menu') && !dialog.current" :x="config.WIDTH / 2" :y="config.HEIGHT * 0.36" :alpha="0" :tween="TITLE_FADE_IN">
       <Image :texture="state.settings.lang === 'ja' ? 'etc/logo-ja' : 'etc/logo-en'" :origin="0.5" :blendMode="1" :scale="0.65" />
     </Container>
     <CustomText :text="`v${appVersion}`" :style="{ fontSize: 14 }" :x="(20).byRight()" :y="(20).byBottom()" :origin="1" :alpha="0.5" />
+    <Dialog v-if="dialog.current" :title="dialog.current.title" :desc="dialog.current.desc" :options="dialog.current.options" @close="dialog.close" :depth="8000" />
     <CustomText
-      v-if="type === 'title'"
+      v-else-if="type === 'title'"
       :text="'Click to Start'"
       :x="config.WIDTH / 2"
       :y="config.HEIGHT * 0.8"
