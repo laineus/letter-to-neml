@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
 import type { StoryMessages } from '../../src/story/types'
-import characters from '../../src/story/characters'
+import { characters } from '../../src/story/characters'
 
 const props = defineProps({
   item: {
@@ -10,7 +10,7 @@ const props = defineProps({
   }
 })
 
-const characterOptions = characters.map(char => char.name)
+const characterOptions = characters.value.map(char => char.name)
 
 const addMessage = (index: number) => {
   const prevName = index > 0 ? props.item.list[index - 1]?.name || '' : ''

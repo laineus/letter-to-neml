@@ -4,7 +4,7 @@ import { computed, watch, type PropType } from 'vue'
 import Speaker from './Speaker.vue'
 import config from '../lib/config'
 import type { SpeakerConfig } from '../story/types'
-import characters from '../story/characters'
+import { characters } from '../story/characters'
 const emit = defineEmits(['end'])
 const props = defineProps({
   speakers: {
@@ -18,7 +18,7 @@ const props = defineProps({
 })
 const currentSpeaker = computed(() => {
   if (!props.speaking) return
-  const char = characters.find(c => c.name === props.speaking)
+  const char = characters.value.find(c => c.name === props.speaking)
   if (!char) return
   return props.speakers.find(v => {
     return v.image.split('/')[1].startsWith(char.image!)

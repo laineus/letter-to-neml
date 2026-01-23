@@ -1,0 +1,17 @@
+[
+  { "name": "" },
+  { "name": "Neml", "image": "neml" },
+  { "name": "Nina", "image": "nina" },
+  { "name": "Rybel", "image": "rybel" },
+  { "name": "Wulfric", "image": "wulfric" },
+  { "name": "Lady", "image": "aunt" },
+  { "name": "Trader", "image": "trader" },
+  { "name": "Shopkeeper", "image": "shopkeeper" },
+  { "name": "Guard", "image": "guard" },
+  { "name": "Dog", "image": "dog" },
+  { "name": "Doctor", "image": "doctor" },
+  { "name": "Ceryth", "image": "ceryth" },
+  { "name": "Child", "image": "korrin" },
+  { "name": "Korrin", "image": "korrin" },
+  { "name": "Shaman", "image": "shaman" }
+]

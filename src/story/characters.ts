@@ -1,17 +1,14 @@
-export default [
-  { name: '' },
-  { name: 'ネムル', image: 'neml' },
-  { name: 'ニーナ', image: 'nina' },
-  { name: 'ライベル', image: 'rybel' },
-  { name: 'ウルフリック', image: 'wulfric' },
-  { name: 'おばさん', image: 'aunt' },
-  { name: '青年', image: 'trader' },
-  { name: '店主', image: 'shopkeeper' },
-  { name: '衛兵', image: 'guard' },
-  { name: '犬', image: 'dog' },
-  { name: '医者', image: 'doctor' },
-  { name: 'お姉さん', image: 'ceryth' },
-  { name: '子供', image: 'korrin' },
-  { name: 'コリン', image: 'korrin' },
-  { name: 'シャーマン', image: 'shaman' }
-]
+import charactersJaJson from './characters.ja.json' with { type: 'json' }
+import charactersEnJson from './characters.en.json' with { type: 'json' }
+import { computed } from 'vue'
+import { state } from '../lib/state'
+export type Character = {
+  name: string
+  image: string
+}
+
+export const characters = computed<Character[]>(() => {
+  const locale = state.value.settings.lang
+  if (locale === 'ja') return charactersJaJson as Character[]
+  return charactersEnJson as Character[]
+})
