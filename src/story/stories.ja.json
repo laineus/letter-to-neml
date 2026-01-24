@@ -2386,16 +2386,6 @@
         "image": "bg/market"
       },
       {
-        "type": "fade",
-        "fade": "out",
-        "duration": 1000
-      },
-      {
-        "type": "audio",
-        "audio": "bgm/night-market",
-        "audioType": "bgm"
-      },
-      {
         "type": "speakers",
         "list": [
           {
@@ -2404,6 +2394,16 @@
             "facing": "right"
           }
         ]
+      },
+      {
+        "type": "fade",
+        "fade": "out",
+        "duration": 1000
+      },
+      {
+        "type": "audio",
+        "audio": "bgm/night-market",
+        "audioType": "bgm"
       },
       {
         "type": "sleep",
