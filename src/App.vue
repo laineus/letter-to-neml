@@ -5,6 +5,8 @@ import MainScene from './components/MainScene.vue'
 import TitleScene from './components/TitleScene.vue'
 import { getUserId, state } from './lib/state.ts'
 import { ref } from 'vue'
+import VideoRecorder from './components/VideoRecorder.vue'
+const isDev = import.meta.env.DEV
 const gameConfig: Phaser.Types.Core.GameConfig = {
   input: {
     gamepad: true
@@ -28,6 +30,7 @@ const userId = getUserId()
     <Game :config="gameConfig" @create="onCreate">
       <TitleScene :autoStart="true" />
       <MainScene :autoStart="false" />
+      <VideoRecorder v-if="isDev" />
     </Game>
     <a href="#" class="FullscreenButton" v-if="!fullscreen" @click.prevent="fullscreen = true">
       <img src="/images/etc/fullscreen.png" alt="">
