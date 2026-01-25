@@ -32,6 +32,7 @@ const createWindow = () => {
     width: 1280,
     height: 720,
     autoHideMenuBar: true,
+    icon: path.join(__dirname, process.platform === 'win32' ? 'icon.ico' : 'icon.png'),
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,

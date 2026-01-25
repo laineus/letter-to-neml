@@ -20,14 +20,17 @@
     ],
     "linux": {
       "target": "dir",
-      "category": "Game"
+      "category": "Game",
+      "icon": "icon.png"
     },
     "win": {
-      "target": "dir"
+      "target": "dir",
+      "icon": "icon.ico"
     },
     "mac": {
       "target": "dir",
-      "category": "public.app-category.games"
+      "category": "public.app-category.games",
+      "icon": "icon.icns"
     }
   },
   "keywords": [],
