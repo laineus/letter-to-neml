@@ -52,6 +52,7 @@ const getBrowserLang = (): string => {
 const getDefaultLangSetting = () => {
   const lang = getBrowserLang()
   if (lang.startsWith('ja')) return 'ja'
+  if (lang.startsWith('zh')) return 'cn'
   return 'en'
 }
 const makeState = (): GameState => {
