@@ -86,9 +86,9 @@ gamePad.onPress(key => {
     se.select()
   } else if (selectedType.value === 'lang') {
     if (key === 'left') {
-      lang.value = 'ja'
+      lang.value = lang.value === 'cn' ? 'en' : 'ja'
     } else if (key === 'right') {
-      lang.value = 'en'
+      lang.value = lang.value === 'ja' ? 'en' : 'cn'
     }
     se.select()
   } else if (key === 'a') {
@@ -137,8 +137,8 @@ const selectedType = ref<ConfigType | undefined>(gamePad.active ? 'bgm' : undefi
       <Rectangle v-if="selectedType === 'bgm'" :x="0" :y="-65" :width="260" :height="35" :origin="0.5" :strokeColor="0x66bb00" :lineWidth="2" />
       <!-- 言語設定 -->
       <CustomText text="Language" :style="{ fontSize: 19, shadow: { blur: 5, color: '#000', offsetX: 0, offsetY: 0, fill: true } }" :origin="0.5" :y="-20" />
-      <RadioList :x="-100" :y="5" :list="[{ text: '日本語', value: 'ja' }, { text: 'English', value: 'en' }]" v-model="lang" />
-      <Rectangle v-if="selectedType === 'lang'" :x="0" :y="21" :width="210" :height="35" :origin="0.5" :strokeColor="0x66bb00" :lineWidth="2" />
+      <RadioList :x="-140" :y="5" :list="[{ text: '日本語', value: 'ja' }, { text: 'English', value: 'en' }, { text: '中文', value: 'cn' }]" v-model="lang" />
+      <Rectangle v-if="selectedType === 'lang'" :x="0" :y="21" :width="320" :height="35" :origin="0.5" :strokeColor="0x66bb00" :lineWidth="2" />
       <!-- タイトルに戻る -->
       <Button v-if="showBackToTitle" :active="selectedType === 'backToTitle'" :text="uiTexts.settings.backToTitle" :size="15" :width="240" :x="0" :y="80" :origin="0.5" :outline="false" @click="confirmBackToTitle = true, se.click()" />
       <!-- データリセット -->

@@ -1,0 +1,17 @@
+[
+  { "name": "" },
+  { "name": "涅穆尔", "image": "neml" },
+  { "name": "妮娜", "image": "nina" },
+  { "name": "莱贝尔", "image": "rybel" },
+  { "name": "乌尔弗里克", "image": "wulfric" },
+  { "name": "大婶", "image": "aunt" },
+  { "name": "青年", "image": "trader" },
+  { "name": "店主", "image": "shopkeeper" },
+  { "name": "卫兵", "image": "guard" },
+  { "name": "狗", "image": "dog" },
+  { "name": "医生", "image": "doctor" },
+  { "name": "大姐姐", "image": "ceryth" },
+  { "name": "孩子", "image": "korrin" },
+  { "name": "科林", "image": "korrin" },
+  { "name": "萨满", "image": "shaman" }
+]

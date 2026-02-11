@@ -5,12 +5,14 @@ import { state } from '../lib/state'
 import { useIfFunctions } from '../lib/ifFunctions'
 import hintsEnJson from '../story/hints.en.json' with { type: 'json' }
 import hintsJaJson from '../story/hints.ja.json' with { type: 'json' }
+import hintsCnJson from '../story/hints.cn.json' with { type: 'json' }
 import { Circle, Container } from 'phavuer'
 import { uiTexts } from '../lib/ui'
 export const useHint = () => {
   const hints = computed<string[]>(() => {
     const locale = state.value.settings.lang
     if (locale === 'ja') return hintsJaJson
+    if (locale === 'cn') return hintsCnJson
     return hintsEnJson
   })
   const ifFunctions = useIfFunctions()

@@ -2,11 +2,13 @@ import { computed } from 'vue'
 import { state } from '../lib/state'
 import thingsEnJson from './things.en.json' with { type: 'json' }
 import thingsJaJson from './things.ja.json' with { type: 'json' }
+import thingsCnJson from './things.cn.json' with { type: 'json' }
 import type { Thing } from './types'
 
 export const things = computed<Thing[]>(() => {
   const locale = state.value.settings.lang
   if (locale === 'ja') return thingsJaJson
+  if (locale === 'cn') return thingsCnJson
   return thingsEnJson
 })
 

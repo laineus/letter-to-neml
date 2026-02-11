@@ -1,6 +1,7 @@
 import { save, state } from '../lib/state'
 import endingsJaJson from './endings.ja.json' with { type: 'json' }
 import endingsEnJson from './endings.en.json' with { type: 'json' }
+import endingsCnJson from './endings.cn.json' with { type: 'json' }
 import { computed } from 'vue'
 export type Ending = {
   id: number
@@ -12,6 +13,7 @@ export type Ending = {
 export const endings = computed<Ending[]>(() => {
   const locale = state.value.settings.lang
   if (locale === 'ja') return endingsJaJson
+  if (locale === 'cn') return endingsCnJson
   return endingsEnJson
 })
 
