@@ -31,6 +31,10 @@ letter-to-neml/        # ゲーム本体
 └─ electron/         # Steam向けネイティブビルド
 ```
 
+# Contributers
+
+- Simplified Chinese translations by [百合炼金工坊](https://yuriatelier.lofter.com/)
+
 # Licence
 
 ソースコードはMITライセンスで自由に利用可能です。

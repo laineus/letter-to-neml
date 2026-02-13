@@ -14,12 +14,18 @@ const list = [
     ]
   },
   {
+    title: 'Translations',
+    list: [
+      { title: 'Simplified Chinese', name: 'Yuriatelier' }
+    ]
+  },
+  {
     title: 'AI tools',
     list: [
       { title: 'Graphics', name: 'ChatGPT / Flux Dev / NanoBanana' },
       { title: 'Music', name: 'Suno' },
       { title: 'Sound effects', name: 'Adobe Firefly' },
-      { title: 'Translation', name: 'ChatGPT' }
+      { title: 'English Translation', name: 'ChatGPT' }
     ]
   },
   {
