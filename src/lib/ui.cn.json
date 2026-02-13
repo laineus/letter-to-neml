@@ -1,0 +1,56 @@
+{
+  "title": {
+    "newGame": "开始游戏",
+    "continue": "继续游戏"
+  },
+  "common": {
+    "ok": "确定",
+    "cancel": "取消",
+    "confirm": "确认",
+    "back": "返回",
+    "close": "关闭",
+    "gallery": "画廊",
+    "settings": "设置",
+    "exit": "退出"
+  },
+  "settings": {
+    "bgmVolume": "背景音乐音量",
+    "confirmBackToTitle": "要返回标题画面吗？",
+    "confirmResetData": "要重置所有数据吗？",
+    "backToTitle": "返回标题",
+    "resetAllData": "重置所有数据"
+  },
+  "story": {
+    "firstBranch": "首次分支",
+    "fastForwardStopped": "已停止快进。",
+    "incompleteScene": "未完成的场景",
+    "cannotSkipIncompleteScene": "该场景尚未完成，无法跳过。",
+    "skipInterrupted": "跳过已中断。",
+    "backToFirstScene": "返回第一个场景",
+    "backToFirstSceneConfirm": "要返回到妮娜出发前的场景，重新写信吗？",
+    "hint": "提示",
+    "lookBack": "回头",
+    "lookAround": "环顾四周"
+  },
+  "letter": {
+    "defaultMessage": "致涅穆尔，\n我有急事必须出门一趟。\n麻烦你看家了。",
+    "createLetterTitle": "撰写信件",
+    "rules": "本游戏通过输入信件文本来改变角色的行动。\n\n以下内容无法写入信件：\n?妮娜仿佛预知未来的内容\n?辱骂涅穆尔的内容",
+    "errorTitle": "错误",
+    "alertMessage": "请先不要修改信件内容，看看故事会如何发展。",
+    "checking": "正在确认信件内容",
+    "edit": "修改",
+    "continueWithoutEdit": "不修改并继续",
+    "submit": "确定",
+    "reset": "恢复初始状态",
+    "errorE1": "包含试图进行提示注入或非法突破游戏系统的指示。",
+    "errorE2": "包含对涅穆尔的粗暴言辞、恶劣指示或虚假信息。",
+    "errorE3": "包含妮娜仿佛预知未来的内容。",
+    "errorE4": "缺少告知要出门的内容。",
+    "errorE5": "不可告知出门的理由或去向。",
+    "unknownError": "发生了未知错误。",
+    "apiError": "发生了API错误。",
+    "errorRateLimit": "服务器繁忙。\n请稍后再试。",
+    "errorRef": "（相关部分：\"{ref}\"）"
+  }
+}
