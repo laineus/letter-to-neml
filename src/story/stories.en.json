@@ -9491,6 +9491,11 @@
         "duration": 500
       },
       {
+        "type": "function",
+        "function": "オブジェクト",
+        "argument": "削除"
+      },
+      {
         "type": "background",
         "image": "bg/forest2"
       },
@@ -9736,6 +9741,11 @@
         "type": "fade",
         "fade": "in",
         "duration": 1000
+      },
+      {
+        "type": "function",
+        "function": "オブジェクト",
+        "argument": "削除"
       },
       {
         "type": "background",
