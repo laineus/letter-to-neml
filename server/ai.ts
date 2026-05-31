@@ -11,7 +11,7 @@ if (!process.env.GEMINI_API_KEY && !process.env.OPENAI_API_KEY) {
 }
 
 const GPT_MODELS = ['gpt-4o', 'gpt-4o-mini', 'gpt-5-nano', 'gpt-5-mini'] as const
-const GEMINI_MODELS = ['gemini-2.5-flash', 'gemini-2.5-flash-lite'] as const
+const GEMINI_MODELS = ['gemini-3.5-flash', 'gemini-2.5-flash', 'gemini-2.5-flash-lite'] as const
 type GPT_MODEL = typeof GPT_MODELS[number]
 type GEMINI_MODEL = typeof GEMINI_MODELS[number]
 type MODEL = GPT_MODEL | GEMINI_MODEL

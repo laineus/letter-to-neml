@@ -204,7 +204,7 @@ app.post('/letter', async (req: Request, res: Response) => {
       { role: 'user' as const, content: letter }
     ]
 
-    const response = await chatAi<SuccessResponse | ErrorResponse>(prompts, 'gemini-2.5-flash')
+    const response = await chatAi<SuccessResponse | ErrorResponse>(prompts, 'gemini-3.5-flash')
 
     // バリデーション
     validateAiResponse(response)
