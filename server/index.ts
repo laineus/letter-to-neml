@@ -9,6 +9,7 @@ dotenv.config()
 
 const app = express()
 const PORT = process.env.PORT || 5901
+const HOST = process.env.HOST || '127.0.0.1'
 const LOG_DIR = resolve(__dirname, 'letter-logs')
 
 // レートリミット設定
@@ -231,6 +232,6 @@ app.post('/letter', async (req: Request, res: Response) => {
   }
 })
 
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`)
+app.listen(Number(PORT), HOST, () => {
+  console.log(`Server is running on http://${HOST}:${PORT}`)
 })
